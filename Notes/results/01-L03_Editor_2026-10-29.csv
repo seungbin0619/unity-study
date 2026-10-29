@@ -1,0 +1,21 @@
+run_time,lab,backend,dev_build,unity,condition,metric,value
+2026-10-29T16:08:07,01-L03,Editor,1,6000.3.25f1,1_AddComponent,event seq=1,ctor [1_AddComponent] main
+2026-10-29T16:08:07,01-L03,Editor,1,6000.3.25f1,1_AddComponent,event seq=2,Awake [1_AddComponent] main
+2026-10-29T16:08:07,01-L03,Editor,1,6000.3.25f1,1_AddComponent,ctor count,1
+2026-10-29T16:08:07,01-L03,Editor,1,6000.3.25f1,1_AddComponent,Awake count,1
+2026-10-29T16:08:07,01-L03,Editor,1,6000.3.25f1,1_AddComponent,order,ctor(main) > Awake(main)
+2026-10-29T16:08:07,01-L03,Editor,1,6000.3.25f1,2_Instantiate,event seq=3,ctor [2_Instantiate] main
+2026-10-29T16:08:07,01-L03,Editor,1,6000.3.25f1,2_Instantiate,event seq=4,Awake [2_Instantiate] main
+2026-10-29T16:08:07,01-L03,Editor,1,6000.3.25f1,2_Instantiate,ctor count,1
+2026-10-29T16:08:07,01-L03,Editor,1,6000.3.25f1,2_Instantiate,Awake count,1
+2026-10-29T16:08:07,01-L03,Editor,1,6000.3.25f1,2_Instantiate,order,ctor(main) > Awake(main)
+2026-10-29T16:08:07,01-L03,Editor,1,6000.3.25f1,3_LoadScene,event seq=5,"ctor [3_LoadScene] other(id=881,name=null)"
+2026-10-29T16:08:07,01-L03,Editor,1,6000.3.25f1,3_LoadScene,event seq=6,Awake [3_LoadScene] main
+2026-10-29T16:08:07,01-L03,Editor,1,6000.3.25f1,3_LoadScene,ctor count,1
+2026-10-29T16:08:07,01-L03,Editor,1,6000.3.25f1,3_LoadScene,Awake count,1
+2026-10-29T16:08:07,01-L03,Editor,1,6000.3.25f1,3_LoadScene,order,ctor(other) > Awake(main)
+2026-10-29T16:08:07,01-L03,Editor,1,6000.3.25f1,4_LoadSceneAsync,event seq=7,"ctor [4_LoadSceneAsync] other(id=881,name=null)"
+2026-10-29T16:08:07,01-L03,Editor,1,6000.3.25f1,4_LoadSceneAsync,event seq=8,Awake [4_LoadSceneAsync] main
+2026-10-29T16:08:07,01-L03,Editor,1,6000.3.25f1,4_LoadSceneAsync,ctor count,1
+2026-10-29T16:08:07,01-L03,Editor,1,6000.3.25f1,4_LoadSceneAsync,Awake count,1
+2026-10-29T16:08:07,01-L03,Editor,1,6000.3.25f1,4_LoadSceneAsync,order,ctor(other) > Awake(main)

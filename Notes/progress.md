@@ -14,10 +14,12 @@
 - [정답 (에디터 기준)] (2026-10-29) 01-L02 `new` vs `AddComponent` — 4문항 모두 맞음. 01-L01 약점(연산자 그룹)을 바로 적용함. 경고가 플레이어에서 안 나온다는 점은 고려하지 않음
 - [힌트 후 정답] (2026-10-29) 01-L06 Q1 에디터 예외 분기 조건 — 1차에 네이티브 포인터로 답하고 비교 대상도 `new` vs `AddComponent`로 잘못 잡음. 힌트 후 `m_InstanceID != 0` 정답
 - [힌트 후 정답] (2026-10-29) 01-L06 Q2 플레이어에서 다른 이유 — "모르겠음" → 힌트(DLL이 다름, 함수 이름) 후 "플레이어 DLL에서 기능 제거" 정답
+- [부분 정답] (2026-10-29) 01-L03 생성자 횟수·스레드·순서 — 횟수 4/4, 스레드 3/4(동기 `LoadScene`을 메인으로 예측), 순서 1/4(2~4를 "Awake 이후"로 예측 — 생성자는 항상 Awake보다 먼저이고 사이에 역직렬화가 낀다)
 
 ## 약점 (관련 실습에서 재확인)
 - 어떤 연산자가 `UnityEngine.Object` 오버로드를 타는지 구분 (`==`·`!=`·`bool`만 탐 / `is null`·`?.`·`??`·`ReferenceEquals`는 안 탐), `==`와 `bool`이 같은 검사라는 점
 - 에디터와 플레이어의 차이를 "다른 DLL, 다른 코드"로 떠올리는 것 (Q2에서 힌트 필요) — 에디터 결과를 볼 때마다 "플레이어에서도 같은가?"를 묻기
+- 객체 생성 파이프라인 순서: 생성자(필드 초기화) → 역직렬화(값 덮어쓰기) → Awake. "동기 API = 메인 스레드에서 실행"이라고 가정하는 것 (동기 LoadScene도 로딩 스레드에서 역직렬화)
 - 성능 이슈를 네이티브 경계 비용 관점으로 설명하는 것
 - 인터페이스를 거칠 때 struct가 박싱되는 지점 찾기
 - 참조 타입 원소 컬렉션(List<class>)이 GC에게는 "객체 N개 + 참조 N개"라는 점 — 원소 클래스가 pointer-free여도 방문 비용은 남음
@@ -30,6 +32,7 @@
 - 2026-10-29 01-L01 에디터 + Mono 플레이어 실행 — [README](../Assets/Labs/01_NativeManaged/L01_FakeNull/README.md) (IL2CPP 미실행, 예외 타입 차이 원인은 01-L06에서 확인)
 - 2026-10-29 01-L02 에디터 + Mono 플레이어 실행 — [README](../Assets/Labs/01_NativeManaged/L02_NewVsAddComponent/README.md)
 - 2026-10-29 01-L06 소스 읽기 + 에디터·Mono 플레이어 CoreModule 비교 — [README](../Assets/Labs/01_NativeManaged/L06_ReadBindings/README.md)
+- 2026-10-29 01-L03 에디터 + Mono 플레이어 실행 — [README](../Assets/Labs/01_NativeManaged/L03_CtorTiming/README.md)
 
 ## Player Settings 변경 이력
 (변경 시 날짜, 항목, 원래 값 → 바꾼 값, 복원 여부)

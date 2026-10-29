@@ -26,7 +26,7 @@ C# 래퍼와 C++ 네이티브 객체의 관계, 경계를 넘는 비용, IL2CPP�
 |---|---|---|---|---|
 | 01-L01 | 가짜 null과 `==` / `is null` / `?.` / `??` | 완료 (Mono, IL2CPP 미실행) | `Destroy` 다음 프레임에 `==`·`bool`만 null로 보고, `is null`·`?.`·`??`는 래퍼를 그대로 통과시켜 예외 발생. 예외 타입은 에디터 `MissingReferenceException`, Mono 플레이어 `NullReferenceException` | [README](Assets/Labs/01_NativeManaged/L01_FakeNull/README.md) |
 | 01-L02 | `new MonoBehaviour()` vs `AddComponent` | 완료 (Mono, IL2CPP 미실행) | `new`로 만든 컴포넌트는 `== null`이 `true`인 래퍼만 남음. `'new' keyword` 경고는 에디터에서만 출력되고 플레이어에서는 없음 | [README](Assets/Labs/01_NativeManaged/L02_NewVsAddComponent/README.md) |
-| 01-L03 | MonoBehaviour 생성자 호출 시점·스레드 | 대기 | | |
+| 01-L03 | MonoBehaviour 생성자 호출 시점·스레드 | 완료 (Mono, IL2CPP 미실행) | 생성자는 경로마다 1번, 항상 `Awake`보다 먼저. `AddComponent`·`Instantiate`는 메인 스레드, 씬 로드는 **동기 `LoadScene`도** 로딩 스레드에서 생성자 호출 | [README](Assets/Labs/01_NativeManaged/L03_CtorTiming/README.md) |
 | 01-L04 | 연쇄 파괴와 이벤트 구독 누수 | 대기 | | |
 | 01-L05 | 경계 비용: 캐싱, 배열 반환 API, `CompareTag` | 대기 | | |
 | 01-L06 | UnityCsReference 바인딩 코드 읽기 | 완료 (Mono, IL2CPP 미실행) | `MissingReferenceException`은 instance ID ≠ 0일 때 에디터에서만 만들어짐. 플레이어 CoreModule의 `TryThrowEditorNullExceptionObject`는 IL 2바이트짜리 빈 메서드(에디터 234바이트) | [README](Assets/Labs/01_NativeManaged/L06_ReadBindings/README.md) |

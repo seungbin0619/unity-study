@@ -11,6 +11,9 @@ namespace Labs.Editor
         [MenuItem("Labs/01/L02 New vs AddComponent")]
         static void Run01L02() => Run("01-L02");
 
+        [MenuItem("Labs/01/L03 Ctor Timing")]
+        static void Run01L03() => Run("01-L03");
+
         [MenuItem("Labs/01/L06 Read Bindings")]
         static void Run01L06() => Run("01-L06");
 
