@@ -15,6 +15,7 @@
 - [힌트 후 정답] (2026-10-29) 01-L06 Q1 에디터 예외 분기 조건 — 1차에 네이티브 포인터로 답하고 비교 대상도 `new` vs `AddComponent`로 잘못 잡음. 힌트 후 `m_InstanceID != 0` 정답
 - [힌트 후 정답] (2026-10-29) 01-L06 Q2 플레이어에서 다른 이유 — "모르겠음" → 힌트(DLL이 다름, 함수 이름) 후 "플레이어 DLL에서 기능 제거" 정답
 - [부분 정답] (2026-10-29) 01-L03 생성자 횟수·스레드·순서 — 횟수 4/4, 스레드 3/4(동기 `LoadScene`을 메인으로 예측), 순서 1/4(2~4를 "Awake 이후"로 예측 — 생성자는 항상 Awake보다 먼저이고 사이에 역직렬화가 낀다)
+- [정답] (2026-10-29) 01-L04 연쇄 파괴·구독 누수 — 4문항 모두 맞음. 에디터/플레이어 예외 타입 차이를 스스로 적용함 (01-L01·01-L06 약점 회복 신호)
 
 ## 약점 (관련 실습에서 재확인)
 - 어떤 연산자가 `UnityEngine.Object` 오버로드를 타는지 구분 (`==`·`!=`·`bool`만 탐 / `is null`·`?.`·`??`·`ReferenceEquals`는 안 탐), `==`와 `bool`이 같은 검사라는 점
@@ -33,6 +34,7 @@
 - 2026-10-29 01-L02 에디터 + Mono 플레이어 실행 — [README](../Assets/Labs/01_NativeManaged/L02_NewVsAddComponent/README.md)
 - 2026-10-29 01-L06 소스 읽기 + 에디터·Mono 플레이어 CoreModule 비교 — [README](../Assets/Labs/01_NativeManaged/L06_ReadBindings/README.md)
 - 2026-10-29 01-L03 에디터 + Mono 플레이어 실행 — [README](../Assets/Labs/01_NativeManaged/L03_CtorTiming/README.md)
+- 2026-10-29 01-L04 에디터 + Mono 플레이어 실행 — [README](../Assets/Labs/01_NativeManaged/L04_CascadeDestroy/README.md)
 
 ## Player Settings 변경 이력
 (변경 시 날짜, 항목, 원래 값 → 바꾼 값, 복원 여부)

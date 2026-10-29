@@ -1,0 +1,18 @@
+run_time,lab,backend,dev_build,unity,condition,metric,value
+2026-10-29T16:28:24,01-L04,Mono,1,6000.3.25f1,-,subscribers after create,2
+2026-10-29T16:28:24,01-L04,Mono,1,6000.3.25f1,a_Leaky,1 same frame cached == null,false
+2026-10-29T16:28:24,01-L04,Mono,1,6000.3.25f1,a_Leaky,1 same frame child == null,false
+2026-10-29T16:28:24,01-L04,Mono,1,6000.3.25f1,b_Clean,1 same frame cached == null,false
+2026-10-29T16:28:24,01-L04,Mono,1,6000.3.25f1,b_Clean,1 same frame child == null,false
+2026-10-29T16:28:24,01-L04,Mono,1,6000.3.25f1,a_Leaky,2 next frame cached == null,true
+2026-10-29T16:28:24,01-L04,Mono,1,6000.3.25f1,a_Leaky,2 next frame child == null,true
+2026-10-29T16:28:24,01-L04,Mono,1,6000.3.25f1,b_Clean,2 next frame cached == null,true
+2026-10-29T16:28:24,01-L04,Mono,1,6000.3.25f1,b_Clean,2 next frame child == null,true
+2026-10-29T16:28:24,01-L04,Mono,1,6000.3.25f1,a_Leaky,OnDestroy called,true
+2026-10-29T16:28:24,01-L04,Mono,1,6000.3.25f1,b_Clean,OnDestroy called,true
+2026-10-29T16:28:24,01-L04,Mono,1,6000.3.25f1,-,subscribers after destroy,1
+2026-10-29T16:28:24,01-L04,Mono,1,6000.3.25f1,a_Leaky,3 OnTick name,NullReferenceException
+2026-10-29T16:28:24,01-L04,Mono,1,6000.3.25f1,b_Clean,3 OnTick name,not called
+2026-10-29T16:28:24,01-L04,Mono,1,6000.3.25f1,a_Leaky,4 alive after GC (subscribed),true
+2026-10-29T16:28:24,01-L04,Mono,1,6000.3.25f1,b_Clean,4 alive after GC,false
+2026-10-29T16:28:24,01-L04,Mono,1,6000.3.25f1,a_Leaky,4 alive after GC (event cleared),false

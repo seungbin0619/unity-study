@@ -18,6 +18,9 @@ namespace Labs.Editor
         [MenuItem("Labs/01/L03 Ctor Timing")]
         static void Run01L03() => Run("01-L03");
 
+        [MenuItem("Labs/01/L04 Cascade Destroy")]
+        static void Run01L04() => Run("01-L04");
+
         [MenuItem("Labs/01/L06 Read Bindings")]
         static void Run01L06() => Run("01-L06");
 
