@@ -68,7 +68,7 @@
   - Rider와 Microsoft.Unity.Analyzers가 `?.`와 `??`에 경고(UNT0008, UNT0007)를 띄우는 이유가 이 결과다. 안전한 형태는 `if (go) go.DoX();` 또는 `go != null ? go : fallback`이다.
   - 같은 이유로 `TryGetComponent(out var c)`가 반환한 값이나 `?.Invoke()` 이벤트 패턴에서도, 대상이 `UnityEngine.Object`이면 파괴 여부를 따로 확인해야 한다.
   - **예외 타입이 환경마다 다르다.** 에디터에서는 `MissingReferenceException`, Mono Development 플레이어에서는 `NullReferenceException`이었다. 연산자 결과(1~4)는 같고 예외 타입만 다르다. 따라서 `catch (MissingReferenceException)`로 파괴된 객체 접근을 잡는 코드는 빌드에서 동작하지 않는다.
-  - 예외 타입이 다른 원인(에디터 전용 분기가 바인딩 코드의 어디에 있는지)은 확인 필요. 01-L06에서 UnityCsReference의 null 예외 생성 경로를 읽어 확인한다. IL2CPP 플레이어 결과는 IL2CPP 모듈 설치 후 추가한다.
+  - 예외 타입이 다른 원인은 [01-L06](../L06_ReadBindings/README.md)에서 확인했다. `TryThrowEditorNullExceptionObject`가 instance ID ≠ 0이면 `MissingReferenceException`을 던지는데, 플레이어용 CoreModule에서는 이 메서드 본문이 비어 있다. IL2CPP 플레이어 결과는 IL2CPP 모듈 설치 후 추가한다.
 - 근거:
   - 실측 CSV (위)
   - UnityCsReference `Runtime/Export/Scripting/UnityEngineObject.bindings.cs` — `operator ==`, `implicit operator bool`, `CompareBaseObjects`, `IsNativeObjectAlive`

@@ -1,0 +1,12 @@
+run_time,lab,backend,dev_build,unity,condition,metric,value
+2026-10-29T15:56:20,01-L06,Editor,1,6000.3.25f1,CoreModule,module,UnityEngine.CoreModule.dll
+2026-10-29T15:56:20,01-L06,Editor,1,6000.3.25f1,TryThrowEditorNullExceptionObject,method found,true
+2026-10-29T15:56:20,01-L06,Editor,1,6000.3.25f1,TryThrowEditorNullExceptionObject,IL bytes,234
+2026-10-29T15:56:20,01-L06,Editor,1,6000.3.25f1,TryThrowEditorNullExceptionObject,ldstr #0,""""""
+2026-10-29T15:56:20,01-L06,Editor,1,6000.3.25f1,TryThrowEditorNullExceptionObject,ldstr #1,"""MissingReferenceException:"""
+2026-10-29T15:56:20,01-L06,Editor,1,6000.3.25f1,TryThrowEditorNullExceptionObject,ldstr #2,"""The object of type '"""
+2026-10-29T15:56:20,01-L06,Editor,1,6000.3.25f1,TryThrowEditorNullExceptionObject,ldstr #3,"""' has been destroyed but you are still trying to access it."""
+2026-10-29T15:56:20,01-L06,Editor,1,6000.3.25f1,TryThrowEditorNullExceptionObject,ldstr #4,""" Parameter name: """
+2026-10-29T15:56:20,01-L06,Editor,1,6000.3.25f1,TryThrowEditorNullExceptionObject,ldstr #5,""" Parameter name: """
+2026-10-29T15:56:20,01-L06,Editor,1,6000.3.25f1,TryThrowEditorNullExceptionObject,ldstr #6,"""UnityEngine."""
+2026-10-29T15:56:20,01-L06,Editor,1,6000.3.25f1,TryThrowEditorNullExceptionObject,ldstr count,7

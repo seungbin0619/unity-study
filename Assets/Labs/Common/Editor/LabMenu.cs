@@ -11,6 +11,9 @@ namespace Labs.Editor
         [MenuItem("Labs/01/L02 New vs AddComponent")]
         static void Run01L02() => Run("01-L02");
 
+        [MenuItem("Labs/01/L06 Read Bindings")]
+        static void Run01L06() => Run("01-L06");
+
         public static void Run(string labId)
         {
             if (EditorApplication.isPlaying)
