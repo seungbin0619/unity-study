@@ -37,6 +37,7 @@ ExportedObj/
 *.csproj
 *.unityproj
 *.sln
+*.slnx
 *.suo
 *.tmp
 *.user
@@ -63,6 +64,9 @@ sysinfo.txt
 *.unitypackage
 *.unitypackage.meta
 *.app
+
+# Performance Testing package writes these during player builds and removes them afterwards
+/[Aa]ssets/[Rr]esources/PerformanceTestRun*
 
 # Crashlytics generated file
 crashlytics-build.properties
