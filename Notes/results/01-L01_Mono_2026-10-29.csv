@@ -1,0 +1,13 @@
+run_time,lab,backend,dev_build,unity,condition,metric,value
+2026-10-29T15:23:40,01-L01,Mono,1,6000.3.25f1,A_SameFrame,1 go == null,false
+2026-10-29T15:23:40,01-L01,Mono,1,6000.3.25f1,A_SameFrame,2 go is null,false
+2026-10-29T15:23:40,01-L01,Mono,1,6000.3.25f1,A_SameFrame,"3 ReferenceEquals(go, null)",false
+2026-10-29T15:23:40,01-L01,Mono,1,6000.3.25f1,A_SameFrame,4 (bool)go,true
+2026-10-29T15:23:40,01-L01,Mono,1,6000.3.25f1,A_SameFrame,5 go?.name,"""Target"""
+2026-10-29T15:23:40,01-L01,Mono,1,6000.3.25f1,A_SameFrame,6 (go ?? fallback).name,"""Target"""
+2026-10-29T15:23:40,01-L01,Mono,1,6000.3.25f1,B_NextFrame,1 go == null,true
+2026-10-29T15:23:40,01-L01,Mono,1,6000.3.25f1,B_NextFrame,2 go is null,false
+2026-10-29T15:23:40,01-L01,Mono,1,6000.3.25f1,B_NextFrame,"3 ReferenceEquals(go, null)",false
+2026-10-29T15:23:40,01-L01,Mono,1,6000.3.25f1,B_NextFrame,4 (bool)go,false
+2026-10-29T15:23:40,01-L01,Mono,1,6000.3.25f1,B_NextFrame,5 go?.name,NullReferenceException
+2026-10-29T15:23:40,01-L01,Mono,1,6000.3.25f1,B_NextFrame,6 (go ?? fallback).name,NullReferenceException

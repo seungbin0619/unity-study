@@ -24,7 +24,7 @@ C# 래퍼와 C++ 네이티브 객체의 관계, 경계를 넘는 비용, IL2CPP�
 
 | ID | 실습 | 상태 | 핵심 결론 | 링크 |
 |---|---|---|---|---|
-| 01-L01 | 가짜 null과 `==` / `is null` / `?.` / `??` | 대기 | | |
+| 01-L01 | 가짜 null과 `==` / `is null` / `?.` / `??` | 완료 (Mono, IL2CPP 미실행) | `Destroy` 다음 프레임에 `==`·`bool`만 null로 보고, `is null`·`?.`·`??`는 래퍼를 그대로 통과시켜 예외 발생. 예외 타입은 에디터 `MissingReferenceException`, Mono 플레이어 `NullReferenceException` | [README](Assets/Labs/01_NativeManaged/L01_FakeNull/README.md) |
 | 01-L02 | `new MonoBehaviour()` vs `AddComponent` | 대기 | | |
 | 01-L03 | MonoBehaviour 생성자 호출 시점·스레드 | 대기 | | |
 | 01-L04 | 연쇄 파괴와 이벤트 구독 누수 | 대기 | | |
