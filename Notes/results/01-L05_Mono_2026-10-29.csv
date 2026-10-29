@@ -1,0 +1,134 @@
+run_time,lab,backend,dev_build,unity,condition,metric,value
+2026-10-29T16:46:19,01-L05,Mono,1,6000.3.25f1,-,metrics valid,true
+2026-10-29T16:46:19,01-L05,Mono,1,6000.3.25f1,0a baseline (empty loop),iterations per frame,1000
+2026-10-29T16:46:19,01-L05,Mono,1,6000.3.25f1,0a baseline (empty loop),frame alloc bytes avg,0
+2026-10-29T16:46:19,01-L05,Mono,1,6000.3.25f1,0a baseline (empty loop),frame alloc bytes min/max,0/0
+2026-10-29T16:46:19,01-L05,Mono,1,6000.3.25f1,0a baseline (empty loop),frame alloc count avg,0.0
+2026-10-29T16:46:19,01-L05,Mono,1,6000.3.25f1,0a baseline (empty loop),alloc bytes per call,0.0
+2026-10-29T16:46:19,01-L05,Mono,1,6000.3.25f1,0a baseline (empty loop),ns per call avg,0.6
+2026-10-29T16:46:19,01-L05,Mono,1,6000.3.25f1,0a baseline (empty loop),ns per call min,0.5
+2026-10-29T16:46:19,01-L05,Mono,1,6000.3.25f1,0b calibration new byte[1024],iterations per frame,100
+2026-10-29T16:46:19,01-L05,Mono,1,6000.3.25f1,0b calibration new byte[1024],frame alloc bytes avg,105600
+2026-10-29T16:46:19,01-L05,Mono,1,6000.3.25f1,0b calibration new byte[1024],frame alloc bytes min/max,105600/105600
+2026-10-29T16:46:19,01-L05,Mono,1,6000.3.25f1,0b calibration new byte[1024],frame alloc count avg,100.0
+2026-10-29T16:46:19,01-L05,Mono,1,6000.3.25f1,0b calibration new byte[1024],alloc bytes per call,1056.0
+2026-10-29T16:46:19,01-L05,Mono,1,6000.3.25f1,0b calibration new byte[1024],ns per call avg,1399.9
+2026-10-29T16:46:19,01-L05,Mono,1,6000.3.25f1,0b calibration new byte[1024],ns per call min,98.0
+2026-10-29T16:46:19,01-L05,Mono,1,6000.3.25f1,1a GetComponent<BoxCollider>,iterations per frame,1000
+2026-10-29T16:46:19,01-L05,Mono,1,6000.3.25f1,1a GetComponent<BoxCollider>,frame alloc bytes avg,0
+2026-10-29T16:46:19,01-L05,Mono,1,6000.3.25f1,1a GetComponent<BoxCollider>,frame alloc bytes min/max,0/0
+2026-10-29T16:46:19,01-L05,Mono,1,6000.3.25f1,1a GetComponent<BoxCollider>,frame alloc count avg,0.0
+2026-10-29T16:46:19,01-L05,Mono,1,6000.3.25f1,1a GetComponent<BoxCollider>,alloc bytes per call,0.0
+2026-10-29T16:46:19,01-L05,Mono,1,6000.3.25f1,1a GetComponent<BoxCollider>,ns per call avg,20.3
+2026-10-29T16:46:19,01-L05,Mono,1,6000.3.25f1,1a GetComponent<BoxCollider>,ns per call min,19.6
+2026-10-29T16:46:19,01-L05,Mono,1,6000.3.25f1,1b cached field,iterations per frame,1000
+2026-10-29T16:46:19,01-L05,Mono,1,6000.3.25f1,1b cached field,frame alloc bytes avg,0
+2026-10-29T16:46:19,01-L05,Mono,1,6000.3.25f1,1b cached field,frame alloc bytes min/max,0/0
+2026-10-29T16:46:19,01-L05,Mono,1,6000.3.25f1,1b cached field,frame alloc count avg,0.0
+2026-10-29T16:46:19,01-L05,Mono,1,6000.3.25f1,1b cached field,alloc bytes per call,0.0
+2026-10-29T16:46:19,01-L05,Mono,1,6000.3.25f1,1b cached field,ns per call avg,0.8
+2026-10-29T16:46:19,01-L05,Mono,1,6000.3.25f1,1b cached field,ns per call min,0.7
+2026-10-29T16:46:19,01-L05,Mono,1,6000.3.25f1,1c GetComponent<Rigidbody> (missing),iterations per frame,1000
+2026-10-29T16:46:19,01-L05,Mono,1,6000.3.25f1,1c GetComponent<Rigidbody> (missing),frame alloc bytes avg,0
+2026-10-29T16:46:19,01-L05,Mono,1,6000.3.25f1,1c GetComponent<Rigidbody> (missing),frame alloc bytes min/max,0/0
+2026-10-29T16:46:19,01-L05,Mono,1,6000.3.25f1,1c GetComponent<Rigidbody> (missing),frame alloc count avg,0.0
+2026-10-29T16:46:19,01-L05,Mono,1,6000.3.25f1,1c GetComponent<Rigidbody> (missing),alloc bytes per call,0.0
+2026-10-29T16:46:19,01-L05,Mono,1,6000.3.25f1,1c GetComponent<Rigidbody> (missing),ns per call avg,19.7
+2026-10-29T16:46:19,01-L05,Mono,1,6000.3.25f1,1c GetComponent<Rigidbody> (missing),ns per call min,19.4
+2026-10-29T16:46:19,01-L05,Mono,1,6000.3.25f1,2a mesh.vertices,iterations per frame,100
+2026-10-29T16:46:19,01-L05,Mono,1,6000.3.25f1,2a mesh.vertices,frame alloc bytes avg,1203200
+2026-10-29T16:46:19,01-L05,Mono,1,6000.3.25f1,2a mesh.vertices,frame alloc bytes min/max,1203200/1203200
+2026-10-29T16:46:19,01-L05,Mono,1,6000.3.25f1,2a mesh.vertices,frame alloc count avg,100.0
+2026-10-29T16:46:19,01-L05,Mono,1,6000.3.25f1,2a mesh.vertices,alloc bytes per call,12032.0
+2026-10-29T16:46:19,01-L05,Mono,1,6000.3.25f1,2a mesh.vertices,ns per call avg,14614.8
+2026-10-29T16:46:19,01-L05,Mono,1,6000.3.25f1,2a mesh.vertices,ns per call min,13057.0
+2026-10-29T16:46:19,01-L05,Mono,1,6000.3.25f1,2b mesh.GetVertices(list),iterations per frame,100
+2026-10-29T16:46:19,01-L05,Mono,1,6000.3.25f1,2b mesh.GetVertices(list),frame alloc bytes avg,0
+2026-10-29T16:46:19,01-L05,Mono,1,6000.3.25f1,2b mesh.GetVertices(list),frame alloc bytes min/max,0/0
+2026-10-29T16:46:19,01-L05,Mono,1,6000.3.25f1,2b mesh.GetVertices(list),frame alloc count avg,0.0
+2026-10-29T16:46:19,01-L05,Mono,1,6000.3.25f1,2b mesh.GetVertices(list),alloc bytes per call,0.0
+2026-10-29T16:46:19,01-L05,Mono,1,6000.3.25f1,2b mesh.GetVertices(list),ns per call avg,1079.7
+2026-10-29T16:46:19,01-L05,Mono,1,6000.3.25f1,2b mesh.GetVertices(list),ns per call min,882.0
+2026-10-29T16:46:19,01-L05,Mono,1,6000.3.25f1,"3a go.tag == ""Player""",iterations per frame,1000
+2026-10-29T16:46:19,01-L05,Mono,1,6000.3.25f1,"3a go.tag == ""Player""",frame alloc bytes avg,34000
+2026-10-29T16:46:19,01-L05,Mono,1,6000.3.25f1,"3a go.tag == ""Player""",frame alloc bytes min/max,34000/34000
+2026-10-29T16:46:19,01-L05,Mono,1,6000.3.25f1,"3a go.tag == ""Player""",frame alloc count avg,1000.0
+2026-10-29T16:46:19,01-L05,Mono,1,6000.3.25f1,"3a go.tag == ""Player""",alloc bytes per call,34.0
+2026-10-29T16:46:19,01-L05,Mono,1,6000.3.25f1,"3a go.tag == ""Player""",ns per call avg,230.6
+2026-10-29T16:46:19,01-L05,Mono,1,6000.3.25f1,"3a go.tag == ""Player""",ns per call min,130.7
+2026-10-29T16:46:19,01-L05,Mono,1,6000.3.25f1,"3b go.CompareTag(""Player"")",iterations per frame,1000
+2026-10-29T16:46:19,01-L05,Mono,1,6000.3.25f1,"3b go.CompareTag(""Player"")",frame alloc bytes avg,0
+2026-10-29T16:46:19,01-L05,Mono,1,6000.3.25f1,"3b go.CompareTag(""Player"")",frame alloc bytes min/max,0/0
+2026-10-29T16:46:19,01-L05,Mono,1,6000.3.25f1,"3b go.CompareTag(""Player"")",frame alloc count avg,0.0
+2026-10-29T16:46:19,01-L05,Mono,1,6000.3.25f1,"3b go.CompareTag(""Player"")",alloc bytes per call,0.0
+2026-10-29T16:46:19,01-L05,Mono,1,6000.3.25f1,"3b go.CompareTag(""Player"")",ns per call avg,44.2
+2026-10-29T16:46:19,01-L05,Mono,1,6000.3.25f1,"3b go.CompareTag(""Player"")",ns per call min,41.7
+2026-10-29T16:46:19,01-L05,Mono,1,6000.3.25f1,-,sink,3996200
+2026-10-29T16:56:54,01-L05,Mono,1,6000.3.25f1,1c returned value,is null,true
+2026-10-29T16:56:54,01-L05,Mono,1,6000.3.25f1,1c returned value,== null,true
+2026-10-29T16:56:54,01-L05,Mono,1,6000.3.25f1,1c returned value,?.mass,null
+2026-10-29T16:56:54,01-L05,Mono,1,6000.3.25f1,-,metrics valid,true
+2026-10-29T16:56:54,01-L05,Mono,1,6000.3.25f1,0a baseline (empty loop),iterations per frame,1000
+2026-10-29T16:56:54,01-L05,Mono,1,6000.3.25f1,0a baseline (empty loop),frame alloc bytes avg,0
+2026-10-29T16:56:54,01-L05,Mono,1,6000.3.25f1,0a baseline (empty loop),frame alloc bytes min/max,0/0
+2026-10-29T16:56:54,01-L05,Mono,1,6000.3.25f1,0a baseline (empty loop),frame alloc count avg,0.0
+2026-10-29T16:56:54,01-L05,Mono,1,6000.3.25f1,0a baseline (empty loop),alloc bytes per call,0.0
+2026-10-29T16:56:54,01-L05,Mono,1,6000.3.25f1,0a baseline (empty loop),ns per call avg,0.5
+2026-10-29T16:56:54,01-L05,Mono,1,6000.3.25f1,0a baseline (empty loop),ns per call min,0.4
+2026-10-29T16:56:54,01-L05,Mono,1,6000.3.25f1,0b calibration new byte[1024],iterations per frame,100
+2026-10-29T16:56:54,01-L05,Mono,1,6000.3.25f1,0b calibration new byte[1024],frame alloc bytes avg,105600
+2026-10-29T16:56:54,01-L05,Mono,1,6000.3.25f1,0b calibration new byte[1024],frame alloc bytes min/max,105600/105600
+2026-10-29T16:56:54,01-L05,Mono,1,6000.3.25f1,0b calibration new byte[1024],frame alloc count avg,100.0
+2026-10-29T16:56:54,01-L05,Mono,1,6000.3.25f1,0b calibration new byte[1024],alloc bytes per call,1056.0
+2026-10-29T16:56:54,01-L05,Mono,1,6000.3.25f1,0b calibration new byte[1024],ns per call avg,1333.9
+2026-10-29T16:56:54,01-L05,Mono,1,6000.3.25f1,0b calibration new byte[1024],ns per call min,97.0
+2026-10-29T16:56:54,01-L05,Mono,1,6000.3.25f1,1a GetComponent<BoxCollider>,iterations per frame,1000
+2026-10-29T16:56:54,01-L05,Mono,1,6000.3.25f1,1a GetComponent<BoxCollider>,frame alloc bytes avg,0
+2026-10-29T16:56:54,01-L05,Mono,1,6000.3.25f1,1a GetComponent<BoxCollider>,frame alloc bytes min/max,0/0
+2026-10-29T16:56:54,01-L05,Mono,1,6000.3.25f1,1a GetComponent<BoxCollider>,frame alloc count avg,0.0
+2026-10-29T16:56:54,01-L05,Mono,1,6000.3.25f1,1a GetComponent<BoxCollider>,alloc bytes per call,0.0
+2026-10-29T16:56:54,01-L05,Mono,1,6000.3.25f1,1a GetComponent<BoxCollider>,ns per call avg,19.8
+2026-10-29T16:56:54,01-L05,Mono,1,6000.3.25f1,1a GetComponent<BoxCollider>,ns per call min,19.5
+2026-10-29T16:56:54,01-L05,Mono,1,6000.3.25f1,1b cached field,iterations per frame,1000
+2026-10-29T16:56:54,01-L05,Mono,1,6000.3.25f1,1b cached field,frame alloc bytes avg,0
+2026-10-29T16:56:54,01-L05,Mono,1,6000.3.25f1,1b cached field,frame alloc bytes min/max,0/0
+2026-10-29T16:56:54,01-L05,Mono,1,6000.3.25f1,1b cached field,frame alloc count avg,0.0
+2026-10-29T16:56:54,01-L05,Mono,1,6000.3.25f1,1b cached field,alloc bytes per call,0.0
+2026-10-29T16:56:54,01-L05,Mono,1,6000.3.25f1,1b cached field,ns per call avg,0.8
+2026-10-29T16:56:54,01-L05,Mono,1,6000.3.25f1,1b cached field,ns per call min,0.7
+2026-10-29T16:56:54,01-L05,Mono,1,6000.3.25f1,1c GetComponent<Rigidbody> (missing),iterations per frame,1000
+2026-10-29T16:56:54,01-L05,Mono,1,6000.3.25f1,1c GetComponent<Rigidbody> (missing),frame alloc bytes avg,0
+2026-10-29T16:56:54,01-L05,Mono,1,6000.3.25f1,1c GetComponent<Rigidbody> (missing),frame alloc bytes min/max,0/0
+2026-10-29T16:56:54,01-L05,Mono,1,6000.3.25f1,1c GetComponent<Rigidbody> (missing),frame alloc count avg,0.0
+2026-10-29T16:56:54,01-L05,Mono,1,6000.3.25f1,1c GetComponent<Rigidbody> (missing),alloc bytes per call,0.0
+2026-10-29T16:56:54,01-L05,Mono,1,6000.3.25f1,1c GetComponent<Rigidbody> (missing),ns per call avg,20.9
+2026-10-29T16:56:54,01-L05,Mono,1,6000.3.25f1,1c GetComponent<Rigidbody> (missing),ns per call min,20.8
+2026-10-29T16:56:54,01-L05,Mono,1,6000.3.25f1,2a mesh.vertices,iterations per frame,100
+2026-10-29T16:56:54,01-L05,Mono,1,6000.3.25f1,2a mesh.vertices,frame alloc bytes avg,1203200
+2026-10-29T16:56:54,01-L05,Mono,1,6000.3.25f1,2a mesh.vertices,frame alloc bytes min/max,1203200/1203200
+2026-10-29T16:56:54,01-L05,Mono,1,6000.3.25f1,2a mesh.vertices,frame alloc count avg,100.0
+2026-10-29T16:56:54,01-L05,Mono,1,6000.3.25f1,2a mesh.vertices,alloc bytes per call,12032.0
+2026-10-29T16:56:54,01-L05,Mono,1,6000.3.25f1,2a mesh.vertices,ns per call avg,12097.1
+2026-10-29T16:56:54,01-L05,Mono,1,6000.3.25f1,2a mesh.vertices,ns per call min,10633.0
+2026-10-29T16:56:54,01-L05,Mono,1,6000.3.25f1,2b mesh.GetVertices(list),iterations per frame,100
+2026-10-29T16:56:54,01-L05,Mono,1,6000.3.25f1,2b mesh.GetVertices(list),frame alloc bytes avg,0
+2026-10-29T16:56:54,01-L05,Mono,1,6000.3.25f1,2b mesh.GetVertices(list),frame alloc bytes min/max,0/0
+2026-10-29T16:56:54,01-L05,Mono,1,6000.3.25f1,2b mesh.GetVertices(list),frame alloc count avg,0.0
+2026-10-29T16:56:54,01-L05,Mono,1,6000.3.25f1,2b mesh.GetVertices(list),alloc bytes per call,0.0
+2026-10-29T16:56:54,01-L05,Mono,1,6000.3.25f1,2b mesh.GetVertices(list),ns per call avg,922.7
+2026-10-29T16:56:54,01-L05,Mono,1,6000.3.25f1,2b mesh.GetVertices(list),ns per call min,879.0
+2026-10-29T16:56:54,01-L05,Mono,1,6000.3.25f1,"3a go.tag == ""Player""",iterations per frame,1000
+2026-10-29T16:56:54,01-L05,Mono,1,6000.3.25f1,"3a go.tag == ""Player""",frame alloc bytes avg,34000
+2026-10-29T16:56:54,01-L05,Mono,1,6000.3.25f1,"3a go.tag == ""Player""",frame alloc bytes min/max,34000/34000
+2026-10-29T16:56:54,01-L05,Mono,1,6000.3.25f1,"3a go.tag == ""Player""",frame alloc count avg,1000.0
+2026-10-29T16:56:54,01-L05,Mono,1,6000.3.25f1,"3a go.tag == ""Player""",alloc bytes per call,34.0
+2026-10-29T16:56:54,01-L05,Mono,1,6000.3.25f1,"3a go.tag == ""Player""",ns per call avg,187.6
+2026-10-29T16:56:54,01-L05,Mono,1,6000.3.25f1,"3a go.tag == ""Player""",ns per call min,118.8
+2026-10-29T16:56:54,01-L05,Mono,1,6000.3.25f1,"3b go.CompareTag(""Player"")",iterations per frame,1000
+2026-10-29T16:56:54,01-L05,Mono,1,6000.3.25f1,"3b go.CompareTag(""Player"")",frame alloc bytes avg,0
+2026-10-29T16:56:54,01-L05,Mono,1,6000.3.25f1,"3b go.CompareTag(""Player"")",frame alloc bytes min/max,0/0
+2026-10-29T16:56:54,01-L05,Mono,1,6000.3.25f1,"3b go.CompareTag(""Player"")",frame alloc count avg,0.0
+2026-10-29T16:56:54,01-L05,Mono,1,6000.3.25f1,"3b go.CompareTag(""Player"")",alloc bytes per call,0.0
+2026-10-29T16:56:54,01-L05,Mono,1,6000.3.25f1,"3b go.CompareTag(""Player"")",ns per call avg,42.0
+2026-10-29T16:56:54,01-L05,Mono,1,6000.3.25f1,"3b go.CompareTag(""Player"")",ns per call min,40.7
+2026-10-29T16:56:54,01-L05,Mono,1,6000.3.25f1,-,sink,3996200

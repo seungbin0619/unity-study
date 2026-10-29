@@ -28,7 +28,7 @@ C# 래퍼와 C++ 네이티브 객체의 관계, 경계를 넘는 비용, IL2CPP�
 | 01-L02 | `new MonoBehaviour()` vs `AddComponent` | 완료 (Mono, IL2CPP 미실행) | `new`로 만든 컴포넌트는 `== null`이 `true`인 래퍼만 남음. `'new' keyword` 경고는 에디터에서만 출력되고 플레이어에서는 없음 | [README](Assets/Labs/01_NativeManaged/L02_NewVsAddComponent/README.md) |
 | 01-L03 | MonoBehaviour 생성자 호출 시점·스레드 | 완료 (Mono, IL2CPP 미실행) | 생성자는 경로마다 1번, 항상 `Awake`보다 먼저. `AddComponent`·`Instantiate`는 메인 스레드, 씬 로드는 **동기 `LoadScene`도** 로딩 스레드에서 생성자 호출 | [README](Assets/Labs/01_NativeManaged/L03_CtorTiming/README.md) |
 | 01-L04 | 연쇄 파괴와 이벤트 구독 누수 | 완료 (Mono, IL2CPP 미실행) | 부모 `Destroy` 시 자식 컴포넌트도 다음 프레임부터 `== null`. 정적 이벤트 구독을 해제하지 않으면 파괴된 래퍼가 GC 후에도 살아남고(Leaked Managed Shell), 이벤트 발생 시 Unity API 접근에서 예외 | [README](Assets/Labs/01_NativeManaged/L04_CascadeDestroy/README.md) |
-| 01-L05 | 경계 비용: 캐싱, 배열 반환 API, `CompareTag` | 대기 | | |
+| 01-L05 | 경계 비용: 캐싱, 배열 반환 API, `CompareTag` | 완료 (Mono, IL2CPP 미실행) | 플레이어 호출당: `GetComponent` 20 ns·0 B vs 캐싱 0.8 ns, `mesh.vertices` 12 KB 할당 vs `GetVertices` 0 B, `tag ==` 34 B vs `CompareTag` 0 B. 없는 컴포넌트 조회는 에디터에서만 약 600 B 할당(가짜 null)이고 `is null` 결과도 에디터·플레이어가 다름 | [README](Assets/Labs/01_NativeManaged/L05_BoundaryCost/README.md) |
 | 01-L06 | UnityCsReference 바인딩 코드 읽기 | 완료 (Mono, IL2CPP 미실행) | `MissingReferenceException`은 instance ID ≠ 0일 때 에디터에서만 만들어짐. 플레이어 CoreModule의 `TryThrowEditorNullExceptionObject`는 IL 2바이트짜리 빈 메서드(에디터 234바이트) | [README](Assets/Labs/01_NativeManaged/L06_ReadBindings/README.md) |
 | 01-L07 | IL2CPP null·경계 검사와 `Il2CppSetOption` | 대기 | | |
 | 01-L08 | `sealed`와 devirtualization | 대기 | | |

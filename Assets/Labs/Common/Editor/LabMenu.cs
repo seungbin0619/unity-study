@@ -21,6 +21,9 @@ namespace Labs.Editor
         [MenuItem("Labs/01/L04 Cascade Destroy")]
         static void Run01L04() => Run("01-L04");
 
+        [MenuItem("Labs/01/L05 Boundary Cost")]
+        static void Run01L05() => Run("01-L05");
+
         [MenuItem("Labs/01/L06 Read Bindings")]
         static void Run01L06() => Run("01-L06");
 
