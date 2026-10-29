@@ -3,6 +3,9 @@
 ## 코드
 
 - **씬 수작업 의존을 최소화한다.** 실습은 `LabRunner`에 등록된 클래스로 만들고, 에디터 메뉴 또는 커맨드라인 인자로 실행되게 한다. 필요한 GameObject는 코드로 생성한다.
+  - 모든 실습은 공용 `Main` 씬에서 돈다. 실습을 위해 `Main.unity`를 수정하지 않는다.
+  - 실행할 실습 선택: 플레이어는 `-lab <ID>` 인자, 에디터 메뉴는 `SessionState`에 저장한 ID를 `LabRunner`가 읽는다.
+  - 씬 로드 자체를 관찰해야 할 때만 실습 폴더에 전용 씬을 둔다 ([project-structure.md](project-structure.md#씬-운영)).
 - 측정은 다음을 사용한다.
   - 할당량: `ProfilerRecorder`의 `"GC Allocated In Frame"` (Memory 카테고리)
   - 힙 크기: `"GC Used Memory"`, `"GC Reserved Memory"`
