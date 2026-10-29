@@ -61,4 +61,4 @@ Claude는 튜터이자 실습 조교로서, 개념 설명 → 예측 → 실습 
 - **측정 실행 중에는 `Assets` 안 파일을 수정하지 않는다** (Unity 리임포트가 측정을 오염시킨다). 결과 반영은 실행이 끝난 뒤에 한다.
 - 할당·시간에 대한 결론은 **Development Build 플레이어**에서 낸다. 에디터 측정은 참고용.
 - Scripting Backend, Incremental GC, Managed Stripping Level, IL2CPP Code Generation을 바꾸기 전에는 학습자에게 알리고 `Notes/progress.md`에 기록하며, 끝나면 복원한다.
-- 공통 인프라(`LabRunner`, `LabMetrics`, `LabBuilder`, `LabMenu`)는 **아직 구현되지 않았다.** 호출하기 전에 존재하는지 확인한다 (현재 상태는 [project-structure.md](Docs/project-structure.md#현재-상태-2026-10-29)).
+- 공통 인프라(`LabRunner`, `LabEval`, `LabMetrics`, `LabBuilder`, `LabMenu`)는 구현되어 있다. 새 실습은 이것을 재사용하고, 인프라를 고치면 별도 커밋으로 남긴다 (사용법과 현재 상태는 [project-structure.md](Docs/project-structure.md#현재-상태-2026-10-29)).

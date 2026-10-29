@@ -10,12 +10,13 @@ Assets/Main.unity               유일한 공용 씬. Build Settings에 이것 �
 Assets/Labs/
   Labs.asmdef                  런타임 실습 어셈블리 (rootNamespace: Labs)
   Common/
-    LabRunner.cs               공통 실행기: 커맨드라인 -lab 인자로 실습 선택, 측정, CSV 출력, 종료
-    LabMetrics.cs              ProfilerRecorder 래퍼 (GC Allocated In Frame / GC Used / GC Reserved / Main Thread 시간)
+    LabRunner.cs               공통 실행기: ILab/[Lab]/LabContext 정의, -lab 인자 또는 SessionState로 실습 선택, CSV 출력, 종료
+    LabEval.cs                 식 평가 결과·예외 타입 문자열화, 콘솔 출력 캡처
+    LabMetrics.cs              ProfilerRecorder 래퍼 (GC Allocated In Frame / Allocation Count / GC Used / GC Reserved)
     Editor/
       Labs.Editor.asmdef       에디터 전용 (rootNamespace: Labs.Editor)
-      LabBuilder.cs            배치모드 빌드(Mono/IL2CPP), Player Settings 백업·복원
-      LabMenu.cs               에디터 메뉴 "Labs/..."로 실습 씬 생성·실행
+      LabBuilder.cs            Development 빌드(Mono/IL2CPP), Main + 실습 전용 씬 포함, Scripting Backend 복원
+      LabMenu.cs               에디터 메뉴 "Labs/..."로 Main 씬을 열고 플레이 모드에서 실습 실행
   Tests/
     Labs.Tests.asmdef          EditMode 테스트 (Is.Not.AllocatingGCMemory 등)
   01_NativeManaged/
@@ -33,7 +34,13 @@ Builds/                        빌드 산출물 (git 제외)
 ### 현재 상태 (2026-10-29)
 
 - 폴더와 asmdef(`Labs`, `Labs.Editor`, `Labs.Tests`), `Notes/progress.md`는 만들어져 있다.
-- **`LabRunner`, `LabMetrics`, `LabBuilder`, `LabMenu`는 아직 없다.** 첫 작업은 이 공통 인프라 구축이다. 호출하기 전에 실제로 존재하는지 확인한다.
+- 공통 인프라 `LabRunner`, `LabEval`, `LabMetrics`, `LabBuilder`, `LabMenu`는 구현되어 있다 (01-L01~L05에서 사용). `Labs.Tests`는 아직 테스트가 없다.
+- 새 실습 추가 방법:
+  1. `Assets/Labs/<주제>/L<번호>_<이름>/`에 `ILab`을 구현한 클래스를 만들고 `[Preserve, Lab("<ID>")]`를 붙인다. `Run`은 `async Awaitable`이고, 프레임을 넘길 때 `await Awaitable.NextFrameAsync()`를 쓴다. 결과는 `ctx.Record(condition, metric, value)`로 남긴다.
+  2. 할당·시간 측정에는 `LabMetrics`를 쓴다. 프레임 카운터는 직전 프레임 값이므로 프레임 F에서 돌린 코드는 F+1에서 읽는다.
+  3. `LabMenu`에 `[MenuItem("Labs/<주제>/L<번호> <이름>")]` 항목을 추가한다.
+  4. 씬 로드 자체를 관찰할 때만 실습 폴더에 전용 씬을 둔다. 씬 파일은 손으로 편집하지 말고 열린 에디터에서 코드로 만든다. `LabBuilder`가 빌드할 때 자동으로 포함한다.
+- `LabRunner`는 MonoBehaviour가 아닌 정적 클래스라 씬에 GameObject를 만들지 않는다.
 - 빈 폴더는 git이 추적하지 않으므로 `.gitkeep`을 둔다. Unity는 `.`으로 시작하는 파일을 임포트하지 않는다. 폴더에 실제 파일이 생기면 `.gitkeep`은 지워도 된다.
 - `Assets`에는 `Labs`, `Main.unity` 외에 URP 템플릿 파일(`Settings/`, `InputSystem_Actions.inputactions`)이 남아 있다. 템플릿의 `TutorialInfo/`, `Readme.asset`, `Scenes/SampleScene`은 2026-10-29에 삭제했다.
   - 템플릿이라 URP(`com.unity.render-pipelines.universal` 17.3.0), Input System 등이 들어 있다. GC 실습에서는 이들의 초기화 할당이 노이즈가 될 수 있으니 워밍업으로 배제하고, 렌더링 주제(5)에서는 이 URP 설정을 기반으로 쓴다.
@@ -45,7 +52,7 @@ Builds/                        빌드 산출물 (git 제외)
 - Main 씬은 거의 비워 둔다. `LabRunner`도 씬에 배치하지 않고 `[RuntimeInitializeOnLoadMethod]`로 스스로 부트스트랩한다. 그래서 실습을 추가해도 씬 파일은 수정하지 않는다.
 - 실습 간 격리는 실행 단위로 보장한다. 플레이어는 `-lab <ID>`로 실습 하나만 실행하고 종료하며, 에디터 메뉴도 실행마다 플레이 모드에 새로 진입한다.
 - **예외: 씬 로드 자체가 실험 대상인 실습**(예: 01-L03 씬 로드 시 생성자 호출)은 실습 폴더 안에 전용 씬을 둔다(`L03_.../L03_Scene.unity`). 저장된 씬의 역직렬화가 필요하므로 `SceneManager.CreateScene`으로는 대체할 수 없다.
-  - 전용 씬은 Build Settings에 수동으로 넣지 않는다. `LabBuilder`가 빌드할 때 `Main` 뒤에 추가하고, 빌드 후 원래 목록으로 복원한다.
+  - 전용 씬은 Build Settings에 수동으로 넣지 않는다. `LabBuilder`가 `BuildPlayerOptions.scenes`에 `Main`과 `Assets/Labs` 아래 씬을 넘기므로 Build Settings는 바뀌지 않는다. 에디터에서는 `EditorSceneManager.LoadScene(Async)InPlayMode`로 경로 로드한다.
 - `Main.unity`를 옮기거나 이름을 바꿀 때는 Build Settings 경로가 함께 바뀌도록 Unity 안에서 한다.
 
 ## 이름 규칙
