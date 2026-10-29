@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEditor;
 using UnityEditor.Build;
 using UnityEditor.Build.Reporting;
@@ -7,6 +8,7 @@ namespace Labs.Editor
 {
     /// <summary>
     /// 실습용 Development 플레이어 빌드. 출력: Builds/&lt;백엔드&gt;/Labs.exe
+    /// 씬: Main + Assets/Labs 아래의 실습 전용 씬 (Build Settings는 바꾸지 않음)
     /// Scripting Backend를 바꿔야 하면 빌드 동안만 바꾸고 원래 값으로 복원한다.
     /// 배치모드: -executeMethod Labs.Editor.LabBuilder.BuildMono
     /// </summary>
@@ -37,7 +39,7 @@ namespace Labs.Editor
 
                 report = BuildPipeline.BuildPlayer(new BuildPlayerOptions
                 {
-                    scenes = new[] { MainScene },
+                    scenes = CollectScenes(),
                     locationPathName = $"Builds/{folder}/Labs.exe",
                     target = BuildTarget.StandaloneWindows64,
                     options = BuildOptions.Development,
@@ -55,6 +57,15 @@ namespace Labs.Editor
 
             if (Application.isBatchMode && summary.result != BuildResult.Succeeded)
                 EditorApplication.Exit(1);
+        }
+
+        // Main 뒤에 실습 전용 씬(Assets/Labs 아래)을 붙인다. Build Settings 자체는 건드리지 않는다.
+        static string[] CollectScenes()
+        {
+            var scenes = new List<string> { MainScene };
+            foreach (var guid in AssetDatabase.FindAssets("t:Scene", new[] { "Assets/Labs" }))
+                scenes.Add(AssetDatabase.GUIDToAssetPath(guid));
+            return scenes.ToArray();
         }
     }
 }
