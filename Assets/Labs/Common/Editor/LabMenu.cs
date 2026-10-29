@@ -8,6 +8,9 @@ namespace Labs.Editor
         [MenuItem("Labs/01/L01 Fake Null")]
         static void Run01L01() => Run("01-L01");
 
+        [MenuItem("Labs/01/L02 New vs AddComponent")]
+        static void Run01L02() => Run("01-L02");
+
         public static void Run(string labId)
         {
             if (EditorApplication.isPlaying)

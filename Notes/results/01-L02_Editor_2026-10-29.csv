@@ -1,0 +1,9 @@
+run_time,lab,backend,dev_build,unity,condition,metric,value
+2026-10-29T15:27:46,01-L02,Editor,1,6000.3.25f1,a_new,0 console,"Warning: You are trying to create a MonoBehaviour using the 'new' keyword.  This is not allowed.  MonoBehaviours can only be added using AddComponent(). Alternatively, your script can inherit from ScriptableObject or no base class at all"
+2026-10-29T15:27:46,01-L02,Editor,1,6000.3.25f1,b_AddComponent,0 console,none
+2026-10-29T15:27:46,01-L02,Editor,1,6000.3.25f1,a_new,1 x == null,true
+2026-10-29T15:27:46,01-L02,Editor,1,6000.3.25f1,a_new,2 x is null,false
+2026-10-29T15:27:46,01-L02,Editor,1,6000.3.25f1,a_new,3 x?.name,NullReferenceException
+2026-10-29T15:27:46,01-L02,Editor,1,6000.3.25f1,b_AddComponent,1 x == null,false
+2026-10-29T15:27:46,01-L02,Editor,1,6000.3.25f1,b_AddComponent,2 x is null,false
+2026-10-29T15:27:46,01-L02,Editor,1,6000.3.25f1,b_AddComponent,3 x?.name,"""Host"""
