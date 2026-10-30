@@ -21,6 +21,8 @@
 
 - [정답] (2026-10-30) 01-L07 `NullCheck` 개수 (A 3 / B 2 / C 0) — 개수는 모두 맞음. (C)의 이유를 "참조 x"로 답했으나(`this`도 역참조), 후속 질문에서 "this가 null이면 호출 자체가 안 됨"으로 정답
 - [정답] (2026-10-30) 01-L07 추가: 직접 `if (a == null)`을 넣어도 `NullCheck` 2개가 남는다 — IL2CPP는 명령어 단위로 변환하고 앞의 검사 결과를 전달하지 않음. 측정에서도 E ≈ B ≫ D
+- [부분 정답 3/4] (2026-10-31) 01-L08 가상/직접 호출 — A·B·C를 가상, D를 직접으로 예측. 실제로는 IL2CPP가 넷 다 가상 호출을 생성함. D의 추론(메서드 sealed → 구현 확정)은 이론상 옳음. C는 "자식에서 상속 가능"이라는 틀린 이유로 답이 맞음
+- [힌트 후 정답] (2026-10-31) 01-L08 `SealedDog d`에 들어올 수 있는 런타임 타입 — "모르겠음" → 힌트(대입하려면 상속해야 함, sealed는 상속 금지) 후 "SealedDog 하나"
 - [설명 들음] (2026-10-30) 검사 개수(정적)와 실행 횟수(루프 안이면 원소마다) 구분, IL2CPP는 hoist·경계 검사 제거를 하지 않음 (RyuJIT과 대비)
 
 ## 약점 (관련 실습에서 재확인)
@@ -29,6 +31,7 @@
 - 객체 생성 파이프라인 순서: 생성자(필드 초기화) → 역직렬화(값 덮어쓰기) → Awake. "동기 API = 메인 스레드에서 실행"이라고 가정하는 것 (동기 LoadScene도 로딩 스레드에서 역직렬화)
 - 성능 이슈를 네이티브 경계 비용 관점으로 설명하는 것 — 01-L05에서 핵심은 설명함(개선). 다음엔 "경계를 넘는 방향과 넘어오는 데이터 종류가 할당을 결정한다"까지 말하는지 확인
 - 인터페이스를 거칠 때 struct가 박싱되는 지점 찾기
+- 정적 타입(static type)으로부터 "들어올 수 있는 런타임 타입의 범위"를 추론하는 것 — `sealed class`면 런타임 타입이 하나로 확정된다는 점을 바로 떠올리지 못함 (01-L08, 힌트 필요). 01-L09·인터페이스 호출 관련 실습에서 다시 묻기
 - 참조 타입 원소 컬렉션(List<class>)이 GC에게는 "객체 N개 + 참조 N개"라는 점 — 원소 클래스가 pointer-free여도 방문 비용은 남음
 
 ## 미응답 질문 (다음 세션 첫 질문으로)
@@ -43,9 +46,11 @@
 - 2026-10-29 01-L04 에디터 + Mono 플레이어 실행 — [README](../Assets/Labs/01_NativeManaged/L04_CascadeDestroy/README.md)
 - 2026-10-29 01-L05 에디터 + Mono 플레이어 측정 — [README](../Assets/Labs/01_NativeManaged/L05_BoundaryCost/README.md)
 - 2026-10-30 01-L07 IL2CPP 플레이어 실행 + 생성 코드 읽기 — [README](../Assets/Labs/01_NativeManaged/L07_NullChecks/README.md)
+- 2026-10-31 01-L08 IL2CPP 플레이어 실행 + 생성 코드·IL 읽기 — [README](../Assets/Labs/01_NativeManaged/L08_Sealed/README.md) (예상과 달리 devirtualization 없음, 원인 확인 필요)
 
 ## Player Settings 변경 이력
 (변경 시 날짜, 항목, 원래 값 → 바꾼 값, 복원 여부)
 - 2026-10-29 Run In Background: `false` → `true`, **복원 안 함 (학습자 요청으로 상시 유지)**. 에디터가 포커스를 잃으면 플레이 모드가 멈춰 실습이 매우 오래 걸리던 문제 해결용. 플레이어 빌드에도 적용되지만 측정 기준(Backend, Incremental GC, Stripping)과 무관하고, 플레이어는 원래 `-batchmode`로 실행함
 - 2026-10-30 Scripting Backend: Mono → IL2CPP (01-L07 빌드 동안만), **복원됨** (`LabBuilder`가 빌드 후 Mono로 되돌림)
 - 2026-10-30 Scripting Backend: Mono → IL2CPP (01-L07 (E) 추가 빌드 동안만), **복원됨** — 수정한 `LabBuilder`가 디스크에도 `Standalone: 0`으로 저장함을 확인
+- 2026-10-31 Scripting Backend: Mono → IL2CPP (01-L08 빌드 동안만), **복원됨** (`Standalone: 0` 확인)

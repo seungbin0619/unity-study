@@ -30,6 +30,9 @@ namespace Labs.Editor
         [MenuItem("Labs/01/L07 Null Checks")]
         static void Run01L07() => Run("01-L07");
 
+        [MenuItem("Labs/01/L08 Sealed")]
+        static void Run01L08() => Run("01-L08");
+
         public static void Run(string labId)
         {
             if (EditorApplication.isPlaying)
