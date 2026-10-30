@@ -19,6 +19,9 @@
 - [부분 정답 5/7] (2026-10-29) 01-L05 경계 비용 할당·속도 — 1a를 "수십 B"로 예측(실제 0), 1c의 에디터 전용 할당을 놓침. 나머지 맞음
 - [정답] (2026-10-29) 약점 재확인: `GetComponent` vs 캐싱을 경계 관점으로 설명 — "경계를 넘어 컴포넌트 목록에서 타입 비교 후 반환 vs 단순 필드 읽기". 타입 변환·래퍼 반환 단계는 보충함
 
+- [정답] (2026-10-30) 01-L07 `NullCheck` 개수 (A 3 / B 2 / C 0) — 개수는 모두 맞음. (C)의 이유를 "참조 x"로 답했으나(`this`도 역참조), 후속 질문에서 "this가 null이면 호출 자체가 안 됨"으로 정답
+- [설명 들음] (2026-10-30) 검사 개수(정적)와 실행 횟수(루프 안이면 원소마다) 구분, IL2CPP는 hoist·경계 검사 제거를 하지 않음 (RyuJIT과 대비)
+
 ## 약점 (관련 실습에서 재확인)
 - 어떤 연산자가 `UnityEngine.Object` 오버로드를 타는지 구분 (`==`·`!=`·`bool`만 탐 / `is null`·`?.`·`??`·`ReferenceEquals`는 안 탐), `==`와 `bool`이 같은 검사라는 점
 - 에디터와 플레이어의 차이를 "다른 DLL, 다른 코드"로 떠올리는 것 (Q2에서 힌트 필요) — 에디터 결과를 볼 때마다 "플레이어에서도 같은가?"를 묻기
@@ -38,7 +41,9 @@
 - 2026-10-29 01-L03 에디터 + Mono 플레이어 실행 — [README](../Assets/Labs/01_NativeManaged/L03_CtorTiming/README.md)
 - 2026-10-29 01-L04 에디터 + Mono 플레이어 실행 — [README](../Assets/Labs/01_NativeManaged/L04_CascadeDestroy/README.md)
 - 2026-10-29 01-L05 에디터 + Mono 플레이어 측정 — [README](../Assets/Labs/01_NativeManaged/L05_BoundaryCost/README.md)
+- 2026-10-30 01-L07 IL2CPP 플레이어 실행 + 생성 코드 읽기 — [README](../Assets/Labs/01_NativeManaged/L07_NullChecks/README.md)
 
 ## Player Settings 변경 이력
 (변경 시 날짜, 항목, 원래 값 → 바꾼 값, 복원 여부)
 - 2026-10-29 Run In Background: `false` → `true`, **복원 안 함 (학습자 요청으로 상시 유지)**. 에디터가 포커스를 잃으면 플레이 모드가 멈춰 실습이 매우 오래 걸리던 문제 해결용. 플레이어 빌드에도 적용되지만 측정 기준(Backend, Incremental GC, Stripping)과 무관하고, 플레이어는 원래 `-batchmode`로 실행함
+- 2026-10-30 Scripting Backend: Mono → IL2CPP (01-L07 빌드 동안만), **복원됨** (`LabBuilder`가 빌드 후 Mono로 되돌림)

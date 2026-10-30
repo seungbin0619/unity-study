@@ -27,6 +27,9 @@ namespace Labs.Editor
         [MenuItem("Labs/01/L06 Read Bindings")]
         static void Run01L06() => Run("01-L06");
 
+        [MenuItem("Labs/01/L07 Null Checks")]
+        static void Run01L07() => Run("01-L07");
+
         public static void Run(string labId)
         {
             if (EditorApplication.isPlaying)

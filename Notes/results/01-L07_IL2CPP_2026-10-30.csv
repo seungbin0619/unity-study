@@ -1,0 +1,11 @@
+run_time,lab,backend,dev_build,unity,condition,metric,value
+2026-10-30T23:31:13,01-L07,IL2CPP,1,6000.3.25f1,A ReadChain,result,3
+2026-10-30T23:31:13,01-L07,IL2CPP,1,6000.3.25f1,A ReadChain(Next == null),exception,NullReferenceException
+2026-10-30T23:31:13,01-L07,IL2CPP,1,6000.3.25f1,C DoubleValue,result,2
+2026-10-30T23:31:13,01-L07,IL2CPP,1,6000.3.25f1,B SumArray,ns/element avg,0.482
+2026-10-30T23:31:13,01-L07,IL2CPP,1,6000.3.25f1,B SumArray,ns/element min,0.353
+2026-10-30T23:31:13,01-L07,IL2CPP,1,6000.3.25f1,B SumArray,ns/element max,0.759
+2026-10-30T23:31:13,01-L07,IL2CPP,1,6000.3.25f1,D SumArrayUnchecked,ns/element avg,0.168
+2026-10-30T23:31:13,01-L07,IL2CPP,1,6000.3.25f1,D SumArrayUnchecked,ns/element min,0.150
+2026-10-30T23:31:13,01-L07,IL2CPP,1,6000.3.25f1,D SumArrayUnchecked,ns/element max,0.211
+2026-10-30T23:31:13,01-L07,IL2CPP,1,6000.3.25f1,-,sink,58647173760
