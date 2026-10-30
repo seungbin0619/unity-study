@@ -55,6 +55,8 @@
 | 2026-10-31 (2차, E·F 추가) | IL2CPP | On | Development | (A) / (B) / (C) / (D) | 평균 1.965 / 2.069 / 2.060 / 1.873 |
 | 2026-10-31 (2차, E·F 추가) | IL2CPP | On | Development | (E) `Fox` — 직접 호출 | 평균 **0.464** (최소 0.242, 최대 0.642) |
 | 2026-10-31 (2차, E·F 추가) | IL2CPP | On | Development | (F) `OpenFox` — 가상 호출 | 평균 1.957 (최소 0.962, 최대 2.345) |
+| 2026-10-31 (Release) | IL2CPP | On | **Release** | (A) / (B) / (C) / (D) / (F) | 평균 2.145 / 2.159 / 2.148 / 2.141 / 2.213 |
+| 2026-10-31 (Release) | IL2CPP | On | **Release** | (E) `Fox` — 직접 호출 | 평균 **0.554** (최소 0.502, 최대 0.804) |
 
 원본: `Notes/results/01-L08_IL2CPP_2026-10-31.csv`
 
@@ -68,7 +70,8 @@
   - 결론: IL2CPP 6000.3은 **IL에 적힌 호출 대상 메서드가 final인지(또는 그 선언 타입이 sealed인지)**만 보고 devirtualize한다. 수신 객체의 정적 타입(`SealedDog`, `Wolf`)은 보지 않는다. Roslyn은 override 호출의 대상을 처음 선언된 메서드(`Animal::Speak`)로 적기 때문에, `sealed class`나 `sealed override`를 붙여도 이 최적화가 걸리지 않는다. 선언 타입이 sealed인 경우만 따로 확인하지는 못했다(C#으로 그런 IL을 만들 수 없음).
   - 시간: (E) 0.46 ns vs 나머지 약 1.9~2.1 ns, 약 4배. 직접 호출이 되자 C++ 컴파일러가 상수를 반환하는 `Fox_Speak`를 인라인했을 가능성이 크다 — 디스어셈블리로 확인 필요. 이번 실행은 최소값 편차가 커서(A 최소 1.08) 가상 호출들끼리의 차이는 해석하지 않는다.
   - **블로그 조건 재현 (G, [Farm.cs](Farm.cs)):** 블로그 예제를 그대로 옮겨 봤다(`abstract` 기반, `string` 반환, `MonoBehaviour.Start` 안, `var cow = new Cow();`). `sealed class Cow`의 `cow.Speak()`가 `VirtualFuncInvoker0<String_t*>::Invoke(4, L_20)`로 남았고, 봉인하지 않은 `OpenCow`와 생성 코드가 같았다. IL은 세 호출 모두 `callvirt FarmAnimal::Speak`. 블로그의 "after" 결과(`Cow_Speak_m...(L_16, NULL)`)는 6000.3에서 재현되지 않았다. 플레이어 로그에 `The cow says 'Moo'`가 찍혀 코드가 실제로 실행됐음도 확인.
-  - 결론의 범위: **Unity 6000.3.25f1, Windows x64, IL2CPP Development 빌드, 코드 생성 옵션 기본값**에서 확인한 사실이다. Release 빌드, 다른 플랫폼, 다른 버전은 확인하지 않았다. "IL 호출 대상이 final일 때만 직접 호출"은 E·F·G와 맞아떨어지는 해석이지만 IL2CPP 소스로 확인한 것은 아니다.
+  - **Release 빌드 확인:** `LabBuilder`의 `IL2CPP (Release)`(BuildOptions.None)로 빌드했다. il2cpp 인자는 Development와 같았다(`--emit-null-checks --enable-array-bounds-check --dotnetprofile=unityaot-win32`). 생성 코드도 같았다. C·D와 블로그 예제의 `cow.Speak()`는 `VirtualFuncInvoker`, E만 `Fox_Speak_m...` 직접 호출. 시간도 가상 호출 약 2.1~2.2 ns, E 0.55 ns로 Development와 같은 경향이다.
+  - 결론의 범위: **Unity 6000.3.25f1, Windows x64, IL2CPP Development·Release 빌드, 코드 생성 옵션 기본값**에서 확인한 사실이다. 다른 플랫폼, 다른 버전, IL2CPP Code Generation 설정 변경은 확인하지 않았다. "IL 호출 대상이 final일 때만 직접 호출"은 E·F·G와 맞아떨어지는 해석이지만 IL2CPP 소스로 확인한 것은 아니다.
   - 실무 함의: Unity 6에서 클래스 계층의 override 호출을 직접 호출로 만들고 싶다면 `sealed`로는 부족하다. 비가상 메서드로 두거나, 인터페이스를 암시적으로 구현한 메서드를 구체 타입으로 호출하는 경우처럼 IL 대상 자체가 final인 메서드여야 한다.
 - 한 단계 더:
   - devirtualization의 진짜 이득은 간접 호출 하나를 없애는 것보다, 그 뒤에 **인라인**이 가능해진다는 데 있다. `Speak()`처럼 상수를 반환하는 메서드라면 루프 전체가 접힐 수도 있다. 가상 호출로 남으면 C++ 컴파일러는 vtable 너머를 볼 수 없다.
