@@ -31,13 +31,20 @@ namespace Labs.NativeManaged
             ctx.Record("C CallSealedDog", "result", SealedTargets.CallSealedDog(sealedDog).ToString());
             ctx.Record("D CallWolf", "result", SealedTargets.CallWolf(wolf).ToString());
 
-            var names = new[] { "A Animal (Dog instance)", "B Dog", "C SealedDog", "D Wolf" };
+            var fox = new Fox();
+            var openFox = new OpenFox();
+            ctx.Record("E CallFox", "result", SealedTargets.CallFox(fox).ToString());
+            ctx.Record("F CallOpenFox", "result", SealedTargets.CallOpenFox(openFox).ToString());
+
+            var names = new[] { "A Animal (Dog instance)", "B Dog", "C SealedDog", "D Wolf", "E Fox", "F OpenFox" };
             var bodies = new Func<int, long>[]
             {
                 n => SealedTargets.LoopAnimal(dog, n),
                 n => SealedTargets.LoopDog(dog, n),
                 n => SealedTargets.LoopSealedDog(sealedDog, n),
                 n => SealedTargets.LoopWolf(wolf, n),
+                n => SealedTargets.LoopFox(fox, n),
+                n => SealedTargets.LoopOpenFox(openFox, n),
             };
 
             var ns = new double[names.Length, Samples];

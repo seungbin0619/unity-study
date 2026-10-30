@@ -26,6 +26,25 @@ namespace Labs.NativeManaged
         public sealed override int Speak() => 4;
     }
 
+    // 가설 검증용: IL의 호출 대상이 수신 타입 자신의 메서드가 되도록 인터페이스를 구현한다.
+    // (sealed class에는 새 virtual 메서드를 선언할 수 없어서(CS0549) 이 방식으로 IL 대상을 바꾼다)
+    public interface ISpeaker
+    {
+        int Speak();
+    }
+
+    // 암시적 구현 — IL에서 Speak는 virtual final(IsFinal=True)
+    public class Fox : ISpeaker
+    {
+        public int Speak() => 5;
+    }
+
+    // virtual로 구현 — IL에서 Speak는 virtual, final 아님
+    public class OpenFox : ISpeaker
+    {
+        public virtual int Speak() => 6;
+    }
+
     public static class SealedTargets
     {
         // (A) 기반 타입으로 호출
@@ -44,6 +63,14 @@ namespace Labs.NativeManaged
         [MethodImpl(MethodImplOptions.NoInlining)]
         public static int CallWolf(Wolf w) => w.Speak();
 
+        // (E) final 메서드를 그 클래스 타입으로 호출 — IL: callvirt Fox::Speak
+        [MethodImpl(MethodImplOptions.NoInlining)]
+        public static int CallFox(Fox f) => f.Speak();
+
+        // (F) final이 아닌 virtual 메서드를 그 클래스 타입으로 호출 — IL: callvirt OpenFox::Speak
+        [MethodImpl(MethodImplOptions.NoInlining)]
+        public static int CallOpenFox(OpenFox f) => f.Speak();
+
         // 시간 측정용: 같은 호출을 루프 안에서 반복한다
         [MethodImpl(MethodImplOptions.NoInlining)]
         public static long LoopAnimal(Animal a, int n) { long s = 0; for (var i = 0; i < n; i++) s += a.Speak(); return s; }
@@ -56,5 +83,11 @@ namespace Labs.NativeManaged
 
         [MethodImpl(MethodImplOptions.NoInlining)]
         public static long LoopWolf(Wolf w, int n) { long s = 0; for (var i = 0; i < n; i++) s += w.Speak(); return s; }
+
+        [MethodImpl(MethodImplOptions.NoInlining)]
+        public static long LoopFox(Fox f, int n) { long s = 0; for (var i = 0; i < n; i++) s += f.Speak(); return s; }
+
+        [MethodImpl(MethodImplOptions.NoInlining)]
+        public static long LoopOpenFox(OpenFox f, int n) { long s = 0; for (var i = 0; i < n; i++) s += f.Speak(); return s; }
     }
 }

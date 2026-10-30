@@ -23,6 +23,7 @@
 - [정답] (2026-10-30) 01-L07 추가: 직접 `if (a == null)`을 넣어도 `NullCheck` 2개가 남는다 — IL2CPP는 명령어 단위로 변환하고 앞의 검사 결과를 전달하지 않음. 측정에서도 E ≈ B ≫ D
 - [부분 정답 3/4] (2026-10-31) 01-L08 가상/직접 호출 — A·B·C를 가상, D를 직접으로 예측. 실제로는 IL2CPP가 넷 다 가상 호출을 생성함. D의 추론(메서드 sealed → 구현 확정)은 이론상 옳음. C는 "자식에서 상속 가능"이라는 틀린 이유로 답이 맞음
 - [힌트 후 정답] (2026-10-31) 01-L08 `SealedDog d`에 들어올 수 있는 런타임 타입 — "모르겠음" → 힌트(대입하려면 상속해야 함, sealed는 상속 금지) 후 "SealedDog 하나"
+- [정답] (2026-10-31) 01-L08 가설 검증 — (E) `callvirt Fox::Speak`(final) 직접 / (F) `callvirt OpenFox::Speak`(final 아님) 가상, 이유 포함 정답. 결론: IL2CPP 6000.3은 IL 호출 대상 메서드가 final인지만 보고, 수신 객체의 정적 타입은 보지 않음
 - [설명 들음] (2026-10-30) 검사 개수(정적)와 실행 횟수(루프 안이면 원소마다) 구분, IL2CPP는 hoist·경계 검사 제거를 하지 않음 (RyuJIT과 대비)
 
 ## 약점 (관련 실습에서 재확인)
@@ -46,7 +47,7 @@
 - 2026-10-29 01-L04 에디터 + Mono 플레이어 실행 — [README](../Assets/Labs/01_NativeManaged/L04_CascadeDestroy/README.md)
 - 2026-10-29 01-L05 에디터 + Mono 플레이어 측정 — [README](../Assets/Labs/01_NativeManaged/L05_BoundaryCost/README.md)
 - 2026-10-30 01-L07 IL2CPP 플레이어 실행 + 생성 코드 읽기 — [README](../Assets/Labs/01_NativeManaged/L07_NullChecks/README.md)
-- 2026-10-31 01-L08 IL2CPP 플레이어 실행 + 생성 코드·IL 읽기 — [README](../Assets/Labs/01_NativeManaged/L08_Sealed/README.md) (예상과 달리 devirtualization 없음, 원인 확인 필요)
+- 2026-10-31 01-L08 IL2CPP 플레이어 실행 + 생성 코드·IL 읽기 — [README](../Assets/Labs/01_NativeManaged/L08_Sealed/README.md) (예상과 달리 devirtualization 없음 → 같은 날 가설 검증: IL 호출 대상이 final일 때만 직접 호출)
 
 ## Player Settings 변경 이력
 (변경 시 날짜, 항목, 원래 값 → 바꾼 값, 복원 여부)
@@ -54,3 +55,4 @@
 - 2026-10-30 Scripting Backend: Mono → IL2CPP (01-L07 빌드 동안만), **복원됨** (`LabBuilder`가 빌드 후 Mono로 되돌림)
 - 2026-10-30 Scripting Backend: Mono → IL2CPP (01-L07 (E) 추가 빌드 동안만), **복원됨** — 수정한 `LabBuilder`가 디스크에도 `Standalone: 0`으로 저장함을 확인
 - 2026-10-31 Scripting Backend: Mono → IL2CPP (01-L08 빌드 동안만), **복원됨** (`Standalone: 0` 확인)
+- 2026-10-31 Scripting Backend: Mono → IL2CPP (01-L08 가설 검증 빌드 동안만), **복원됨** (`Standalone: 0` 확인)
