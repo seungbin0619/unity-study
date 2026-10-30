@@ -78,6 +78,13 @@ namespace Labs.NativeManaged
             }
             ctx.Record("-", "sink", _sink.ToString());
 
+            // 블로그 예제 재현: Farm.Start가 실행되게 붙였다가 지운다 (스트리핑 방지 겸)
+            var farm = new GameObject("Farm").AddComponent<Farm>();
+            await Awaitable.NextFrameAsync();
+            await Awaitable.NextFrameAsync();
+            ctx.Record("G Farm (blog sample)", "ran", (farm != null).ToString().ToLowerInvariant());
+            UnityEngine.Object.Destroy(farm.gameObject);
+
             await Awaitable.NextFrameAsync();
         }
     }

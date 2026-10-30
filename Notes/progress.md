@@ -47,7 +47,7 @@
 - 2026-10-29 01-L04 에디터 + Mono 플레이어 실행 — [README](../Assets/Labs/01_NativeManaged/L04_CascadeDestroy/README.md)
 - 2026-10-29 01-L05 에디터 + Mono 플레이어 측정 — [README](../Assets/Labs/01_NativeManaged/L05_BoundaryCost/README.md)
 - 2026-10-30 01-L07 IL2CPP 플레이어 실행 + 생성 코드 읽기 — [README](../Assets/Labs/01_NativeManaged/L07_NullChecks/README.md)
-- 2026-10-31 01-L08 IL2CPP 플레이어 실행 + 생성 코드·IL 읽기 — [README](../Assets/Labs/01_NativeManaged/L08_Sealed/README.md) (예상과 달리 devirtualization 없음 → 같은 날 가설 검증: IL 호출 대상이 final일 때만 직접 호출)
+- 2026-10-31 01-L08 IL2CPP 플레이어 실행 + 생성 코드·IL 읽기 — [README](../Assets/Labs/01_NativeManaged/L08_Sealed/README.md) (예상과 달리 devirtualization 없음 → 같은 날 가설 검증: IL 호출 대상이 final일 때만 직접 호출. 2016년 블로그 예제를 그대로 옮겨도 재현 안 됨. 범위: 6000.3 Development 빌드, Release 미확인)
 
 ## Player Settings 변경 이력
 (변경 시 날짜, 항목, 원래 값 → 바꾼 값, 복원 여부)
@@ -56,3 +56,4 @@
 - 2026-10-30 Scripting Backend: Mono → IL2CPP (01-L07 (E) 추가 빌드 동안만), **복원됨** — 수정한 `LabBuilder`가 디스크에도 `Standalone: 0`으로 저장함을 확인
 - 2026-10-31 Scripting Backend: Mono → IL2CPP (01-L08 빌드 동안만), **복원됨** (`Standalone: 0` 확인)
 - 2026-10-31 Scripting Backend: Mono → IL2CPP (01-L08 가설 검증 빌드 동안만), **복원됨** (`Standalone: 0` 확인)
+- 2026-10-31 Scripting Backend: Mono → IL2CPP (01-L08 블로그 조건 재현 빌드 동안만), **복원됨** (`Standalone: 0` 확인)
