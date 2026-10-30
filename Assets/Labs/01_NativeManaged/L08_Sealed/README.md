@@ -45,7 +45,8 @@
 - 예측과 비교: 결과만 보면 A·B·C 맞음, D 틀림 (3/4). 그러나 이유로 보면 D의 추론("메서드가 sealed라 구현 확정")은 이론상 옳고, C는 답은 맞았지만 이유("자식에서 상속 가능")가 틀렸다. 후속 질문 "`SealedDog d`에 들어올 수 있는 런타임 타입은?"에 처음엔 "모르겠음", 힌트(상속해야 대입 가능 + sealed는 상속 금지) 후 "SealedDog 하나"로 정답.
 - 이론상 직접 호출이 가능한 것은 C(타입이 봉인 → 런타임 타입이 하나)와 D(메서드가 봉인 → 어떤 파생 클래스든 `Wolf.Speak`가 최종 구현)다. A·B는 파생 클래스가 더 있을 수 있어서 불가능하다.
 - 그런데 IL2CPP 6000.3.25f1은 네 경우 모두 `VirtualFuncInvoker`를 생성했고, 호출 시간도 2.11~2.13 ns로 같았다. C# 컴파일러가 네 경우 모두 `callvirt Animal::Speak`(처음 선언된 메서드)를 내고, IL2CPP는 이 패턴에서 수신 객체의 정적 타입을 보고 호출 대상을 좁히지 않았다.
-  - "sealed면 IL2CPP가 직접 호출로 바꾼다"는 설명이 널리 알려져 있다(Unity의 IL2CPP 최적화 블로그로 기억하지만 출처는 확인 필요). 이 버전·이 패턴에서는 재현되지 않았다. 어떤 형태에서 devirtualization이 일어나는지는 후속 실험으로 좁혀야 한다 — 확인 필요.
+  - 출처: Unity 블로그 [IL2CPP optimizations: Devirtualization](https://unity.com/blog/engine-platform/il2cpp-optimizations-devirtualization) (2016-07, Unity 5.3.5). `sealed class Cow : Animal`의 `override Speak()`를 `Cow` 타입 변수로 호출하면 `VirtFuncInvoker0::Invoke(4 /* Cow::Speak() */)`가 `Cow_Speak_m...(L_16, NULL)`로 바뀐다고 보여 준다. 우리 (C)와 같은 형태인데 6000.3에서는 재현되지 않았다. 글쓴이도 "게임이 극적으로 빨라지지는 않는다"고 했고, 수치 벤치마크는 없다.
+  - 가설 (확인 필요): 블로그의 생성 코드 주석이 `Cow::Speak()`인 것으로 보아, 당시 Unity의 C# 컴파일러(Mono `mcs`)는 `callvirt Cow::Speak`를 냈던 것으로 보인다. 지금의 Roslyn은 `callvirt Animal::Speak`를 낸다(이번 실측). IL2CPP의 devirtualization이 "호출 대상으로 적힌 메서드나 그 선언 타입이 봉인됐는가"만 본다면, 컴파일러가 바뀌면서 이 최적화가 걸리지 않게 됐을 수 있다. 검증 방법: sealed 클래스에 새로 선언한 `virtual` 메서드를 부르면 IL이 `callvirt SealedX::M`이 되므로, 그 경우에 직접 호출이 나오는지 본다.
 - 한 단계 더:
   - devirtualization의 진짜 이득은 간접 호출 하나를 없애는 것보다, 그 뒤에 **인라인**이 가능해진다는 데 있다. `Speak()`처럼 상수를 반환하는 메서드라면 루프 전체가 접힐 수도 있다. 가상 호출로 남으면 C++ 컴파일러는 vtable 너머를 볼 수 없다.
   - .NET의 RyuJIT은 sealed 타입이나 final 메서드에 대한 호출을 JIT 단계에서 devirtualize한다(.NET Core 이후). "같은 C# 코드라도 백엔드마다 최적화가 다르다"는 01-L07의 경계 검사 제거와 같은 맥락이다.
