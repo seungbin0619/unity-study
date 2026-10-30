@@ -7,7 +7,7 @@ using UnityEngine;
 namespace Labs.Editor
 {
     /// <summary>
-    /// 실습용 Development 플레이어 빌드. 출력: Builds/&lt;백엔드&gt;/Labs.exe
+    /// 실습용 플레이어 빌드(기본 Development). 출력: Builds/&lt;백엔드&gt;/Labs.exe, Release는 Builds/IL2CPP-Release/Labs.exe
     /// 씬: Main + Assets/Labs 아래의 실습 전용 씬 (Build Settings는 바꾸지 않음)
     /// Scripting Backend를 바꿔야 하면 빌드 동안만 바꾸고 원래 값으로 복원한다.
     /// 배치모드: -executeMethod Labs.Editor.LabBuilder.BuildMono
@@ -23,7 +23,12 @@ namespace Labs.Editor
         [MenuItem("Labs/Build/IL2CPP (Development)")]
         public static void BuildIL2CPP() => Build(ScriptingImplementation.IL2CPP, "IL2CPP");
 
-        static void Build(ScriptingImplementation backend, string folder)
+        // 생성 코드·최적화가 Development 빌드와 다른지 비교할 때만 쓴다.
+        // ProfilerRecorder 카운터가 동작하지 않으므로 할당 측정 실습에는 쓰지 않는다.
+        [MenuItem("Labs/Build/IL2CPP (Release)")]
+        public static void BuildIL2CPPRelease() => Build(ScriptingImplementation.IL2CPP, "IL2CPP-Release", BuildOptions.None);
+
+        static void Build(ScriptingImplementation backend, string folder, BuildOptions options = BuildOptions.Development)
         {
             var target = NamedBuildTarget.Standalone;
             var originalBackend = PlayerSettings.GetScriptingBackend(target);
@@ -42,7 +47,7 @@ namespace Labs.Editor
                     scenes = CollectScenes(),
                     locationPathName = $"Builds/{folder}/Labs.exe",
                     target = BuildTarget.StandaloneWindows64,
-                    options = BuildOptions.Development,
+                    options = options,
                 });
             }
             finally
