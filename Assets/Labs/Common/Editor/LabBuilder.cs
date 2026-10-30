@@ -48,7 +48,11 @@ namespace Labs.Editor
             finally
             {
                 if (PlayerSettings.GetScriptingBackend(target) != originalBackend)
+                {
                     PlayerSettings.SetScriptingBackend(target, originalBackend);
+                    // 빌드 중 디스크에 저장된 바뀐 값이 남지 않게 복원한 값을 바로 저장한다
+                    AssetDatabase.SaveAssets();
+                }
             }
 
             var summary = report.summary;
