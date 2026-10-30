@@ -34,6 +34,7 @@ namespace Labs.NativeManaged
 
             Measure(ctx, "B SumArray", CheckTargets.SumArray, array);
             Measure(ctx, "D SumArrayUnchecked", CheckTargets.SumArrayUnchecked, array);
+            Measure(ctx, "E SumArrayGuarded", CheckTargets.SumArrayGuarded, array);
             ctx.Record("-", "sink", _sink.ToString());
 
             await Awaitable.NextFrameAsync();

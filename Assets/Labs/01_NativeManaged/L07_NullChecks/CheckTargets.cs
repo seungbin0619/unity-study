@@ -30,6 +30,17 @@ namespace Labs.NativeManaged
             return sum;
         }
 
+        // (E) 개발자가 직접 null을 검사한 뒤 B와 같은 루프. Il2CppSetOption은 없음
+        [MethodImpl(MethodImplOptions.NoInlining)]
+        public static int SumArrayGuarded(int[] a)
+        {
+            if (a == null) return 0;
+            var sum = 0;
+            for (var i = 0; i < a.Length; i++)
+                sum += a[i];
+            return sum;
+        }
+
         // (D) B와 같은 코드에서 검사만 끈 버전
         [Il2CppSetOption(Option.NullChecks, false)]
         [Il2CppSetOption(Option.ArrayBoundsChecks, false)]
