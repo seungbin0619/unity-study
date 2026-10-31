@@ -71,6 +71,7 @@ namespace Labs.NativeManaged
                 ctx.Record(names[c], "ns/add max", max.ToString("F3", CultureInfo.InvariantCulture));
             }
             ctx.Record("-", "sink", _sink.ToString());
+            ctx.Record("-", "incremental gc", UnityEngine.Scripting.GarbageCollector.isIncremental.ToString().ToLowerInvariant());
 
             UnityEngine.Object.Destroy(go);
             await Awaitable.NextFrameAsync();

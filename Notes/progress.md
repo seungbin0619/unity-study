@@ -55,7 +55,7 @@
 - 2026-10-29 01-L05 에디터 + Mono 플레이어 측정 — [README](../Assets/Labs/01_NativeManaged/L05_BoundaryCost/README.md)
 - 2026-10-30 01-L07 IL2CPP 플레이어 실행 + 생성 코드 읽기 — [README](../Assets/Labs/01_NativeManaged/L07_NullChecks/README.md)
 - 2026-10-31 01-L08 IL2CPP 플레이어 실행 + 생성 코드·IL 읽기 — [README](../Assets/Labs/01_NativeManaged/L08_Sealed/README.md) (예상과 달리 devirtualization 없음 → 같은 날 가설 검증: IL 호출 대상이 final일 때만 직접 호출. 2016년 블로그 예제를 그대로 옮겨도 재현 안 됨. 범위: 6000.3 Development·Release 빌드, Windows x64)
-- 2026-10-31 01-L09 IL2CPP 플레이어 실행 (Code Generation 두 설정) + 생성 코드 읽기 — [README](../Assets/Labs/01_NativeManaged/L09_GenericSharing/README.md) (쓰기 배리어 단독 비용은 Incremental GC Off 빌드로 확인 필요)
+- 2026-10-31 01-L09 IL2CPP 플레이어 실행 (Code Generation 두 설정) + 생성 코드 읽기 — [README](../Assets/Labs/01_NativeManaged/L09_GenericSharing/README.md) (같은 날 학습자 요청으로 Incremental GC On/Off 비교: string−int 차이 약 6 ns 중 약 90%가 쓰기 배리어. 배리어 포함 여부는 빌드 시점 define `IL2CPP_ENABLE_WRITE_BARRIERS`로 결정)
 
 ## Player Settings 변경 이력
 (변경 시 날짜, 항목, 원래 값 → 바꾼 값, 복원 여부)
@@ -68,3 +68,4 @@
 - 2026-10-31 Scripting Backend: Mono → IL2CPP (01-L08 Release 빌드 동안만), **복원됨** (`Standalone: 0` 확인)
 - 2026-10-31 Scripting Backend: Mono → IL2CPP (01-L09 기본 설정 빌드 동안만), **복원됨** (`Standalone: 0` 확인)
 - 2026-10-31 IL2CPP Code Generation: `OptimizeSpeed`(Faster runtime) → `OptimizeSize`(Faster (smaller) builds) (01-L09 비교 빌드 동안만), **복원됨** (`il2cppCodeGeneration: Standalone: 0`. 원래 `{}`였으나 값은 같은 OptimizeSpeed). 이 비교 빌드에서도 Backend는 `LabBuilder`가 복원함 (`Standalone: 0` 확인)
+- 2026-10-31 Incremental GC: `On` → `Off` (01-L09 쓰기 배리어 비용 검증 빌드 동안만), **복원됨** (`gcIncremental: 1` 확인, 복원 후 On 빌드로 재측정)

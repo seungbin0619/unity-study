@@ -49,6 +49,19 @@ IL2CPP Code Generation을 `Faster runtime`(기본)에서 `Faster (smaller) build
 평균값. 최소는 모두 평균의 -7% 안이고, 최대는 일부 표본이 튐 (기본 설정 float 최대 3.18, int 최대 2.65).
 원본: `Notes/results/01-L09_IL2CPP_2026-10-31.csv` (11:37 행 = Faster runtime, 11:39 행 = Faster (smaller) builds)
 
+### 쓰기 배리어 비용 검증: Incremental GC On/Off (Faster runtime)
+
+학습자 요청으로 추가 측정했다(예측 질문 없음). 12:34 이후 행에는 `incremental gc` 값을 함께 기록했다.
+
+| 실행 시각 | Incremental GC | int | float | Vector3 | string | GameObject | string − int |
+|---|---|---|---|---|---|---|---|
+| 11:37 (위 표와 같음) | On | 1.83 | 1.87 | 1.83 | 7.54 | 7.45 | 5.71 |
+| 12:34 | **Off** | 1.86 | 1.88 | 1.90 | 2.42 | 2.45 | **0.57** |
+| 12:40 | On (복원 후 재빌드) | 1.88 | 1.94 | 1.97 | 8.00 | 7.94 | 6.12 |
+
+- 12:39 행(On, 모든 값이 약 2.3배: int 4.26, string 17.17)은 재빌드 직후에 실행한 것이다. 값 타입까지 함께 느려져서 측정 환경이 오염된 것으로 보고 해석에서 제외했다. 같은 빌드로 바로 다시 잰 것이 12:40 행이다.
+- 빌드 플래그: On 빌드의 C++ 컴파일 명령에만 `-DIL2CPP_ENABLE_WRITE_BARRIERS=1`이 있다(`Library/Bee/Player*.dag.json`, 569회). Off 빌드에는 없다. 생성 C++ 텍스트에는 두 경우 모두 `Il2CppCodeGenWriteBarrier` 호출이 그대로 남아 있다.
+
 ## 해석
 - 예측과 비교
   - 기본 설정 4벌(값 타입 3 + 참조 공유 1)은 맞음.
@@ -61,16 +74,20 @@ IL2CPP Code Generation을 `Faster runtime`(기본)에서 `Faster (smaller) build
   - 참조 배열에 저장되는 것은 포인터라서 크기는 항상 8바이트다. 크기 차이가 원인이라면 12바이트 `Vector3`가 가장 느려야 하는데, `int`와 같았다.
   - 차이는 참조 배열의 `SetAt`에만 붙는 쓰기 배리어(write barrier) `Il2CppCodeGenWriteBarrier`다. 이 프로젝트는 `gcIncremental: 1`이다.
   - Incremental GC가 켜져 있으면 배리어는 마킹 중이 아니어도 참조를 저장할 때마다 항상 실행된다. 값 타입 저장에는 GC가 추적할 포인터가 없어서 배리어가 없다.
-  - **확인 필요**: 4배 차이가 전부 배리어 비용인지는 Incremental GC Off 빌드로 재 봐야 확정된다 (02-L06과 묶어서 검증 가능).
+  - 검증 (Incremental GC On/Off 비교): Off에서 참조 타입 `Add`는 7.5–8.0 → 2.4 ns로 줄었다. 값 타입은 On/Off 모두 약 1.9 ns로 그대로였다. string과 int의 차이 5.7–6.1 ns 중 약 5.1–5.6 ns, 즉 **약 90%가 배리어 비용**이다.
+  - 배리어가 하는 일: 호출 사슬은 `Il2CppCodeGenWriteBarrier` → `GarbageCollector::SetWriteBarrier` → `GC_END_STUBBORN_CHANGE(ptr)`(Boehm이 그 페이지를 dirty로 표시)다. `Il2CppCodeGenWriteBarrier`는 libil2cpp의 별도 번역 단위(`il2cpp-codegen.cpp`)에 정의되어 있어서, 생성 코드 쪽에 inline되지 않는 함수 호출로 남는다.
+  - Off일 때 배리어는 `il2cpp-codegen.h`의 빈 inline 함수가 되어 컴파일 과정에서 사라진다. 즉 배리어를 넣을지는 **빌드 시점에 결정**되고, 실행 중에 Incremental GC를 끄는 API로는 이 비용을 없앨 수 없다 (헤더 구조로 본 추론, 런타임 API로 실측하지는 않음).
+  - Off에서도 남는 0.57 ns 차이는 원인을 확인하지 않았다 (확인 필요).
   - `Faster (smaller) builds`에서 참조 타입이 1.4배만 느려진 것도 이것으로 설명된다 (추정). 공유 본문에서는 값 타입도 `…ForClass` 배리어 판단을 거친다. 전용 본문에서 이미 배리어 비용을 내던 참조 타입은 상대적으로 덜 잃는다.
 - 한 단계 더
   - full generic sharing은 `Faster runtime`에서도 빌드 시점에 알 수 없는 인스턴스에 쓰인다 (Unity 2022.1+). 예: `MakeGenericType`으로 만든 값 타입 인스턴스. 2021 이전에는 이런 경우 "no ahead of time (AOT) code was generated" `ExecutionEngineException`이 났다.
   - 즉 `OptimizeSpeed`는 "공유를 끈다"가 아니라 "빌드 시점에 아는 인스턴스는 전용 코드로 만든다"는 뜻이다. 이 실습에서 실측하지는 않았다.
   - 호출 쪽 `_inline` 래퍼는 두 설정 모두 타입마다 생기므로, 래퍼 수만 세면 차이가 보이지 않는다. 래퍼가 넘겨주는 `_gshared` 본문을 따라가야 한다.
-- 범위: 6000.3.25f1, Windows x64, IL2CPP Development 빌드, Incremental GC On
+- 범위: 6000.3.25f1, Windows x64, IL2CPP Development 빌드, Incremental GC On (배리어 검증만 On/Off 비교)
 - 근거
   - 이 프로젝트의 il2cppOutput (`Labs.cpp`, `GenericMethods.cpp`, `Generics__117.cpp`)
   - `il2cpp/libil2cpp/codegen/il2cpp-codegen.h` — `IL2CPP_ENABLE_WRITE_BARRIERS`일 때만 배리어 함수가 실제로 정의되고, 아니면 빈 inline 함수
+  - `il2cpp/libil2cpp/codegen/il2cpp-codegen.cpp`, `il2cpp/libil2cpp/gc/BoehmGC.cpp` — 배리어 호출 사슬 (`SetWriteBarrier` → `GC_END_STUBBORN_CHANGE`)
   - "한 단계 더"의 2022.1 이전 동작은 Unity 블로그 "IL2CPP full generic sharing in Unity 2022.1 beta" 기준 (이번 세션에서 원문을 다시 읽지는 않음, 실측 아님)
 
 ## 코드 발췌
