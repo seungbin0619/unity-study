@@ -1,0 +1,68 @@
+run_time,lab,backend,dev_build,unity,condition,metric,value
+2026-10-31T15:24:37,02-L01,Mono,1,6000.3.25f1,-,metrics valid,true
+2026-10-31T15:24:37,02-L01,Mono,1,6000.3.25f1,0a baseline (empty),iterations per frame,100
+2026-10-31T15:24:37,02-L01,Mono,1,6000.3.25f1,0a baseline (empty),frame alloc bytes min/max,0/0
+2026-10-31T15:24:37,02-L01,Mono,1,6000.3.25f1,0a baseline (empty),alloc bytes per call,0.0
+2026-10-31T15:24:37,02-L01,Mono,1,6000.3.25f1,0a baseline (empty),alloc count per call,0.00
+2026-10-31T15:24:37,02-L01,Mono,1,6000.3.25f1,0a baseline (empty),first frame alloc bytes/count,3441/62
+2026-10-31T15:24:37,02-L01,Mono,1,6000.3.25f1,0b calibration new byte[16],iterations per frame,100
+2026-10-31T15:24:37,02-L01,Mono,1,6000.3.25f1,0b calibration new byte[16],frame alloc bytes min/max,4800/4800
+2026-10-31T15:24:37,02-L01,Mono,1,6000.3.25f1,0b calibration new byte[16],alloc bytes per call,48.0
+2026-10-31T15:24:37,02-L01,Mono,1,6000.3.25f1,0b calibration new byte[16],alloc count per call,1.00
+2026-10-31T15:24:37,02-L01,Mono,1,6000.3.25f1,0b calibration new byte[16],first frame alloc bytes/count,4800/100
+2026-10-31T15:24:37,02-L01,Mono,1,6000.3.25f1,A boxing,iterations per frame,100
+2026-10-31T15:24:37,02-L01,Mono,1,6000.3.25f1,A boxing,frame alloc bytes min/max,2000/2000
+2026-10-31T15:24:37,02-L01,Mono,1,6000.3.25f1,A boxing,alloc bytes per call,20.0
+2026-10-31T15:24:37,02-L01,Mono,1,6000.3.25f1,A boxing,alloc count per call,1.00
+2026-10-31T15:24:37,02-L01,Mono,1,6000.3.25f1,A boxing,first frame alloc bytes/count,2000/100
+2026-10-31T15:24:37,02-L01,Mono,1,6000.3.25f1,B interpolation,iterations per frame,100
+2026-10-31T15:24:37,02-L01,Mono,1,6000.3.25f1,B interpolation,frame alloc bytes min/max,5600/5600
+2026-10-31T15:24:37,02-L01,Mono,1,6000.3.25f1,B interpolation,alloc bytes per call,56.0
+2026-10-31T15:24:37,02-L01,Mono,1,6000.3.25f1,B interpolation,alloc count per call,2.00
+2026-10-31T15:24:37,02-L01,Mono,1,6000.3.25f1,B interpolation,first frame alloc bytes/count,5636/201
+2026-10-31T15:24:37,02-L01,Mono,1,6000.3.25f1,C capturing lambda,iterations per frame,100
+2026-10-31T15:24:37,02-L01,Mono,1,6000.3.25f1,C capturing lambda,frame alloc bytes min/max,14800/14800
+2026-10-31T15:24:37,02-L01,Mono,1,6000.3.25f1,C capturing lambda,alloc bytes per call,148.0
+2026-10-31T15:24:37,02-L01,Mono,1,6000.3.25f1,C capturing lambda,alloc count per call,2.00
+2026-10-31T15:24:37,02-L01,Mono,1,6000.3.25f1,C capturing lambda,first frame alloc bytes/count,14848/201
+2026-10-31T15:24:37,02-L01,Mono,1,6000.3.25f1,D non-capturing lambda,iterations per frame,100
+2026-10-31T15:24:37,02-L01,Mono,1,6000.3.25f1,D non-capturing lambda,frame alloc bytes min/max,0/0
+2026-10-31T15:24:37,02-L01,Mono,1,6000.3.25f1,D non-capturing lambda,alloc bytes per call,0.0
+2026-10-31T15:24:37,02-L01,Mono,1,6000.3.25f1,D non-capturing lambda,alloc count per call,0.00
+2026-10-31T15:24:37,02-L01,Mono,1,6000.3.25f1,D non-capturing lambda,first frame alloc bytes/count,144/2
+2026-10-31T15:24:37,02-L01,Mono,1,6000.3.25f1,E static method group,iterations per frame,100
+2026-10-31T15:24:37,02-L01,Mono,1,6000.3.25f1,E static method group,frame alloc bytes min/max,12800/12800
+2026-10-31T15:24:37,02-L01,Mono,1,6000.3.25f1,E static method group,alloc bytes per call,128.0
+2026-10-31T15:24:37,02-L01,Mono,1,6000.3.25f1,E static method group,alloc count per call,1.00
+2026-10-31T15:24:37,02-L01,Mono,1,6000.3.25f1,E static method group,first frame alloc bytes/count,12800/100
+2026-10-31T15:24:37,02-L01,Mono,1,6000.3.25f1,F foreach List<int>,iterations per frame,100
+2026-10-31T15:24:37,02-L01,Mono,1,6000.3.25f1,F foreach List<int>,frame alloc bytes min/max,0/0
+2026-10-31T15:24:37,02-L01,Mono,1,6000.3.25f1,F foreach List<int>,alloc bytes per call,0.0
+2026-10-31T15:24:37,02-L01,Mono,1,6000.3.25f1,F foreach List<int>,alloc count per call,0.00
+2026-10-31T15:24:37,02-L01,Mono,1,6000.3.25f1,F foreach List<int>,first frame alloc bytes/count,0/0
+2026-10-31T15:24:37,02-L01,Mono,1,6000.3.25f1,G foreach IEnumerable<int>,iterations per frame,100
+2026-10-31T15:24:37,02-L01,Mono,1,6000.3.25f1,G foreach IEnumerable<int>,frame alloc bytes min/max,4000/4000
+2026-10-31T15:24:37,02-L01,Mono,1,6000.3.25f1,G foreach IEnumerable<int>,alloc bytes per call,40.0
+2026-10-31T15:24:37,02-L01,Mono,1,6000.3.25f1,G foreach IEnumerable<int>,alloc count per call,1.00
+2026-10-31T15:24:37,02-L01,Mono,1,6000.3.25f1,G foreach IEnumerable<int>,first frame alloc bytes/count,4000/100
+2026-10-31T15:24:37,02-L01,Mono,1,6000.3.25f1,H LINQ Count(pred),iterations per frame,100
+2026-10-31T15:24:37,02-L01,Mono,1,6000.3.25f1,H LINQ Count(pred),frame alloc bytes min/max,4000/4000
+2026-10-31T15:24:37,02-L01,Mono,1,6000.3.25f1,H LINQ Count(pred),alloc bytes per call,40.0
+2026-10-31T15:24:37,02-L01,Mono,1,6000.3.25f1,H LINQ Count(pred),alloc count per call,1.00
+2026-10-31T15:24:37,02-L01,Mono,1,6000.3.25f1,H LINQ Count(pred),first frame alloc bytes/count,4176/102
+2026-10-31T15:24:37,02-L01,Mono,1,6000.3.25f1,I new WaitForSeconds,iterations per frame,100
+2026-10-31T15:24:37,02-L01,Mono,1,6000.3.25f1,I new WaitForSeconds,frame alloc bytes min/max,2000/2000
+2026-10-31T15:24:37,02-L01,Mono,1,6000.3.25f1,I new WaitForSeconds,alloc bytes per call,20.0
+2026-10-31T15:24:37,02-L01,Mono,1,6000.3.25f1,I new WaitForSeconds,alloc count per call,1.00
+2026-10-31T15:24:37,02-L01,Mono,1,6000.3.25f1,I new WaitForSeconds,first frame alloc bytes/count,2048/101
+2026-10-31T15:24:37,02-L01,Mono,1,6000.3.25f1,J params (3 args),iterations per frame,100
+2026-10-31T15:24:37,02-L01,Mono,1,6000.3.25f1,J params (3 args),frame alloc bytes min/max,4400/4400
+2026-10-31T15:24:37,02-L01,Mono,1,6000.3.25f1,J params (3 args),alloc bytes per call,44.0
+2026-10-31T15:24:37,02-L01,Mono,1,6000.3.25f1,J params (3 args),alloc count per call,1.00
+2026-10-31T15:24:37,02-L01,Mono,1,6000.3.25f1,J params (3 args),first frame alloc bytes/count,4400/100
+2026-10-31T15:24:37,02-L01,Mono,1,6000.3.25f1,K params (0 args),iterations per frame,100
+2026-10-31T15:24:37,02-L01,Mono,1,6000.3.25f1,K params (0 args),frame alloc bytes min/max,0/0
+2026-10-31T15:24:37,02-L01,Mono,1,6000.3.25f1,K params (0 args),alloc bytes per call,0.0
+2026-10-31T15:24:37,02-L01,Mono,1,6000.3.25f1,K params (0 args),alloc count per call,0.00
+2026-10-31T15:24:37,02-L01,Mono,1,6000.3.25f1,K params (0 args),first frame alloc bytes/count,32/1
+2026-10-31T15:24:37,02-L01,Mono,1,6000.3.25f1,-,sink,-470844868

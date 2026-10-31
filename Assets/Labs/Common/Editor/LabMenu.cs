@@ -39,6 +39,9 @@ namespace Labs.Editor
         [MenuItem("Labs/01/L10 Stripping")]
         static void Run01L10() => Run("01-L10");
 
+        [MenuItem("Labs/02/L01 Hidden Alloc")]
+        static void Run02L01() => Run("02-L01");
+
         public static void Run(string labId)
         {
             if (EditorApplication.isPlaying)

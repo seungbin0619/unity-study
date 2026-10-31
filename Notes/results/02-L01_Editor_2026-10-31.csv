@@ -1,0 +1,68 @@
+run_time,lab,backend,dev_build,unity,condition,metric,value
+2026-10-31T15:19:55,02-L01,Editor,1,6000.3.25f1,-,metrics valid,true
+2026-10-31T15:19:55,02-L01,Editor,1,6000.3.25f1,0a baseline (empty),iterations per frame,100
+2026-10-31T15:19:55,02-L01,Editor,1,6000.3.25f1,0a baseline (empty),frame alloc bytes min/max,9301/9461
+2026-10-31T15:19:55,02-L01,Editor,1,6000.3.25f1,0a baseline (empty),alloc bytes per call,93.3
+2026-10-31T15:19:55,02-L01,Editor,1,6000.3.25f1,0a baseline (empty),alloc count per call,2.18
+2026-10-31T15:19:55,02-L01,Editor,1,6000.3.25f1,0a baseline (empty),first frame alloc bytes/count,8858868/66012
+2026-10-31T15:19:55,02-L01,Editor,1,6000.3.25f1,0b calibration new byte[16],iterations per frame,100
+2026-10-31T15:19:55,02-L01,Editor,1,6000.3.25f1,0b calibration new byte[16],frame alloc bytes min/max,14101/14189
+2026-10-31T15:19:55,02-L01,Editor,1,6000.3.25f1,0b calibration new byte[16],alloc bytes per call,141.2
+2026-10-31T15:19:55,02-L01,Editor,1,6000.3.25f1,0b calibration new byte[16],alloc count per call,3.18
+2026-10-31T15:19:55,02-L01,Editor,1,6000.3.25f1,0b calibration new byte[16],first frame alloc bytes/count,14101/318
+2026-10-31T15:19:55,02-L01,Editor,1,6000.3.25f1,A boxing,iterations per frame,100
+2026-10-31T15:19:55,02-L01,Editor,1,6000.3.25f1,A boxing,frame alloc bytes min/max,11301/24694
+2026-10-31T15:19:55,02-L01,Editor,1,6000.3.25f1,A boxing,alloc bytes per call,126.8
+2026-10-31T15:19:55,02-L01,Editor,1,6000.3.25f1,A boxing,alloc count per call,3.35
+2026-10-31T15:19:55,02-L01,Editor,1,6000.3.25f1,A boxing,first frame alloc bytes/count,11301/318
+2026-10-31T15:19:55,02-L01,Editor,1,6000.3.25f1,B interpolation,iterations per frame,100
+2026-10-31T15:19:55,02-L01,Editor,1,6000.3.25f1,B interpolation,frame alloc bytes min/max,14901/14989
+2026-10-31T15:19:55,02-L01,Editor,1,6000.3.25f1,B interpolation,alloc bytes per call,149.2
+2026-10-31T15:19:55,02-L01,Editor,1,6000.3.25f1,B interpolation,alloc count per call,4.18
+2026-10-31T15:19:55,02-L01,Editor,1,6000.3.25f1,B interpolation,first frame alloc bytes/count,14937/419
+2026-10-31T15:19:55,02-L01,Editor,1,6000.3.25f1,C capturing lambda,iterations per frame,100
+2026-10-31T15:19:55,02-L01,Editor,1,6000.3.25f1,C capturing lambda,frame alloc bytes min/max,24101/24245
+2026-10-31T15:19:55,02-L01,Editor,1,6000.3.25f1,C capturing lambda,alloc bytes per call,241.2
+2026-10-31T15:19:55,02-L01,Editor,1,6000.3.25f1,C capturing lambda,alloc count per call,4.18
+2026-10-31T15:19:55,02-L01,Editor,1,6000.3.25f1,C capturing lambda,first frame alloc bytes/count,24149/419
+2026-10-31T15:19:55,02-L01,Editor,1,6000.3.25f1,D non-capturing lambda,iterations per frame,100
+2026-10-31T15:19:55,02-L01,Editor,1,6000.3.25f1,D non-capturing lambda,frame alloc bytes min/max,9301/9389
+2026-10-31T15:19:55,02-L01,Editor,1,6000.3.25f1,D non-capturing lambda,alloc bytes per call,93.2
+2026-10-31T15:19:55,02-L01,Editor,1,6000.3.25f1,D non-capturing lambda,alloc count per call,2.18
+2026-10-31T15:19:55,02-L01,Editor,1,6000.3.25f1,D non-capturing lambda,first frame alloc bytes/count,9445/220
+2026-10-31T15:19:55,02-L01,Editor,1,6000.3.25f1,E static method group,iterations per frame,100
+2026-10-31T15:19:55,02-L01,Editor,1,6000.3.25f1,E static method group,frame alloc bytes min/max,22101/22153
+2026-10-31T15:19:55,02-L01,Editor,1,6000.3.25f1,E static method group,alloc bytes per call,221.1
+2026-10-31T15:19:55,02-L01,Editor,1,6000.3.25f1,E static method group,alloc count per call,3.18
+2026-10-31T15:19:55,02-L01,Editor,1,6000.3.25f1,E static method group,first frame alloc bytes/count,22101/318
+2026-10-31T15:19:55,02-L01,Editor,1,6000.3.25f1,F foreach List<int>,iterations per frame,100
+2026-10-31T15:19:55,02-L01,Editor,1,6000.3.25f1,F foreach List<int>,frame alloc bytes min/max,9301/9357
+2026-10-31T15:19:55,02-L01,Editor,1,6000.3.25f1,F foreach List<int>,alloc bytes per call,93.1
+2026-10-31T15:19:55,02-L01,Editor,1,6000.3.25f1,F foreach List<int>,alloc count per call,2.18
+2026-10-31T15:19:55,02-L01,Editor,1,6000.3.25f1,F foreach List<int>,first frame alloc bytes/count,9301/218
+2026-10-31T15:19:55,02-L01,Editor,1,6000.3.25f1,G foreach IEnumerable<int>,iterations per frame,100
+2026-10-31T15:19:55,02-L01,Editor,1,6000.3.25f1,G foreach IEnumerable<int>,frame alloc bytes min/max,13301/13301
+2026-10-31T15:19:55,02-L01,Editor,1,6000.3.25f1,G foreach IEnumerable<int>,alloc bytes per call,133.0
+2026-10-31T15:19:55,02-L01,Editor,1,6000.3.25f1,G foreach IEnumerable<int>,alloc count per call,3.18
+2026-10-31T15:19:55,02-L01,Editor,1,6000.3.25f1,G foreach IEnumerable<int>,first frame alloc bytes/count,13301/318
+2026-10-31T15:19:55,02-L01,Editor,1,6000.3.25f1,H LINQ Count(pred),iterations per frame,100
+2026-10-31T15:19:55,02-L01,Editor,1,6000.3.25f1,H LINQ Count(pred),frame alloc bytes min/max,13301/13353
+2026-10-31T15:19:55,02-L01,Editor,1,6000.3.25f1,H LINQ Count(pred),alloc bytes per call,133.1
+2026-10-31T15:19:55,02-L01,Editor,1,6000.3.25f1,H LINQ Count(pred),alloc count per call,3.18
+2026-10-31T15:19:55,02-L01,Editor,1,6000.3.25f1,H LINQ Count(pred),first frame alloc bytes/count,13429/319
+2026-10-31T15:19:55,02-L01,Editor,1,6000.3.25f1,I new WaitForSeconds,iterations per frame,100
+2026-10-31T15:19:55,02-L01,Editor,1,6000.3.25f1,I new WaitForSeconds,frame alloc bytes min/max,11301/11389
+2026-10-31T15:19:55,02-L01,Editor,1,6000.3.25f1,I new WaitForSeconds,alloc bytes per call,113.1
+2026-10-31T15:19:55,02-L01,Editor,1,6000.3.25f1,I new WaitForSeconds,alloc count per call,3.18
+2026-10-31T15:19:55,02-L01,Editor,1,6000.3.25f1,I new WaitForSeconds,first frame alloc bytes/count,11301/318
+2026-10-31T15:19:55,02-L01,Editor,1,6000.3.25f1,J params (3 args),iterations per frame,100
+2026-10-31T15:19:55,02-L01,Editor,1,6000.3.25f1,J params (3 args),frame alloc bytes min/max,13701/13789
+2026-10-31T15:19:55,02-L01,Editor,1,6000.3.25f1,J params (3 args),alloc bytes per call,137.1
+2026-10-31T15:19:55,02-L01,Editor,1,6000.3.25f1,J params (3 args),alloc count per call,3.18
+2026-10-31T15:19:55,02-L01,Editor,1,6000.3.25f1,J params (3 args),first frame alloc bytes/count,13701/318
+2026-10-31T15:19:55,02-L01,Editor,1,6000.3.25f1,K params (0 args),iterations per frame,100
+2026-10-31T15:19:55,02-L01,Editor,1,6000.3.25f1,K params (0 args),frame alloc bytes min/max,9301/9389
+2026-10-31T15:19:55,02-L01,Editor,1,6000.3.25f1,K params (0 args),alloc bytes per call,93.1
+2026-10-31T15:19:55,02-L01,Editor,1,6000.3.25f1,K params (0 args),alloc count per call,2.18
+2026-10-31T15:19:55,02-L01,Editor,1,6000.3.25f1,K params (0 args),first frame alloc bytes/count,9301/218
+2026-10-31T15:19:55,02-L01,Editor,1,6000.3.25f1,-,sink,7166277820
