@@ -42,6 +42,9 @@ namespace Labs.Editor
         [MenuItem("Labs/02/L01 Hidden Alloc")]
         static void Run02L01() => Run("02-L01");
 
+        [MenuItem("Labs/02/L02 Closure Timing")]
+        static void Run02L02() => Run("02-L02");
+
         public static void Run(string labId)
         {
             if (EditorApplication.isPlaying)

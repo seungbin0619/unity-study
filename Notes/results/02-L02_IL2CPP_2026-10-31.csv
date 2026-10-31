@@ -1,0 +1,43 @@
+run_time,lab,backend,dev_build,unity,condition,metric,value
+2026-10-31T16:39:32,02-L02,IL2CPP,1,6000.3.25f1,-,metrics valid,true
+2026-10-31T16:39:32,02-L02,IL2CPP,1,6000.3.25f1,0a baseline (empty),iterations per frame,100
+2026-10-31T16:39:32,02-L02,IL2CPP,1,6000.3.25f1,0a baseline (empty),frame alloc bytes min/max,0/0
+2026-10-31T16:39:32,02-L02,IL2CPP,1,6000.3.25f1,0a baseline (empty),alloc bytes per call,0.0
+2026-10-31T16:39:32,02-L02,IL2CPP,1,6000.3.25f1,0a baseline (empty),alloc count per call,0.00
+2026-10-31T16:39:32,02-L02,IL2CPP,1,6000.3.25f1,0b calibration new byte[16],iterations per frame,100
+2026-10-31T16:39:32,02-L02,IL2CPP,1,6000.3.25f1,0b calibration new byte[16],frame alloc bytes min/max,4800/4800
+2026-10-31T16:39:32,02-L02,IL2CPP,1,6000.3.25f1,0b calibration new byte[16],alloc bytes per call,48.0
+2026-10-31T16:39:32,02-L02,IL2CPP,1,6000.3.25f1,0b calibration new byte[16],alloc count per call,1.00
+2026-10-31T16:39:32,02-L02,IL2CPP,1,6000.3.25f1,"A capture parameter, use=false",iterations per frame,100
+2026-10-31T16:39:32,02-L02,IL2CPP,1,6000.3.25f1,"A capture parameter, use=false",frame alloc bytes min/max,2400/2400
+2026-10-31T16:39:32,02-L02,IL2CPP,1,6000.3.25f1,"A capture parameter, use=false",alloc bytes per call,24.0
+2026-10-31T16:39:32,02-L02,IL2CPP,1,6000.3.25f1,"A capture parameter, use=false",alloc count per call,1.00
+2026-10-31T16:39:32,02-L02,IL2CPP,1,6000.3.25f1,"B capture top local, use=false",iterations per frame,100
+2026-10-31T16:39:32,02-L02,IL2CPP,1,6000.3.25f1,"B capture top local, use=false",frame alloc bytes min/max,2400/2400
+2026-10-31T16:39:32,02-L02,IL2CPP,1,6000.3.25f1,"B capture top local, use=false",alloc bytes per call,24.0
+2026-10-31T16:39:32,02-L02,IL2CPP,1,6000.3.25f1,"B capture top local, use=false",alloc count per call,1.00
+2026-10-31T16:39:32,02-L02,IL2CPP,1,6000.3.25f1,"C capture branch local, use=false",iterations per frame,100
+2026-10-31T16:39:32,02-L02,IL2CPP,1,6000.3.25f1,"C capture branch local, use=false",frame alloc bytes min/max,0/0
+2026-10-31T16:39:32,02-L02,IL2CPP,1,6000.3.25f1,"C capture branch local, use=false",alloc bytes per call,0.0
+2026-10-31T16:39:32,02-L02,IL2CPP,1,6000.3.25f1,"C capture branch local, use=false",alloc count per call,0.00
+2026-10-31T16:39:32,02-L02,IL2CPP,1,6000.3.25f1,"D capture this only, use=false",iterations per frame,100
+2026-10-31T16:39:32,02-L02,IL2CPP,1,6000.3.25f1,"D capture this only, use=false",frame alloc bytes min/max,0/0
+2026-10-31T16:39:32,02-L02,IL2CPP,1,6000.3.25f1,"D capture this only, use=false",alloc bytes per call,0.0
+2026-10-31T16:39:32,02-L02,IL2CPP,1,6000.3.25f1,"D capture this only, use=false",alloc count per call,0.00
+2026-10-31T16:39:32,02-L02,IL2CPP,1,6000.3.25f1,"A capture parameter, use=true",iterations per frame,100
+2026-10-31T16:39:32,02-L02,IL2CPP,1,6000.3.25f1,"A capture parameter, use=true",frame alloc bytes min/max,15200/15200
+2026-10-31T16:39:32,02-L02,IL2CPP,1,6000.3.25f1,"A capture parameter, use=true",alloc bytes per call,152.0
+2026-10-31T16:39:32,02-L02,IL2CPP,1,6000.3.25f1,"A capture parameter, use=true",alloc count per call,2.00
+2026-10-31T16:39:32,02-L02,IL2CPP,1,6000.3.25f1,"B capture top local, use=true",iterations per frame,100
+2026-10-31T16:39:32,02-L02,IL2CPP,1,6000.3.25f1,"B capture top local, use=true",frame alloc bytes min/max,15200/15200
+2026-10-31T16:39:32,02-L02,IL2CPP,1,6000.3.25f1,"B capture top local, use=true",alloc bytes per call,152.0
+2026-10-31T16:39:32,02-L02,IL2CPP,1,6000.3.25f1,"B capture top local, use=true",alloc count per call,2.00
+2026-10-31T16:39:32,02-L02,IL2CPP,1,6000.3.25f1,"C capture branch local, use=true",iterations per frame,100
+2026-10-31T16:39:32,02-L02,IL2CPP,1,6000.3.25f1,"C capture branch local, use=true",frame alloc bytes min/max,15200/15200
+2026-10-31T16:39:32,02-L02,IL2CPP,1,6000.3.25f1,"C capture branch local, use=true",alloc bytes per call,152.0
+2026-10-31T16:39:32,02-L02,IL2CPP,1,6000.3.25f1,"C capture branch local, use=true",alloc count per call,2.00
+2026-10-31T16:39:32,02-L02,IL2CPP,1,6000.3.25f1,"D capture this only, use=true",iterations per frame,100
+2026-10-31T16:39:32,02-L02,IL2CPP,1,6000.3.25f1,"D capture this only, use=true",frame alloc bytes min/max,12800/12800
+2026-10-31T16:39:32,02-L02,IL2CPP,1,6000.3.25f1,"D capture this only, use=true",alloc bytes per call,128.0
+2026-10-31T16:39:32,02-L02,IL2CPP,1,6000.3.25f1,"D capture this only, use=true",alloc count per call,1.00
+2026-10-31T16:39:32,02-L02,IL2CPP,1,6000.3.25f1,-,sink,31200

@@ -14,7 +14,7 @@ Unity 엔진 내부 동작을 문서로만 읽지 않고 **직접 측정해서 �
 | 주제 | 진행 |
 |---|---|
 | [1. 네이티브–매니지드 경계](#1-네이티브매니지드-경계) | 10 / 10 완료 |
-| [2. 메모리와 GC](#2-메모리와-gc) | 1 / 9 |
+| [2. 메모리와 GC](#2-메모리와-gc) | 2 / 9 |
 | 3. PlayerLoop · 4. 직렬화와 에셋 파이프라인 · 5. 렌더링 파이프라인 · 6. DOTS | 예정 |
 
 ## 실행 방법
@@ -71,7 +71,8 @@ Boehm GC의 특성, 숨은 할당, 힙 크기와 단편화, Incremental GC.
 > ✅ **[02-L01 숨은 할당 측정](Assets/Labs/02_GC/L01_HiddenAlloc/README.md)** · `Mono` `IL2CPP`\
 > 델리게이트 생성이 128 B로 가장 큼 (C# 9는 메서드 그룹·`this` 캡처 람다를 캐시 안 함, 필드 캐시 시 0). `IEnumerable<T>` foreach·LINQ는 열거자 박싱 40 B, `List.Sort()`도 매번 128 B
 
-> ⏳ 02-L02 클로저 할당 시점
+> ✅ **[02-L02 클로저 할당 시점](Assets/Labs/02_GC/L02_ClosureTiming/README.md)** · `Mono` `IL2CPP`\
+> 클로저는 캡처 변수의 스코프 진입 시 생성. 매개변수를 캡처하면 람다 분기를 안 타도 호출마다 20~24 B
 
 > ⏳ 02-L03 `Instantiate`/`Destroy` vs 풀링
 
