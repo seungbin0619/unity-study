@@ -36,6 +36,9 @@ namespace Labs.Editor
         [MenuItem("Labs/01/L09 Generic Sharing")]
         static void Run01L09() => Run("01-L09");
 
+        [MenuItem("Labs/01/L10 Stripping")]
+        static void Run01L10() => Run("01-L10");
+
         public static void Run(string labId)
         {
             if (EditorApplication.isPlaying)

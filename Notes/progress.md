@@ -26,6 +26,8 @@
 - [정답] (2026-10-31) 01-L08 가설 검증 — (E) `callvirt Fox::Speak`(final) 직접 / (F) `callvirt OpenFox::Speak`(final 아님) 가상, 이유 포함 정답. 결론: IL2CPP 6000.3은 IL 호출 대상 메서드가 final인지만 보고, 수신 객체의 정적 타입은 보지 않음
 - [오답] (2026-10-31) 01-L09 `Faster (smaller) builds`에서 `Add` 본문 수 — "여전히 값 타입 3개, 참조 타입1개"로 답함(이유 없음). 실제 1벌. full generic sharing이 크기를 런타임 메타데이터에서 읽어 값 타입까지 공유한다는 점을 몰랐음
 - [힌트 후 정답] (2026-10-31) 01-L09 기본 설정에서 `List<string>.Add`가 `List<int>.Add`보다 4배 느린 이유 — 1차 "참조 타입은 타입마다 크기가 달라서"(오답: 배열에는 8바이트 포인터가 들어감) → 힌트(`SetAt`의 `Il2CppCodeGenWriteBarrier`, `gcIncremental: 1`) 후 "참조가 중간에 바뀌면 마킹을 다시 해야 해서 배리어" 정답. 배리어는 dirty 표시만 하고 마킹 중이 아니어도 항상 실행된다는 점은 보충함
+- [부분 정답 1/2] (2026-10-31) 01-L10 Stripping High에서 리플렉션 대상 — "둘 다 null". B(런타임 조합)는 맞음. A(상수 문자열)는 UnityLinker가 패턴을 알아봐서 타입은 남고, 생성자가 지워져 `MissingMethodException`
+- [정답] (2026-10-31) 01-L10 `[Preserve]` 붙인 클래스에서 `Ping`이 지워진 이유 — "각 메서드도 사용 안 되면 삭제해도 된다고 판단". `[Preserve]`는 붙인 대상(타입 + 기본 생성자)에만 적용된다는 점은 보충함
 - [설명 들음] (2026-10-30) 검사 개수(정적)와 실행 횟수(루프 안이면 원소마다) 구분, IL2CPP는 hoist·경계 검사 제거를 하지 않음 (RyuJIT과 대비)
 
 ## 약점 (관련 실습에서 재확인)
@@ -38,6 +40,7 @@
 - 참조 타입 원소 컬렉션(List<class>)이 GC에게는 "객체 N개 + 참조 N개"라는 점 — 원소 클래스가 pointer-free여도 방문 비용은 남음
 - 참조 타입 배열·컬렉션에 저장되는 것은 객체가 아니라 8바이트 포인터라는 점 (01-L09에서 "참조 타입은 크기가 달라서"라고 답함). 02-L05·02-L06에서 다시 묻기
 - 런타임에 타입 정보를 읽어 처리하는 방식(full generic sharing, rgctx)의 존재 — "값 타입 = 반드시 전용 코드"로 고정해서 생각함
+- 빌드 도구(UnityLinker, IL2CPP)가 하는 분석의 수준을 "전부 아니면 전무"로 가정하는 것 — 01-L10에서 링커가 상수 문자열 리플렉션은 알아본다는 점, 01-L08에서 IL2CPP가 sealed를 쓰지 않는다는 점. 도구가 "무엇을 보고 무엇을 못 보는지"를 단계별로 묻기
 
 ## 미응답 질문 (다음 세션 첫 질문으로)
 (없음)
@@ -56,6 +59,7 @@
 - 2026-10-30 01-L07 IL2CPP 플레이어 실행 + 생성 코드 읽기 — [README](../Assets/Labs/01_NativeManaged/L07_NullChecks/README.md)
 - 2026-10-31 01-L08 IL2CPP 플레이어 실행 + 생성 코드·IL 읽기 — [README](../Assets/Labs/01_NativeManaged/L08_Sealed/README.md) (예상과 달리 devirtualization 없음 → 같은 날 가설 검증: IL 호출 대상이 final일 때만 직접 호출. 2016년 블로그 예제를 그대로 옮겨도 재현 안 됨. 범위: 6000.3 Development·Release 빌드, Windows x64)
 - 2026-10-31 01-L09 IL2CPP 플레이어 실행 (Code Generation 두 설정) + 생성 코드 읽기 — [README](../Assets/Labs/01_NativeManaged/L09_GenericSharing/README.md) (같은 날 학습자 요청으로 Incremental GC On/Off 비교: string−int 차이 약 6 ns 중 약 90%가 쓰기 배리어. 배리어 포함 여부는 빌드 시점 define `IL2CPP_ENABLE_WRITE_BARRIERS`로 결정)
+- 2026-10-31 01-L10 에디터 + IL2CPP 플레이어(Stripping High) 실행 + 생성 코드 확인 — [README](../Assets/Labs/01_NativeManaged/L10_Stripping/README.md) (1장 실습 모두 완료)
 
 ## Player Settings 변경 이력
 (변경 시 날짜, 항목, 원래 값 → 바꾼 값, 복원 여부)
@@ -69,3 +73,4 @@
 - 2026-10-31 Scripting Backend: Mono → IL2CPP (01-L09 기본 설정 빌드 동안만), **복원됨** (`Standalone: 0` 확인)
 - 2026-10-31 IL2CPP Code Generation: `OptimizeSpeed`(Faster runtime) → `OptimizeSize`(Faster (smaller) builds) (01-L09 비교 빌드 동안만), **복원됨** (`il2cppCodeGeneration: Standalone: 0`. 원래 `{}`였으나 값은 같은 OptimizeSpeed). 이 비교 빌드에서도 Backend는 `LabBuilder`가 복원함 (`Standalone: 0` 확인)
 - 2026-10-31 Incremental GC: `On` → `Off` (01-L09 쓰기 배리어 비용 검증 빌드 동안만), **복원됨** (`gcIncremental: 1` 확인, 복원 후 On 빌드로 재측정)
+- 2026-10-31 Managed Stripping Level: 기본값(`managedStrippingLevel: {}`, API로는 `Disabled`) → `High` (01-L10 빌드 동안만), **복원됨** (`Disabled`로 되돌림. 파일에는 `{}` 대신 `Standalone: 0`으로 남음, 값은 같음). Backend도 `Standalone: 0` 확인

@@ -1,0 +1,6 @@
+<linker>
+  <!-- 01-L10 (D): 리플렉션으로만 쓰는 타입을 통째로 보존한다 -->
+  <assembly fullname="Labs">
+    <type fullname="Labs.NativeManaged.HiddenLinkXml" preserve="all" />
+  </assembly>
+</linker>

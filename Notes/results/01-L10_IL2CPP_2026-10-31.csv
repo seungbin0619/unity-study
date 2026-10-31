@@ -1,0 +1,13 @@
+run_time,lab,backend,dev_build,unity,condition,metric,value
+2026-10-31T14:39:13,01-L10,IL2CPP,1,6000.3.25f1,A literal,type,found
+2026-10-31T14:39:13,01-L10,IL2CPP,1,6000.3.25f1,A literal,create,MissingMethodException
+2026-10-31T14:39:13,01-L10,IL2CPP,1,6000.3.25f1,B dynamic,type,null
+2026-10-31T14:39:13,01-L10,IL2CPP,1,6000.3.25f1,C dynamic + [Preserve],type,found
+2026-10-31T14:39:13,01-L10,IL2CPP,1,6000.3.25f1,C dynamic + [Preserve],create,ok
+2026-10-31T14:39:13,01-L10,IL2CPP,1,6000.3.25f1,C dynamic + [Preserve],method,null
+2026-10-31T14:39:13,01-L10,IL2CPP,1,6000.3.25f1,D dynamic + link.xml,type,found
+2026-10-31T14:39:13,01-L10,IL2CPP,1,6000.3.25f1,D dynamic + link.xml,create,ok
+2026-10-31T14:39:13,01-L10,IL2CPP,1,6000.3.25f1,D dynamic + link.xml,method,found
+2026-10-31T14:39:13,01-L10,IL2CPP,1,6000.3.25f1,D dynamic + link.xml,invoke,4
+2026-10-31T14:39:13,01-L10,IL2CPP,1,6000.3.25f1,E typeof only,type,found
+2026-10-31T14:39:13,01-L10,IL2CPP,1,6000.3.25f1,E typeof only,create,MissingMethodException
