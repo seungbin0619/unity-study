@@ -34,6 +34,7 @@
 - [부분 정답 2/3] (2026-10-31) 02-L01 추가 2: struct predicate 받는 쪽 시그니처 — (a) 제네릭 제약 0, (b) 인터페이스 매개변수 1회 박싱 정답. (c) `List.Sort(new Desc())`는 "모르겠음" → 힌트((b)와 시그니처 비교) 후 "할당 없음"(오답). 실제 2회 145 B: 넘길 때 박싱 1 + `ArraySortHelper`가 `comparer.Compare`를 `Comparison<T>`로 감싸는 128 B. 힌트를 받고도 `IComparer<T>` 매개변수를 (b)와 같은 경우로 연결하지 못함
 - [힌트 후 풀이] (2026-10-31) 02-L02 클로저 할당 시점 (A 매개변수 / B 맨 위 지역 / C 분기 안 지역 / D `this`만, 모두 람다 분기 미실행) — "전혀 모르겠는데" → 힌트(캡처 변수는 클로저 필드, lowering 예시, 02-L01 M) 후에도 "모르겠음" → 풀이. 실측: A·B 클로저 1개(20/24 B), C·D 0
 - [유도 후 정답] (2026-10-31) 02-L02 확인 질문: `x => x == t && x > _target`의 클로저에 담기는 것 — 1차 "클로저가 들어가야지"(target 칸 = 클로저까지만), 유도 질문(람다 메서드의 `this`는 클로저) 후 "this가 있어야겠네" 정답. 풀이 직후 D(`this`만 캡처)를 "`_target`이 클래스 변수인지 감이 안 옴"이라고 해서 지역 변수(스택) vs 인스턴스 필드(힙 객체 안)와 델리게이트 (target, method) 구조를 설명함
+- [부분 정답] (2026-10-31) 02-L03 `Instantiate`/`Destroy` vs 풀링 — "A는 프레임당 엄청 많이, B는 최초 프레임 제외 0, B가 훨씬 빠름"(배수는 추측 불가라고 함). B 0·B가 빠름(약 2.2배)은 맞음. A의 GC 할당은 객체당 64 B(프레임당 6.4 KB)로 작았음 — `Instantiate`의 대부분이 네이티브 메모리라는 점을 고려하지 않음
 - [설명 들음] (2026-10-30) 검사 개수(정적)와 실행 횟수(루프 안이면 원소마다) 구분, IL2CPP는 hoist·경계 검사 제거를 하지 않음 (RyuJIT과 대비)
 
 ## 약점 (관련 실습에서 재확인)
@@ -46,6 +47,7 @@
 - 정적 타입(static type)으로부터 "들어올 수 있는 런타임 타입의 범위"를 추론하는 것 — `sealed class`면 런타임 타입이 하나로 확정된다는 점을 바로 떠올리지 못함 (01-L08, 힌트 필요). 01-L09·인터페이스 호출 관련 실습에서 다시 묻기
 - 참조 타입 원소 컬렉션(List<class>)이 GC에게는 "객체 N개 + 참조 N개"라는 점 — 원소 클래스가 pointer-free여도 방문 비용은 남음
 - 참조 타입 배열·컬렉션에 저장되는 것은 객체가 아니라 8바이트 포인터라는 점 (01-L09에서 "참조 타입은 크기가 달라서"라고 답함). 02-L05·02-L06에서 다시 묻기
+- 엔진 API 비용을 "매니지드 힙(GC) vs 네이티브 메모리·CPU"로 나눠 보는 것 — 02-L03에서 `Instantiate`가 GC 할당을 많이 할 거라고 봄. 1장 래퍼 구조와 연결해 "GC에 잡히는 건 래퍼뿐"을 02-L04·02-L08(Memory Profiler)에서 다시 묻기
 - 런타임에 타입 정보를 읽어 처리하는 방식(full generic sharing, rgctx)의 존재 — "값 타입 = 반드시 전용 코드"로 고정해서 생각함
 - 빌드 도구(UnityLinker, IL2CPP)가 하는 분석의 수준을 "전부 아니면 전무"로 가정하는 것 — 01-L10에서 링커가 상수 문자열 리플렉션은 알아본다는 점, 01-L08에서 IL2CPP가 sealed를 쓰지 않는다는 점. 도구가 "무엇을 보고 무엇을 못 보는지"를 단계별로 묻기
 
@@ -69,6 +71,7 @@
 - 2026-10-31 01-L10 에디터 + IL2CPP 플레이어(Stripping High) 실행 + 생성 코드 확인 — [README](../Assets/Labs/01_NativeManaged/L10_Stripping/README.md) (1장 실습 모두 완료)
 - 2026-10-31 02-L01 에디터(참고용) + Mono·IL2CPP 플레이어 측정 + 생성 코드 확인 — [README](../Assets/Labs/02_GC/L01_HiddenAlloc/README.md)
 - 2026-10-31 02-L02 Mono·IL2CPP 플레이어 측정 + 생성 코드 확인 — [README](../Assets/Labs/02_GC/L02_ClosureTiming/README.md)
+- 2026-10-31 02-L03 Mono·IL2CPP 플레이어 측정 — [README](../Assets/Labs/02_GC/L03_Pooling/README.md) (객체당 64 B·2회 할당의 정체는 확인 필요로 남김)
 
 ## Player Settings 변경 이력
 (변경 시 날짜, 항목, 원래 값 → 바꾼 값, 복원 여부)
@@ -87,3 +90,4 @@
 - 2026-10-31 Scripting Backend: Mono → IL2CPP (02-L01 추가 케이스 L~P 빌드 동안만), **복원됨** (`Standalone: 0` 확인)
 - 2026-10-31 Scripting Backend: Mono → IL2CPP (02-L01 추가 케이스 Q~V 빌드 3회, 1회는 생성 코드 폴더 잠금으로 실패 후 재빌드), **복원됨** (매번 `Standalone: 0` 확인)
 - 2026-10-31 Scripting Backend: Mono → IL2CPP (02-L02 빌드 동안만), **복원됨** (`Standalone: 0` 확인)
+- 2026-10-31 Scripting Backend: Mono → IL2CPP (02-L03 빌드 동안만), **복원됨** (`Standalone: 0` 확인)
