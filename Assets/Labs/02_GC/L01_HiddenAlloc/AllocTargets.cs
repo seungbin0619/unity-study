@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -92,6 +93,63 @@ namespace Labs.GarbageCollection
             var total = 0;
             for (var i = 0; i < xs.Length; i++) total += xs[i];
             return total;
+        }
+
+        // --- 추가: 메서드 그룹 대처법 비교 ---
+
+        // L
+        public void InstanceMethodGroup()
+        {
+            Sink += _list.FindIndex(IsMatch);
+        }
+
+        // M
+        public void LambdaWrapsInstance()
+        {
+            Sink += _list.FindIndex(x => IsMatch(x));
+        }
+
+        // N
+        public void LambdaWrapsInstanceNoField()
+        {
+            Sink += _list.FindIndex(x => IsThreeInstance(x));
+        }
+
+        bool IsMatch(int x) => x == _target;
+
+#pragma warning disable CA1822 // LAB: 의도적 — 인스턴스 상태를 안 읽는 인스턴스 메서드
+        bool IsThreeInstance(int x) => x == 3;
+#pragma warning restore CA1822
+
+        // O
+        static readonly Predicate<int> s_isThree = IsThree;
+
+        public void CachedStaticDelegate()
+        {
+            Sink += _list.FindIndex(s_isThree);
+        }
+
+        // P
+        public void StructPredicate()
+        {
+            Sink += FindIndex(_list, new IsThreePred());
+        }
+
+        interface IIntPredicate
+        {
+            bool Invoke(int x);
+        }
+
+        struct IsThreePred : IIntPredicate
+        {
+            public bool Invoke(int x) => x == 3;
+        }
+
+        static int FindIndex<TPred>(List<int> list, TPred pred) where TPred : struct, IIntPredicate
+        {
+            for (var i = 0; i < list.Count; i++)
+                if (pred.Invoke(list[i])) return i;
+            return -1;
         }
     }
 }

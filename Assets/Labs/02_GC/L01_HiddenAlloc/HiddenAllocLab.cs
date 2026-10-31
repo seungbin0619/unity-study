@@ -49,6 +49,11 @@ namespace Labs.GarbageCollection
                 new Case("I new WaitForSeconds", t.NewWaitForSeconds),
                 new Case("J params (3 args)", t.ParamsThree),
                 new Case("K params (0 args)", t.ParamsZero),
+                new Case("L instance method group", t.InstanceMethodGroup),
+                new Case("M lambda wraps instance method", t.LambdaWrapsInstance),
+                new Case("N lambda wraps instance method (no field)", t.LambdaWrapsInstanceNoField),
+                new Case("O cached static delegate", t.CachedStaticDelegate),
+                new Case("P struct generic predicate", t.StructPredicate),
             };
 
             using var metrics = new LabMetrics();
