@@ -22,6 +22,9 @@
 - 추가 질문 (2026-10-31, 메서드 그룹 대처법 심화): 인스턴스 메서드 `bool IsMatch(int x) => x == _target;`를 람다로 감싼 `_list.FindIndex(x => IsMatch(x))`(M)는 워밍업 후 호출마다 할당되는가? 무엇이 몇 개?
 - 학습자 답 (실행 전, 원문 그대로): "_target때문에 호출 할 때마다 1번씩 할당될거같은데"
 - 비교용으로 L(인스턴스 메서드 그룹), N(필드를 안 읽는 인스턴스 메서드를 람다로 감쌈), O(static 필드에 캐시한 델리게이트), P(struct 제네릭 predicate)를 함께 잰다
+- 추가 질문 2 (2026-10-31, struct predicate 받는 쪽 시그니처): `GreaterThan`(struct, `IPredicate<int>`)·`Desc`(struct, `IComparer<int>`)일 때 호출당 할당 횟수 — (Q) `FindIndex(_list, new GreaterThan(t))` (`where TPred : struct, IPredicate<int>`) / (R) `FindIndexI(_list, new GreaterThan(t))` (매개변수 `IPredicate<int>`) / (S) `_list.Sort(new Desc())`
+- 학습자 답 (실행 전, 원문 그대로): "a - 0 / b - 1 (박싱) / c - 모르겠음" → 힌트(`Sort(IComparer<T>)` 시그니처를 (b)와 비교, 박싱이 넘길 때인지 호출마다인지) 후 "c는 할당 없을거같은데"
+- 비교용으로 T(`IComparer<int>` 필드에 미리 박싱해 둔 `Desc`로 `Sort`), U(비교자 없는 `Sort()`), V(static 필드에 캐시한 `Comparison<int>`로 `Sort`)를 함께 잰다 (T·U·V는 S 결과를 본 뒤 원인을 가르려고 추가)
 
 ## 실습 구성
 - 코드: `AllocTargets.cs` — 케이스 A~K를 메서드 하나씩으로 둔다
@@ -47,6 +50,10 @@
 | 2026-10-31 | Mono | On | Development | (추가) O static 필드 캐시 델리게이트 · P struct 제네릭 predicate | 0 · 0 (첫 프레임도 0) |
 | 2026-10-31 | IL2CPP | On | Development | (추가) L · M · N | 128 B·1 · 128 B·1 · 128 B·1 |
 | 2026-10-31 | IL2CPP | On | Development | (추가) O · P | 0 · 0 (첫 프레임도 0) |
+| 2026-10-31 | Mono | On | Development | (추가 2) Q struct predicate 제네릭 · R 인터페이스 매개변수 | 0 · 20 B·1 |
+| 2026-10-31 | Mono | On | Development | (추가 2) S `Sort(new Desc())` · T `Sort(박싱해 둔 Desc)` · U `Sort()` · V `Sort(캐시한 Comparison)` | 145 B·2 · 128 B·1 · 128 B·1 · 0 |
+| 2026-10-31 | IL2CPP | On | Development | (추가 2) Q · R | 0 · 20 B·1 |
+| 2026-10-31 | IL2CPP | On | Development | (추가 2) S · T · U · V | 145 B·2 · 128 B·1 · 128 B·1 · 0 |
 | 2026-10-31 | Mono (에디터) | On | 에디터 | 0a 빈 호출 | 93 B·2.2 — 에디터 자체 할당(프레임당 약 9 KB)이 섞여 판정 불가, 참고용 |
 
 원본: `Notes/results/02-L01_Mono_2026-10-31.csv`, `02-L01_IL2CPP_2026-10-31.csv`, `02-L01_Editor_2026-10-31.csv`
@@ -60,6 +67,10 @@
   - G: 후속 질문에서 F가 0인 이유("`List<T>`에 자체 struct `Enumerator`가 있다")는 맞음. G의 40 B를 "yield 상태"로 답했으나, 실제로는 **같은 struct `Enumerator`가 박싱된 것**이다. `List<T>`는 `yield` 이터레이터를 쓰지 않는다. `IEnumerable<T>.GetEnumerator()` 명시적 구현이 `new Enumerator(this)`를 `IEnumerator<T>`로 반환하면서 박싱한다 (아래 발췌). `foreach`는 정적 타입의 `GetEnumerator()`를 고르므로 F는 struct를 반환하는 public 메서드를, G는 인터페이스 메서드를 탄다.
 - 추가 질문(M) 비교: "호출마다 1번"은 맞음. 이유("`_target` 때문")는 어긋남 — `_target`을 안 읽는 N도 똑같이 128 B·1회다. 원인은 람다가 **인스턴스 메서드를 호출해 `this`를 캡처**한다는 것. 이때 컴파일러는 클로저 클래스(`<>c__DisplayClass`)를 만들지 않고 람다 본문을 `AllocTargets`의 인스턴스 메서드(`<LambdaWrapsInstance>b__18_0`)로 옮긴 뒤 **`new Predicate<int>(this, 그 메서드)`** 를 매번 만든다 (아래 발췌). 할당되는 객체는 클로저가 아니라 델리게이트 하나. `<>c`의 static 캐시는 대상(`this`)이 없는 람다만 쓸 수 있으므로 M은 캐시되지 않는다.
   - 대처법 정리: 메서드 그룹(E·L)과 `this`를 캡처한 람다(M·N)는 매번 128 B. 델리게이트를 필드에 한 번 만들어 두면(O) 0, 델리게이트 대신 struct 제네릭 predicate(P)도 0. 인스턴스 메서드면 인스턴스 필드에 캐시한다.
+- 추가 질문 2 비교: (a) 0 ✅, (b) 1회 박싱 ✅ (`GreaterThan` 박싱 = 헤더 16 + `int` 4 = 20 B), (c) "할당 없음" ✗ — 실제 호출당 2회 145 B.
+  - 1회는 (b)와 같은 원인: `Sort`의 매개변수가 `IComparer<T>`라서 struct `Desc`를 **넘기는 순간 한 번** 박싱된다 (17 B = 헤더 16 + 빈 struct 1). 원소마다가 아니라 호출마다 1회다 — 박싱된 객체 하나를 안에서 계속 쓴다.
+  - 나머지 1회(128 B)는 **BCL 내부**: `ArraySortHelper<T>.Sort(keys, index, length, IComparer<T>)`가 `IntrospectiveSort(..., comparer.Compare)`로 `Comparison<T>` 델리게이트를 새로 만든다 (아래 발췌). 그래서 미리 박싱해 둔 비교자(T)도, 비교자 없는 `Sort()`(U, 안에서 `Comparer<T>.Default`를 감쌈)도 매번 128 B. 캐시한 `Comparison<T>`를 넘기는 `Sort(Comparison<T>)`(V)만 0이다.
+  - 교훈: 받는 쪽 시그니처가 인터페이스면 struct의 이점은 사라지고, 라이브러리 내부가 다시 감쌀 수도 있다. "할당 0"은 호출 경로 끝까지 봐야 말할 수 있다.
 - 한 단계 더:
   - **델리게이트 하나가 128 B**다. Mono/IL2CPP의 `Delegate`는 `method_ptr`, `invoke_impl`, `m_target`, `method`, `method_info`, `extra_arg` 등 필드가 많은 큰 객체다. 그래서 람다 비용은 캡처 변수 수보다 델리게이트 생성 여부가 좌우한다. 줄이려면 델리게이트를 필드에 한 번 캐시하거나, C# 9의 `static` 람다로 캡처 실수를 컴파일 오류로 막는다.
   - 크기가 백엔드마다 다르다: B 56/60, C 148/152, I 20/24 (Mono/IL2CPP). 클래스 인스턴스(클로저, `WaitForSeconds`)는 IL2CPP에서 8바이트 정렬된 크기로 잡히는 것으로 보이고, 박싱된 `int`(20 B)와 배열은 같다. 원인은 확인 필요 (`Il2CppClass::instance_size` 계산과 `GC Allocated In Frame`이 요청 크기를 세는지, Boehm 크기 클래스로 반올림한 크기를 세는지).
@@ -84,4 +95,12 @@ M `_list.FindIndex(x => IsMatch(x))` (`Labs.cpp`, 이름 해시 생략) — 람�
 Predicate_1_t...* L_2 = (Predicate_1_t...*)il2cpp_codegen_object_new(Predicate_1_t..._il2cpp_TypeInfo_var);
 Predicate_1__ctor_...(L_2, __this, (intptr_t)((void*)AllocTargets_U3CLambdaWrapsInstanceU3Eb__18_0_..._RuntimeMethod_var), NULL);
 L_3 = List_1_FindIndex_...(L_1, L_2, ...);
+```
+
+`ArraySortHelper<T>.Sort(T[], int, int, IComparer<T>)` (IL2CPP 생성 코드 `Generics__*.cpp`, full sharing 본문, 요약) — `comparer`가 null이면 `Comparer<T>.Default`를 쓰고, 어느 쪽이든 `Compare`를 델리게이트로 감싼다:
+```cpp
+L_1 = Comparer_1_get_Default_...(...);
+Comparison_1_t...* L_7 = (Comparison_1_t...*)il2cpp_codegen_object_new(il2cpp_rgctx_data(method->klass->rgctx_data, 6));
+Comparison_1__ctor_...(L_7, (RuntimeObject*)L_6, (intptr_t)((void*)GetInterfaceMethodInfo(L_6, 0, ...)), ...);
+ArraySortHelper_1_IntrospectiveSort_...(L_2, L_3, L_4, L_7, ...);
 ```

@@ -54,6 +54,12 @@ namespace Labs.GarbageCollection
                 new Case("N lambda wraps instance method (no field)", t.LambdaWrapsInstanceNoField),
                 new Case("O cached static delegate", t.CachedStaticDelegate),
                 new Case("P struct generic predicate", t.StructPredicate),
+                new Case("Q struct predicate with state (generic)", t.StructPredicateWithState),
+                new Case("R struct predicate via interface param", t.StructPredicateViaInterface),
+                new Case("S Sort(new Desc()) struct comparer", t.SortStructComparer),
+                new Case("T Sort(cached boxed comparer)", t.SortCachedBoxedComparer),
+                new Case("U Sort() default", t.SortDefault),
+                new Case("V Sort(cached Comparison<int>)", t.SortCachedComparison),
             };
 
             using var metrics = new LabMetrics();

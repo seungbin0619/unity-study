@@ -151,5 +151,71 @@ namespace Labs.GarbageCollection
                 if (pred.Invoke(list[i])) return i;
             return -1;
         }
+
+        // --- 추가 2: struct predicate를 받는 쪽 시그니처 ---
+
+        readonly struct GreaterThan : IIntPredicate
+        {
+            readonly int _min;
+            public GreaterThan(int min) => _min = min;
+            public bool Invoke(int x) => x > _min;
+        }
+
+        readonly struct Desc : IComparer<int>
+        {
+            public int Compare(int a, int b) => b.CompareTo(a);
+        }
+
+        static int FindIndexI(List<int> list, IIntPredicate pred)
+        {
+            for (var i = 0; i < list.Count; i++)
+                if (pred.Invoke(list[i])) return i;
+            return -1;
+        }
+
+        readonly List<int> _sortList = new List<int> { 5, 3, 1, 4, 2 };
+        static readonly IComparer<int> s_boxedDesc = new Desc();
+
+        // Q
+        public void StructPredicateWithState()
+        {
+            Sink += FindIndex(_list, new GreaterThan(_target));
+        }
+
+        // R
+        public void StructPredicateViaInterface()
+        {
+            Sink += FindIndexI(_list, new GreaterThan(_target));
+        }
+
+        // S
+        public void SortStructComparer()
+        {
+            _sortList.Sort(new Desc());
+            Sink += _sortList[0];
+        }
+
+        // T
+        public void SortCachedBoxedComparer()
+        {
+            _sortList.Sort(s_boxedDesc);
+            Sink += _sortList[0];
+        }
+
+        // U
+        public void SortDefault()
+        {
+            _sortList.Sort();
+            Sink += _sortList[0];
+        }
+
+        static readonly Comparison<int> s_descComparison = (a, b) => b.CompareTo(a);
+
+        // V
+        public void SortCachedComparison()
+        {
+            _sortList.Sort(s_descComparison);
+            Sink += _sortList[0];
+        }
     }
 }

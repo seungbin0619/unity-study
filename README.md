@@ -69,7 +69,7 @@ C# 래퍼와 C++ 네이티브 객체의 관계, 경계를 넘는 비용, IL2CPP�
 Boehm GC의 특성, 숨은 할당, 힙 크기와 단편화, Incremental GC.
 
 > ✅ **[02-L01 숨은 할당 측정](Assets/Labs/02_GC/L01_HiddenAlloc/README.md)** · `Mono` `IL2CPP`\
-> 델리게이트 생성이 128 B로 가장 큼 (C# 9는 메서드 그룹·`this` 캡처 람다를 캐시 안 함, 필드 캐시 시 0). `IEnumerable<T>` foreach·LINQ는 박싱된 열거자 40 B, 인자 없는 `params`는 0
+> 델리게이트 생성이 128 B로 가장 큼 (C# 9는 메서드 그룹·`this` 캡처 람다를 캐시 안 함, 필드 캐시 시 0). `IEnumerable<T>` foreach·LINQ는 열거자 박싱 40 B, `List.Sort()`도 매번 128 B
 
 > ⏳ 02-L02 클로저 할당 시점
 
