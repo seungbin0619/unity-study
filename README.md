@@ -14,7 +14,7 @@ Unity 엔진 내부 동작을 문서로만 읽지 않고 **직접 측정해서 �
 | 주제 | 진행 |
 |---|---|
 | [1. 네이티브–매니지드 경계](#1-네이티브매니지드-경계) | 10 / 10 완료 |
-| [2. 메모리와 GC](#2-메모리와-gc) | 2 / 9 |
+| [2. 메모리와 GC](#2-메모리와-gc) | 3 / 9 |
 | 3. PlayerLoop · 4. 직렬화와 에셋 파이프라인 · 5. 렌더링 파이프라인 · 6. DOTS | 예정 |
 
 ## 실행 방법
@@ -74,7 +74,8 @@ Boehm GC의 특성, 숨은 할당, 힙 크기와 단편화, Incremental GC.
 > ✅ **[02-L02 클로저 할당 시점](Assets/Labs/02_GC/L02_ClosureTiming/README.md)** · `Mono` `IL2CPP`\
 > 클로저는 캡처 변수의 스코프 진입 시 생성. 매개변수를 캡처하면 람다 분기를 안 타도 호출마다 20~24 B
 
-> ⏳ 02-L03 `Instantiate`/`Destroy` vs 풀링
+> ✅ **[02-L03 `Instantiate`/`Destroy` vs 풀링](Assets/Labs/02_GC/L03_Pooling/README.md)** · `Mono` `IL2CPP`\
+> `Instantiate`의 GC 할당은 객체당 64 B뿐(나머지는 네이티브). 풀링 이득은 주로 CPU: 100개/프레임에서 약 2.2배 빠름
 
 > ⏳ 02-L04 GC Used vs Reserved
 

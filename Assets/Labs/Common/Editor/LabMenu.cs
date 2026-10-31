@@ -45,6 +45,9 @@ namespace Labs.Editor
         [MenuItem("Labs/02/L02 Closure Timing")]
         static void Run02L02() => Run("02-L02");
 
+        [MenuItem("Labs/02/L03 Pooling")]
+        static void Run02L03() => Run("02-L03");
+
         public static void Run(string labId)
         {
             if (EditorApplication.isPlaying)
