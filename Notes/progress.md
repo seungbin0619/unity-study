@@ -28,6 +28,8 @@
 - [힌트 후 정답] (2026-10-31) 01-L09 기본 설정에서 `List<string>.Add`가 `List<int>.Add`보다 4배 느린 이유 — 1차 "참조 타입은 타입마다 크기가 달라서"(오답: 배열에는 8바이트 포인터가 들어감) → 힌트(`SetAt`의 `Il2CppCodeGenWriteBarrier`, `gcIncremental: 1`) 후 "참조가 중간에 바뀌면 마킹을 다시 해야 해서 배리어" 정답. 배리어는 dirty 표시만 하고 마킹 중이 아니어도 항상 실행된다는 점은 보충함
 - [부분 정답 1/2] (2026-10-31) 01-L10 Stripping High에서 리플렉션 대상 — "둘 다 null". B(런타임 조합)는 맞음. A(상수 문자열)는 UnityLinker가 패턴을 알아봐서 타입은 남고, 생성자가 지워져 `MissingMethodException`
 - [정답] (2026-10-31) 01-L10 `[Preserve]` 붙인 클래스에서 `Ping`이 지워진 이유 — "각 메서드도 사용 안 되면 삭제해도 된다고 판단". `[Preserve]`는 붙인 대상(타입 + 기본 생성자)에만 적용된다는 점은 보충함
+- [부분 정답 8/11] (2026-10-31) 02-L01 숨은 할당 A~K — B의 할당 2회(string + 박싱)까지 맞음. E(static 메서드 그룹)를 X로(실제 매번 델리게이트 128 B, C# 9는 캐시 안 함), H(LINQ `Count(pred)`)를 X로(실제 박싱된 열거자 40 B), K(인자 없는 `params`)를 O로(실제 `Array.Empty` → 0) 틀림. C를 클로저만으로 설명함(델리게이트 128 B가 대부분)
+- [부분 정답] (2026-10-31) 02-L01 G에서 할당되는 객체 — F가 0인 이유("`List<T>` 자체 struct `Enumerator`")는 맞음. G를 "yield 상태 할당"으로 답함. 실제로는 같은 struct `Enumerator`가 인터페이스 반환에서 박싱됨 (IL2CPP 생성 코드의 `Box(...)`로 확인)
 - [설명 들음] (2026-10-30) 검사 개수(정적)와 실행 횟수(루프 안이면 원소마다) 구분, IL2CPP는 hoist·경계 검사 제거를 하지 않음 (RyuJIT과 대비)
 
 ## 약점 (관련 실습에서 재확인)
@@ -35,7 +37,8 @@
 - 에디터와 플레이어의 차이를 "다른 DLL, 다른 코드"로 떠올리는 것 (Q2에서 힌트 필요) — 에디터 결과를 볼 때마다 "플레이어에서도 같은가?"를 묻기
 - 객체 생성 파이프라인 순서: 생성자(필드 초기화) → 역직렬화(값 덮어쓰기) → Awake. "동기 API = 메인 스레드에서 실행"이라고 가정하는 것 (동기 LoadScene도 로딩 스레드에서 역직렬화)
 - 성능 이슈를 네이티브 경계 비용 관점으로 설명하는 것 — 01-L05에서 핵심은 설명함(개선). 다음엔 "경계를 넘는 방향과 넘어오는 데이터 종류가 할당을 결정한다"까지 말하는지 확인
-- 인터페이스를 거칠 때 struct가 박싱되는 지점 찾기
+- 인터페이스를 거칠 때 struct가 박싱되는 지점 찾기 — 02-L01에서도 재발: G는 맞혔지만 원인을 "yield 상태"로 봤고, 같은 원인인 H(LINQ가 `IEnumerable<T>`로 받음)는 놓침. "API가 매개변수를 인터페이스로 받으면 내부 foreach에서 박싱"을 02-L02 이후 다시 묻기
+- 델리게이트 생성 시점: 캐시되는 것(캡처 없는 람다)과 매번 생성되는 것(메서드 그룹(C# 9), 캡처 람다)을 구분, 델리게이트가 클로저보다 훨씬 크다는 점 (02-L01). 02-L02에서 재확인
 - 정적 타입(static type)으로부터 "들어올 수 있는 런타임 타입의 범위"를 추론하는 것 — `sealed class`면 런타임 타입이 하나로 확정된다는 점을 바로 떠올리지 못함 (01-L08, 힌트 필요). 01-L09·인터페이스 호출 관련 실습에서 다시 묻기
 - 참조 타입 원소 컬렉션(List<class>)이 GC에게는 "객체 N개 + 참조 N개"라는 점 — 원소 클래스가 pointer-free여도 방문 비용은 남음
 - 참조 타입 배열·컬렉션에 저장되는 것은 객체가 아니라 8바이트 포인터라는 점 (01-L09에서 "참조 타입은 크기가 달라서"라고 답함). 02-L05·02-L06에서 다시 묻기
@@ -60,6 +63,7 @@
 - 2026-10-31 01-L08 IL2CPP 플레이어 실행 + 생성 코드·IL 읽기 — [README](../Assets/Labs/01_NativeManaged/L08_Sealed/README.md) (예상과 달리 devirtualization 없음 → 같은 날 가설 검증: IL 호출 대상이 final일 때만 직접 호출. 2016년 블로그 예제를 그대로 옮겨도 재현 안 됨. 범위: 6000.3 Development·Release 빌드, Windows x64)
 - 2026-10-31 01-L09 IL2CPP 플레이어 실행 (Code Generation 두 설정) + 생성 코드 읽기 — [README](../Assets/Labs/01_NativeManaged/L09_GenericSharing/README.md) (같은 날 학습자 요청으로 Incremental GC On/Off 비교: string−int 차이 약 6 ns 중 약 90%가 쓰기 배리어. 배리어 포함 여부는 빌드 시점 define `IL2CPP_ENABLE_WRITE_BARRIERS`로 결정)
 - 2026-10-31 01-L10 에디터 + IL2CPP 플레이어(Stripping High) 실행 + 생성 코드 확인 — [README](../Assets/Labs/01_NativeManaged/L10_Stripping/README.md) (1장 실습 모두 완료)
+- 2026-10-31 02-L01 에디터(참고용) + Mono·IL2CPP 플레이어 측정 + 생성 코드 확인 — [README](../Assets/Labs/02_GC/L01_HiddenAlloc/README.md)
 
 ## Player Settings 변경 이력
 (변경 시 날짜, 항목, 원래 값 → 바꾼 값, 복원 여부)
@@ -74,3 +78,4 @@
 - 2026-10-31 IL2CPP Code Generation: `OptimizeSpeed`(Faster runtime) → `OptimizeSize`(Faster (smaller) builds) (01-L09 비교 빌드 동안만), **복원됨** (`il2cppCodeGeneration: Standalone: 0`. 원래 `{}`였으나 값은 같은 OptimizeSpeed). 이 비교 빌드에서도 Backend는 `LabBuilder`가 복원함 (`Standalone: 0` 확인)
 - 2026-10-31 Incremental GC: `On` → `Off` (01-L09 쓰기 배리어 비용 검증 빌드 동안만), **복원됨** (`gcIncremental: 1` 확인, 복원 후 On 빌드로 재측정)
 - 2026-10-31 Managed Stripping Level: 기본값(`managedStrippingLevel: {}`, API로는 `Disabled`) → `High` (01-L10 빌드 동안만), **복원됨** (`Disabled`로 되돌림. 파일에는 `{}` 대신 `Standalone: 0`으로 남음, 값은 같음). Backend도 `Standalone: 0` 확인
+- 2026-10-31 Scripting Backend: Mono → IL2CPP (02-L01 빌드 동안만), **복원됨** (`Standalone: 0` 확인)
