@@ -47,6 +47,7 @@
 - 실행: 에디터 메뉴 `Labs/01/L04 Cascade Destroy` 또는 플레이어 `-lab 01-L04`
 
 ## 결과
+
 | 실행일 | 백엔드 | 빌드 | # | 항목 | (a) 구독 유지 | (b) `OnDisable`에서 해제 |
 |---|---|---|---|---|---|---|
 | 2026-10-29 | Editor (Mono) | 에디터 플레이 모드 | 1 | 같은 프레임 `cached == null` / `child == null` | `false` / `false` | `false` / `false` |

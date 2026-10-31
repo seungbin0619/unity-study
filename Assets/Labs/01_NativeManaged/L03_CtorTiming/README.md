@@ -30,6 +30,7 @@ MonoBehaviour의 C# 생성자(와 필드 초기화자)를 Unity가 언제, 몇 �
 - 실행: 에디터 메뉴 `Labs/01/L03 Ctor Timing` 또는 플레이어 `-lab 01-L03`
 
 ## 결과
+
 | 실행일 | 백엔드 | 빌드 | # | 경로 | 생성자 횟수 | 순서 (스레드) |
 |---|---|---|---|---|---|---|
 | 2026-10-29 | Editor (Mono) | 에디터 플레이 모드 | 1 | `AddComponent` | 1 | ctor(main) → Awake(main) |

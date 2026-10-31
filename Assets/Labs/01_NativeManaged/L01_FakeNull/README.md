@@ -38,6 +38,7 @@
 - 실행: 에디터 메뉴 `Labs/01/L01` 또는 플레이어 `-lab 01-L01`
 
 ## 결과
+
 | 실행일 | 백엔드 | 빌드 | # | 식 | (A) 같은 프레임 | (B) 다음 프레임 |
 |---|---|---|---|---|---|---|
 | 2026-10-29 | Editor (Mono) | 에디터 플레이 모드 | 1 | `go == null` | `false` | `true` |
@@ -46,9 +47,7 @@
 | | | | 4 | `(bool)go` | `true` | `false` |
 | | | | 5 | `go?.name` | `"Target"` | `MissingReferenceException` |
 | | | | 6 | `(go ?? fallback).name` | `"Target"` | `MissingReferenceException` |
-
 | 2026-10-29 | Editor (Mono) | 에디터 플레이 모드, 러너를 `Awaitable`로 교체 후 재실행 | 1~6 | (위와 동일) | 동일 | 동일 |
-
 | 2026-10-29 | Mono | Development 플레이어 (`-batchmode -nographics`) | 1~4 | | 에디터와 동일 | 에디터와 동일 |
 | | | | 5 | `go?.name` | `"Target"` | **`NullReferenceException`** |
 | | | | 6 | `(go ?? fallback).name` | `"Target"` | **`NullReferenceException`** |

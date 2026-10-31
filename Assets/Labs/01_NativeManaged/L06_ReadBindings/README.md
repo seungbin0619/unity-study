@@ -39,13 +39,16 @@
 - 실행: 에디터 메뉴 `Labs/01/L06 Read Bindings` 또는 플레이어 `-lab 01-L06`
 
 ## 결과
+
 `TryThrowEditorNullExceptionObject(Object, string)` 리플렉션 결과
 
 | 실행일 | 백엔드 | 빌드 | 메서드 존재 | IL 바이트 | `ldstr` 문자열 |
 |---|---|---|---|---|---|
-| 2026-10-29 | Editor (Mono) | 에디터 플레이 모드 | 있음 | **234** | 7개: `""`, `"MissingReferenceException:"`, `"The object of type '"`, `"' has been destroyed but you are still trying to access it."`, `" Parameter name: "` ×2, `"UnityEngine."` |
+| 2026-10-29 | Editor (Mono) | 에디터 플레이 모드 | 있음 | **234** | 7개 (아래) |
 | 2026-10-29 | Mono | Development 플레이어 | 있음 | **2** | **0개** |
 | 2026-10-29 | Editor (Mono) | 에디터 플레이 모드, Run In Background 켠 뒤 동작 확인용 재실행 | 있음 | 234 | 7개 (동일) |
+
+에디터의 `ldstr` 문자열 7개: `""`, `"MissingReferenceException:"`, `"The object of type '"`, `"' has been destroyed but you are still trying to access it."`, `" Parameter name: "` ×2, `"UnityEngine."`
 
 DLL 파일 바이트 검색 (2026-10-29, 경고 메시지 UTF-16 / 메서드 이름 ASCII)
 

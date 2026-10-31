@@ -33,6 +33,7 @@
 - 실행: 에디터 메뉴 `Labs/01/L02 New vs AddComponent` 또는 플레이어 `-lab 01-L02`
 
 ## 결과
+
 | 실행일 | 백엔드 | 빌드 | # | 식 | `a` (new) | `b` (AddComponent) |
 |---|---|---|---|---|---|---|
 | 2026-10-29 | Editor (Mono) | 에디터 플레이 모드 | 0 | 콘솔 출력 | Warning: "You are trying to create a MonoBehaviour using the 'new' keyword. This is not allowed. …" | 없음 |

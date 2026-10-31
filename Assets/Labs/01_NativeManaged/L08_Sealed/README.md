@@ -40,7 +40,6 @@
 | (B) `CallDog` | `callvirt Animal::Speak` | 같음 (가상 호출) |
 | (C) `CallSealedDog` | `callvirt Animal::Speak` | 같음 (가상 호출) |
 | (D) `CallWolf` | `callvirt Animal::Speak` | 같음 (가상 호출) |
-
 | (E) `CallFox` (가설 검증) | `callvirt Fox::Speak` | **`Fox_Speak_m...(L_0, NULL)` 직접 호출** |
 | (F) `CallOpenFox` (가설 검증) | `callvirt OpenFox::Speak` | `VirtualFuncInvoker0<int32_t>::Invoke(5, L_0)` |
 
