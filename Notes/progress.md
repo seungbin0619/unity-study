@@ -38,6 +38,9 @@
 ## 미응답 질문 (다음 세션 첫 질문으로)
 (없음)
 
+## 보류한 작업
+- 2026-10-31 `Docs/build-and-environment.md`에 `Labs/Build/IL2CPP (Release)` 메뉴(출력 `Builds/IL2CPP-Release`, 생성 코드 비교용, 프로파일러 카운터 없음)를 추가하기 — 학습자가 "나중에"로 보류. Docs 수정이라 할 때 다시 묻는다
+
 ## 실습 기록
 (실습별 상세는 각 실습 README. 여기에는 날짜와 링크만)
 - 2026-10-29 01-L01 에디터 + Mono 플레이어 실행 — [README](../Assets/Labs/01_NativeManaged/L01_FakeNull/README.md) (IL2CPP 미실행, 예외 타입 차이 원인은 01-L06에서 확인)
