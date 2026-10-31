@@ -32,7 +32,7 @@ C# 래퍼와 C++ 네이티브 객체의 관계, 경계를 넘는 비용, IL2CPP�
 | 01-L06 | UnityCsReference 바인딩 코드 읽기 | 완료 (Mono, IL2CPP 미실행) | `MissingReferenceException`은 instance ID ≠ 0일 때 에디터에서만 만들어짐. 플레이어 CoreModule의 `TryThrowEditorNullExceptionObject`는 IL 2바이트짜리 빈 메서드(에디터 234바이트) | [README](Assets/Labs/01_NativeManaged/L06_ReadBindings/README.md) |
 | 01-L07 | IL2CPP null·경계 검사와 `Il2CppSetOption` | 완료 (IL2CPP) | 역참조마다 `NullCheck` 1개(`ReadChain` 3개, `SumArray` 루프 안 2개). `this`는 호출하는 쪽에서 검사하므로 0개. 배열 경계 검사는 `GetAt()` 안에 숨어 있음. 검사를 끄면 루프가 원소당 0.48 → 0.17 ns (약 2.9배) | [README](Assets/Labs/01_NativeManaged/L07_NullChecks/README.md) |
 | 01-L08 | `sealed`와 devirtualization | 완료 (IL2CPP) | C# 컴파일러는 정적 타입과 관계없이 `callvirt Animal::Speak`를 냄. IL2CPP 6000.3은 `sealed class`·`sealed override` 모두 devirtualize하지 않고 `VirtualFuncInvoker`를 생성했으며, 호출 시간도 네 경우 모두 약 2.1 ns로 같음 (이론상 C·D는 직접 호출 가능). 가설 검증: IL2CPP는 **IL에 적힌 호출 대상 메서드가 final일 때만** 직접 호출로 바꿈. `callvirt Fox::Speak`(final)은 직접 호출되어 0.46 ns(약 4배 빠름). 2016년 블로그 예제를 그대로 옮겨도 `sealed Cow`가 가상 호출로 남음 (6000.3, Development·Release 빌드 모두 같음) | [README](Assets/Labs/01_NativeManaged/L08_Sealed/README.md) |
-| 01-L09 | 제네릭 인스턴스 생성과 full generic sharing | 대기 | | |
+| 01-L09 | 제네릭 인스턴스 생성과 full generic sharing | 완료 (IL2CPP) | `List<int/float/Vector3/string/GameObject>.Add` 본문은 기본(`Faster runtime`)에서 4벌(값 타입마다 1 + 참조 공유 1), `Faster (smaller) builds`에서 1벌(`Il2CppFullySharedGenericAny`, 크기를 런타임에 조회). 대신 `GameAssembly.dll` 42.6 → 24.1 MB, 값 타입 `Add` 1.8 → 10 ns. 기본 설정에서 참조 타입 `Add`가 7.5 ns로 4배 느린 것은 참조 배열 저장에만 붙는 쓰기 배리어 때문 (Incremental GC On, 배리어 단독 비용은 확인 필요) | [README](Assets/Labs/01_NativeManaged/L09_GenericSharing/README.md) |
 | 01-L10 | 코드 스트리핑과 `[Preserve]` / `link.xml` | 대기 | | |
 
 ## 2. 메모리와 GC
