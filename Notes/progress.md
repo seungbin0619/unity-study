@@ -71,7 +71,7 @@
 - 2026-10-31 01-L10 에디터 + IL2CPP 플레이어(Stripping High) 실행 + 생성 코드 확인 — [README](../Assets/Labs/01_NativeManaged/L10_Stripping/README.md) (1장 실습 모두 완료)
 - 2026-10-31 02-L01 에디터(참고용) + Mono·IL2CPP 플레이어 측정 + 생성 코드 확인 — [README](../Assets/Labs/02_GC/L01_HiddenAlloc/README.md)
 - 2026-10-31 02-L02 Mono·IL2CPP 플레이어 측정 + 생성 코드 확인 — [README](../Assets/Labs/02_GC/L02_ClosureTiming/README.md)
-- 2026-10-31 02-L03 Mono·IL2CPP 플레이어 측정 — [README](../Assets/Labs/02_GC/L03_Pooling/README.md) (객체당 64 B·2회 할당의 정체는 확인 필요로 남김)
+- 2026-10-31 02-L03 Mono·IL2CPP 플레이어 측정 — [README](../Assets/Labs/02_GC/L03_Pooling/README.md) (2026-11-01 C 분해 추가: 64 B = GameObject 래퍼 24 + 스크립트 인스턴스 40)
 
 ## Player Settings 변경 이력
 (변경 시 날짜, 항목, 원래 값 → 바꾼 값, 복원 여부)
@@ -91,3 +91,4 @@
 - 2026-10-31 Scripting Backend: Mono → IL2CPP (02-L01 추가 케이스 Q~V 빌드 3회, 1회는 생성 코드 폴더 잠금으로 실패 후 재빌드), **복원됨** (매번 `Standalone: 0` 확인)
 - 2026-10-31 Scripting Backend: Mono → IL2CPP (02-L02 빌드 동안만), **복원됨** (`Standalone: 0` 확인)
 - 2026-10-31 Scripting Backend: Mono → IL2CPP (02-L03 빌드 동안만), **복원됨** (`Standalone: 0` 확인)
+- 2026-11-01 Scripting Backend: Mono → IL2CPP (02-L03 C 분해 빌드 동안만), **복원됨** (`Standalone: 0` 확인)
