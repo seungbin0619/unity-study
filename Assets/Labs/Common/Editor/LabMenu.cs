@@ -48,6 +48,9 @@ namespace Labs.Editor
         [MenuItem("Labs/02/L03 Pooling")]
         static void Run02L03() => Run("02-L03");
 
+        [MenuItem("Labs/02/L04 Used vs Reserved")]
+        static void Run02L04() => Run("02-L04");
+
         public static void Run(string labId)
         {
             if (EditorApplication.isPlaying)
