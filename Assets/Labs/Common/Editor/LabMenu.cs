@@ -51,6 +51,9 @@ namespace Labs.Editor
         [MenuItem("Labs/02/L04 Used vs Reserved")]
         static void Run02L04() => Run("02-L04");
 
+        [MenuItem("Labs/02/L05 Mark Cost")]
+        static void Run02L05() => Run("02-L05");
+
         public static void Run(string labId)
         {
             if (EditorApplication.isPlaying)
