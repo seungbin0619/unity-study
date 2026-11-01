@@ -45,7 +45,12 @@
   - **On이면 GC가 더 자주 돈다**(Mono 25 → 51회). 부분 수집이 덜 회수하므로 다음 트리거가 빨리 온다. 장수 객체가 많고 쓰레기가 꾸준한 이 실험은 incremental에 유리한 조건이다. 장수 객체의 참조를 매 프레임 바꾸는 코드라면 dirty 페이지가 많아져 부분 수집 이득이 줄어든다 (미측정).
   - **full 마킹 중 힙이 자란다.** 마킹이 여러 프레임에 걸치면 그동안의 할당이 회수되지 못해 Used가 평소 최고치를 넘는다. 메모리 예산이 빠듯하면 이것도 고려해야 한다.
   - Mono도 같은 패턴(약 20회 주기의 스파이크)이므로 같은 Boehm 로직으로 보이지만, Mono 런타임 소스로는 확인하지 않음 (확인 필요).
-- 근거: 이 프로젝트 실측. `Editor/Data/il2cpp/external/bdwgc/alloc.c`(`GC_full_freq = 19`, `GC_maybe_gc`), `libil2cpp/gc/BoehmGC.cpp`(`GC_enable_incremental`, `GC_set_time_limit`)
+- 추가 (학습자 질문, 2026-11-01) — GC는 언제 도는가: 주기가 아니라 **할당량 임계치**. `alloc.c` `min_bytes_allocd()`:
+  - 임계치 = (2 × 참조 있는 블록 사용량 + 참조 없는(atomic) 블록 사용량 / 4 + 루트) / `GC_free_space_divisor`(기본 3). incremental이면 다시 ÷ 2. 마지막 수집 이후 할당이 이것을 넘으면 다음 할당에서 수집.
+  - 이 실험 대입 (Mono Off): `_live` 배열 30.5 MB(참조 있음) × 2 + `EnemyClass` 122 MB(atomic) / 4 ≈ 92 MB → ÷ 3 ≈ 31 MB. 실측 24프레임 × 1.33 MB ≈ 32 MB. On이면 ÷ 2 ≈ 15 MB, 실측 11.5프레임 × 1.33 ≈ 15 MB. 둘 다 맞음.
+  - IL2CPP는 같은 계산(≈ 36 MB / 18 MB)과 실측(약 50 MB / 18 MB)의 Off 쪽이 어긋남. IL2CPP 빌드의 `GC_FREE_SPACE_DIVISOR` 정의나 루트 크기 차이일 수 있음 (확인 필요).
+  - 함의: 살아 있는 힙이 클수록 GC가 덜 자주 돌지만 한 번이 비싸다. 참조 있는 데이터는 atomic 데이터보다 임계치 계산에서 8배 무겁게 친다 — 02-L05의 "GC가 읽어야 하는 바이트"와 같은 기준.
+- 근거: 이 프로젝트 실측. `Editor/Data/il2cpp/external/bdwgc/alloc.c`(`GC_full_freq = 19`, `GC_maybe_gc`, `min_bytes_allocd`), `libil2cpp/gc/BoehmGC.cpp`(`GC_enable_incremental`, `GC_set_time_limit`)
 
 ## 코드 발췌
 ```c
