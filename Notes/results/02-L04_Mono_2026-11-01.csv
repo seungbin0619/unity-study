@@ -42,3 +42,138 @@ run_time,lab,backend,dev_build,unity,condition,metric,value
 2026-11-01T21:16:25,02-L04,Mono,1,6000.3.25f1,5 drop + Collect again,Profiler.GetMonoHeapSizeLong MB,51.84
 2026-11-01T21:16:25,02-L04,Mono,1,6000.3.25f1,5 drop + Collect again,GC.GetTotalMemory(false) MB,0.97
 2026-11-01T21:16:25,02-L04,Mono,1,6000.3.25f1,5 drop + Collect again,GC.CollectionCount(0),20
+2026-11-01T21:27:35,02-L04,Mono,1,6000.3.25f1,-,metrics valid,true
+2026-11-01T21:27:35,02-L04,Mono,1,6000.3.25f1,0 baseline (after Collect),recorder GC Used MB,0.96
+2026-11-01T21:27:35,02-L04,Mono,1,6000.3.25f1,0 baseline (after Collect),recorder GC Reserved MB,1.34
+2026-11-01T21:27:35,02-L04,Mono,1,6000.3.25f1,0 baseline (after Collect),Profiler.GetMonoUsedSizeLong MB,0.96
+2026-11-01T21:27:35,02-L04,Mono,1,6000.3.25f1,0 baseline (after Collect),Profiler.GetMonoHeapSizeLong MB,1.34
+2026-11-01T21:27:35,02-L04,Mono,1,6000.3.25f1,0 baseline (after Collect),GC.GetTotalMemory(false) MB,0.96
+2026-11-01T21:27:35,02-L04,Mono,1,6000.3.25f1,0 baseline (after Collect),GC.CollectionCount(0),16
+2026-11-01T21:27:35,02-L04,Mono,1,6000.3.25f1,1 after new byte[50MB],recorder GC Used MB,50.96
+2026-11-01T21:27:35,02-L04,Mono,1,6000.3.25f1,1 after new byte[50MB],recorder GC Reserved MB,51.84
+2026-11-01T21:27:35,02-L04,Mono,1,6000.3.25f1,1 after new byte[50MB],Profiler.GetMonoUsedSizeLong MB,50.96
+2026-11-01T21:27:35,02-L04,Mono,1,6000.3.25f1,1 after new byte[50MB],Profiler.GetMonoHeapSizeLong MB,51.84
+2026-11-01T21:27:35,02-L04,Mono,1,6000.3.25f1,1 after new byte[50MB],GC.GetTotalMemory(false) MB,50.96
+2026-11-01T21:27:35,02-L04,Mono,1,6000.3.25f1,1 after new byte[50MB],GC.CollectionCount(0),17
+2026-11-01T21:27:35,02-L04,Mono,1,6000.3.25f1,"2a ref dropped, no Collect",recorder GC Used MB,50.96
+2026-11-01T21:27:35,02-L04,Mono,1,6000.3.25f1,"2a ref dropped, no Collect",recorder GC Reserved MB,51.84
+2026-11-01T21:27:35,02-L04,Mono,1,6000.3.25f1,"2a ref dropped, no Collect",Profiler.GetMonoUsedSizeLong MB,50.96
+2026-11-01T21:27:35,02-L04,Mono,1,6000.3.25f1,"2a ref dropped, no Collect",Profiler.GetMonoHeapSizeLong MB,51.84
+2026-11-01T21:27:35,02-L04,Mono,1,6000.3.25f1,"2a ref dropped, no Collect",GC.GetTotalMemory(false) MB,50.96
+2026-11-01T21:27:35,02-L04,Mono,1,6000.3.25f1,"2a ref dropped, no Collect",GC.CollectionCount(0),17
+2026-11-01T21:27:35,02-L04,Mono,1,6000.3.25f1,2b after GC.Collect(),recorder GC Used MB,0.96
+2026-11-01T21:27:35,02-L04,Mono,1,6000.3.25f1,2b after GC.Collect(),recorder GC Reserved MB,51.84
+2026-11-01T21:27:35,02-L04,Mono,1,6000.3.25f1,2b after GC.Collect(),Profiler.GetMonoUsedSizeLong MB,0.96
+2026-11-01T21:27:35,02-L04,Mono,1,6000.3.25f1,2b after GC.Collect(),Profiler.GetMonoHeapSizeLong MB,51.84
+2026-11-01T21:27:35,02-L04,Mono,1,6000.3.25f1,2b after GC.Collect(),GC.GetTotalMemory(false) MB,0.96
+2026-11-01T21:27:35,02-L04,Mono,1,6000.3.25f1,2b after GC.Collect(),GC.CollectionCount(0),18
+2026-11-01T21:27:35,02-L04,Mono,1,6000.3.25f1,3 after 10 s idle,recorder GC Used MB,0.96
+2026-11-01T21:27:35,02-L04,Mono,1,6000.3.25f1,3 after 10 s idle,recorder GC Reserved MB,51.84
+2026-11-01T21:27:35,02-L04,Mono,1,6000.3.25f1,3 after 10 s idle,Profiler.GetMonoUsedSizeLong MB,0.96
+2026-11-01T21:27:35,02-L04,Mono,1,6000.3.25f1,3 after 10 s idle,Profiler.GetMonoHeapSizeLong MB,51.84
+2026-11-01T21:27:35,02-L04,Mono,1,6000.3.25f1,3 after 10 s idle,GC.GetTotalMemory(false) MB,0.96
+2026-11-01T21:27:35,02-L04,Mono,1,6000.3.25f1,3 after 10 s idle,GC.CollectionCount(0),18
+2026-11-01T21:27:35,02-L04,Mono,1,6000.3.25f1,4 re-allocate byte[50MB],recorder GC Used MB,50.96
+2026-11-01T21:27:35,02-L04,Mono,1,6000.3.25f1,4 re-allocate byte[50MB],recorder GC Reserved MB,51.84
+2026-11-01T21:27:35,02-L04,Mono,1,6000.3.25f1,4 re-allocate byte[50MB],Profiler.GetMonoUsedSizeLong MB,50.97
+2026-11-01T21:27:35,02-L04,Mono,1,6000.3.25f1,4 re-allocate byte[50MB],Profiler.GetMonoHeapSizeLong MB,51.84
+2026-11-01T21:27:35,02-L04,Mono,1,6000.3.25f1,4 re-allocate byte[50MB],GC.GetTotalMemory(false) MB,50.97
+2026-11-01T21:27:35,02-L04,Mono,1,6000.3.25f1,4 re-allocate byte[50MB],GC.CollectionCount(0),19
+2026-11-01T21:27:35,02-L04,Mono,1,6000.3.25f1,5 drop + Collect again,recorder GC Used MB,0.96
+2026-11-01T21:27:35,02-L04,Mono,1,6000.3.25f1,5 drop + Collect again,recorder GC Reserved MB,51.84
+2026-11-01T21:27:35,02-L04,Mono,1,6000.3.25f1,5 drop + Collect again,Profiler.GetMonoUsedSizeLong MB,0.96
+2026-11-01T21:27:35,02-L04,Mono,1,6000.3.25f1,5 drop + Collect again,Profiler.GetMonoHeapSizeLong MB,51.84
+2026-11-01T21:27:35,02-L04,Mono,1,6000.3.25f1,5 drop + Collect again,GC.GetTotalMemory(false) MB,0.96
+2026-11-01T21:27:35,02-L04,Mono,1,6000.3.25f1,5 drop + Collect again,GC.CollectionCount(0),20
+2026-11-01T21:27:35,02-L04,Mono,1,6000.3.25f1,6 Collect x6 total,recorder GC Used MB,0.96
+2026-11-01T21:27:35,02-L04,Mono,1,6000.3.25f1,6 Collect x6 total,recorder GC Reserved MB,51.84
+2026-11-01T21:27:35,02-L04,Mono,1,6000.3.25f1,6 Collect x6 total,Profiler.GetMonoUsedSizeLong MB,0.96
+2026-11-01T21:27:35,02-L04,Mono,1,6000.3.25f1,6 Collect x6 total,Profiler.GetMonoHeapSizeLong MB,51.84
+2026-11-01T21:27:35,02-L04,Mono,1,6000.3.25f1,6 Collect x6 total,GC.GetTotalMemory(false) MB,0.96
+2026-11-01T21:27:35,02-L04,Mono,1,6000.3.25f1,6 Collect x6 total,GC.CollectionCount(0),25
+2026-11-01T21:27:35,02-L04,Mono,1,6000.3.25f1,7 Collect x12 total,recorder GC Used MB,0.96
+2026-11-01T21:27:35,02-L04,Mono,1,6000.3.25f1,7 Collect x12 total,recorder GC Reserved MB,51.84
+2026-11-01T21:27:35,02-L04,Mono,1,6000.3.25f1,7 Collect x12 total,Profiler.GetMonoUsedSizeLong MB,0.96
+2026-11-01T21:27:35,02-L04,Mono,1,6000.3.25f1,7 Collect x12 total,Profiler.GetMonoHeapSizeLong MB,51.84
+2026-11-01T21:27:35,02-L04,Mono,1,6000.3.25f1,7 Collect x12 total,GC.GetTotalMemory(false) MB,0.96
+2026-11-01T21:27:35,02-L04,Mono,1,6000.3.25f1,7 Collect x12 total,GC.CollectionCount(0),31
+2026-11-01T21:27:35,02-L04,Mono,1,6000.3.25f1,8 Collect x32 total,recorder GC Used MB,0.96
+2026-11-01T21:27:35,02-L04,Mono,1,6000.3.25f1,8 Collect x32 total,recorder GC Reserved MB,51.84
+2026-11-01T21:27:35,02-L04,Mono,1,6000.3.25f1,8 Collect x32 total,Profiler.GetMonoUsedSizeLong MB,0.96
+2026-11-01T21:27:35,02-L04,Mono,1,6000.3.25f1,8 Collect x32 total,Profiler.GetMonoHeapSizeLong MB,51.84
+2026-11-01T21:27:35,02-L04,Mono,1,6000.3.25f1,8 Collect x32 total,GC.GetTotalMemory(false) MB,0.96
+2026-11-01T21:27:35,02-L04,Mono,1,6000.3.25f1,8 Collect x32 total,GC.CollectionCount(0),51
+2026-11-01T21:27:35,02-L04,Mono,1,6000.3.25f1,9 after 30 s idle,recorder GC Used MB,0.96
+2026-11-01T21:27:35,02-L04,Mono,1,6000.3.25f1,9 after 30 s idle,recorder GC Reserved MB,51.84
+2026-11-01T21:27:35,02-L04,Mono,1,6000.3.25f1,9 after 30 s idle,Profiler.GetMonoUsedSizeLong MB,0.96
+2026-11-01T21:27:35,02-L04,Mono,1,6000.3.25f1,9 after 30 s idle,Profiler.GetMonoHeapSizeLong MB,51.84
+2026-11-01T21:27:35,02-L04,Mono,1,6000.3.25f1,9 after 30 s idle,GC.GetTotalMemory(false) MB,0.97
+2026-11-01T21:27:35,02-L04,Mono,1,6000.3.25f1,9 after 30 s idle,GC.CollectionCount(0),51
+2026-11-01T21:27:36,02-L04,Mono,1,6000.3.25f1,-,metrics valid,true
+2026-11-01T21:27:36,02-L04,Mono,1,6000.3.25f1,F0 baseline,recorder GC Used MB,0.96
+2026-11-01T21:27:36,02-L04,Mono,1,6000.3.25f1,F0 baseline,recorder GC Reserved MB,1.34
+2026-11-01T21:27:36,02-L04,Mono,1,6000.3.25f1,F0 baseline,Profiler.GetMonoUsedSizeLong MB,0.96
+2026-11-01T21:27:36,02-L04,Mono,1,6000.3.25f1,F0 baseline,Profiler.GetMonoHeapSizeLong MB,1.34
+2026-11-01T21:27:36,02-L04,Mono,1,6000.3.25f1,F0 baseline,GC.GetTotalMemory(false) MB,0.96
+2026-11-01T21:27:36,02-L04,Mono,1,6000.3.25f1,F0 baseline,GC.CollectionCount(0),16
+2026-11-01T21:27:36,02-L04,Mono,1,6000.3.25f1,F1 100 x 512KB held (50 MB),recorder GC Used MB,51.36
+2026-11-01T21:27:36,02-L04,Mono,1,6000.3.25f1,F1 100 x 512KB held (50 MB),recorder GC Reserved MB,65.05
+2026-11-01T21:27:36,02-L04,Mono,1,6000.3.25f1,F1 100 x 512KB held (50 MB),Profiler.GetMonoUsedSizeLong MB,51.36
+2026-11-01T21:27:36,02-L04,Mono,1,6000.3.25f1,F1 100 x 512KB held (50 MB),Profiler.GetMonoHeapSizeLong MB,65.05
+2026-11-01T21:27:36,02-L04,Mono,1,6000.3.25f1,F1 100 x 512KB held (50 MB),GC.GetTotalMemory(false) MB,51.36
+2026-11-01T21:27:36,02-L04,Mono,1,6000.3.25f1,F1 100 x 512KB held (50 MB),GC.CollectionCount(0),60
+2026-11-01T21:27:36,02-L04,Mono,1,6000.3.25f1,F2 odd chunks freed + Collect (25 MB in 512KB holes),recorder GC Used MB,26.16
+2026-11-01T21:27:36,02-L04,Mono,1,6000.3.25f1,F2 odd chunks freed + Collect (25 MB in 512KB holes),recorder GC Reserved MB,65.05
+2026-11-01T21:27:36,02-L04,Mono,1,6000.3.25f1,F2 odd chunks freed + Collect (25 MB in 512KB holes),Profiler.GetMonoUsedSizeLong MB,26.16
+2026-11-01T21:27:36,02-L04,Mono,1,6000.3.25f1,F2 odd chunks freed + Collect (25 MB in 512KB holes),Profiler.GetMonoHeapSizeLong MB,65.05
+2026-11-01T21:27:36,02-L04,Mono,1,6000.3.25f1,F2 odd chunks freed + Collect (25 MB in 512KB holes),GC.GetTotalMemory(false) MB,26.16
+2026-11-01T21:27:36,02-L04,Mono,1,6000.3.25f1,F2 odd chunks freed + Collect (25 MB in 512KB holes),GC.CollectionCount(0),61
+2026-11-01T21:27:36,02-L04,Mono,1,6000.3.25f1,F3 new byte[20MB] with 512KB holes,recorder GC Used MB,46.16
+2026-11-01T21:27:36,02-L04,Mono,1,6000.3.25f1,F3 new byte[20MB] with 512KB holes,recorder GC Reserved MB,85.56
+2026-11-01T21:27:36,02-L04,Mono,1,6000.3.25f1,F3 new byte[20MB] with 512KB holes,Profiler.GetMonoUsedSizeLong MB,46.16
+2026-11-01T21:27:36,02-L04,Mono,1,6000.3.25f1,F3 new byte[20MB] with 512KB holes,Profiler.GetMonoHeapSizeLong MB,85.56
+2026-11-01T21:27:36,02-L04,Mono,1,6000.3.25f1,F3 new byte[20MB] with 512KB holes,GC.GetTotalMemory(false) MB,46.16
+2026-11-01T21:27:36,02-L04,Mono,1,6000.3.25f1,F3 new byte[20MB] with 512KB holes,GC.CollectionCount(0),62
+2026-11-01T21:27:36,02-L04,Mono,1,6000.3.25f1,F4 all freed + Collect,recorder GC Used MB,0.96
+2026-11-01T21:27:36,02-L04,Mono,1,6000.3.25f1,F4 all freed + Collect,recorder GC Reserved MB,85.56
+2026-11-01T21:27:36,02-L04,Mono,1,6000.3.25f1,F4 all freed + Collect,Profiler.GetMonoUsedSizeLong MB,0.96
+2026-11-01T21:27:36,02-L04,Mono,1,6000.3.25f1,F4 all freed + Collect,Profiler.GetMonoHeapSizeLong MB,85.56
+2026-11-01T21:27:36,02-L04,Mono,1,6000.3.25f1,F4 all freed + Collect,GC.GetTotalMemory(false) MB,0.96
+2026-11-01T21:27:36,02-L04,Mono,1,6000.3.25f1,F4 all freed + Collect,GC.CollectionCount(0),63
+2026-11-01T21:27:36,02-L04,Mono,1,6000.3.25f1,F5 new byte[20MB] after full free,recorder GC Used MB,20.97
+2026-11-01T21:27:36,02-L04,Mono,1,6000.3.25f1,F5 new byte[20MB] after full free,recorder GC Reserved MB,85.56
+2026-11-01T21:27:36,02-L04,Mono,1,6000.3.25f1,F5 new byte[20MB] after full free,Profiler.GetMonoUsedSizeLong MB,20.97
+2026-11-01T21:27:36,02-L04,Mono,1,6000.3.25f1,F5 new byte[20MB] after full free,Profiler.GetMonoHeapSizeLong MB,85.56
+2026-11-01T21:27:36,02-L04,Mono,1,6000.3.25f1,F5 new byte[20MB] after full free,GC.GetTotalMemory(false) MB,20.97
+2026-11-01T21:27:36,02-L04,Mono,1,6000.3.25f1,F5 new byte[20MB] after full free,GC.CollectionCount(0),64
+2026-11-01T21:27:36,02-L04,Mono,1,6000.3.25f1,F6 freed + Collect,recorder GC Used MB,0.97
+2026-11-01T21:27:36,02-L04,Mono,1,6000.3.25f1,F6 freed + Collect,recorder GC Reserved MB,85.56
+2026-11-01T21:27:36,02-L04,Mono,1,6000.3.25f1,F6 freed + Collect,Profiler.GetMonoUsedSizeLong MB,0.97
+2026-11-01T21:27:36,02-L04,Mono,1,6000.3.25f1,F6 freed + Collect,Profiler.GetMonoHeapSizeLong MB,85.56
+2026-11-01T21:27:36,02-L04,Mono,1,6000.3.25f1,F6 freed + Collect,GC.GetTotalMemory(false) MB,0.97
+2026-11-01T21:27:36,02-L04,Mono,1,6000.3.25f1,F6 freed + Collect,GC.CollectionCount(0),65
+2026-11-01T21:27:36,02-L04,Mono,1,6000.3.25f1,S1 800k x byte[32] held,recorder GC Used MB,55.90
+2026-11-01T21:27:36,02-L04,Mono,1,6000.3.25f1,S1 800k x byte[32] held,recorder GC Reserved MB,85.56
+2026-11-01T21:27:36,02-L04,Mono,1,6000.3.25f1,S1 800k x byte[32] held,Profiler.GetMonoUsedSizeLong MB,55.90
+2026-11-01T21:27:36,02-L04,Mono,1,6000.3.25f1,S1 800k x byte[32] held,Profiler.GetMonoHeapSizeLong MB,85.56
+2026-11-01T21:27:36,02-L04,Mono,1,6000.3.25f1,S1 800k x byte[32] held,GC.GetTotalMemory(false) MB,55.90
+2026-11-01T21:27:36,02-L04,Mono,1,6000.3.25f1,S1 800k x byte[32] held,GC.CollectionCount(0),81
+2026-11-01T21:27:36,02-L04,Mono,1,6000.3.25f1,S2 keep 1 of 64 + Collect,recorder GC Used MB,55.89
+2026-11-01T21:27:36,02-L04,Mono,1,6000.3.25f1,S2 keep 1 of 64 + Collect,recorder GC Reserved MB,85.56
+2026-11-01T21:27:36,02-L04,Mono,1,6000.3.25f1,S2 keep 1 of 64 + Collect,Profiler.GetMonoUsedSizeLong MB,55.89
+2026-11-01T21:27:36,02-L04,Mono,1,6000.3.25f1,S2 keep 1 of 64 + Collect,Profiler.GetMonoHeapSizeLong MB,85.56
+2026-11-01T21:27:36,02-L04,Mono,1,6000.3.25f1,S2 keep 1 of 64 + Collect,GC.GetTotalMemory(false) MB,55.89
+2026-11-01T21:27:36,02-L04,Mono,1,6000.3.25f1,S2 keep 1 of 64 + Collect,GC.CollectionCount(0),82
+2026-11-01T21:27:36,02-L04,Mono,1,6000.3.25f1,S3 new byte[20MB] with sparse small survivors,recorder GC Used MB,75.90
+2026-11-01T21:27:36,02-L04,Mono,1,6000.3.25f1,S3 new byte[20MB] with sparse small survivors,recorder GC Reserved MB,85.56
+2026-11-01T21:27:36,02-L04,Mono,1,6000.3.25f1,S3 new byte[20MB] with sparse small survivors,Profiler.GetMonoUsedSizeLong MB,75.90
+2026-11-01T21:27:36,02-L04,Mono,1,6000.3.25f1,S3 new byte[20MB] with sparse small survivors,Profiler.GetMonoHeapSizeLong MB,85.56
+2026-11-01T21:27:36,02-L04,Mono,1,6000.3.25f1,S3 new byte[20MB] with sparse small survivors,GC.GetTotalMemory(false) MB,75.90
+2026-11-01T21:27:36,02-L04,Mono,1,6000.3.25f1,S3 new byte[20MB] with sparse small survivors,GC.CollectionCount(0),83
+2026-11-01T21:27:36,02-L04,Mono,1,6000.3.25f1,S4 all freed + Collect,recorder GC Used MB,0.97
+2026-11-01T21:27:36,02-L04,Mono,1,6000.3.25f1,S4 all freed + Collect,recorder GC Reserved MB,85.56
+2026-11-01T21:27:36,02-L04,Mono,1,6000.3.25f1,S4 all freed + Collect,Profiler.GetMonoUsedSizeLong MB,0.97
+2026-11-01T21:27:36,02-L04,Mono,1,6000.3.25f1,S4 all freed + Collect,Profiler.GetMonoHeapSizeLong MB,85.56
+2026-11-01T21:27:36,02-L04,Mono,1,6000.3.25f1,S4 all freed + Collect,GC.GetTotalMemory(false) MB,0.97
+2026-11-01T21:27:36,02-L04,Mono,1,6000.3.25f1,S4 all freed + Collect,GC.CollectionCount(0),84
+2026-11-01T21:27:36,02-L04,Mono,1,6000.3.25f1,-,keep alive,100

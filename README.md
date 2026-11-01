@@ -78,7 +78,7 @@ Boehm GC의 특성, 숨은 할당, 힙 크기와 단편화, Incremental GC.
 > `Instantiate`의 GC 할당은 GameObject 래퍼 24 B + 스크립트당 40 B뿐(나머지는 네이티브). 풀링 이득은 주로 CPU: 약 2.1~2.6배
 
 > ✅ **[02-L04 GC Used vs Reserved](Assets/Labs/02_GC/L04_UsedVsReserved/README.md)** · `Mono` `IL2CPP`\
-> 50 MB 해제 + Collect 후 Used만 1 MB로 내려가고 Reserved는 51.8 MB 유지. 10초 뒤에도 OS에 반환 안 함, 재할당 시 재사용
+> 50 MB 해제 + Collect 후 Reserved는 51.8 MB 유지. IL2CPP는 수집 6~12회 뒤 반납, Mono는 32회 뒤에도 유지. 단편화 시 빈 25 MB에 20 MB가 안 들어감
 
 > ⏳ 02-L05 데이터 배치에 따른 GC 마킹 비용
 
