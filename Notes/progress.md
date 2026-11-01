@@ -35,6 +35,7 @@
 - [힌트 후 풀이] (2026-10-31) 02-L02 클로저 할당 시점 (A 매개변수 / B 맨 위 지역 / C 분기 안 지역 / D `this`만, 모두 람다 분기 미실행) — "전혀 모르겠는데" → 힌트(캡처 변수는 클로저 필드, lowering 예시, 02-L01 M) 후에도 "모르겠음" → 풀이. 실측: A·B 클로저 1개(20/24 B), C·D 0
 - [유도 후 정답] (2026-10-31) 02-L02 확인 질문: `x => x == t && x > _target`의 클로저에 담기는 것 — 1차 "클로저가 들어가야지"(target 칸 = 클로저까지만), 유도 질문(람다 메서드의 `this`는 클로저) 후 "this가 있어야겠네" 정답. 풀이 직후 D(`this`만 캡처)를 "`_target`이 클래스 변수인지 감이 안 옴"이라고 해서 지역 변수(스택) vs 인스턴스 필드(힙 객체 안)와 델리게이트 (target, method) 구조를 설명함
 - [부분 정답] (2026-10-31) 02-L03 `Instantiate`/`Destroy` vs 풀링 — "A는 프레임당 엄청 많이, B는 최초 프레임 제외 0, B가 훨씬 빠름"(배수는 추측 불가라고 함). B 0·B가 빠름(약 2.2배)은 맞음. A의 GC 할당은 객체당 64 B(프레임당 6.4 KB)로 작았음 — `Instantiate`의 대부분이 네이티브 메모리라는 점을 고려하지 않음
+- [정답] (2026-11-01) 02-L04 `byte[50MB]` 할당 → 해제 + Collect → 10초 대기의 Used/Reserved — 세 단계 모두 맞음 (실행 전 (2)·(3)을 한 번 바꿔 적었다가 스스로 정정). "Reserved는 부족한 경우 증가"까지 짚음. 참조만 끊은 시점(2a)에 Used가 그대로라는 점(추적 GC)은 설명으로 보충
 - [설명 들음] (2026-10-30) 검사 개수(정적)와 실행 횟수(루프 안이면 원소마다) 구분, IL2CPP는 hoist·경계 검사 제거를 하지 않음 (RyuJIT과 대비)
 
 ## 약점 (관련 실습에서 재확인)
@@ -72,6 +73,7 @@
 - 2026-10-31 02-L01 에디터(참고용) + Mono·IL2CPP 플레이어 측정 + 생성 코드 확인 — [README](../Assets/Labs/02_GC/L01_HiddenAlloc/README.md)
 - 2026-10-31 02-L02 Mono·IL2CPP 플레이어 측정 + 생성 코드 확인 — [README](../Assets/Labs/02_GC/L02_ClosureTiming/README.md)
 - 2026-10-31 02-L03 Mono·IL2CPP 플레이어 측정 — [README](../Assets/Labs/02_GC/L03_Pooling/README.md) (2026-11-01 C 분해 추가: 64 B = GameObject 래퍼 24 + 스크립트 인스턴스 40)
+- 2026-11-01 02-L04 Mono·IL2CPP 플레이어 측정 — [README](../Assets/Labs/02_GC/L04_UsedVsReserved/README.md)
 
 ## Player Settings 변경 이력
 (변경 시 날짜, 항목, 원래 값 → 바꾼 값, 복원 여부)
@@ -92,3 +94,4 @@
 - 2026-10-31 Scripting Backend: Mono → IL2CPP (02-L02 빌드 동안만), **복원됨** (`Standalone: 0` 확인)
 - 2026-10-31 Scripting Backend: Mono → IL2CPP (02-L03 빌드 동안만), **복원됨** (`Standalone: 0` 확인)
 - 2026-11-01 Scripting Backend: Mono → IL2CPP (02-L03 C 분해 빌드 동안만), **복원됨** (`Standalone: 0` 확인)
+- 2026-11-01 Scripting Backend: Mono → IL2CPP (02-L04 빌드 동안만), **복원됨** (`Standalone: 0` 확인)
