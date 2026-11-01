@@ -1,0 +1,449 @@
+run_time,lab,backend,dev_build,unity,condition,metric,value
+2026-11-01T22:48:49,02-L05,IL2CPP,1,6000.3.25f1,-,metrics valid,true
+2026-11-01T22:48:49,02-L05,IL2CPP,1,6000.3.25f1,-,count,100000
+2026-11-01T22:48:49,02-L05,IL2CPP,1,6000.3.25f1,0 baseline,collect ms #00,0.397
+2026-11-01T22:48:49,02-L05,IL2CPP,1,6000.3.25f1,0 baseline,collect ms #01,0.320
+2026-11-01T22:48:49,02-L05,IL2CPP,1,6000.3.25f1,0 baseline,collect ms #02,0.303
+2026-11-01T22:48:49,02-L05,IL2CPP,1,6000.3.25f1,0 baseline,collect ms #03,0.306
+2026-11-01T22:48:49,02-L05,IL2CPP,1,6000.3.25f1,0 baseline,collect ms #04,0.468
+2026-11-01T22:48:49,02-L05,IL2CPP,1,6000.3.25f1,0 baseline,collect ms #05,0.331
+2026-11-01T22:48:49,02-L05,IL2CPP,1,6000.3.25f1,0 baseline,collect ms #06,0.319
+2026-11-01T22:48:49,02-L05,IL2CPP,1,6000.3.25f1,0 baseline,collect ms #07,0.378
+2026-11-01T22:48:49,02-L05,IL2CPP,1,6000.3.25f1,0 baseline,collect ms #08,0.379
+2026-11-01T22:48:49,02-L05,IL2CPP,1,6000.3.25f1,0 baseline,collect ms #09,0.365
+2026-11-01T22:48:49,02-L05,IL2CPP,1,6000.3.25f1,0 baseline,collect ms #10,0.349
+2026-11-01T22:48:49,02-L05,IL2CPP,1,6000.3.25f1,0 baseline,collect ms #11,0.341
+2026-11-01T22:48:49,02-L05,IL2CPP,1,6000.3.25f1,0 baseline,collect ms #12,0.308
+2026-11-01T22:48:49,02-L05,IL2CPP,1,6000.3.25f1,0 baseline,collect ms #13,0.295
+2026-11-01T22:48:49,02-L05,IL2CPP,1,6000.3.25f1,0 baseline,collect ms #14,0.297
+2026-11-01T22:48:49,02-L05,IL2CPP,1,6000.3.25f1,0 baseline,collect ms #15,0.299
+2026-11-01T22:48:49,02-L05,IL2CPP,1,6000.3.25f1,0 baseline,collect ms #16,0.285
+2026-11-01T22:48:49,02-L05,IL2CPP,1,6000.3.25f1,0 baseline,collect ms #17,0.290
+2026-11-01T22:48:49,02-L05,IL2CPP,1,6000.3.25f1,0 baseline,collect ms #18,0.301
+2026-11-01T22:48:49,02-L05,IL2CPP,1,6000.3.25f1,0 baseline,collect ms #19,0.311
+2026-11-01T22:48:49,02-L05,IL2CPP,1,6000.3.25f1,0 baseline,collect ms #20,0.287
+2026-11-01T22:48:49,02-L05,IL2CPP,1,6000.3.25f1,0 baseline,collect ms #21,0.295
+2026-11-01T22:48:49,02-L05,IL2CPP,1,6000.3.25f1,0 baseline,collect ms #22,0.307
+2026-11-01T22:48:49,02-L05,IL2CPP,1,6000.3.25f1,0 baseline,collect ms #23,0.291
+2026-11-01T22:48:49,02-L05,IL2CPP,1,6000.3.25f1,0 baseline,collect ms #24,0.423
+2026-11-01T22:48:49,02-L05,IL2CPP,1,6000.3.25f1,0 baseline,collect ms #25,0.387
+2026-11-01T22:48:49,02-L05,IL2CPP,1,6000.3.25f1,0 baseline,collect ms #26,0.318
+2026-11-01T22:48:49,02-L05,IL2CPP,1,6000.3.25f1,0 baseline,collect ms #27,0.400
+2026-11-01T22:48:49,02-L05,IL2CPP,1,6000.3.25f1,0 baseline,collect ms #28,0.338
+2026-11-01T22:48:49,02-L05,IL2CPP,1,6000.3.25f1,0 baseline,collect ms #29,0.335
+2026-11-01T22:48:49,02-L05,IL2CPP,1,6000.3.25f1,0 baseline,collect ms #30,0.309
+2026-11-01T22:48:49,02-L05,IL2CPP,1,6000.3.25f1,0 baseline,collect ms min,0.285
+2026-11-01T22:48:49,02-L05,IL2CPP,1,6000.3.25f1,0 baseline,collect ms median,0.318
+2026-11-01T22:48:49,02-L05,IL2CPP,1,6000.3.25f1,0 baseline,collect ms max,0.468
+2026-11-01T22:48:49,02-L05,IL2CPP,1,6000.3.25f1,0 baseline,GC Used delta MB,0.00
+2026-11-01T22:48:49,02-L05,IL2CPP,1,6000.3.25f1,0 baseline,GC Used MB,1.18
+2026-11-01T22:48:49,02-L05,IL2CPP,1,6000.3.25f1,0 baseline,GC Reserved MB,1.19
+2026-11-01T22:48:49,02-L05,IL2CPP,1,6000.3.25f1,1 List<EnemyClass>,collect ms #00,0.541
+2026-11-01T22:48:49,02-L05,IL2CPP,1,6000.3.25f1,1 List<EnemyClass>,collect ms #01,0.512
+2026-11-01T22:48:49,02-L05,IL2CPP,1,6000.3.25f1,1 List<EnemyClass>,collect ms #02,0.555
+2026-11-01T22:48:49,02-L05,IL2CPP,1,6000.3.25f1,1 List<EnemyClass>,collect ms #03,0.560
+2026-11-01T22:48:49,02-L05,IL2CPP,1,6000.3.25f1,1 List<EnemyClass>,collect ms #04,0.524
+2026-11-01T22:48:49,02-L05,IL2CPP,1,6000.3.25f1,1 List<EnemyClass>,collect ms #05,0.753
+2026-11-01T22:48:49,02-L05,IL2CPP,1,6000.3.25f1,1 List<EnemyClass>,collect ms #06,0.629
+2026-11-01T22:48:49,02-L05,IL2CPP,1,6000.3.25f1,1 List<EnemyClass>,collect ms #07,0.515
+2026-11-01T22:48:49,02-L05,IL2CPP,1,6000.3.25f1,1 List<EnemyClass>,collect ms #08,0.603
+2026-11-01T22:48:49,02-L05,IL2CPP,1,6000.3.25f1,1 List<EnemyClass>,collect ms #09,0.592
+2026-11-01T22:48:49,02-L05,IL2CPP,1,6000.3.25f1,1 List<EnemyClass>,collect ms #10,0.746
+2026-11-01T22:48:49,02-L05,IL2CPP,1,6000.3.25f1,1 List<EnemyClass>,collect ms #11,0.562
+2026-11-01T22:48:49,02-L05,IL2CPP,1,6000.3.25f1,1 List<EnemyClass>,collect ms #12,0.542
+2026-11-01T22:48:49,02-L05,IL2CPP,1,6000.3.25f1,1 List<EnemyClass>,collect ms #13,0.515
+2026-11-01T22:48:49,02-L05,IL2CPP,1,6000.3.25f1,1 List<EnemyClass>,collect ms #14,0.518
+2026-11-01T22:48:49,02-L05,IL2CPP,1,6000.3.25f1,1 List<EnemyClass>,collect ms #15,0.563
+2026-11-01T22:48:49,02-L05,IL2CPP,1,6000.3.25f1,1 List<EnemyClass>,collect ms #16,0.562
+2026-11-01T22:48:49,02-L05,IL2CPP,1,6000.3.25f1,1 List<EnemyClass>,collect ms #17,0.501
+2026-11-01T22:48:49,02-L05,IL2CPP,1,6000.3.25f1,1 List<EnemyClass>,collect ms #18,0.502
+2026-11-01T22:48:49,02-L05,IL2CPP,1,6000.3.25f1,1 List<EnemyClass>,collect ms #19,0.545
+2026-11-01T22:48:49,02-L05,IL2CPP,1,6000.3.25f1,1 List<EnemyClass>,collect ms #20,0.512
+2026-11-01T22:48:49,02-L05,IL2CPP,1,6000.3.25f1,1 List<EnemyClass>,collect ms #21,0.510
+2026-11-01T22:48:49,02-L05,IL2CPP,1,6000.3.25f1,1 List<EnemyClass>,collect ms #22,0.521
+2026-11-01T22:48:49,02-L05,IL2CPP,1,6000.3.25f1,1 List<EnemyClass>,collect ms #23,0.768
+2026-11-01T22:48:49,02-L05,IL2CPP,1,6000.3.25f1,1 List<EnemyClass>,collect ms #24,0.632
+2026-11-01T22:48:49,02-L05,IL2CPP,1,6000.3.25f1,1 List<EnemyClass>,collect ms #25,0.606
+2026-11-01T22:48:49,02-L05,IL2CPP,1,6000.3.25f1,1 List<EnemyClass>,collect ms #26,0.603
+2026-11-01T22:48:49,02-L05,IL2CPP,1,6000.3.25f1,1 List<EnemyClass>,collect ms #27,0.531
+2026-11-01T22:48:49,02-L05,IL2CPP,1,6000.3.25f1,1 List<EnemyClass>,collect ms #28,0.571
+2026-11-01T22:48:49,02-L05,IL2CPP,1,6000.3.25f1,1 List<EnemyClass>,collect ms #29,0.528
+2026-11-01T22:48:49,02-L05,IL2CPP,1,6000.3.25f1,1 List<EnemyClass>,collect ms #30,0.565
+2026-11-01T22:48:49,02-L05,IL2CPP,1,6000.3.25f1,1 List<EnemyClass>,collect ms min,0.501
+2026-11-01T22:48:49,02-L05,IL2CPP,1,6000.3.25f1,1 List<EnemyClass>,collect ms median,0.555
+2026-11-01T22:48:49,02-L05,IL2CPP,1,6000.3.25f1,1 List<EnemyClass>,collect ms max,0.768
+2026-11-01T22:48:49,02-L05,IL2CPP,1,6000.3.25f1,1 List<EnemyClass>,GC Used delta MB,5.36
+2026-11-01T22:48:49,02-L05,IL2CPP,1,6000.3.25f1,1 List<EnemyClass>,GC Used MB,6.55
+2026-11-01T22:48:49,02-L05,IL2CPP,1,6000.3.25f1,1 List<EnemyClass>,GC Reserved MB,6.55
+2026-11-01T22:48:49,02-L05,IL2CPP,1,6000.3.25f1,2 EnemyStruct[],collect ms #00,0.399
+2026-11-01T22:48:49,02-L05,IL2CPP,1,6000.3.25f1,2 EnemyStruct[],collect ms #01,0.368
+2026-11-01T22:48:49,02-L05,IL2CPP,1,6000.3.25f1,2 EnemyStruct[],collect ms #02,0.356
+2026-11-01T22:48:49,02-L05,IL2CPP,1,6000.3.25f1,2 EnemyStruct[],collect ms #03,0.692
+2026-11-01T22:48:49,02-L05,IL2CPP,1,6000.3.25f1,2 EnemyStruct[],collect ms #04,0.368
+2026-11-01T22:48:49,02-L05,IL2CPP,1,6000.3.25f1,2 EnemyStruct[],collect ms #05,0.315
+2026-11-01T22:48:49,02-L05,IL2CPP,1,6000.3.25f1,2 EnemyStruct[],collect ms #06,0.313
+2026-11-01T22:48:49,02-L05,IL2CPP,1,6000.3.25f1,2 EnemyStruct[],collect ms #07,0.292
+2026-11-01T22:48:49,02-L05,IL2CPP,1,6000.3.25f1,2 EnemyStruct[],collect ms #08,0.292
+2026-11-01T22:48:49,02-L05,IL2CPP,1,6000.3.25f1,2 EnemyStruct[],collect ms #09,0.309
+2026-11-01T22:48:49,02-L05,IL2CPP,1,6000.3.25f1,2 EnemyStruct[],collect ms #10,0.326
+2026-11-01T22:48:49,02-L05,IL2CPP,1,6000.3.25f1,2 EnemyStruct[],collect ms #11,0.319
+2026-11-01T22:48:49,02-L05,IL2CPP,1,6000.3.25f1,2 EnemyStruct[],collect ms #12,0.290
+2026-11-01T22:48:49,02-L05,IL2CPP,1,6000.3.25f1,2 EnemyStruct[],collect ms #13,0.308
+2026-11-01T22:48:49,02-L05,IL2CPP,1,6000.3.25f1,2 EnemyStruct[],collect ms #14,0.303
+2026-11-01T22:48:49,02-L05,IL2CPP,1,6000.3.25f1,2 EnemyStruct[],collect ms #15,0.315
+2026-11-01T22:48:49,02-L05,IL2CPP,1,6000.3.25f1,2 EnemyStruct[],collect ms #16,0.330
+2026-11-01T22:48:49,02-L05,IL2CPP,1,6000.3.25f1,2 EnemyStruct[],collect ms #17,0.362
+2026-11-01T22:48:49,02-L05,IL2CPP,1,6000.3.25f1,2 EnemyStruct[],collect ms #18,0.382
+2026-11-01T22:48:49,02-L05,IL2CPP,1,6000.3.25f1,2 EnemyStruct[],collect ms #19,0.297
+2026-11-01T22:48:49,02-L05,IL2CPP,1,6000.3.25f1,2 EnemyStruct[],collect ms #20,0.296
+2026-11-01T22:48:49,02-L05,IL2CPP,1,6000.3.25f1,2 EnemyStruct[],collect ms #21,0.294
+2026-11-01T22:48:49,02-L05,IL2CPP,1,6000.3.25f1,2 EnemyStruct[],collect ms #22,0.279
+2026-11-01T22:48:49,02-L05,IL2CPP,1,6000.3.25f1,2 EnemyStruct[],collect ms #23,0.288
+2026-11-01T22:48:49,02-L05,IL2CPP,1,6000.3.25f1,2 EnemyStruct[],collect ms #24,0.296
+2026-11-01T22:48:49,02-L05,IL2CPP,1,6000.3.25f1,2 EnemyStruct[],collect ms #25,0.274
+2026-11-01T22:48:49,02-L05,IL2CPP,1,6000.3.25f1,2 EnemyStruct[],collect ms #26,0.291
+2026-11-01T22:48:49,02-L05,IL2CPP,1,6000.3.25f1,2 EnemyStruct[],collect ms #27,0.287
+2026-11-01T22:48:49,02-L05,IL2CPP,1,6000.3.25f1,2 EnemyStruct[],collect ms #28,0.385
+2026-11-01T22:48:49,02-L05,IL2CPP,1,6000.3.25f1,2 EnemyStruct[],collect ms #29,0.562
+2026-11-01T22:48:49,02-L05,IL2CPP,1,6000.3.25f1,2 EnemyStruct[],collect ms #30,0.311
+2026-11-01T22:48:49,02-L05,IL2CPP,1,6000.3.25f1,2 EnemyStruct[],collect ms min,0.274
+2026-11-01T22:48:49,02-L05,IL2CPP,1,6000.3.25f1,2 EnemyStruct[],collect ms median,0.311
+2026-11-01T22:48:49,02-L05,IL2CPP,1,6000.3.25f1,2 EnemyStruct[],collect ms max,0.692
+2026-11-01T22:48:49,02-L05,IL2CPP,1,6000.3.25f1,2 EnemyStruct[],GC Used delta MB,1.53
+2026-11-01T22:48:49,02-L05,IL2CPP,1,6000.3.25f1,2 EnemyStruct[],GC Used MB,2.72
+2026-11-01T22:48:49,02-L05,IL2CPP,1,6000.3.25f1,2 EnemyStruct[],GC Reserved MB,2.72
+2026-11-01T22:48:49,02-L05,IL2CPP,1,6000.3.25f1,3a EnemyStructRef[] shared string,collect ms #00,0.633
+2026-11-01T22:48:49,02-L05,IL2CPP,1,6000.3.25f1,3a EnemyStructRef[] shared string,collect ms #01,0.708
+2026-11-01T22:48:49,02-L05,IL2CPP,1,6000.3.25f1,3a EnemyStructRef[] shared string,collect ms #02,0.690
+2026-11-01T22:48:49,02-L05,IL2CPP,1,6000.3.25f1,3a EnemyStructRef[] shared string,collect ms #03,0.691
+2026-11-01T22:48:49,02-L05,IL2CPP,1,6000.3.25f1,3a EnemyStructRef[] shared string,collect ms #04,0.631
+2026-11-01T22:48:49,02-L05,IL2CPP,1,6000.3.25f1,3a EnemyStructRef[] shared string,collect ms #05,0.708
+2026-11-01T22:48:49,02-L05,IL2CPP,1,6000.3.25f1,3a EnemyStructRef[] shared string,collect ms #06,0.616
+2026-11-01T22:48:49,02-L05,IL2CPP,1,6000.3.25f1,3a EnemyStructRef[] shared string,collect ms #07,0.665
+2026-11-01T22:48:49,02-L05,IL2CPP,1,6000.3.25f1,3a EnemyStructRef[] shared string,collect ms #08,0.573
+2026-11-01T22:48:49,02-L05,IL2CPP,1,6000.3.25f1,3a EnemyStructRef[] shared string,collect ms #09,0.650
+2026-11-01T22:48:49,02-L05,IL2CPP,1,6000.3.25f1,3a EnemyStructRef[] shared string,collect ms #10,0.542
+2026-11-01T22:48:49,02-L05,IL2CPP,1,6000.3.25f1,3a EnemyStructRef[] shared string,collect ms #11,0.551
+2026-11-01T22:48:49,02-L05,IL2CPP,1,6000.3.25f1,3a EnemyStructRef[] shared string,collect ms #12,0.587
+2026-11-01T22:48:49,02-L05,IL2CPP,1,6000.3.25f1,3a EnemyStructRef[] shared string,collect ms #13,0.559
+2026-11-01T22:48:49,02-L05,IL2CPP,1,6000.3.25f1,3a EnemyStructRef[] shared string,collect ms #14,0.586
+2026-11-01T22:48:49,02-L05,IL2CPP,1,6000.3.25f1,3a EnemyStructRef[] shared string,collect ms #15,0.560
+2026-11-01T22:48:49,02-L05,IL2CPP,1,6000.3.25f1,3a EnemyStructRef[] shared string,collect ms #16,0.545
+2026-11-01T22:48:49,02-L05,IL2CPP,1,6000.3.25f1,3a EnemyStructRef[] shared string,collect ms #17,0.565
+2026-11-01T22:48:49,02-L05,IL2CPP,1,6000.3.25f1,3a EnemyStructRef[] shared string,collect ms #18,0.663
+2026-11-01T22:48:49,02-L05,IL2CPP,1,6000.3.25f1,3a EnemyStructRef[] shared string,collect ms #19,0.631
+2026-11-01T22:48:49,02-L05,IL2CPP,1,6000.3.25f1,3a EnemyStructRef[] shared string,collect ms #20,0.753
+2026-11-01T22:48:49,02-L05,IL2CPP,1,6000.3.25f1,3a EnemyStructRef[] shared string,collect ms #21,0.641
+2026-11-01T22:48:49,02-L05,IL2CPP,1,6000.3.25f1,3a EnemyStructRef[] shared string,collect ms #22,0.629
+2026-11-01T22:48:49,02-L05,IL2CPP,1,6000.3.25f1,3a EnemyStructRef[] shared string,collect ms #23,0.581
+2026-11-01T22:48:49,02-L05,IL2CPP,1,6000.3.25f1,3a EnemyStructRef[] shared string,collect ms #24,0.579
+2026-11-01T22:48:49,02-L05,IL2CPP,1,6000.3.25f1,3a EnemyStructRef[] shared string,collect ms #25,0.609
+2026-11-01T22:48:49,02-L05,IL2CPP,1,6000.3.25f1,3a EnemyStructRef[] shared string,collect ms #26,0.620
+2026-11-01T22:48:49,02-L05,IL2CPP,1,6000.3.25f1,3a EnemyStructRef[] shared string,collect ms #27,0.590
+2026-11-01T22:48:49,02-L05,IL2CPP,1,6000.3.25f1,3a EnemyStructRef[] shared string,collect ms #28,0.594
+2026-11-01T22:48:49,02-L05,IL2CPP,1,6000.3.25f1,3a EnemyStructRef[] shared string,collect ms #29,0.593
+2026-11-01T22:48:49,02-L05,IL2CPP,1,6000.3.25f1,3a EnemyStructRef[] shared string,collect ms #30,0.654
+2026-11-01T22:48:49,02-L05,IL2CPP,1,6000.3.25f1,3a EnemyStructRef[] shared string,collect ms min,0.542
+2026-11-01T22:48:49,02-L05,IL2CPP,1,6000.3.25f1,3a EnemyStructRef[] shared string,collect ms median,0.616
+2026-11-01T22:48:49,02-L05,IL2CPP,1,6000.3.25f1,3a EnemyStructRef[] shared string,collect ms max,0.753
+2026-11-01T22:48:49,02-L05,IL2CPP,1,6000.3.25f1,3a EnemyStructRef[] shared string,GC Used delta MB,2.29
+2026-11-01T22:48:49,02-L05,IL2CPP,1,6000.3.25f1,3a EnemyStructRef[] shared string,GC Used MB,3.48
+2026-11-01T22:48:49,02-L05,IL2CPP,1,6000.3.25f1,3a EnemyStructRef[] shared string,GC Reserved MB,3.50
+2026-11-01T22:48:49,02-L05,IL2CPP,1,6000.3.25f1,3b EnemyStructRef[] distinct strings,collect ms #00,0.664
+2026-11-01T22:48:49,02-L05,IL2CPP,1,6000.3.25f1,3b EnemyStructRef[] distinct strings,collect ms #01,0.703
+2026-11-01T22:48:49,02-L05,IL2CPP,1,6000.3.25f1,3b EnemyStructRef[] distinct strings,collect ms #02,0.679
+2026-11-01T22:48:49,02-L05,IL2CPP,1,6000.3.25f1,3b EnemyStructRef[] distinct strings,collect ms #03,0.613
+2026-11-01T22:48:49,02-L05,IL2CPP,1,6000.3.25f1,3b EnemyStructRef[] distinct strings,collect ms #04,0.683
+2026-11-01T22:48:49,02-L05,IL2CPP,1,6000.3.25f1,3b EnemyStructRef[] distinct strings,collect ms #05,0.608
+2026-11-01T22:48:49,02-L05,IL2CPP,1,6000.3.25f1,3b EnemyStructRef[] distinct strings,collect ms #06,0.623
+2026-11-01T22:48:49,02-L05,IL2CPP,1,6000.3.25f1,3b EnemyStructRef[] distinct strings,collect ms #07,0.623
+2026-11-01T22:48:49,02-L05,IL2CPP,1,6000.3.25f1,3b EnemyStructRef[] distinct strings,collect ms #08,0.845
+2026-11-01T22:48:49,02-L05,IL2CPP,1,6000.3.25f1,3b EnemyStructRef[] distinct strings,collect ms #09,0.843
+2026-11-01T22:48:49,02-L05,IL2CPP,1,6000.3.25f1,3b EnemyStructRef[] distinct strings,collect ms #10,0.714
+2026-11-01T22:48:49,02-L05,IL2CPP,1,6000.3.25f1,3b EnemyStructRef[] distinct strings,collect ms #11,0.784
+2026-11-01T22:48:49,02-L05,IL2CPP,1,6000.3.25f1,3b EnemyStructRef[] distinct strings,collect ms #12,0.641
+2026-11-01T22:48:49,02-L05,IL2CPP,1,6000.3.25f1,3b EnemyStructRef[] distinct strings,collect ms #13,0.635
+2026-11-01T22:48:49,02-L05,IL2CPP,1,6000.3.25f1,3b EnemyStructRef[] distinct strings,collect ms #14,0.595
+2026-11-01T22:48:49,02-L05,IL2CPP,1,6000.3.25f1,3b EnemyStructRef[] distinct strings,collect ms #15,0.610
+2026-11-01T22:48:49,02-L05,IL2CPP,1,6000.3.25f1,3b EnemyStructRef[] distinct strings,collect ms #16,0.619
+2026-11-01T22:48:49,02-L05,IL2CPP,1,6000.3.25f1,3b EnemyStructRef[] distinct strings,collect ms #17,0.731
+2026-11-01T22:48:49,02-L05,IL2CPP,1,6000.3.25f1,3b EnemyStructRef[] distinct strings,collect ms #18,0.782
+2026-11-01T22:48:49,02-L05,IL2CPP,1,6000.3.25f1,3b EnemyStructRef[] distinct strings,collect ms #19,0.722
+2026-11-01T22:48:49,02-L05,IL2CPP,1,6000.3.25f1,3b EnemyStructRef[] distinct strings,collect ms #20,0.747
+2026-11-01T22:48:49,02-L05,IL2CPP,1,6000.3.25f1,3b EnemyStructRef[] distinct strings,collect ms #21,0.677
+2026-11-01T22:48:49,02-L05,IL2CPP,1,6000.3.25f1,3b EnemyStructRef[] distinct strings,collect ms #22,0.642
+2026-11-01T22:48:49,02-L05,IL2CPP,1,6000.3.25f1,3b EnemyStructRef[] distinct strings,collect ms #23,0.623
+2026-11-01T22:48:49,02-L05,IL2CPP,1,6000.3.25f1,3b EnemyStructRef[] distinct strings,collect ms #24,0.703
+2026-11-01T22:48:49,02-L05,IL2CPP,1,6000.3.25f1,3b EnemyStructRef[] distinct strings,collect ms #25,0.737
+2026-11-01T22:48:49,02-L05,IL2CPP,1,6000.3.25f1,3b EnemyStructRef[] distinct strings,collect ms #26,0.652
+2026-11-01T22:48:49,02-L05,IL2CPP,1,6000.3.25f1,3b EnemyStructRef[] distinct strings,collect ms #27,0.651
+2026-11-01T22:48:49,02-L05,IL2CPP,1,6000.3.25f1,3b EnemyStructRef[] distinct strings,collect ms #28,0.617
+2026-11-01T22:48:49,02-L05,IL2CPP,1,6000.3.25f1,3b EnemyStructRef[] distinct strings,collect ms #29,0.593
+2026-11-01T22:48:49,02-L05,IL2CPP,1,6000.3.25f1,3b EnemyStructRef[] distinct strings,collect ms #30,0.606
+2026-11-01T22:48:49,02-L05,IL2CPP,1,6000.3.25f1,3b EnemyStructRef[] distinct strings,collect ms min,0.593
+2026-11-01T22:48:49,02-L05,IL2CPP,1,6000.3.25f1,3b EnemyStructRef[] distinct strings,collect ms median,0.652
+2026-11-01T22:48:49,02-L05,IL2CPP,1,6000.3.25f1,3b EnemyStructRef[] distinct strings,collect ms max,0.845
+2026-11-01T22:48:49,02-L05,IL2CPP,1,6000.3.25f1,3b EnemyStructRef[] distinct strings,GC Used delta MB,8.70
+2026-11-01T22:48:49,02-L05,IL2CPP,1,6000.3.25f1,3b EnemyStructRef[] distinct strings,GC Used MB,9.90
+2026-11-01T22:48:49,02-L05,IL2CPP,1,6000.3.25f1,3b EnemyStructRef[] distinct strings,GC Reserved MB,9.91
+2026-11-01T22:48:49,02-L05,IL2CPP,1,6000.3.25f1,0' baseline again,collect ms #00,0.420
+2026-11-01T22:48:49,02-L05,IL2CPP,1,6000.3.25f1,0' baseline again,collect ms #01,0.824
+2026-11-01T22:48:49,02-L05,IL2CPP,1,6000.3.25f1,0' baseline again,collect ms #02,0.352
+2026-11-01T22:48:49,02-L05,IL2CPP,1,6000.3.25f1,0' baseline again,collect ms #03,0.824
+2026-11-01T22:48:49,02-L05,IL2CPP,1,6000.3.25f1,0' baseline again,collect ms #04,0.465
+2026-11-01T22:48:49,02-L05,IL2CPP,1,6000.3.25f1,0' baseline again,collect ms #05,0.361
+2026-11-01T22:48:49,02-L05,IL2CPP,1,6000.3.25f1,0' baseline again,collect ms #06,0.313
+2026-11-01T22:48:49,02-L05,IL2CPP,1,6000.3.25f1,0' baseline again,collect ms #07,0.297
+2026-11-01T22:48:49,02-L05,IL2CPP,1,6000.3.25f1,0' baseline again,collect ms #08,0.302
+2026-11-01T22:48:49,02-L05,IL2CPP,1,6000.3.25f1,0' baseline again,collect ms #09,0.285
+2026-11-01T22:48:49,02-L05,IL2CPP,1,6000.3.25f1,0' baseline again,collect ms #10,0.309
+2026-11-01T22:48:49,02-L05,IL2CPP,1,6000.3.25f1,0' baseline again,collect ms #11,0.281
+2026-11-01T22:48:49,02-L05,IL2CPP,1,6000.3.25f1,0' baseline again,collect ms #12,0.286
+2026-11-01T22:48:49,02-L05,IL2CPP,1,6000.3.25f1,0' baseline again,collect ms #13,0.309
+2026-11-01T22:48:49,02-L05,IL2CPP,1,6000.3.25f1,0' baseline again,collect ms #14,0.298
+2026-11-01T22:48:49,02-L05,IL2CPP,1,6000.3.25f1,0' baseline again,collect ms #15,0.300
+2026-11-01T22:48:49,02-L05,IL2CPP,1,6000.3.25f1,0' baseline again,collect ms #16,0.342
+2026-11-01T22:48:49,02-L05,IL2CPP,1,6000.3.25f1,0' baseline again,collect ms #17,0.332
+2026-11-01T22:48:49,02-L05,IL2CPP,1,6000.3.25f1,0' baseline again,collect ms #18,0.342
+2026-11-01T22:48:49,02-L05,IL2CPP,1,6000.3.25f1,0' baseline again,collect ms #19,0.353
+2026-11-01T22:48:49,02-L05,IL2CPP,1,6000.3.25f1,0' baseline again,collect ms #20,0.355
+2026-11-01T22:48:49,02-L05,IL2CPP,1,6000.3.25f1,0' baseline again,collect ms #21,0.282
+2026-11-01T22:48:49,02-L05,IL2CPP,1,6000.3.25f1,0' baseline again,collect ms #22,0.306
+2026-11-01T22:48:49,02-L05,IL2CPP,1,6000.3.25f1,0' baseline again,collect ms #23,0.287
+2026-11-01T22:48:49,02-L05,IL2CPP,1,6000.3.25f1,0' baseline again,collect ms #24,0.285
+2026-11-01T22:48:49,02-L05,IL2CPP,1,6000.3.25f1,0' baseline again,collect ms #25,0.282
+2026-11-01T22:48:49,02-L05,IL2CPP,1,6000.3.25f1,0' baseline again,collect ms #26,0.278
+2026-11-01T22:48:49,02-L05,IL2CPP,1,6000.3.25f1,0' baseline again,collect ms #27,0.284
+2026-11-01T22:48:49,02-L05,IL2CPP,1,6000.3.25f1,0' baseline again,collect ms #28,0.296
+2026-11-01T22:48:49,02-L05,IL2CPP,1,6000.3.25f1,0' baseline again,collect ms #29,0.275
+2026-11-01T22:48:49,02-L05,IL2CPP,1,6000.3.25f1,0' baseline again,collect ms #30,0.279
+2026-11-01T22:48:49,02-L05,IL2CPP,1,6000.3.25f1,0' baseline again,collect ms min,0.275
+2026-11-01T22:48:49,02-L05,IL2CPP,1,6000.3.25f1,0' baseline again,collect ms median,0.302
+2026-11-01T22:48:49,02-L05,IL2CPP,1,6000.3.25f1,0' baseline again,collect ms max,0.824
+2026-11-01T22:48:49,02-L05,IL2CPP,1,6000.3.25f1,0' baseline again,GC Used delta MB,0.00
+2026-11-01T22:48:49,02-L05,IL2CPP,1,6000.3.25f1,0' baseline again,GC Used MB,1.21
+2026-11-01T22:48:49,02-L05,IL2CPP,1,6000.3.25f1,0' baseline again,GC Reserved MB,1.22
+2026-11-01T22:48:51,02-L05,IL2CPP,1,6000.3.25f1,-,metrics valid,true
+2026-11-01T22:48:51,02-L05,IL2CPP,1,6000.3.25f1,-,count,1000000
+2026-11-01T22:48:51,02-L05,IL2CPP,1,6000.3.25f1,0 baseline,collect ms #00,0.406
+2026-11-01T22:48:51,02-L05,IL2CPP,1,6000.3.25f1,0 baseline,collect ms #01,0.332
+2026-11-01T22:48:51,02-L05,IL2CPP,1,6000.3.25f1,0 baseline,collect ms #02,0.319
+2026-11-01T22:48:51,02-L05,IL2CPP,1,6000.3.25f1,0 baseline,collect ms #03,0.319
+2026-11-01T22:48:51,02-L05,IL2CPP,1,6000.3.25f1,0 baseline,collect ms #04,0.285
+2026-11-01T22:48:51,02-L05,IL2CPP,1,6000.3.25f1,0 baseline,collect ms #05,0.277
+2026-11-01T22:48:51,02-L05,IL2CPP,1,6000.3.25f1,0 baseline,collect ms #06,0.294
+2026-11-01T22:48:51,02-L05,IL2CPP,1,6000.3.25f1,0 baseline,collect ms #07,0.280
+2026-11-01T22:48:51,02-L05,IL2CPP,1,6000.3.25f1,0 baseline,collect ms #08,0.296
+2026-11-01T22:48:51,02-L05,IL2CPP,1,6000.3.25f1,0 baseline,collect ms #09,0.281
+2026-11-01T22:48:51,02-L05,IL2CPP,1,6000.3.25f1,0 baseline,collect ms #10,0.326
+2026-11-01T22:48:51,02-L05,IL2CPP,1,6000.3.25f1,0 baseline,collect ms #11,0.302
+2026-11-01T22:48:51,02-L05,IL2CPP,1,6000.3.25f1,0 baseline,collect ms #12,0.306
+2026-11-01T22:48:51,02-L05,IL2CPP,1,6000.3.25f1,0 baseline,collect ms #13,0.326
+2026-11-01T22:48:51,02-L05,IL2CPP,1,6000.3.25f1,0 baseline,collect ms #14,0.293
+2026-11-01T22:48:51,02-L05,IL2CPP,1,6000.3.25f1,0 baseline,collect ms #15,0.300
+2026-11-01T22:48:51,02-L05,IL2CPP,1,6000.3.25f1,0 baseline,collect ms #16,0.305
+2026-11-01T22:48:51,02-L05,IL2CPP,1,6000.3.25f1,0 baseline,collect ms #17,0.309
+2026-11-01T22:48:51,02-L05,IL2CPP,1,6000.3.25f1,0 baseline,collect ms #18,0.308
+2026-11-01T22:48:51,02-L05,IL2CPP,1,6000.3.25f1,0 baseline,collect ms #19,0.284
+2026-11-01T22:48:51,02-L05,IL2CPP,1,6000.3.25f1,0 baseline,collect ms #20,0.301
+2026-11-01T22:48:51,02-L05,IL2CPP,1,6000.3.25f1,0 baseline,collect ms #21,0.345
+2026-11-01T22:48:51,02-L05,IL2CPP,1,6000.3.25f1,0 baseline,collect ms #22,0.386
+2026-11-01T22:48:51,02-L05,IL2CPP,1,6000.3.25f1,0 baseline,collect ms #23,0.311
+2026-11-01T22:48:51,02-L05,IL2CPP,1,6000.3.25f1,0 baseline,collect ms #24,0.312
+2026-11-01T22:48:51,02-L05,IL2CPP,1,6000.3.25f1,0 baseline,collect ms #25,0.327
+2026-11-01T22:48:51,02-L05,IL2CPP,1,6000.3.25f1,0 baseline,collect ms #26,0.327
+2026-11-01T22:48:51,02-L05,IL2CPP,1,6000.3.25f1,0 baseline,collect ms #27,0.357
+2026-11-01T22:48:51,02-L05,IL2CPP,1,6000.3.25f1,0 baseline,collect ms #28,0.303
+2026-11-01T22:48:51,02-L05,IL2CPP,1,6000.3.25f1,0 baseline,collect ms #29,0.285
+2026-11-01T22:48:51,02-L05,IL2CPP,1,6000.3.25f1,0 baseline,collect ms #30,0.283
+2026-11-01T22:48:51,02-L05,IL2CPP,1,6000.3.25f1,0 baseline,collect ms min,0.277
+2026-11-01T22:48:51,02-L05,IL2CPP,1,6000.3.25f1,0 baseline,collect ms median,0.306
+2026-11-01T22:48:51,02-L05,IL2CPP,1,6000.3.25f1,0 baseline,collect ms max,0.406
+2026-11-01T22:48:51,02-L05,IL2CPP,1,6000.3.25f1,0 baseline,GC Used delta MB,0.00
+2026-11-01T22:48:51,02-L05,IL2CPP,1,6000.3.25f1,0 baseline,GC Used MB,1.19
+2026-11-01T22:48:51,02-L05,IL2CPP,1,6000.3.25f1,0 baseline,GC Reserved MB,1.20
+2026-11-01T22:48:51,02-L05,IL2CPP,1,6000.3.25f1,1 List<EnemyClass>,collect ms #00,2.970
+2026-11-01T22:48:51,02-L05,IL2CPP,1,6000.3.25f1,1 List<EnemyClass>,collect ms #01,2.505
+2026-11-01T22:48:51,02-L05,IL2CPP,1,6000.3.25f1,1 List<EnemyClass>,collect ms #02,2.454
+2026-11-01T22:48:51,02-L05,IL2CPP,1,6000.3.25f1,1 List<EnemyClass>,collect ms #03,2.551
+2026-11-01T22:48:51,02-L05,IL2CPP,1,6000.3.25f1,1 List<EnemyClass>,collect ms #04,2.424
+2026-11-01T22:48:51,02-L05,IL2CPP,1,6000.3.25f1,1 List<EnemyClass>,collect ms #05,3.648
+2026-11-01T22:48:51,02-L05,IL2CPP,1,6000.3.25f1,1 List<EnemyClass>,collect ms #06,2.532
+2026-11-01T22:48:51,02-L05,IL2CPP,1,6000.3.25f1,1 List<EnemyClass>,collect ms #07,2.560
+2026-11-01T22:48:51,02-L05,IL2CPP,1,6000.3.25f1,1 List<EnemyClass>,collect ms #08,2.906
+2026-11-01T22:48:51,02-L05,IL2CPP,1,6000.3.25f1,1 List<EnemyClass>,collect ms #09,2.442
+2026-11-01T22:48:51,02-L05,IL2CPP,1,6000.3.25f1,1 List<EnemyClass>,collect ms #10,2.437
+2026-11-01T22:48:51,02-L05,IL2CPP,1,6000.3.25f1,1 List<EnemyClass>,collect ms #11,3.097
+2026-11-01T22:48:51,02-L05,IL2CPP,1,6000.3.25f1,1 List<EnemyClass>,collect ms #12,2.630
+2026-11-01T22:48:51,02-L05,IL2CPP,1,6000.3.25f1,1 List<EnemyClass>,collect ms #13,2.445
+2026-11-01T22:48:51,02-L05,IL2CPP,1,6000.3.25f1,1 List<EnemyClass>,collect ms #14,2.878
+2026-11-01T22:48:51,02-L05,IL2CPP,1,6000.3.25f1,1 List<EnemyClass>,collect ms #15,2.450
+2026-11-01T22:48:51,02-L05,IL2CPP,1,6000.3.25f1,1 List<EnemyClass>,collect ms #16,2.488
+2026-11-01T22:48:51,02-L05,IL2CPP,1,6000.3.25f1,1 List<EnemyClass>,collect ms #17,2.576
+2026-11-01T22:48:51,02-L05,IL2CPP,1,6000.3.25f1,1 List<EnemyClass>,collect ms #18,2.387
+2026-11-01T22:48:51,02-L05,IL2CPP,1,6000.3.25f1,1 List<EnemyClass>,collect ms #19,2.370
+2026-11-01T22:48:51,02-L05,IL2CPP,1,6000.3.25f1,1 List<EnemyClass>,collect ms #20,2.351
+2026-11-01T22:48:51,02-L05,IL2CPP,1,6000.3.25f1,1 List<EnemyClass>,collect ms #21,2.419
+2026-11-01T22:48:51,02-L05,IL2CPP,1,6000.3.25f1,1 List<EnemyClass>,collect ms #22,2.387
+2026-11-01T22:48:51,02-L05,IL2CPP,1,6000.3.25f1,1 List<EnemyClass>,collect ms #23,2.403
+2026-11-01T22:48:51,02-L05,IL2CPP,1,6000.3.25f1,1 List<EnemyClass>,collect ms #24,2.486
+2026-11-01T22:48:51,02-L05,IL2CPP,1,6000.3.25f1,1 List<EnemyClass>,collect ms #25,2.386
+2026-11-01T22:48:51,02-L05,IL2CPP,1,6000.3.25f1,1 List<EnemyClass>,collect ms #26,2.424
+2026-11-01T22:48:51,02-L05,IL2CPP,1,6000.3.25f1,1 List<EnemyClass>,collect ms #27,2.470
+2026-11-01T22:48:51,02-L05,IL2CPP,1,6000.3.25f1,1 List<EnemyClass>,collect ms #28,3.111
+2026-11-01T22:48:51,02-L05,IL2CPP,1,6000.3.25f1,1 List<EnemyClass>,collect ms #29,2.472
+2026-11-01T22:48:51,02-L05,IL2CPP,1,6000.3.25f1,1 List<EnemyClass>,collect ms #30,2.379
+2026-11-01T22:48:51,02-L05,IL2CPP,1,6000.3.25f1,1 List<EnemyClass>,collect ms min,2.351
+2026-11-01T22:48:51,02-L05,IL2CPP,1,6000.3.25f1,1 List<EnemyClass>,collect ms median,2.470
+2026-11-01T22:48:51,02-L05,IL2CPP,1,6000.3.25f1,1 List<EnemyClass>,collect ms max,3.648
+2026-11-01T22:48:51,02-L05,IL2CPP,1,6000.3.25f1,1 List<EnemyClass>,GC Used delta MB,53.59
+2026-11-01T22:48:51,02-L05,IL2CPP,1,6000.3.25f1,1 List<EnemyClass>,GC Used MB,54.78
+2026-11-01T22:48:51,02-L05,IL2CPP,1,6000.3.25f1,1 List<EnemyClass>,GC Reserved MB,54.78
+2026-11-01T22:48:51,02-L05,IL2CPP,1,6000.3.25f1,2 EnemyStruct[],collect ms #00,0.464
+2026-11-01T22:48:51,02-L05,IL2CPP,1,6000.3.25f1,2 EnemyStruct[],collect ms #01,0.344
+2026-11-01T22:48:51,02-L05,IL2CPP,1,6000.3.25f1,2 EnemyStruct[],collect ms #02,0.416
+2026-11-01T22:48:51,02-L05,IL2CPP,1,6000.3.25f1,2 EnemyStruct[],collect ms #03,3.826
+2026-11-01T22:48:51,02-L05,IL2CPP,1,6000.3.25f1,2 EnemyStruct[],collect ms #04,0.384
+2026-11-01T22:48:51,02-L05,IL2CPP,1,6000.3.25f1,2 EnemyStruct[],collect ms #05,0.331
+2026-11-01T22:48:51,02-L05,IL2CPP,1,6000.3.25f1,2 EnemyStruct[],collect ms #06,0.323
+2026-11-01T22:48:51,02-L05,IL2CPP,1,6000.3.25f1,2 EnemyStruct[],collect ms #07,0.313
+2026-11-01T22:48:51,02-L05,IL2CPP,1,6000.3.25f1,2 EnemyStruct[],collect ms #08,0.310
+2026-11-01T22:48:51,02-L05,IL2CPP,1,6000.3.25f1,2 EnemyStruct[],collect ms #09,0.360
+2026-11-01T22:48:51,02-L05,IL2CPP,1,6000.3.25f1,2 EnemyStruct[],collect ms #10,0.350
+2026-11-01T22:48:51,02-L05,IL2CPP,1,6000.3.25f1,2 EnemyStruct[],collect ms #11,0.381
+2026-11-01T22:48:51,02-L05,IL2CPP,1,6000.3.25f1,2 EnemyStruct[],collect ms #12,0.455
+2026-11-01T22:48:51,02-L05,IL2CPP,1,6000.3.25f1,2 EnemyStruct[],collect ms #13,0.338
+2026-11-01T22:48:51,02-L05,IL2CPP,1,6000.3.25f1,2 EnemyStruct[],collect ms #14,0.322
+2026-11-01T22:48:51,02-L05,IL2CPP,1,6000.3.25f1,2 EnemyStruct[],collect ms #15,0.376
+2026-11-01T22:48:51,02-L05,IL2CPP,1,6000.3.25f1,2 EnemyStruct[],collect ms #16,0.409
+2026-11-01T22:48:51,02-L05,IL2CPP,1,6000.3.25f1,2 EnemyStruct[],collect ms #17,0.427
+2026-11-01T22:48:51,02-L05,IL2CPP,1,6000.3.25f1,2 EnemyStruct[],collect ms #18,0.331
+2026-11-01T22:48:51,02-L05,IL2CPP,1,6000.3.25f1,2 EnemyStruct[],collect ms #19,0.328
+2026-11-01T22:48:51,02-L05,IL2CPP,1,6000.3.25f1,2 EnemyStruct[],collect ms #20,0.341
+2026-11-01T22:48:51,02-L05,IL2CPP,1,6000.3.25f1,2 EnemyStruct[],collect ms #21,0.313
+2026-11-01T22:48:51,02-L05,IL2CPP,1,6000.3.25f1,2 EnemyStruct[],collect ms #22,0.336
+2026-11-01T22:48:51,02-L05,IL2CPP,1,6000.3.25f1,2 EnemyStruct[],collect ms #23,0.310
+2026-11-01T22:48:51,02-L05,IL2CPP,1,6000.3.25f1,2 EnemyStruct[],collect ms #24,0.302
+2026-11-01T22:48:51,02-L05,IL2CPP,1,6000.3.25f1,2 EnemyStruct[],collect ms #25,0.296
+2026-11-01T22:48:51,02-L05,IL2CPP,1,6000.3.25f1,2 EnemyStruct[],collect ms #26,0.294
+2026-11-01T22:48:51,02-L05,IL2CPP,1,6000.3.25f1,2 EnemyStruct[],collect ms #27,0.294
+2026-11-01T22:48:51,02-L05,IL2CPP,1,6000.3.25f1,2 EnemyStruct[],collect ms #28,0.302
+2026-11-01T22:48:51,02-L05,IL2CPP,1,6000.3.25f1,2 EnemyStruct[],collect ms #29,0.292
+2026-11-01T22:48:51,02-L05,IL2CPP,1,6000.3.25f1,2 EnemyStruct[],collect ms #30,0.293
+2026-11-01T22:48:51,02-L05,IL2CPP,1,6000.3.25f1,2 EnemyStruct[],collect ms min,0.292
+2026-11-01T22:48:51,02-L05,IL2CPP,1,6000.3.25f1,2 EnemyStruct[],collect ms median,0.331
+2026-11-01T22:48:51,02-L05,IL2CPP,1,6000.3.25f1,2 EnemyStruct[],collect ms max,3.826
+2026-11-01T22:48:51,02-L05,IL2CPP,1,6000.3.25f1,2 EnemyStruct[],GC Used delta MB,15.26
+2026-11-01T22:48:51,02-L05,IL2CPP,1,6000.3.25f1,2 EnemyStruct[],GC Used MB,16.46
+2026-11-01T22:48:51,02-L05,IL2CPP,1,6000.3.25f1,2 EnemyStruct[],GC Reserved MB,16.47
+2026-11-01T22:48:51,02-L05,IL2CPP,1,6000.3.25f1,3a EnemyStructRef[] shared string,collect ms #00,4.141
+2026-11-01T22:48:51,02-L05,IL2CPP,1,6000.3.25f1,3a EnemyStructRef[] shared string,collect ms #01,4.220
+2026-11-01T22:48:51,02-L05,IL2CPP,1,6000.3.25f1,3a EnemyStructRef[] shared string,collect ms #02,4.098
+2026-11-01T22:48:51,02-L05,IL2CPP,1,6000.3.25f1,3a EnemyStructRef[] shared string,collect ms #03,4.884
+2026-11-01T22:48:51,02-L05,IL2CPP,1,6000.3.25f1,3a EnemyStructRef[] shared string,collect ms #04,4.528
+2026-11-01T22:48:51,02-L05,IL2CPP,1,6000.3.25f1,3a EnemyStructRef[] shared string,collect ms #05,3.963
+2026-11-01T22:48:51,02-L05,IL2CPP,1,6000.3.25f1,3a EnemyStructRef[] shared string,collect ms #06,3.988
+2026-11-01T22:48:51,02-L05,IL2CPP,1,6000.3.25f1,3a EnemyStructRef[] shared string,collect ms #07,4.267
+2026-11-01T22:48:51,02-L05,IL2CPP,1,6000.3.25f1,3a EnemyStructRef[] shared string,collect ms #08,3.945
+2026-11-01T22:48:51,02-L05,IL2CPP,1,6000.3.25f1,3a EnemyStructRef[] shared string,collect ms #09,4.139
+2026-11-01T22:48:51,02-L05,IL2CPP,1,6000.3.25f1,3a EnemyStructRef[] shared string,collect ms #10,3.838
+2026-11-01T22:48:51,02-L05,IL2CPP,1,6000.3.25f1,3a EnemyStructRef[] shared string,collect ms #11,4.107
+2026-11-01T22:48:51,02-L05,IL2CPP,1,6000.3.25f1,3a EnemyStructRef[] shared string,collect ms #12,4.042
+2026-11-01T22:48:51,02-L05,IL2CPP,1,6000.3.25f1,3a EnemyStructRef[] shared string,collect ms #13,3.866
+2026-11-01T22:48:51,02-L05,IL2CPP,1,6000.3.25f1,3a EnemyStructRef[] shared string,collect ms #14,3.830
+2026-11-01T22:48:51,02-L05,IL2CPP,1,6000.3.25f1,3a EnemyStructRef[] shared string,collect ms #15,4.043
+2026-11-01T22:48:51,02-L05,IL2CPP,1,6000.3.25f1,3a EnemyStructRef[] shared string,collect ms #16,4.070
+2026-11-01T22:48:51,02-L05,IL2CPP,1,6000.3.25f1,3a EnemyStructRef[] shared string,collect ms #17,4.127
+2026-11-01T22:48:51,02-L05,IL2CPP,1,6000.3.25f1,3a EnemyStructRef[] shared string,collect ms #18,4.107
+2026-11-01T22:48:51,02-L05,IL2CPP,1,6000.3.25f1,3a EnemyStructRef[] shared string,collect ms #19,4.066
+2026-11-01T22:48:51,02-L05,IL2CPP,1,6000.3.25f1,3a EnemyStructRef[] shared string,collect ms #20,4.105
+2026-11-01T22:48:51,02-L05,IL2CPP,1,6000.3.25f1,3a EnemyStructRef[] shared string,collect ms #21,4.360
+2026-11-01T22:48:51,02-L05,IL2CPP,1,6000.3.25f1,3a EnemyStructRef[] shared string,collect ms #22,4.035
+2026-11-01T22:48:51,02-L05,IL2CPP,1,6000.3.25f1,3a EnemyStructRef[] shared string,collect ms #23,4.236
+2026-11-01T22:48:51,02-L05,IL2CPP,1,6000.3.25f1,3a EnemyStructRef[] shared string,collect ms #24,4.019
+2026-11-01T22:48:51,02-L05,IL2CPP,1,6000.3.25f1,3a EnemyStructRef[] shared string,collect ms #25,4.432
+2026-11-01T22:48:51,02-L05,IL2CPP,1,6000.3.25f1,3a EnemyStructRef[] shared string,collect ms #26,4.064
+2026-11-01T22:48:51,02-L05,IL2CPP,1,6000.3.25f1,3a EnemyStructRef[] shared string,collect ms #27,4.348
+2026-11-01T22:48:51,02-L05,IL2CPP,1,6000.3.25f1,3a EnemyStructRef[] shared string,collect ms #28,4.115
+2026-11-01T22:48:51,02-L05,IL2CPP,1,6000.3.25f1,3a EnemyStructRef[] shared string,collect ms #29,4.100
+2026-11-01T22:48:51,02-L05,IL2CPP,1,6000.3.25f1,3a EnemyStructRef[] shared string,collect ms #30,3.945
+2026-11-01T22:48:51,02-L05,IL2CPP,1,6000.3.25f1,3a EnemyStructRef[] shared string,collect ms min,3.830
+2026-11-01T22:48:51,02-L05,IL2CPP,1,6000.3.25f1,3a EnemyStructRef[] shared string,collect ms median,4.100
+2026-11-01T22:48:51,02-L05,IL2CPP,1,6000.3.25f1,3a EnemyStructRef[] shared string,collect ms max,4.884
+2026-11-01T22:48:51,02-L05,IL2CPP,1,6000.3.25f1,3a EnemyStructRef[] shared string,GC Used delta MB,22.89
+2026-11-01T22:48:51,02-L05,IL2CPP,1,6000.3.25f1,3a EnemyStructRef[] shared string,GC Used MB,24.09
+2026-11-01T22:48:51,02-L05,IL2CPP,1,6000.3.25f1,3a EnemyStructRef[] shared string,GC Reserved MB,24.10
+2026-11-01T22:48:51,02-L05,IL2CPP,1,6000.3.25f1,3b EnemyStructRef[] distinct strings,collect ms #00,4.976
+2026-11-01T22:48:51,02-L05,IL2CPP,1,6000.3.25f1,3b EnemyStructRef[] distinct strings,collect ms #01,4.740
+2026-11-01T22:48:51,02-L05,IL2CPP,1,6000.3.25f1,3b EnemyStructRef[] distinct strings,collect ms #02,5.013
+2026-11-01T22:48:51,02-L05,IL2CPP,1,6000.3.25f1,3b EnemyStructRef[] distinct strings,collect ms #03,9.990
+2026-11-01T22:48:51,02-L05,IL2CPP,1,6000.3.25f1,3b EnemyStructRef[] distinct strings,collect ms #04,5.242
+2026-11-01T22:48:51,02-L05,IL2CPP,1,6000.3.25f1,3b EnemyStructRef[] distinct strings,collect ms #05,4.767
+2026-11-01T22:48:51,02-L05,IL2CPP,1,6000.3.25f1,3b EnemyStructRef[] distinct strings,collect ms #06,6.275
+2026-11-01T22:48:51,02-L05,IL2CPP,1,6000.3.25f1,3b EnemyStructRef[] distinct strings,collect ms #07,4.757
+2026-11-01T22:48:51,02-L05,IL2CPP,1,6000.3.25f1,3b EnemyStructRef[] distinct strings,collect ms #08,4.591
+2026-11-01T22:48:51,02-L05,IL2CPP,1,6000.3.25f1,3b EnemyStructRef[] distinct strings,collect ms #09,5.335
+2026-11-01T22:48:51,02-L05,IL2CPP,1,6000.3.25f1,3b EnemyStructRef[] distinct strings,collect ms #10,4.915
+2026-11-01T22:48:51,02-L05,IL2CPP,1,6000.3.25f1,3b EnemyStructRef[] distinct strings,collect ms #11,4.978
+2026-11-01T22:48:51,02-L05,IL2CPP,1,6000.3.25f1,3b EnemyStructRef[] distinct strings,collect ms #12,5.020
+2026-11-01T22:48:51,02-L05,IL2CPP,1,6000.3.25f1,3b EnemyStructRef[] distinct strings,collect ms #13,4.804
+2026-11-01T22:48:51,02-L05,IL2CPP,1,6000.3.25f1,3b EnemyStructRef[] distinct strings,collect ms #14,5.343
+2026-11-01T22:48:51,02-L05,IL2CPP,1,6000.3.25f1,3b EnemyStructRef[] distinct strings,collect ms #15,4.658
+2026-11-01T22:48:51,02-L05,IL2CPP,1,6000.3.25f1,3b EnemyStructRef[] distinct strings,collect ms #16,4.826
+2026-11-01T22:48:51,02-L05,IL2CPP,1,6000.3.25f1,3b EnemyStructRef[] distinct strings,collect ms #17,4.554
+2026-11-01T22:48:51,02-L05,IL2CPP,1,6000.3.25f1,3b EnemyStructRef[] distinct strings,collect ms #18,5.106
+2026-11-01T22:48:51,02-L05,IL2CPP,1,6000.3.25f1,3b EnemyStructRef[] distinct strings,collect ms #19,5.571
+2026-11-01T22:48:51,02-L05,IL2CPP,1,6000.3.25f1,3b EnemyStructRef[] distinct strings,collect ms #20,4.603
+2026-11-01T22:48:51,02-L05,IL2CPP,1,6000.3.25f1,3b EnemyStructRef[] distinct strings,collect ms #21,5.885
+2026-11-01T22:48:51,02-L05,IL2CPP,1,6000.3.25f1,3b EnemyStructRef[] distinct strings,collect ms #22,4.778
+2026-11-01T22:48:51,02-L05,IL2CPP,1,6000.3.25f1,3b EnemyStructRef[] distinct strings,collect ms #23,4.729
+2026-11-01T22:48:51,02-L05,IL2CPP,1,6000.3.25f1,3b EnemyStructRef[] distinct strings,collect ms #24,5.049
+2026-11-01T22:48:51,02-L05,IL2CPP,1,6000.3.25f1,3b EnemyStructRef[] distinct strings,collect ms #25,4.967
+2026-11-01T22:48:51,02-L05,IL2CPP,1,6000.3.25f1,3b EnemyStructRef[] distinct strings,collect ms #26,4.855
+2026-11-01T22:48:51,02-L05,IL2CPP,1,6000.3.25f1,3b EnemyStructRef[] distinct strings,collect ms #27,4.888
+2026-11-01T22:48:51,02-L05,IL2CPP,1,6000.3.25f1,3b EnemyStructRef[] distinct strings,collect ms #28,4.722
+2026-11-01T22:48:51,02-L05,IL2CPP,1,6000.3.25f1,3b EnemyStructRef[] distinct strings,collect ms #29,4.874
+2026-11-01T22:48:51,02-L05,IL2CPP,1,6000.3.25f1,3b EnemyStructRef[] distinct strings,collect ms #30,5.025
+2026-11-01T22:48:51,02-L05,IL2CPP,1,6000.3.25f1,3b EnemyStructRef[] distinct strings,collect ms min,4.554
+2026-11-01T22:48:51,02-L05,IL2CPP,1,6000.3.25f1,3b EnemyStructRef[] distinct strings,collect ms median,4.915
+2026-11-01T22:48:51,02-L05,IL2CPP,1,6000.3.25f1,3b EnemyStructRef[] distinct strings,collect ms max,9.990
+2026-11-01T22:48:51,02-L05,IL2CPP,1,6000.3.25f1,3b EnemyStructRef[] distinct strings,GC Used delta MB,84.23
+2026-11-01T22:48:51,02-L05,IL2CPP,1,6000.3.25f1,3b EnemyStructRef[] distinct strings,GC Used MB,85.44
+2026-11-01T22:48:51,02-L05,IL2CPP,1,6000.3.25f1,3b EnemyStructRef[] distinct strings,GC Reserved MB,85.44
+2026-11-01T22:48:51,02-L05,IL2CPP,1,6000.3.25f1,0' baseline again,collect ms #00,0.448
+2026-11-01T22:48:51,02-L05,IL2CPP,1,6000.3.25f1,0' baseline again,collect ms #01,0.408
+2026-11-01T22:48:51,02-L05,IL2CPP,1,6000.3.25f1,0' baseline again,collect ms #02,0.370
+2026-11-01T22:48:51,02-L05,IL2CPP,1,6000.3.25f1,0' baseline again,collect ms #03,7.134
+2026-11-01T22:48:51,02-L05,IL2CPP,1,6000.3.25f1,0' baseline again,collect ms #04,0.862
+2026-11-01T22:48:51,02-L05,IL2CPP,1,6000.3.25f1,0' baseline again,collect ms #05,0.775
+2026-11-01T22:48:51,02-L05,IL2CPP,1,6000.3.25f1,0' baseline again,collect ms #06,0.552
+2026-11-01T22:48:51,02-L05,IL2CPP,1,6000.3.25f1,0' baseline again,collect ms #07,0.490
+2026-11-01T22:48:51,02-L05,IL2CPP,1,6000.3.25f1,0' baseline again,collect ms #08,0.453
+2026-11-01T22:48:51,02-L05,IL2CPP,1,6000.3.25f1,0' baseline again,collect ms #09,0.422
+2026-11-01T22:48:51,02-L05,IL2CPP,1,6000.3.25f1,0' baseline again,collect ms #10,0.808
+2026-11-01T22:48:51,02-L05,IL2CPP,1,6000.3.25f1,0' baseline again,collect ms #11,1.439
+2026-11-01T22:48:51,02-L05,IL2CPP,1,6000.3.25f1,0' baseline again,collect ms #12,0.699
+2026-11-01T22:48:51,02-L05,IL2CPP,1,6000.3.25f1,0' baseline again,collect ms #13,0.588
+2026-11-01T22:48:51,02-L05,IL2CPP,1,6000.3.25f1,0' baseline again,collect ms #14,0.553
+2026-11-01T22:48:51,02-L05,IL2CPP,1,6000.3.25f1,0' baseline again,collect ms #15,0.522
+2026-11-01T22:48:51,02-L05,IL2CPP,1,6000.3.25f1,0' baseline again,collect ms #16,0.649
+2026-11-01T22:48:51,02-L05,IL2CPP,1,6000.3.25f1,0' baseline again,collect ms #17,0.563
+2026-11-01T22:48:51,02-L05,IL2CPP,1,6000.3.25f1,0' baseline again,collect ms #18,0.578
+2026-11-01T22:48:51,02-L05,IL2CPP,1,6000.3.25f1,0' baseline again,collect ms #19,0.537
+2026-11-01T22:48:51,02-L05,IL2CPP,1,6000.3.25f1,0' baseline again,collect ms #20,0.545
+2026-11-01T22:48:51,02-L05,IL2CPP,1,6000.3.25f1,0' baseline again,collect ms #21,0.815
+2026-11-01T22:48:51,02-L05,IL2CPP,1,6000.3.25f1,0' baseline again,collect ms #22,0.442
+2026-11-01T22:48:51,02-L05,IL2CPP,1,6000.3.25f1,0' baseline again,collect ms #23,0.561
+2026-11-01T22:48:51,02-L05,IL2CPP,1,6000.3.25f1,0' baseline again,collect ms #24,0.447
+2026-11-01T22:48:51,02-L05,IL2CPP,1,6000.3.25f1,0' baseline again,collect ms #25,0.770
+2026-11-01T22:48:51,02-L05,IL2CPP,1,6000.3.25f1,0' baseline again,collect ms #26,0.595
+2026-11-01T22:48:51,02-L05,IL2CPP,1,6000.3.25f1,0' baseline again,collect ms #27,0.498
+2026-11-01T22:48:51,02-L05,IL2CPP,1,6000.3.25f1,0' baseline again,collect ms #28,0.435
+2026-11-01T22:48:51,02-L05,IL2CPP,1,6000.3.25f1,0' baseline again,collect ms #29,0.450
+2026-11-01T22:48:51,02-L05,IL2CPP,1,6000.3.25f1,0' baseline again,collect ms #30,0.534
+2026-11-01T22:48:51,02-L05,IL2CPP,1,6000.3.25f1,0' baseline again,collect ms min,0.370
+2026-11-01T22:48:51,02-L05,IL2CPP,1,6000.3.25f1,0' baseline again,collect ms median,0.552
+2026-11-01T22:48:51,02-L05,IL2CPP,1,6000.3.25f1,0' baseline again,collect ms max,7.134
+2026-11-01T22:48:51,02-L05,IL2CPP,1,6000.3.25f1,0' baseline again,GC Used delta MB,0.00
+2026-11-01T22:48:51,02-L05,IL2CPP,1,6000.3.25f1,0' baseline again,GC Used MB,1.22
+2026-11-01T22:48:51,02-L05,IL2CPP,1,6000.3.25f1,0' baseline again,GC Reserved MB,1.22
