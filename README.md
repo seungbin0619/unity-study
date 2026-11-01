@@ -14,7 +14,7 @@ Unity 엔진 내부 동작을 문서로만 읽지 않고 **직접 측정해서 �
 | 주제 | 진행 |
 |---|---|
 | [1. 네이티브–매니지드 경계](#1-네이티브매니지드-경계) | 10 / 10 완료 |
-| [2. 메모리와 GC](#2-메모리와-gc) | 5 / 9 |
+| [2. 메모리와 GC](#2-메모리와-gc) | 6 / 9 |
 | 3. PlayerLoop · 4. 직렬화와 에셋 파이프라인 · 5. 렌더링 파이프라인 · 6. DOTS | 예정 |
 
 ## 실행 방법
@@ -83,7 +83,8 @@ Boehm GC의 특성, 숨은 할당, 힙 크기와 단편화, Incremental GC.
 > ✅ **[02-L05 데이터 배치에 따른 GC 마킹 비용](Assets/Labs/02_GC/L05_MarkCost/README.md)** · `Mono` `IL2CPP`\
 > 참조 없는 `struct[]`는 100만 개여도 기준선과 같음. 참조 필드 하나 든 `struct[]`가 문자열을 공유해도 `List<class>`보다 약 1.7배 비쌈 (훑는 바이트가 3배)
 
-> ⏳ 02-L06 Incremental GC on/off 프레임 타임
+> ✅ **[02-L06 Incremental GC On/Off 프레임 타임](Assets/Labs/02_GC/L06_IncrementalGC/README.md)** · `Mono` `IL2CPP`\
+> Off는 GC마다 10 ms 스파이크. On은 부분(세대별) 수집이라 GC 프레임 약 1 ms, 20회에 한 번 full 마킹이 3~6 ms × 2~3프레임. 총 시간도 On이 적음
 
 > ⏳ 02-L07 `GarbageCollector.Mode.Manual`과 `CollectIncremental`
 

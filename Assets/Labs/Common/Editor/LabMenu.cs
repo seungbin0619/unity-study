@@ -54,6 +54,9 @@ namespace Labs.Editor
         [MenuItem("Labs/02/L05 Mark Cost")]
         static void Run02L05() => Run("02-L05");
 
+        [MenuItem("Labs/02/L06 Incremental GC")]
+        static void Run02L06() => Run("02-L06");
+
         public static void Run(string labId)
         {
             if (EditorApplication.isPlaying)
