@@ -38,6 +38,7 @@
 - [정답] (2026-11-01) 02-L04 `byte[50MB]` 할당 → 해제 + Collect → 10초 대기의 Used/Reserved — 세 단계 모두 맞음 (실행 전 (2)·(3)을 한 번 바꿔 적었다가 스스로 정정). "Reserved는 부족한 경우 증가"까지 짚음. 참조만 끊은 시점(2a)에 Used가 그대로라는 점(추적 GC)은 설명으로 보충
 - [부분 정답] (2026-11-01) 02-L05 마킹 비용 순서 (0 기준선 / 1 `List<class>` / 2 `struct[]` / 3a 참조 필드 `struct[]` + 공유 문자열 / 3b 원소마다 문자열) — 답 "0, 2, 3a, 3b = 1"(GC Used 계산은 생략). 실측 0 ≈ 2 < 1 < 3a < 3b (두 백엔드, 10만·100만 개). 2가 기준선과 같다는 점, 3b가 비싸다는 점은 맞음. 3a가 1보다 비싸다는 점은 놓침 — "방문할 객체 수"만 세고 "훑어야 할 배열 바이트·스캔 방식"을 고려하지 않음 (개념 단계 정답 `2 < 3 ≤ 1`도 같은 이유로 틀렸음)
 - [힌트 후 정답] (2026-11-01) 02-L05 약점 재확인: `EnemyClass[]`(100만 개 7.6 MB)가 `EnemyStruct[]`(15.3 MB)보다 작은 이유 — "진짜 모르겠음" → 힌트(칸당 8 B인데 객체는 16 B 이상, 3a의 공유 문자열) 후 "포인터" 정답. 객체 본체는 힙의 다른 곳에 따로 있어 합계는 배열 7.6 MB + 객체 30.5 MB(Mono)라는 점은 보충함
+- [부분 정답] (2026-11-01) 02-L06 Incremental GC On/Off 프레임 그래프 — Off "한 번 크게 올랐다가 뚝 떨어짐" 정답(GC마다 약 10 ms 단일 스파이크). On "일정 / 천천히 오르다 약간 떨어짐" 대체로 맞음(GC 프레임 약 1 ms). 놓친 점: 약 20회마다 full 마킹 스파이크 3~6 ms × 2~3프레임, On이 총 시간도 적음(부분 수집이 장수 객체를 다시 마킹하지 않음, `GC_full_freq` 19)
 - [설명 들음] (2026-10-30) 검사 개수(정적)와 실행 횟수(루프 안이면 원소마다) 구분, IL2CPP는 hoist·경계 검사 제거를 하지 않음 (RyuJIT과 대비)
 
 ## 약점 (관련 실습에서 재확인)
@@ -77,6 +78,7 @@
 - 2026-10-31 02-L03 Mono·IL2CPP 플레이어 측정 — [README](../Assets/Labs/02_GC/L03_Pooling/README.md) (2026-11-01 C 분해 추가: 64 B = GameObject 래퍼 24 + 스크립트 인스턴스 40)
 - 2026-11-01 02-L04 Mono·IL2CPP 플레이어 측정 — [README](../Assets/Labs/02_GC/L04_UsedVsReserved/README.md) (같은 날 학습자 요청으로 Collect 반복·단편화 추가: IL2CPP만 수집 6~12회 뒤 Reserved 반납, Mono는 유지)
 - 2026-11-01 02-L05 Mono·IL2CPP 플레이어 측정 (10만·100만 개) + libil2cpp 할당 경로 확인 — [README](../Assets/Labs/02_GC/L05_MarkCost/README.md)
+- 2026-11-01 02-L06 Mono·IL2CPP 플레이어 측정 (Incremental On/Off 4빌드) + bdwgc `GC_maybe_gc` 확인 — [README](../Assets/Labs/02_GC/L06_IncrementalGC/README.md)
 
 ## Player Settings 변경 이력
 (변경 시 날짜, 항목, 원래 값 → 바꾼 값, 복원 여부)
@@ -100,3 +102,5 @@
 - 2026-11-01 Scripting Backend: Mono → IL2CPP (02-L04 빌드 동안만), **복원됨** (`Standalone: 0` 확인)
 - 2026-11-01 Scripting Backend: Mono → IL2CPP (02-L04 unmap·단편화 추가 빌드 동안만), **복원됨** (`Standalone: 0` 확인)
 - 2026-11-01 Scripting Backend: Mono → IL2CPP (02-L05 빌드 동안만), **복원됨** (`Standalone: 0` 확인)
+- 2026-11-01 Scripting Backend: Mono → IL2CPP (02-L06 Incremental On 빌드 동안만), **복원됨** (`Standalone: 0` 확인)
+- 2026-11-01 Incremental GC: `On` → `Off` (02-L06 Off 빌드 Mono·IL2CPP 동안만, IL2CPP 빌드의 Backend 전환도 복원됨), **복원됨** (`gcIncremental: 1` 확인)
