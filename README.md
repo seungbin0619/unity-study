@@ -84,7 +84,7 @@ Boehm GC의 특성, 숨은 할당, 힙 크기와 단편화, Incremental GC.
 > 참조 없는 `struct[]`는 100만 개여도 기준선과 같음. 참조 필드 하나 든 `struct[]`가 문자열을 공유해도 `List<class>`보다 약 1.7배 비쌈 (훑는 바이트가 3배)
 
 > ✅ **[02-L06 Incremental GC On/Off 프레임 타임](Assets/Labs/02_GC/L06_IncrementalGC/README.md)** · `Mono` `IL2CPP`\
-> Off는 GC마다 10 ms 스파이크. On은 부분(세대별) 수집이라 GC 프레임 약 1 ms, 20회에 한 번 full 마킹이 3~6 ms × 2~3프레임. 총 시간도 On이 적음
+> Off는 GC마다 10 ms 스파이크. On은 부분(세대별) 수집이라 GC 프레임 약 1 ms, 20회에 한 번 full 마킹이 3~6 ms × 2~3프레임. 총 시간도 On이 적음. 단 30프레임 사는 객체가 많으면 이점이 사라지고, 장수 데이터를 넓게 고치면 On이 약 3배 손해
 
 > ⏳ 02-L07 `GarbageCollector.Mode.Manual`과 `CollectIncremental`
 
