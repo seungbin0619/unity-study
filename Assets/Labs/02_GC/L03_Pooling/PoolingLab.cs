@@ -50,6 +50,63 @@ namespace Labs.GarbageCollection
 
             foreach (var go in _pool) Object.Destroy(go);
             Object.Destroy(_template);
+
+            await MeasureBreakdown(ctx, metrics);
+        }
+
+        /// <summary>
+        /// 객체당 매니지드 할당의 구성 확인용. 템플릿 구성을 바꿔 가며
+        /// 프레임 F에 Instantiate만 100번, 프레임 F+1에 Destroy만 100번 하고 각 프레임의 할당을 따로 읽는다.
+        /// </summary>
+        static async Awaitable MeasureBreakdown(LabContext ctx, LabMetrics metrics)
+        {
+            const int samples = 10;
+            const int warmup = 3;
+            var batch = new GameObject[BatchSize];
+
+            var empty = new GameObject("T0 empty");
+            var collider = new GameObject("T1 collider");
+            collider.AddComponent<BoxCollider>();
+            var oneScript = new GameObject("T2 collider + 1 script");
+            oneScript.AddComponent<BoxCollider>();
+            oneScript.AddComponent<PooledProbe>();
+            var twoScripts = new GameObject("T3 collider + 2 scripts");
+            twoScripts.AddComponent<BoxCollider>();
+            twoScripts.AddComponent<PooledProbe>();
+            twoScripts.AddComponent<PooledProbe>();
+            var templates = new[] { empty, collider, oneScript, twoScripts };
+
+            foreach (var template in templates)
+            {
+                long instBytes = 0, instCount = 0, destroyBytes = 0, destroyCount = 0;
+                for (var s = -warmup; s < samples; s++)
+                {
+                    await Awaitable.NextFrameAsync(); // 프레임 F
+                    for (var i = 0; i < BatchSize; i++) batch[i] = Object.Instantiate(template);
+
+                    await Awaitable.NextFrameAsync(); // 프레임 F+1: F(Instantiate만)의 카운터를 읽고 Destroy
+                    var ib = metrics.LastFrameGcAllocBytes;
+                    var ic = metrics.LastFrameGcAllocCount;
+                    for (var i = 0; i < BatchSize; i++) Object.Destroy(batch[i]);
+
+                    await Awaitable.NextFrameAsync(); // 프레임 F+2: F+1(Destroy + 프레임 끝 실제 파괴)의 카운터
+                    if (s < 0) continue;
+                    instBytes += ib;
+                    instCount += ic;
+                    destroyBytes += metrics.LastFrameGcAllocBytes;
+                    destroyCount += metrics.LastFrameGcAllocCount;
+                }
+
+                var inv = CultureInfo.InvariantCulture;
+                var perObject = (double)samples * BatchSize;
+                var name = "C breakdown " + template.name;
+                ctx.Record(name, "Instantiate alloc bytes per object", (instBytes / perObject).ToString("F1", inv));
+                ctx.Record(name, "Instantiate alloc count per object", (instCount / perObject).ToString("F2", inv));
+                ctx.Record(name, "Destroy alloc bytes per object", (destroyBytes / perObject).ToString("F1", inv));
+                ctx.Record(name, "Destroy alloc count per object", (destroyCount / perObject).ToString("F2", inv));
+            }
+
+            foreach (var t in templates) Object.Destroy(t);
         }
 
         void InstantiateDestroyStep()

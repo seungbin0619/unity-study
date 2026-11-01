@@ -75,7 +75,7 @@ Boehm GC의 특성, 숨은 할당, 힙 크기와 단편화, Incremental GC.
 > 클로저는 캡처 변수의 스코프 진입 시 생성. 매개변수를 캡처하면 람다 분기를 안 타도 호출마다 20~24 B
 
 > ✅ **[02-L03 `Instantiate`/`Destroy` vs 풀링](Assets/Labs/02_GC/L03_Pooling/README.md)** · `Mono` `IL2CPP`\
-> `Instantiate`의 GC 할당은 객체당 64 B뿐(나머지는 네이티브). 풀링 이득은 주로 CPU: 100개/프레임에서 약 2.2배 빠름
+> `Instantiate`의 GC 할당은 GameObject 래퍼 24 B + 스크립트당 40 B뿐(나머지는 네이티브). 풀링 이득은 주로 CPU: 약 2.1~2.6배
 
 > ⏳ 02-L04 GC Used vs Reserved
 
