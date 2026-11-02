@@ -43,6 +43,7 @@
 - [정답] (2026-11-02) 02-L06 확인 2: 부분 수집에서 새로 연결된 객체가 살아남는 이유 — 질문 전에 "dirty → 연결된 거라면 그 트리를 타고 새 마킹, 해제된 거라면 그대로"로 스스로 정리함. 그 전에 "null 대입 → dirty → 다음 GC에서 마킹 해제"로 오해(참조 카운팅식 사고) → 살아 있음은 길 하나, 죽음은 전체 추적이 필요하다는 비대칭을 설명함. incremental(마킹을 프레임에 나눔)과 부분 수집(수집 사이에 마크 유지)을 한 덩어리로 보고 있어 둘을 구분해 설명함
 - [의견 검증] (2026-11-02) 02-L06 학습자 의견 "부분 수집은 생성 후 연결되지 않은 객체만 처리하니 실제 환경에서는 큰 이점이 없을 것" → 추가 측정(midlived·mutate). 부분적으로 맞음: 30프레임 사는 객체가 많으면 On 이점이 사라지고(총 시간 Off와 같음, Used +21~27 MB), 장수 데이터를 넓게 고치면 On이 약 3배 손해. 단 "한 프레임 안에 죽는 쓰레기 + 안 바뀌는 장수 데이터"에서는 이점이 큼(기본 조건 250 vs 430 ms)
 - [질문 오해 — 채점 보류] (2026-11-02) 02-L07 Manual + 매 프레임 `CollectIncremental(slice)`, slice 3 → 1 → 0.1 ms — 답 "(a) GC 프레임 시간 증가, (b) 3 ms는 Used 감소, 0.1 ms로 갈수록 결국 증가". 결과를 본 뒤 학습자가 slice를 "3 ms마다 실행"(호출 간격)으로 읽었다고 밝힘 — 질문 문구가 모호했음(출제 문제). 실측: 세 slice(시간 예산)의 총 시간·Used가 거의 같고, 호출마다 새 수집 시작(GC 600회), slice는 상한이 아님. 간격 해석의 "자주 부를수록 GC 시간 증가" 직관은 실측(수집 빈도 = 호출 빈도)과 같은 방향. 다음에 API 매개변수가 들어간 예측 질문은 단위·의미(간격인지 예산인지)를 명시하기
+- [부분 정답 1.5/3] (2026-11-02) 02-L07 추가: 호출 간격 N = 1·5·20·60 (slice 3 ms) — 답 "(a) 감소, (b) 증가, (c) 이전과 동일". (a) 맞음(GC 합계 1/30, 단 프레임 합계는 N=20부터 포화). (b) 부분 수집 1회 비용은 맞게 늘었지만(IL2CPP 1 → 2~5 ms) 프레임 최대는 오히려 줄었음 — 최대를 정하는 건 20회마다 오는 full이고 N이 클수록 드물어짐. (c) 틀림: N MB 진폭 톱니(최고 +80 MB). 앞 실험의 "평평한 Used"를 전제(1 MB마다 수집)가 바뀐 조건에 그대로 옮김
 - [설명 들음] (2026-10-30) 검사 개수(정적)와 실행 횟수(루프 안이면 원소마다) 구분, IL2CPP는 hoist·경계 검사 제거를 하지 않음 (RyuJIT과 대비)
 
 ## 약점 (관련 실습에서 재확인)
@@ -83,7 +84,7 @@
 - 2026-11-01 02-L04 Mono·IL2CPP 플레이어 측정 — [README](../Assets/Labs/02_GC/L04_UsedVsReserved/README.md) (같은 날 학습자 요청으로 Collect 반복·단편화 추가: IL2CPP만 수집 6~12회 뒤 Reserved 반납, Mono는 유지)
 - 2026-11-01 02-L05 Mono·IL2CPP 플레이어 측정 (10만·100만 개) + libil2cpp 할당 경로 확인 — [README](../Assets/Labs/02_GC/L05_MarkCost/README.md)
 - 2026-11-01 02-L06 Mono·IL2CPP 플레이어 측정 (Incremental On/Off 4빌드) + bdwgc `GC_maybe_gc` 확인 — [README](../Assets/Labs/02_GC/L06_IncrementalGC/README.md) (2026-11-02 학습자 요청으로 midlived·mutate 조건 추가: 이점이 조건을 탐)
-- 2026-11-02 02-L07 Mono·IL2CPP 플레이어 측정 (Enabled 기준선 + Manual slice 3 ms·1 ms·0.1 ms, 각 2회) + bdwgc `GC_start_incremental_collection`·`GC_collect_a_little_inner` 확인 — [README](../Assets/Labs/02_GC/L07_ManualGC/README.md)
+- 2026-11-02 02-L07 Mono·IL2CPP 플레이어 측정 (Enabled 기준선 + Manual slice 3 ms·1 ms·0.1 ms, 각 2회) + bdwgc `GC_start_incremental_collection`·`GC_collect_a_little_inner` 확인 — [README](../Assets/Labs/02_GC/L07_ManualGC/README.md) (같은 날 학습자 해석을 실험으로: 호출 간격 N = 1·5·20·60, Mono·IL2CPP 각 2회)
 
 ## Player Settings 변경 이력
 (변경 시 날짜, 항목, 원래 값 → 바꾼 값, 복원 여부)
@@ -112,3 +113,4 @@
 - 2026-11-02 Scripting Backend: Mono → IL2CPP (02-L06 추가 측정 On·Off 빌드 2회 동안만), **복원됨** (`Standalone: 0` 확인)
 - 2026-11-02 Incremental GC: `On` → `Off` (02-L06 추가 측정 Off 빌드 Mono·IL2CPP 동안만), **복원됨** (`gcIncremental: 1` 확인)
 - 2026-11-02 Scripting Backend: Mono → IL2CPP (02-L07 빌드 동안만), **복원됨** (`Standalone: 0` 확인)
+- 2026-11-02 Scripting Backend: Mono → IL2CPP (02-L07 호출 간격 빌드 동안만), **복원됨** (`Standalone: 0` 확인)
