@@ -1,0 +1,36 @@
+run_time,lab,backend,dev_build,unity,condition,metric,value
+2026-11-02T13:41:49,02-L08,IL2CPP,1,6000.3.25f1,-,metrics valid,true
+2026-11-02T13:41:49,02-L08,IL2CPP,1,6000.3.25f1,A,GC Used MB,1.18
+2026-11-02T13:41:49,02-L08,IL2CPP,1,6000.3.25f1,A,native allocated MB,65.49
+2026-11-02T13:41:49,02-L08,IL2CPP,1,6000.3.25f1,A,snapshot,ok D:/Files/Programming/Unity/unity-study/Builds/Snapshots\02-L08_IL2CPP_A.snap
+2026-11-02T13:41:49,02-L08,IL2CPP,1,6000.3.25f1,spawned,GC Used MB,26.67
+2026-11-02T13:41:49,02-L08,IL2CPP,1,6000.3.25f1,spawned,native allocated MB,172.67
+2026-11-02T13:41:49,02-L08,IL2CPP,1,6000.3.25f1,spawned,LeakEvents subscribers,100
+2026-11-02T13:41:49,02-L08,IL2CPP,1,6000.3.25f1,B,GC Used MB,13.97
+2026-11-02T13:41:49,02-L08,IL2CPP,1,6000.3.25f1,B,native allocated MB,172.56
+2026-11-02T13:41:49,02-L08,IL2CPP,1,6000.3.25f1,B,snapshot,ok D:/Files/Programming/Unity/unity-study/Builds/Snapshots\02-L08_IL2CPP_B.snap
+2026-11-02T13:41:49,02-L08,IL2CPP,1,6000.3.25f1,B,LeakEvents subscribers,50
+2026-11-02T13:41:49,02-L08,IL2CPP,1,6000.3.25f1,B Leaky,1 GameObject native,0
+2026-11-02T13:41:49,02-L08,IL2CPP,1,6000.3.25f1,B Leaky,2 LeakHolder managed alive|== null,50|50
+2026-11-02T13:41:49,02-L08,IL2CPP,1,6000.3.25f1,B Leaky,3 byte[] managed alive,50
+2026-11-02T13:41:49,02-L08,IL2CPP,1,6000.3.25f1,B Leaky,4 Texture2D native|MB,50|50.04
+2026-11-02T13:41:49,02-L08,IL2CPP,1,6000.3.25f1,B Leaky,4b Texture2D wrapper alive,50
+2026-11-02T13:41:49,02-L08,IL2CPP,1,6000.3.25f1,B Clean,1 GameObject native,0
+2026-11-02T13:41:49,02-L08,IL2CPP,1,6000.3.25f1,B Clean,2 LeakHolder managed alive|== null,0|0
+2026-11-02T13:41:49,02-L08,IL2CPP,1,6000.3.25f1,B Clean,3 byte[] managed alive,0
+2026-11-02T13:41:49,02-L08,IL2CPP,1,6000.3.25f1,B Clean,4 Texture2D native|MB,50|50.04
+2026-11-02T13:41:49,02-L08,IL2CPP,1,6000.3.25f1,B Clean,4b Texture2D wrapper alive,50
+2026-11-02T13:41:49,02-L08,IL2CPP,1,6000.3.25f1,C,GC Used MB,13.97
+2026-11-02T13:41:49,02-L08,IL2CPP,1,6000.3.25f1,C,native allocated MB,122.39
+2026-11-02T13:41:49,02-L08,IL2CPP,1,6000.3.25f1,C,snapshot,ok D:/Files/Programming/Unity/unity-study/Builds/Snapshots\02-L08_IL2CPP_C.snap
+2026-11-02T13:41:49,02-L08,IL2CPP,1,6000.3.25f1,C,LeakEvents subscribers,50
+2026-11-02T13:41:49,02-L08,IL2CPP,1,6000.3.25f1,C Leaky,1 GameObject native,0
+2026-11-02T13:41:49,02-L08,IL2CPP,1,6000.3.25f1,C Leaky,2 LeakHolder managed alive|== null,50|50
+2026-11-02T13:41:49,02-L08,IL2CPP,1,6000.3.25f1,C Leaky,3 byte[] managed alive,50
+2026-11-02T13:41:49,02-L08,IL2CPP,1,6000.3.25f1,C Leaky,4 Texture2D native|MB,50|50.04
+2026-11-02T13:41:49,02-L08,IL2CPP,1,6000.3.25f1,C Leaky,4b Texture2D wrapper alive,50
+2026-11-02T13:41:49,02-L08,IL2CPP,1,6000.3.25f1,C Clean,1 GameObject native,0
+2026-11-02T13:41:49,02-L08,IL2CPP,1,6000.3.25f1,C Clean,2 LeakHolder managed alive|== null,0|0
+2026-11-02T13:41:49,02-L08,IL2CPP,1,6000.3.25f1,C Clean,3 byte[] managed alive,0
+2026-11-02T13:41:49,02-L08,IL2CPP,1,6000.3.25f1,C Clean,4 Texture2D native|MB,0|0.00
+2026-11-02T13:41:49,02-L08,IL2CPP,1,6000.3.25f1,C Clean,4b Texture2D wrapper alive,0
