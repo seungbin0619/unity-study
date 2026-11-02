@@ -86,7 +86,7 @@
 - 2026-11-01 02-L05 Mono·IL2CPP 플레이어 측정 (10만·100만 개) + libil2cpp 할당 경로 확인 — [README](../Assets/Labs/02_GC/L05_MarkCost/README.md)
 - 2026-11-01 02-L06 Mono·IL2CPP 플레이어 측정 (Incremental On/Off 4빌드) + bdwgc `GC_maybe_gc` 확인 — [README](../Assets/Labs/02_GC/L06_IncrementalGC/README.md) (2026-11-02 학습자 요청으로 midlived·mutate 조건 추가: 이점이 조건을 탐)
 - 2026-11-02 02-L07 Mono·IL2CPP 플레이어 측정 (Enabled 기준선 + Manual slice 3 ms·1 ms·0.1 ms, 각 2회) + bdwgc `GC_start_incremental_collection`·`GC_collect_a_little_inner` 확인 — [README](../Assets/Labs/02_GC/L07_ManualGC/README.md) (같은 날 학습자 해석을 실험으로: 호출 간격 N = 1·5·20·60, Mono·IL2CPP 각 2회)
-- 2026-11-02 02-L08 Mono·IL2CPP 플레이어 실행 + 스냅샷 A/B/C 촬영(`Builds/Snapshots`) — [README](../Assets/Labs/02_GC/L08_SnapshotLeak/README.md) (판정은 코드로 함. Memory Profiler 창 비교는 패키지 미설치로 보류)
+- 2026-11-02 02-L08 Mono·IL2CPP 플레이어 실행 + 스냅샷 A/B/C 촬영(`Builds/Snapshots`) — [README](../Assets/Labs/02_GC/L08_SnapshotLeak/README.md) (판정은 코드로 함). 이후 Memory Profiler 1.2.0 설치, 학습자가 창에서 A→B·B→C 비교와 Leaked Managed Shell 참조 경로를 확인 — 코드 판정과 일치
 
 ## Player Settings 변경 이력
 (변경 시 날짜, 항목, 원래 값 → 바꾼 값, 복원 여부)

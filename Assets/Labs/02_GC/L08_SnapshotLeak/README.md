@@ -16,7 +16,7 @@ GameObject를 `Destroy`한 뒤 무엇이 메모리에 남는지를 스냅샷 비
 ## 실습 구성
 - 코드: `LeakHolder.cs`(정적 이벤트 `LeakEvents.Tick`, 구독하는 컴포넌트), `SnapshotLeakLab.cs` — 스냅샷 A(생성 전) → 100개 생성 → `Destroy` + GC → 스냅샷 B → `Resources.UnloadUnusedAssets()` + GC → 스냅샷 C. B·C에서 그룹마다 남은 GameObject·`Texture2D`(이름으로 `Resources.FindObjectsOfTypeAll`), `LeakHolder`·`byte[]`·`Texture2D` 래퍼(`WeakReference`)를 세어 CSV에 기록
 - 실행: 에디터 메뉴 `Labs/02/L08 Snapshot Leak` 또는 플레이어 `-lab 02-L08 -snapshotDir <폴더>` (스냅샷 `.snap`은 크기가 커서 git 제외 폴더 `Builds/Snapshots`에 둔다)
-- 스냅샷 비교(Memory Profiler 창)는 학습자가 GUI로 한다. 창을 쓰려면 `com.unity.memoryprofiler` 패키지가 필요하다
+- 스냅샷 비교(Memory Profiler 창)는 학습자가 GUI로 한다. 창을 쓰려면 `com.unity.memoryprofiler` 패키지가 필요하다 (1.2.0 설치됨)
 
 ## 결과
 그룹당 50개, Development 빌드, Incremental GC On. 두 백엔드의 판정 결과가 같았다 (수치는 Mono / IL2CPP)
@@ -37,6 +37,10 @@ GameObject를 `Destroy`한 뒤 무엇이 메모리에 남는지를 스냅샷 비
 
 - B의 GC Used 증가분 약 12.8 MB = Leaky `byte[]` 50 × 256 KB(12.5 MB) + 래퍼들. 네이티브는 B에서 거의 줄지 않았다 — `Texture2D` 100개(100 MB)가 그대로 남았다.
 - 스냅샷: `Builds/Snapshots/02-L08_<백엔드>_{A,B,C}.snap` (Mono 21 / 58 / 58 MB, git 제외)
+- Memory Profiler 1.2.0 창 확인 (2026-11-02, 학습자, Mono 스냅샷): 코드 판정과 같은 결과
+  - A → B 비교: Summary에서 Managed 약 13 MB·Graphics 약 100 MB 증가, Unity Objects에 `L08_Leaky_NN_tex`·`L08_Clean_NN_tex` 각 50개
+  - B 단독: `LeakHolder`가 Leaked Managed Shell로 표시. References 경로 `LeakEvents.Tick` → `Action` → `LeakHolder`
+  - B → C 비교: Clean 텍스처만 사라짐
 
 원본: `Notes/results/02-L08_Mono_2026-11-02.csv`, `02-L08_IL2CPP_2026-11-02.csv`
 
