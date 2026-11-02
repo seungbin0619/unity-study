@@ -33,7 +33,7 @@
 | 02-L08 | Memory Profiler 스냅샷 비교로 누수 찾기 (Claude는 절차 안내, GUI 조작은 학습자) | 무엇이 남아 있을까? |
 | 02-L09 | 파이널라이저가 있는 객체의 수거 지연 (GC 사이클 수 확인) | 몇 번째 GC에서 해제? |
 
-## 3~6. 예정
+## 3\~6. 예정
 
 3. PlayerLoop (`PlayerLoop` API, 커스텀 시스템 삽입, Awaitable/코루틴 동작 위치)
 4. 직렬화와 에셋 파이프라인 (`SerializedObject`, YAML/GUID, `AssetDatabase`, `ScriptedImporter`, Addressables)
