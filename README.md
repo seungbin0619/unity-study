@@ -14,7 +14,7 @@ Unity 엔진 내부 동작을 문서로만 읽지 않고 **직접 측정해서 �
 | 주제 | 진행 |
 |---|---|
 | [1. 네이티브–매니지드 경계](#1-네이티브매니지드-경계) | 10 / 10 완료 |
-| [2. 메모리와 GC](#2-메모리와-gc) | 8 / 9 |
+| [2. 메모리와 GC](#2-메모리와-gc) | 9 / 9 완료 |
 | 3. PlayerLoop · 4. 직렬화와 에셋 파이프라인 · 5. 렌더링 파이프라인 · 6. DOTS | 예정 |
 
 ## 실행 방법
@@ -92,4 +92,5 @@ Boehm GC의 특성, 숨은 할당, 힙 크기와 단편화, Incremental GC.
 > ✅ **[02-L08 Memory Profiler 스냅샷으로 누수 찾기](Assets/Labs/02_GC/L08_SnapshotLeak/README.md)** · `Mono` `IL2CPP`\
 > 구독 누수는 파괴된 셸 + 필드를 매니지드에 남김. 런타임 `Texture2D`는 구독과 무관하게 네이티브 50 MB 잔존, 셸이 참조하면 `UnloadUnusedAssets`로도 안 풀림
 
-> ⏳ 02-L09 파이널라이저와 수거 지연
+> ✅ **[02-L09 파이널라이저와 수거 지연](Assets/Labs/02_GC/L09_Finalizer/README.md)** · `Mono` `IL2CPP`\
+> 파이널라이저 객체는 "Collect → 파이널라이저 스레드 실행 → 다음 Collect"에서 회수. 매 프레임 Collect하면 스레드가 틈에만 돌아 Mono 약 170회·IL2CPP 약 16회, 60fps면 2~3회. 첫 수집이 3~4배 비싸고(다시 마킹), IL2CPP는 `trackResurrection` 미지원
