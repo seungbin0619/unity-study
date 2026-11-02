@@ -60,6 +60,9 @@ namespace Labs.Editor
         [MenuItem("Labs/02/L07 Manual GC")]
         static void Run02L07() => Run("02-L07");
 
+        [MenuItem("Labs/02/L08 Snapshot Leak")]
+        static void Run02L08() => Run("02-L08");
+
         public static void Run(string labId)
         {
             if (EditorApplication.isPlaying)
