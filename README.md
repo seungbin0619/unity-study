@@ -14,7 +14,7 @@ Unity 엔진 내부 동작을 문서로만 읽지 않고 **직접 측정해서 �
 | 주제 | 진행 |
 |---|---|
 | [1. 네이티브–매니지드 경계](#1-네이티브매니지드-경계) | 10 / 10 완료 |
-| [2. 메모리와 GC](#2-메모리와-gc) | 6 / 9 |
+| [2. 메모리와 GC](#2-메모리와-gc) | 7 / 9 |
 | 3. PlayerLoop · 4. 직렬화와 에셋 파이프라인 · 5. 렌더링 파이프라인 · 6. DOTS | 예정 |
 
 ## 실행 방법
@@ -86,7 +86,8 @@ Boehm GC의 특성, 숨은 할당, 힙 크기와 단편화, Incremental GC.
 > ✅ **[02-L06 Incremental GC On/Off 프레임 타임](Assets/Labs/02_GC/L06_IncrementalGC/README.md)** · `Mono` `IL2CPP`\
 > Off는 GC마다 10 ms 스파이크. On은 부분(세대별) 수집이라 GC 프레임 약 1 ms, 20회에 한 번 full 마킹이 3~6 ms × 2~3프레임. 총 시간도 On이 적음. 단 30프레임 사는 객체가 많으면 이점이 사라지고, 장수 데이터를 넓게 고치면 On이 약 3배 손해
 
-> ⏳ 02-L07 `GarbageCollector.Mode.Manual`과 `CollectIncremental`
+> ✅ **[02-L07 `GarbageCollector.Mode.Manual`과 `CollectIncremental`](Assets/Labs/02_GC/L07_ManualGC/README.md)** · `Mono` `IL2CPP`\
+> 매 프레임 호출하면 호출마다 새 수집을 시작해 Used는 평평하지만 CPU는 Enabled의 2.5~3.7배. slice는 상한이 아님 (마무리 바닥 0.6~1 ms, 남은 마킹은 다음 할당이 이어받음)
 
 > ⏳ 02-L08 Memory Profiler 스냅샷으로 누수 찾기
 
