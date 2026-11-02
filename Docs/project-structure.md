@@ -27,6 +27,7 @@ Assets/Labs/
     ...
 Notes/
   progress.md                  학습 진행 기록: 퀴즈·약점·미응답 질문·Player Settings 변경 이력
+  glossary.md                  용어집: 장별 용어, 헷갈리기 쉬운 것, 관련 실습 링크
   results/                     실습 결과 CSV, 플레이어·빌드·테스트 로그
 Builds/                        빌드 산출물 (git 제외)
 ```

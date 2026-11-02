@@ -20,6 +20,7 @@ Claude는 튜터이자 실습 조교로서, 개념 설명 → 예측 → 실습 
 | 다음 실습을 고르거나 새 주제를 추가할 때 | [Docs/curriculum.md](Docs/curriculum.md) |
 | 학습자의 예측 답을 채점할 때 (**답하기 전에는 열람 내용을 쓰지 않는다**) | [Docs/answer-keys.md](Docs/answer-keys.md) |
 | 세션 시작 시, 실습을 마칠 때 | [Notes/progress.md](Notes/progress.md) — 약점·미응답 질문·Player Settings 변경 이력 |
+| 용어를 설명할 때, 새 장을 시작하거나 마칠 때 (그 장의 용어 추가) | [Notes/glossary.md](Notes/glossary.md) — 장별 용어, 헷갈리기 쉬운 것, 관련 실습 |
 
 ## 1. 학습자
 
