@@ -42,6 +42,7 @@
 - [정답] (2026-11-01) 02-L06 확인: `_live[123] = null` 때 쓰기 배리어가 dirty로 표시하는 곳 — 질문이 헷갈린다고 해서 그림으로 다시 냄(힌트 아님) → "`_live` 배열 쪽, 루트에서 나가는 트리가 바뀐 것" 정답. 끊긴 객체는 이전 마크가 남아 다음 full 수집까지 회수되지 않는다(floating garbage)는 점은 보충함. 배열 칸 = 포인터 약점과 연결해 맞힘
 - [정답] (2026-11-02) 02-L06 확인 2: 부분 수집에서 새로 연결된 객체가 살아남는 이유 — 질문 전에 "dirty → 연결된 거라면 그 트리를 타고 새 마킹, 해제된 거라면 그대로"로 스스로 정리함. 그 전에 "null 대입 → dirty → 다음 GC에서 마킹 해제"로 오해(참조 카운팅식 사고) → 살아 있음은 길 하나, 죽음은 전체 추적이 필요하다는 비대칭을 설명함. incremental(마킹을 프레임에 나눔)과 부분 수집(수집 사이에 마크 유지)을 한 덩어리로 보고 있어 둘을 구분해 설명함
 - [의견 검증] (2026-11-02) 02-L06 학습자 의견 "부분 수집은 생성 후 연결되지 않은 객체만 처리하니 실제 환경에서는 큰 이점이 없을 것" → 추가 측정(midlived·mutate). 부분적으로 맞음: 30프레임 사는 객체가 많으면 On 이점이 사라지고(총 시간 Off와 같음, Used +21~27 MB), 장수 데이터를 넓게 고치면 On이 약 3배 손해. 단 "한 프레임 안에 죽는 쓰레기 + 안 바뀌는 장수 데이터"에서는 이점이 큼(기본 조건 250 vs 430 ms)
+- [오답] (2026-11-02) 02-L07 Manual + 매 프레임 `CollectIncremental(slice)`, slice 3 → 1 → 0.1 ms — 답 "(a) GC 프레임 시간 증가, (b) 3 ms는 Used 감소, 0.1 ms로 갈수록 결국 증가". 실측: 세 slice의 총 시간·Used가 거의 같음(Used는 살아 있는 힙에 붙어 평평, Enabled보다 낮음). 대신 Manual 자체가 Enabled의 2.5~3.7배. 놓친 점: 호출마다 새 수집 시작(GC 600회), slice는 상한이 아님(마무리 바닥 비용, `MAX_PRIOR_ATTEMPTS` 1), 남은 마킹은 할당 경로가 이어받음. "수집 한 번의 고정 작업량을 slice로 나눠 갚는다"는 모델로 추론함
 - [설명 들음] (2026-10-30) 검사 개수(정적)와 실행 횟수(루프 안이면 원소마다) 구분, IL2CPP는 hoist·경계 검사 제거를 하지 않음 (RyuJIT과 대비)
 
 ## 약점 (관련 실습에서 재확인)
@@ -57,6 +58,7 @@
 - 엔진 API 비용을 "매니지드 힙(GC) vs 네이티브 메모리·CPU"로 나눠 보는 것 — 02-L03에서 `Instantiate`가 GC 할당을 많이 할 거라고 봄. 1장 래퍼 구조와 연결해 "GC에 잡히는 건 래퍼뿐"을 02-L04·02-L08(Memory Profiler)에서 다시 묻기
 - 런타임에 타입 정보를 읽어 처리하는 방식(full generic sharing, rgctx)의 존재 — "값 타입 = 반드시 전용 코드"로 고정해서 생각함
 - 빌드 도구(UnityLinker, IL2CPP)가 하는 분석의 수준을 "전부 아니면 전무"로 가정하는 것 — 01-L10에서 링커가 상수 문자열 리플렉션은 알아본다는 점, 01-L08에서 IL2CPP가 sealed를 쓰지 않는다는 점. 도구가 "무엇을 보고 무엇을 못 보는지"를 단계별로 묻기
+- API 이름과 매개변수를 문자 그대로 믿는 것 — 02-L07에서 `CollectIncremental(slice)`의 slice를 엄격한 상한으로, Manual을 "부를 때만 GC 작업"으로 봄. 실제로는 호출이 새 수집을 시작하고, 마무리는 시간 제한을 넘기며, 할당 경로도 마킹함. 다음 GC·PlayerLoop API 질문에서 "이 API가 실제로 무엇을 시작·제한하는가"를 묻기
 
 ## 미응답 질문 (다음 세션 첫 질문으로)
 (없음)
@@ -82,6 +84,7 @@
 - 2026-11-01 02-L04 Mono·IL2CPP 플레이어 측정 — [README](../Assets/Labs/02_GC/L04_UsedVsReserved/README.md) (같은 날 학습자 요청으로 Collect 반복·단편화 추가: IL2CPP만 수집 6~12회 뒤 Reserved 반납, Mono는 유지)
 - 2026-11-01 02-L05 Mono·IL2CPP 플레이어 측정 (10만·100만 개) + libil2cpp 할당 경로 확인 — [README](../Assets/Labs/02_GC/L05_MarkCost/README.md)
 - 2026-11-01 02-L06 Mono·IL2CPP 플레이어 측정 (Incremental On/Off 4빌드) + bdwgc `GC_maybe_gc` 확인 — [README](../Assets/Labs/02_GC/L06_IncrementalGC/README.md) (2026-11-02 학습자 요청으로 midlived·mutate 조건 추가: 이점이 조건을 탐)
+- 2026-11-02 02-L07 Mono·IL2CPP 플레이어 측정 (Enabled 기준선 + Manual slice 3 ms·1 ms·0.1 ms, 각 2회) + bdwgc `GC_start_incremental_collection`·`GC_collect_a_little_inner` 확인 — [README](../Assets/Labs/02_GC/L07_ManualGC/README.md)
 
 ## Player Settings 변경 이력
 (변경 시 날짜, 항목, 원래 값 → 바꾼 값, 복원 여부)
@@ -109,3 +112,4 @@
 - 2026-11-01 Incremental GC: `On` → `Off` (02-L06 Off 빌드 Mono·IL2CPP 동안만, IL2CPP 빌드의 Backend 전환도 복원됨), **복원됨** (`gcIncremental: 1` 확인)
 - 2026-11-02 Scripting Backend: Mono → IL2CPP (02-L06 추가 측정 On·Off 빌드 2회 동안만), **복원됨** (`Standalone: 0` 확인)
 - 2026-11-02 Incremental GC: `On` → `Off` (02-L06 추가 측정 Off 빌드 Mono·IL2CPP 동안만), **복원됨** (`gcIncremental: 1` 확인)
+- 2026-11-02 Scripting Backend: Mono → IL2CPP (02-L07 빌드 동안만), **복원됨** (`Standalone: 0` 확인)
