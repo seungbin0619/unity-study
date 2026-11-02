@@ -45,6 +45,7 @@
 - [질문 오해 — 채점 보류] (2026-11-02) 02-L07 Manual + 매 프레임 `CollectIncremental(slice)`, slice 3 → 1 → 0.1 ms — 답 "(a) GC 프레임 시간 증가, (b) 3 ms는 Used 감소, 0.1 ms로 갈수록 결국 증가". 결과를 본 뒤 학습자가 slice를 "3 ms마다 실행"(호출 간격)으로 읽었다고 밝힘 — 질문 문구가 모호했음(출제 문제). 실측: 세 slice(시간 예산)의 총 시간·Used가 거의 같고, 호출마다 새 수집 시작(GC 600회), slice는 상한이 아님. 간격 해석의 "자주 부를수록 GC 시간 증가" 직관은 실측(수집 빈도 = 호출 빈도)과 같은 방향. 다음에 API 매개변수가 들어간 예측 질문은 단위·의미(간격인지 예산인지)를 명시하기
 - [부분 정답 1.5/3] (2026-11-02) 02-L07 추가: 호출 간격 N = 1·5·20·60 (slice 3 ms) — 답 "(a) 감소, (b) 증가, (c) 이전과 동일". (a) 맞음(GC 합계 1/30, 단 프레임 합계는 N=20부터 포화). (b) 부분 수집 1회 비용은 맞게 늘었지만(IL2CPP 1 → 2~5 ms) 프레임 최대는 오히려 줄었음 — 최대를 정하는 건 20회마다 오는 full이고 N이 클수록 드물어짐. (c) 틀림: N MB 진폭 톱니(최고 +80 MB). 앞 실험의 "평평한 Used"를 전제(1 MB마다 수집)가 바뀐 조건에 그대로 옮김
 - [정답 4/4] (2026-11-02) 02-L08 Destroy + GC 후 남는 것 (Leaky 구독 해제 안 함 / Clean 해제) — GameObject 둘 다 X, `LeakHolder`·`byte[]` Leaky만 O(매니지드), `Texture2D` 둘 다 O(네이티브). 두 백엔드 실측과 일치. 텍스처를 네이티브로 분류함 — "엔진 API 비용을 매니지드 vs 네이티브로 나누기" 약점 회복 신호. 보충: `UnloadUnusedAssets`가 셸의 필드 참조 때문에 Leaky 텍스처를 못 푼다는 점, Clean 텍스처 래퍼가 네이티브가 살아 있는 동안 함께 산다는 점
+- [부분 정답 1.5/2] (2026-11-02) 02-L09 참조를 끊은 뒤 GC Used가 돌아오는 `Collect` 횟수 (1프레임 간격, Wait 없음) — 답 "소멸자 없음 1회, 있음 2회 (1회 후 소멸자 대기, 2회차에 소멸)". 없음 1회 맞음. 있음은 원리(1회차에 살려서 대기열, 실행 후 다음 수집에서 회수)는 맞지만, 파이널라이저가 별도 스레드에서 비동기로 돈다는 점을 고려하지 않음 — 질문 조건에서 Mono 157~184회, IL2CPP 14~18회. 60fps면 IL2CPP 2회·Mono 3회, `WaitForPendingFinalizers`를 끼우면 2회
 - [설명 들음] (2026-10-30) 검사 개수(정적)와 실행 횟수(루프 안이면 원소마다) 구분, IL2CPP는 hoist·경계 검사 제거를 하지 않음 (RyuJIT과 대비)
 
 ## 약점 (관련 실습에서 재확인)
@@ -62,7 +63,7 @@
 - 빌드 도구(UnityLinker, IL2CPP)가 하는 분석의 수준을 "전부 아니면 전무"로 가정하는 것 — 01-L10에서 링커가 상수 문자열 리플렉션은 알아본다는 점, 01-L08에서 IL2CPP가 sealed를 쓰지 않는다는 점. 도구가 "무엇을 보고 무엇을 못 보는지"를 단계별로 묻기
 
 ## 미응답 질문 (다음 세션 첫 질문으로)
-(없음)
+- (2026-11-02, 02-L09 확인) 회수되지 않고 남을 Finalizable 객체 10만 개가 있는 첫 `Collect`가 Plain보다 3~4배 비쌌던 이유 — "이때 GC가 읽는 객체·바이트는?" (약점 "GC가 읽는 바이트" 재확인용)
 
 ## 보류한 작업
 - 2026-10-31 `Docs/build-and-environment.md`에 `Labs/Build/IL2CPP (Release)` 메뉴(출력 `Builds/IL2CPP-Release`, 생성 코드 비교용, 프로파일러 카운터 없음)를 추가하기 — 학습자가 "나중에"로 보류. Docs 수정이라 할 때 다시 묻는다
@@ -87,6 +88,7 @@
 - 2026-11-01 02-L06 Mono·IL2CPP 플레이어 측정 (Incremental On/Off 4빌드) + bdwgc `GC_maybe_gc` 확인 — [README](../Assets/Labs/02_GC/L06_IncrementalGC/README.md) (2026-11-02 학습자 요청으로 midlived·mutate 조건 추가: 이점이 조건을 탐)
 - 2026-11-02 02-L07 Mono·IL2CPP 플레이어 측정 (Enabled 기준선 + Manual slice 3 ms·1 ms·0.1 ms, 각 2회) + bdwgc `GC_start_incremental_collection`·`GC_collect_a_little_inner` 확인 — [README](../Assets/Labs/02_GC/L07_ManualGC/README.md) (같은 날 학습자 해석을 실험으로: 호출 간격 N = 1·5·20·60, Mono·IL2CPP 각 2회)
 - 2026-11-02 02-L08 Mono·IL2CPP 플레이어 실행 + 스냅샷 A/B/C 촬영(`Builds/Snapshots`) — [README](../Assets/Labs/02_GC/L08_SnapshotLeak/README.md) (판정은 코드로 함). 이후 Memory Profiler 1.2.0 설치, 학습자가 창에서 A→B·B→C 비교와 Leaked Managed Shell 참조 경로를 확인 — 코드 판정과 일치
+- 2026-11-02 02-L09 Mono·IL2CPP 플레이어 측정 (프레임 제한 없음·60fps 각 1회, Mono는 drain·Wait 단계 추가 전 버전 1회 더) — [README](../Assets/Labs/02_GC/L09_Finalizer/README.md) (첫 Mono 결과가 예측과 달라 drain·Wait·`-frameRate` 추가. IL2CPP 첫 실행은 `WeakReference(o, true)` `NotSupportedException`으로 실패 → IL2CPP에서는 긴 약한 참조 생략 후 재빌드. 2장 실습 모두 완료)
 
 ## Player Settings 변경 이력
 (변경 시 날짜, 항목, 원래 값 → 바꾼 값, 복원 여부)
@@ -117,3 +119,4 @@
 - 2026-11-02 Scripting Backend: Mono → IL2CPP (02-L07 빌드 동안만), **복원됨** (`Standalone: 0` 확인)
 - 2026-11-02 Scripting Backend: Mono → IL2CPP (02-L07 호출 간격 빌드 동안만), **복원됨** (`Standalone: 0` 확인)
 - 2026-11-02 Scripting Backend: Mono → IL2CPP (02-L08 빌드 동안만), **복원됨** (`Standalone: 0` 확인)
+- 2026-11-02 Scripting Backend: Mono → IL2CPP (02-L09 빌드 2회 동안만 — 1회차 실행 실패 후 수정 빌드), **복원됨** (매번 `Standalone: 0` 확인)

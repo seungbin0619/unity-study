@@ -1,0 +1,939 @@
+run_time,lab,backend,dev_build,unity,condition,metric,value
+2026-11-02T15:42:26,02-L09,Mono,1,6000.3.25f1,-,metrics valid,true
+2026-11-02T15:42:26,02-L09,Mono,1,6000.3.25f1,-,GarbageCollector.isIncremental,true
+2026-11-02T15:42:26,02-L09,Mono,1,6000.3.25f1,-,count,100000
+2026-11-02T15:42:26,02-L09,Mono,1,6000.3.25f1,Plain t1,baseline GC Used MB,5.95
+2026-11-02T15:42:26,02-L09,Mono,1,6000.3.25f1,Plain t1,baseline GetTotalMemory MB,5.95
+2026-11-02T15:42:26,02-L09,Mono,1,6000.3.25f1,Plain t1,spawned GC Used MB,136.22
+2026-11-02T15:42:26,02-L09,Mono,1,6000.3.25f1,Plain t1,c0 GC Used MB,136.22
+2026-11-02T15:42:26,02-L09,Mono,1,6000.3.25f1,Plain t1,c0 finalized,0
+2026-11-02T15:42:26,02-L09,Mono,1,6000.3.25f1,Plain t1,c0 weak short|long alive,1000|1000
+2026-11-02T15:42:26,02-L09,Mono,1,6000.3.25f1,Plain t1,c1 collect ms,1.53
+2026-11-02T15:42:26,02-L09,Mono,1,6000.3.25f1,Plain t1,c1 GetTotalMemory MB,2.14
+2026-11-02T15:42:26,02-L09,Mono,1,6000.3.25f1,Plain t1,c1 GC Used MB,2.14
+2026-11-02T15:42:26,02-L09,Mono,1,6000.3.25f1,Plain t1,c1 finalized,0
+2026-11-02T15:42:26,02-L09,Mono,1,6000.3.25f1,Plain t1,c1 weak short|long alive,0|0
+2026-11-02T15:42:26,02-L09,Mono,1,6000.3.25f1,Plain t1,c2 collect ms,0.65
+2026-11-02T15:42:26,02-L09,Mono,1,6000.3.25f1,Plain t1,c2 GetTotalMemory MB,2.14
+2026-11-02T15:42:26,02-L09,Mono,1,6000.3.25f1,Plain t1,c2 GC Used MB,2.14
+2026-11-02T15:42:26,02-L09,Mono,1,6000.3.25f1,Plain t1,c2 finalized,0
+2026-11-02T15:42:26,02-L09,Mono,1,6000.3.25f1,Plain t1,c2 weak short|long alive,0|0
+2026-11-02T15:42:26,02-L09,Mono,1,6000.3.25f1,Plain t1,c3 collect ms,0.63
+2026-11-02T15:42:26,02-L09,Mono,1,6000.3.25f1,Plain t1,c3 GetTotalMemory MB,2.14
+2026-11-02T15:42:26,02-L09,Mono,1,6000.3.25f1,Plain t1,c3 GC Used MB,2.14
+2026-11-02T15:42:26,02-L09,Mono,1,6000.3.25f1,Plain t1,c3 finalized,0
+2026-11-02T15:42:26,02-L09,Mono,1,6000.3.25f1,Plain t1,c3 weak short|long alive,0|0
+2026-11-02T15:42:26,02-L09,Mono,1,6000.3.25f1,Plain t1,c4 collect ms,0.57
+2026-11-02T15:42:26,02-L09,Mono,1,6000.3.25f1,Plain t1,c4 GetTotalMemory MB,2.14
+2026-11-02T15:42:26,02-L09,Mono,1,6000.3.25f1,Plain t1,c4 GC Used MB,2.14
+2026-11-02T15:42:26,02-L09,Mono,1,6000.3.25f1,Plain t1,c4 finalized,0
+2026-11-02T15:42:26,02-L09,Mono,1,6000.3.25f1,Plain t1,c4 weak short|long alive,0|0
+2026-11-02T15:42:26,02-L09,Mono,1,6000.3.25f1,Plain t1,c5 collect ms,0.58
+2026-11-02T15:42:26,02-L09,Mono,1,6000.3.25f1,Plain t1,c5 GetTotalMemory MB,2.14
+2026-11-02T15:42:26,02-L09,Mono,1,6000.3.25f1,Plain t1,c5 GC Used MB,2.14
+2026-11-02T15:42:26,02-L09,Mono,1,6000.3.25f1,Plain t1,c5 finalized,0
+2026-11-02T15:42:26,02-L09,Mono,1,6000.3.25f1,Plain t1,c5 weak short|long alive,0|0
+2026-11-02T15:42:26,02-L09,Mono,1,6000.3.25f1,Finalizable t1,baseline GC Used MB,2.01
+2026-11-02T15:42:26,02-L09,Mono,1,6000.3.25f1,Finalizable t1,baseline GetTotalMemory MB,2.01
+2026-11-02T15:42:26,02-L09,Mono,1,6000.3.25f1,Finalizable t1,spawned GC Used MB,140.82
+2026-11-02T15:42:26,02-L09,Mono,1,6000.3.25f1,Finalizable t1,c0 GC Used MB,140.82
+2026-11-02T15:42:26,02-L09,Mono,1,6000.3.25f1,Finalizable t1,c0 finalized,0
+2026-11-02T15:42:26,02-L09,Mono,1,6000.3.25f1,Finalizable t1,c0 weak short|long alive,1000|1000
+2026-11-02T15:42:26,02-L09,Mono,1,6000.3.25f1,Finalizable t1,c1 collect ms,5.15
+2026-11-02T15:42:26,02-L09,Mono,1,6000.3.25f1,Finalizable t1,c1 GetTotalMemory MB,140.06
+2026-11-02T15:42:26,02-L09,Mono,1,6000.3.25f1,Finalizable t1,c1 GC Used MB,140.06
+2026-11-02T15:42:26,02-L09,Mono,1,6000.3.25f1,Finalizable t1,c1 finalized,1891
+2026-11-02T15:42:26,02-L09,Mono,1,6000.3.25f1,Finalizable t1,c1 weak short|long alive,0|1000
+2026-11-02T15:42:26,02-L09,Mono,1,6000.3.25f1,Finalizable t1,c2 collect ms,5.55
+2026-11-02T15:42:26,02-L09,Mono,1,6000.3.25f1,Finalizable t1,c2 GetTotalMemory MB,137.59
+2026-11-02T15:42:26,02-L09,Mono,1,6000.3.25f1,Finalizable t1,c2 GC Used MB,137.59
+2026-11-02T15:42:26,02-L09,Mono,1,6000.3.25f1,Finalizable t1,c2 finalized,3535
+2026-11-02T15:42:26,02-L09,Mono,1,6000.3.25f1,Finalizable t1,c2 weak short|long alive,0|981
+2026-11-02T15:42:26,02-L09,Mono,1,6000.3.25f1,Finalizable t1,c3 collect ms,6.82
+2026-11-02T15:42:26,02-L09,Mono,1,6000.3.25f1,Finalizable t1,c3 GetTotalMemory MB,135.45
+2026-11-02T15:42:26,02-L09,Mono,1,6000.3.25f1,Finalizable t1,c3 GC Used MB,135.45
+2026-11-02T15:42:26,02-L09,Mono,1,6000.3.25f1,Finalizable t1,c3 finalized,5554
+2026-11-02T15:42:26,02-L09,Mono,1,6000.3.25f1,Finalizable t1,c3 weak short|long alive,0|967
+2026-11-02T15:42:26,02-L09,Mono,1,6000.3.25f1,Finalizable t1,c4 collect ms,4.46
+2026-11-02T15:42:26,02-L09,Mono,1,6000.3.25f1,Finalizable t1,c4 GetTotalMemory MB,132.75
+2026-11-02T15:42:26,02-L09,Mono,1,6000.3.25f1,Finalizable t1,c4 GC Used MB,132.75
+2026-11-02T15:42:26,02-L09,Mono,1,6000.3.25f1,Finalizable t1,c4 finalized,7349
+2026-11-02T15:42:26,02-L09,Mono,1,6000.3.25f1,Finalizable t1,c4 weak short|long alive,0|947
+2026-11-02T15:42:26,02-L09,Mono,1,6000.3.25f1,Finalizable t1,c5 collect ms,3.77
+2026-11-02T15:42:26,02-L09,Mono,1,6000.3.25f1,Finalizable t1,c5 GetTotalMemory MB,130.41
+2026-11-02T15:42:26,02-L09,Mono,1,6000.3.25f1,Finalizable t1,c5 GC Used MB,130.41
+2026-11-02T15:42:26,02-L09,Mono,1,6000.3.25f1,Finalizable t1,c5 finalized,8941
+2026-11-02T15:42:26,02-L09,Mono,1,6000.3.25f1,Finalizable t1,c5 weak short|long alive,0|931
+2026-11-02T15:42:26,02-L09,Mono,1,6000.3.25f1,Finalizable t2,baseline GC Used MB,2.01
+2026-11-02T15:42:26,02-L09,Mono,1,6000.3.25f1,Finalizable t2,baseline GetTotalMemory MB,2.01
+2026-11-02T15:42:26,02-L09,Mono,1,6000.3.25f1,Finalizable t2,spawned GC Used MB,140.82
+2026-11-02T15:42:26,02-L09,Mono,1,6000.3.25f1,Finalizable t2,c0 GC Used MB,140.82
+2026-11-02T15:42:26,02-L09,Mono,1,6000.3.25f1,Finalizable t2,c0 finalized,0
+2026-11-02T15:42:26,02-L09,Mono,1,6000.3.25f1,Finalizable t2,c0 weak short|long alive,1000|1000
+2026-11-02T15:42:26,02-L09,Mono,1,6000.3.25f1,Finalizable t2,c1 collect ms,5.08
+2026-11-02T15:42:26,02-L09,Mono,1,6000.3.25f1,Finalizable t2,c1 GetTotalMemory MB,140.06
+2026-11-02T15:42:26,02-L09,Mono,1,6000.3.25f1,Finalizable t2,c1 GC Used MB,140.06
+2026-11-02T15:42:26,02-L09,Mono,1,6000.3.25f1,Finalizable t2,c1 finalized,1850
+2026-11-02T15:42:26,02-L09,Mono,1,6000.3.25f1,Finalizable t2,c1 weak short|long alive,0|1000
+2026-11-02T15:42:26,02-L09,Mono,1,6000.3.25f1,Finalizable t2,c2 collect ms,4.37
+2026-11-02T15:42:26,02-L09,Mono,1,6000.3.25f1,Finalizable t2,c2 GetTotalMemory MB,137.64
+2026-11-02T15:42:26,02-L09,Mono,1,6000.3.25f1,Finalizable t2,c2 GC Used MB,137.64
+2026-11-02T15:42:26,02-L09,Mono,1,6000.3.25f1,Finalizable t2,c2 finalized,3483
+2026-11-02T15:42:26,02-L09,Mono,1,6000.3.25f1,Finalizable t2,c2 weak short|long alive,0|981
+2026-11-02T15:42:26,02-L09,Mono,1,6000.3.25f1,Finalizable t2,c3 collect ms,3.95
+2026-11-02T15:42:26,02-L09,Mono,1,6000.3.25f1,Finalizable t2,c3 GetTotalMemory MB,135.47
+2026-11-02T15:42:26,02-L09,Mono,1,6000.3.25f1,Finalizable t2,c3 GC Used MB,135.47
+2026-11-02T15:42:26,02-L09,Mono,1,6000.3.25f1,Finalizable t2,c3 finalized,4856
+2026-11-02T15:42:26,02-L09,Mono,1,6000.3.25f1,Finalizable t2,c3 weak short|long alive,0|963
+2026-11-02T15:42:26,02-L09,Mono,1,6000.3.25f1,Finalizable t2,c4 collect ms,4.14
+2026-11-02T15:42:26,02-L09,Mono,1,6000.3.25f1,Finalizable t2,c4 GetTotalMemory MB,133.68
+2026-11-02T15:42:26,02-L09,Mono,1,6000.3.25f1,Finalizable t2,c4 GC Used MB,133.68
+2026-11-02T15:42:26,02-L09,Mono,1,6000.3.25f1,Finalizable t2,c4 finalized,6520
+2026-11-02T15:42:26,02-L09,Mono,1,6000.3.25f1,Finalizable t2,c4 weak short|long alive,0|951
+2026-11-02T15:42:26,02-L09,Mono,1,6000.3.25f1,Finalizable t2,c5 collect ms,3.66
+2026-11-02T15:42:26,02-L09,Mono,1,6000.3.25f1,Finalizable t2,c5 GetTotalMemory MB,131.49
+2026-11-02T15:42:26,02-L09,Mono,1,6000.3.25f1,Finalizable t2,c5 GC Used MB,131.49
+2026-11-02T15:42:26,02-L09,Mono,1,6000.3.25f1,Finalizable t2,c5 finalized,8009
+2026-11-02T15:42:26,02-L09,Mono,1,6000.3.25f1,Finalizable t2,c5 weak short|long alive,0|936
+2026-11-02T15:42:26,02-L09,Mono,1,6000.3.25f1,Plain t2,baseline GC Used MB,2.02
+2026-11-02T15:42:26,02-L09,Mono,1,6000.3.25f1,Plain t2,baseline GetTotalMemory MB,2.02
+2026-11-02T15:42:26,02-L09,Mono,1,6000.3.25f1,Plain t2,spawned GC Used MB,136.23
+2026-11-02T15:42:26,02-L09,Mono,1,6000.3.25f1,Plain t2,c0 GC Used MB,136.23
+2026-11-02T15:42:26,02-L09,Mono,1,6000.3.25f1,Plain t2,c0 finalized,0
+2026-11-02T15:42:26,02-L09,Mono,1,6000.3.25f1,Plain t2,c0 weak short|long alive,1000|1000
+2026-11-02T15:42:26,02-L09,Mono,1,6000.3.25f1,Plain t2,c1 collect ms,1.70
+2026-11-02T15:42:26,02-L09,Mono,1,6000.3.25f1,Plain t2,c1 GetTotalMemory MB,2.15
+2026-11-02T15:42:26,02-L09,Mono,1,6000.3.25f1,Plain t2,c1 GC Used MB,2.15
+2026-11-02T15:42:26,02-L09,Mono,1,6000.3.25f1,Plain t2,c1 finalized,0
+2026-11-02T15:42:26,02-L09,Mono,1,6000.3.25f1,Plain t2,c1 weak short|long alive,0|0
+2026-11-02T15:42:26,02-L09,Mono,1,6000.3.25f1,Plain t2,c2 collect ms,0.72
+2026-11-02T15:42:26,02-L09,Mono,1,6000.3.25f1,Plain t2,c2 GetTotalMemory MB,2.15
+2026-11-02T15:42:26,02-L09,Mono,1,6000.3.25f1,Plain t2,c2 GC Used MB,2.15
+2026-11-02T15:42:26,02-L09,Mono,1,6000.3.25f1,Plain t2,c2 finalized,0
+2026-11-02T15:42:26,02-L09,Mono,1,6000.3.25f1,Plain t2,c2 weak short|long alive,0|0
+2026-11-02T15:42:26,02-L09,Mono,1,6000.3.25f1,Plain t2,c3 collect ms,0.64
+2026-11-02T15:42:26,02-L09,Mono,1,6000.3.25f1,Plain t2,c3 GetTotalMemory MB,2.15
+2026-11-02T15:42:26,02-L09,Mono,1,6000.3.25f1,Plain t2,c3 GC Used MB,2.15
+2026-11-02T15:42:26,02-L09,Mono,1,6000.3.25f1,Plain t2,c3 finalized,0
+2026-11-02T15:42:26,02-L09,Mono,1,6000.3.25f1,Plain t2,c3 weak short|long alive,0|0
+2026-11-02T15:42:26,02-L09,Mono,1,6000.3.25f1,Plain t2,c4 collect ms,0.72
+2026-11-02T15:42:26,02-L09,Mono,1,6000.3.25f1,Plain t2,c4 GetTotalMemory MB,2.15
+2026-11-02T15:42:26,02-L09,Mono,1,6000.3.25f1,Plain t2,c4 GC Used MB,2.15
+2026-11-02T15:42:26,02-L09,Mono,1,6000.3.25f1,Plain t2,c4 finalized,0
+2026-11-02T15:42:26,02-L09,Mono,1,6000.3.25f1,Plain t2,c4 weak short|long alive,0|0
+2026-11-02T15:42:26,02-L09,Mono,1,6000.3.25f1,Plain t2,c5 collect ms,0.78
+2026-11-02T15:42:26,02-L09,Mono,1,6000.3.25f1,Plain t2,c5 GetTotalMemory MB,2.15
+2026-11-02T15:42:26,02-L09,Mono,1,6000.3.25f1,Plain t2,c5 GC Used MB,2.15
+2026-11-02T15:42:26,02-L09,Mono,1,6000.3.25f1,Plain t2,c5 finalized,0
+2026-11-02T15:42:26,02-L09,Mono,1,6000.3.25f1,Plain t2,c5 weak short|long alive,0|0
+2026-11-02T15:42:26,02-L09,Mono,1,6000.3.25f1,Plain t3,baseline GC Used MB,2.02
+2026-11-02T15:42:26,02-L09,Mono,1,6000.3.25f1,Plain t3,baseline GetTotalMemory MB,2.02
+2026-11-02T15:42:26,02-L09,Mono,1,6000.3.25f1,Plain t3,spawned GC Used MB,136.23
+2026-11-02T15:42:26,02-L09,Mono,1,6000.3.25f1,Plain t3,c0 GC Used MB,136.23
+2026-11-02T15:42:26,02-L09,Mono,1,6000.3.25f1,Plain t3,c0 finalized,0
+2026-11-02T15:42:26,02-L09,Mono,1,6000.3.25f1,Plain t3,c0 weak short|long alive,1000|1000
+2026-11-02T15:42:26,02-L09,Mono,1,6000.3.25f1,Plain t3,c1 collect ms,1.73
+2026-11-02T15:42:26,02-L09,Mono,1,6000.3.25f1,Plain t3,c1 GetTotalMemory MB,2.15
+2026-11-02T15:42:26,02-L09,Mono,1,6000.3.25f1,Plain t3,c1 GC Used MB,2.15
+2026-11-02T15:42:26,02-L09,Mono,1,6000.3.25f1,Plain t3,c1 finalized,0
+2026-11-02T15:42:26,02-L09,Mono,1,6000.3.25f1,Plain t3,c1 weak short|long alive,0|0
+2026-11-02T15:42:26,02-L09,Mono,1,6000.3.25f1,Plain t3,c2 collect ms,0.72
+2026-11-02T15:42:26,02-L09,Mono,1,6000.3.25f1,Plain t3,c2 GetTotalMemory MB,2.15
+2026-11-02T15:42:26,02-L09,Mono,1,6000.3.25f1,Plain t3,c2 GC Used MB,2.15
+2026-11-02T15:42:26,02-L09,Mono,1,6000.3.25f1,Plain t3,c2 finalized,0
+2026-11-02T15:42:26,02-L09,Mono,1,6000.3.25f1,Plain t3,c2 weak short|long alive,0|0
+2026-11-02T15:42:26,02-L09,Mono,1,6000.3.25f1,Plain t3,c3 collect ms,0.66
+2026-11-02T15:42:26,02-L09,Mono,1,6000.3.25f1,Plain t3,c3 GetTotalMemory MB,2.15
+2026-11-02T15:42:26,02-L09,Mono,1,6000.3.25f1,Plain t3,c3 GC Used MB,2.16
+2026-11-02T15:42:26,02-L09,Mono,1,6000.3.25f1,Plain t3,c3 finalized,0
+2026-11-02T15:42:26,02-L09,Mono,1,6000.3.25f1,Plain t3,c3 weak short|long alive,0|0
+2026-11-02T15:42:26,02-L09,Mono,1,6000.3.25f1,Plain t3,c4 collect ms,0.67
+2026-11-02T15:42:26,02-L09,Mono,1,6000.3.25f1,Plain t3,c4 GetTotalMemory MB,2.16
+2026-11-02T15:42:26,02-L09,Mono,1,6000.3.25f1,Plain t3,c4 GC Used MB,2.16
+2026-11-02T15:42:26,02-L09,Mono,1,6000.3.25f1,Plain t3,c4 finalized,0
+2026-11-02T15:42:26,02-L09,Mono,1,6000.3.25f1,Plain t3,c4 weak short|long alive,0|0
+2026-11-02T15:42:26,02-L09,Mono,1,6000.3.25f1,Plain t3,c5 collect ms,0.67
+2026-11-02T15:42:26,02-L09,Mono,1,6000.3.25f1,Plain t3,c5 GetTotalMemory MB,2.16
+2026-11-02T15:42:26,02-L09,Mono,1,6000.3.25f1,Plain t3,c5 GC Used MB,2.16
+2026-11-02T15:42:26,02-L09,Mono,1,6000.3.25f1,Plain t3,c5 finalized,0
+2026-11-02T15:42:26,02-L09,Mono,1,6000.3.25f1,Plain t3,c5 weak short|long alive,0|0
+2026-11-02T15:42:26,02-L09,Mono,1,6000.3.25f1,Finalizable t3,baseline GC Used MB,2.03
+2026-11-02T15:42:26,02-L09,Mono,1,6000.3.25f1,Finalizable t3,baseline GetTotalMemory MB,2.03
+2026-11-02T15:42:26,02-L09,Mono,1,6000.3.25f1,Finalizable t3,spawned GC Used MB,140.83
+2026-11-02T15:42:26,02-L09,Mono,1,6000.3.25f1,Finalizable t3,c0 GC Used MB,140.83
+2026-11-02T15:42:26,02-L09,Mono,1,6000.3.25f1,Finalizable t3,c0 finalized,0
+2026-11-02T15:42:26,02-L09,Mono,1,6000.3.25f1,Finalizable t3,c0 weak short|long alive,1000|1000
+2026-11-02T15:42:26,02-L09,Mono,1,6000.3.25f1,Finalizable t3,c1 collect ms,5.57
+2026-11-02T15:42:26,02-L09,Mono,1,6000.3.25f1,Finalizable t3,c1 GetTotalMemory MB,140.07
+2026-11-02T15:42:26,02-L09,Mono,1,6000.3.25f1,Finalizable t3,c1 GC Used MB,140.07
+2026-11-02T15:42:26,02-L09,Mono,1,6000.3.25f1,Finalizable t3,c1 finalized,1691
+2026-11-02T15:42:26,02-L09,Mono,1,6000.3.25f1,Finalizable t3,c1 weak short|long alive,0|1000
+2026-11-02T15:42:26,02-L09,Mono,1,6000.3.25f1,Finalizable t3,c2 collect ms,5.10
+2026-11-02T15:42:26,02-L09,Mono,1,6000.3.25f1,Finalizable t3,c2 GetTotalMemory MB,137.86
+2026-11-02T15:42:26,02-L09,Mono,1,6000.3.25f1,Finalizable t3,c2 GC Used MB,137.86
+2026-11-02T15:42:26,02-L09,Mono,1,6000.3.25f1,Finalizable t3,c2 finalized,3290
+2026-11-02T15:42:26,02-L09,Mono,1,6000.3.25f1,Finalizable t3,c2 weak short|long alive,0|984
+2026-11-02T15:42:26,02-L09,Mono,1,6000.3.25f1,Finalizable t3,c3 collect ms,4.51
+2026-11-02T15:42:26,02-L09,Mono,1,6000.3.25f1,Finalizable t3,c3 GetTotalMemory MB,135.75
+2026-11-02T15:42:26,02-L09,Mono,1,6000.3.25f1,Finalizable t3,c3 GC Used MB,135.75
+2026-11-02T15:42:26,02-L09,Mono,1,6000.3.25f1,Finalizable t3,c3 finalized,5017
+2026-11-02T15:42:26,02-L09,Mono,1,6000.3.25f1,Finalizable t3,c3 weak short|long alive,0|968
+2026-11-02T15:42:26,02-L09,Mono,1,6000.3.25f1,Finalizable t3,c4 collect ms,4.41
+2026-11-02T15:42:26,02-L09,Mono,1,6000.3.25f1,Finalizable t3,c4 GetTotalMemory MB,133.50
+2026-11-02T15:42:26,02-L09,Mono,1,6000.3.25f1,Finalizable t3,c4 GC Used MB,133.50
+2026-11-02T15:42:26,02-L09,Mono,1,6000.3.25f1,Finalizable t3,c4 finalized,6869
+2026-11-02T15:42:26,02-L09,Mono,1,6000.3.25f1,Finalizable t3,c4 weak short|long alive,0|952
+2026-11-02T15:42:26,02-L09,Mono,1,6000.3.25f1,Finalizable t3,c5 collect ms,4.08
+2026-11-02T15:42:26,02-L09,Mono,1,6000.3.25f1,Finalizable t3,c5 GetTotalMemory MB,131.03
+2026-11-02T15:42:26,02-L09,Mono,1,6000.3.25f1,Finalizable t3,c5 GC Used MB,131.04
+2026-11-02T15:42:26,02-L09,Mono,1,6000.3.25f1,Finalizable t3,c5 finalized,8511
+2026-11-02T15:42:26,02-L09,Mono,1,6000.3.25f1,Finalizable t3,c5 weak short|long alive,0|935
+2026-11-02T15:43:57,02-L09,Mono,1,6000.3.25f1,-,metrics valid,true
+2026-11-02T15:43:57,02-L09,Mono,1,6000.3.25f1,-,GarbageCollector.isIncremental,true
+2026-11-02T15:43:57,02-L09,Mono,1,6000.3.25f1,-,count,100000
+2026-11-02T15:43:57,02-L09,Mono,1,6000.3.25f1,Plain t1,baseline GC Used MB,5.96
+2026-11-02T15:43:57,02-L09,Mono,1,6000.3.25f1,Plain t1,baseline GetTotalMemory MB,5.96
+2026-11-02T15:43:57,02-L09,Mono,1,6000.3.25f1,Plain t1,spawned GC Used MB,136.23
+2026-11-02T15:43:57,02-L09,Mono,1,6000.3.25f1,Plain t1,c0 GC Used MB,136.23
+2026-11-02T15:43:57,02-L09,Mono,1,6000.3.25f1,Plain t1,c0 finalized,0
+2026-11-02T15:43:57,02-L09,Mono,1,6000.3.25f1,Plain t1,c0 weak short|long alive,1000|1000
+2026-11-02T15:43:57,02-L09,Mono,1,6000.3.25f1,Plain t1,c1 collect ms,1.86
+2026-11-02T15:43:57,02-L09,Mono,1,6000.3.25f1,Plain t1,c1 GetTotalMemory MB,2.15
+2026-11-02T15:43:57,02-L09,Mono,1,6000.3.25f1,Plain t1,c1 GC Used MB,2.15
+2026-11-02T15:43:57,02-L09,Mono,1,6000.3.25f1,Plain t1,c1 finalized,0
+2026-11-02T15:43:57,02-L09,Mono,1,6000.3.25f1,Plain t1,c1 weak short|long alive,0|0
+2026-11-02T15:43:57,02-L09,Mono,1,6000.3.25f1,Plain t1,c2 collect ms,0.80
+2026-11-02T15:43:57,02-L09,Mono,1,6000.3.25f1,Plain t1,c2 GetTotalMemory MB,2.15
+2026-11-02T15:43:57,02-L09,Mono,1,6000.3.25f1,Plain t1,c2 GC Used MB,2.15
+2026-11-02T15:43:57,02-L09,Mono,1,6000.3.25f1,Plain t1,c2 finalized,0
+2026-11-02T15:43:57,02-L09,Mono,1,6000.3.25f1,Plain t1,c2 weak short|long alive,0|0
+2026-11-02T15:43:57,02-L09,Mono,1,6000.3.25f1,Plain t1,c3 collect ms,0.76
+2026-11-02T15:43:57,02-L09,Mono,1,6000.3.25f1,Plain t1,c3 GetTotalMemory MB,2.15
+2026-11-02T15:43:57,02-L09,Mono,1,6000.3.25f1,Plain t1,c3 GC Used MB,2.15
+2026-11-02T15:43:57,02-L09,Mono,1,6000.3.25f1,Plain t1,c3 finalized,0
+2026-11-02T15:43:57,02-L09,Mono,1,6000.3.25f1,Plain t1,c3 weak short|long alive,0|0
+2026-11-02T15:43:57,02-L09,Mono,1,6000.3.25f1,Plain t1,c4 collect ms,0.74
+2026-11-02T15:43:57,02-L09,Mono,1,6000.3.25f1,Plain t1,c4 GetTotalMemory MB,2.15
+2026-11-02T15:43:57,02-L09,Mono,1,6000.3.25f1,Plain t1,c4 GC Used MB,2.15
+2026-11-02T15:43:57,02-L09,Mono,1,6000.3.25f1,Plain t1,c4 finalized,0
+2026-11-02T15:43:57,02-L09,Mono,1,6000.3.25f1,Plain t1,c4 weak short|long alive,0|0
+2026-11-02T15:43:57,02-L09,Mono,1,6000.3.25f1,Plain t1,c5 collect ms,0.77
+2026-11-02T15:43:57,02-L09,Mono,1,6000.3.25f1,Plain t1,c5 GetTotalMemory MB,2.15
+2026-11-02T15:43:57,02-L09,Mono,1,6000.3.25f1,Plain t1,c5 GC Used MB,2.15
+2026-11-02T15:43:57,02-L09,Mono,1,6000.3.25f1,Plain t1,c5 finalized,0
+2026-11-02T15:43:57,02-L09,Mono,1,6000.3.25f1,Plain t1,c5 weak short|long alive,0|0
+2026-11-02T15:43:57,02-L09,Mono,1,6000.3.25f1,Plain t1,drain total collects,5
+2026-11-02T15:43:57,02-L09,Mono,1,6000.3.25f1,Plain t1,drain ms after c5,0
+2026-11-02T15:43:57,02-L09,Mono,1,6000.3.25f1,Plain t1,drained GC Used MB,2.15
+2026-11-02T15:43:57,02-L09,Mono,1,6000.3.25f1,Plain t1,drained finalized,0
+2026-11-02T15:43:57,02-L09,Mono,1,6000.3.25f1,Plain t1,drained weak short|long alive,0|0
+2026-11-02T15:43:57,02-L09,Mono,1,6000.3.25f1,Finalizable t1,baseline GC Used MB,2.01
+2026-11-02T15:43:57,02-L09,Mono,1,6000.3.25f1,Finalizable t1,baseline GetTotalMemory MB,2.01
+2026-11-02T15:43:57,02-L09,Mono,1,6000.3.25f1,Finalizable t1,spawned GC Used MB,140.83
+2026-11-02T15:43:57,02-L09,Mono,1,6000.3.25f1,Finalizable t1,c0 GC Used MB,140.83
+2026-11-02T15:43:57,02-L09,Mono,1,6000.3.25f1,Finalizable t1,c0 finalized,0
+2026-11-02T15:43:57,02-L09,Mono,1,6000.3.25f1,Finalizable t1,c0 weak short|long alive,1000|1000
+2026-11-02T15:43:57,02-L09,Mono,1,6000.3.25f1,Finalizable t1,c1 collect ms,6.60
+2026-11-02T15:43:57,02-L09,Mono,1,6000.3.25f1,Finalizable t1,c1 GetTotalMemory MB,140.06
+2026-11-02T15:43:57,02-L09,Mono,1,6000.3.25f1,Finalizable t1,c1 GC Used MB,140.06
+2026-11-02T15:43:57,02-L09,Mono,1,6000.3.25f1,Finalizable t1,c1 finalized,1660
+2026-11-02T15:43:57,02-L09,Mono,1,6000.3.25f1,Finalizable t1,c1 weak short|long alive,0|1000
+2026-11-02T15:43:57,02-L09,Mono,1,6000.3.25f1,Finalizable t1,c2 collect ms,7.17
+2026-11-02T15:43:57,02-L09,Mono,1,6000.3.25f1,Finalizable t1,c2 GetTotalMemory MB,137.89
+2026-11-02T15:43:57,02-L09,Mono,1,6000.3.25f1,Finalizable t1,c2 GC Used MB,137.89
+2026-11-02T15:43:57,02-L09,Mono,1,6000.3.25f1,Finalizable t1,c2 finalized,3830
+2026-11-02T15:43:57,02-L09,Mono,1,6000.3.25f1,Finalizable t1,c2 weak short|long alive,0|984
+2026-11-02T15:43:57,02-L09,Mono,1,6000.3.25f1,Finalizable t1,c3 collect ms,7.02
+2026-11-02T15:43:57,02-L09,Mono,1,6000.3.25f1,Finalizable t1,c3 GetTotalMemory MB,135.01
+2026-11-02T15:43:57,02-L09,Mono,1,6000.3.25f1,Finalizable t1,c3 GC Used MB,135.01
+2026-11-02T15:43:57,02-L09,Mono,1,6000.3.25f1,Finalizable t1,c3 finalized,6023
+2026-11-02T15:43:57,02-L09,Mono,1,6000.3.25f1,Finalizable t1,c3 weak short|long alive,0|964
+2026-11-02T15:43:57,02-L09,Mono,1,6000.3.25f1,Finalizable t1,c4 collect ms,5.19
+2026-11-02T15:43:57,02-L09,Mono,1,6000.3.25f1,Finalizable t1,c4 GetTotalMemory MB,132.09
+2026-11-02T15:43:57,02-L09,Mono,1,6000.3.25f1,Finalizable t1,c4 GC Used MB,132.09
+2026-11-02T15:43:57,02-L09,Mono,1,6000.3.25f1,Finalizable t1,c4 finalized,8287
+2026-11-02T15:43:57,02-L09,Mono,1,6000.3.25f1,Finalizable t1,c4 weak short|long alive,0|942
+2026-11-02T15:43:57,02-L09,Mono,1,6000.3.25f1,Finalizable t1,c5 collect ms,4.67
+2026-11-02T15:43:57,02-L09,Mono,1,6000.3.25f1,Finalizable t1,c5 GetTotalMemory MB,129.04
+2026-11-02T15:43:57,02-L09,Mono,1,6000.3.25f1,Finalizable t1,c5 GC Used MB,129.04
+2026-11-02T15:43:57,02-L09,Mono,1,6000.3.25f1,Finalizable t1,c5 finalized,10148
+2026-11-02T15:43:57,02-L09,Mono,1,6000.3.25f1,Finalizable t1,c5 weak short|long alive,0|918
+2026-11-02T15:43:57,02-L09,Mono,1,6000.3.25f1,Finalizable t1,drain total collects,160
+2026-11-02T15:43:57,02-L09,Mono,1,6000.3.25f1,Finalizable t1,drain ms after c5,402
+2026-11-02T15:43:57,02-L09,Mono,1,6000.3.25f1,Finalizable t1,drained GC Used MB,5.98
+2026-11-02T15:43:57,02-L09,Mono,1,6000.3.25f1,Finalizable t1,drained finalized,100000
+2026-11-02T15:43:57,02-L09,Mono,1,6000.3.25f1,Finalizable t1,drained weak short|long alive,0|0
+2026-11-02T15:43:57,02-L09,Mono,1,6000.3.25f1,Finalizable t2,baseline GC Used MB,2.02
+2026-11-02T15:43:57,02-L09,Mono,1,6000.3.25f1,Finalizable t2,baseline GetTotalMemory MB,2.02
+2026-11-02T15:43:57,02-L09,Mono,1,6000.3.25f1,Finalizable t2,spawned GC Used MB,140.83
+2026-11-02T15:43:57,02-L09,Mono,1,6000.3.25f1,Finalizable t2,c0 GC Used MB,140.83
+2026-11-02T15:43:57,02-L09,Mono,1,6000.3.25f1,Finalizable t2,c0 finalized,0
+2026-11-02T15:43:57,02-L09,Mono,1,6000.3.25f1,Finalizable t2,c0 weak short|long alive,1000|1000
+2026-11-02T15:43:57,02-L09,Mono,1,6000.3.25f1,Finalizable t2,c1 collect ms,6.45
+2026-11-02T15:43:57,02-L09,Mono,1,6000.3.25f1,Finalizable t2,c1 GetTotalMemory MB,140.07
+2026-11-02T15:43:57,02-L09,Mono,1,6000.3.25f1,Finalizable t2,c1 GC Used MB,140.07
+2026-11-02T15:43:57,02-L09,Mono,1,6000.3.25f1,Finalizable t2,c1 finalized,1800
+2026-11-02T15:43:57,02-L09,Mono,1,6000.3.25f1,Finalizable t2,c1 weak short|long alive,0|1000
+2026-11-02T15:43:57,02-L09,Mono,1,6000.3.25f1,Finalizable t2,c2 collect ms,4.96
+2026-11-02T15:43:57,02-L09,Mono,1,6000.3.25f1,Finalizable t2,c2 GetTotalMemory MB,137.70
+2026-11-02T15:43:57,02-L09,Mono,1,6000.3.25f1,Finalizable t2,c2 GC Used MB,137.70
+2026-11-02T15:43:57,02-L09,Mono,1,6000.3.25f1,Finalizable t2,c2 finalized,3976
+2026-11-02T15:43:57,02-L09,Mono,1,6000.3.25f1,Finalizable t2,c2 weak short|long alive,0|980
+2026-11-02T15:43:57,02-L09,Mono,1,6000.3.25f1,Finalizable t2,c3 collect ms,5.20
+2026-11-02T15:43:57,02-L09,Mono,1,6000.3.25f1,Finalizable t2,c3 GetTotalMemory MB,134.83
+2026-11-02T15:43:57,02-L09,Mono,1,6000.3.25f1,Finalizable t2,c3 GC Used MB,134.83
+2026-11-02T15:43:57,02-L09,Mono,1,6000.3.25f1,Finalizable t2,c3 finalized,6001
+2026-11-02T15:43:57,02-L09,Mono,1,6000.3.25f1,Finalizable t2,c3 weak short|long alive,0|960
+2026-11-02T15:43:57,02-L09,Mono,1,6000.3.25f1,Finalizable t2,c4 collect ms,4.57
+2026-11-02T15:43:57,02-L09,Mono,1,6000.3.25f1,Finalizable t2,c4 GetTotalMemory MB,132.17
+2026-11-02T15:43:57,02-L09,Mono,1,6000.3.25f1,Finalizable t2,c4 GC Used MB,132.17
+2026-11-02T15:43:57,02-L09,Mono,1,6000.3.25f1,Finalizable t2,c4 finalized,8144
+2026-11-02T15:43:57,02-L09,Mono,1,6000.3.25f1,Finalizable t2,c4 weak short|long alive,0|941
+2026-11-02T15:43:57,02-L09,Mono,1,6000.3.25f1,Finalizable t2,c5 collect ms,5.39
+2026-11-02T15:43:57,02-L09,Mono,1,6000.3.25f1,Finalizable t2,c5 GetTotalMemory MB,129.38
+2026-11-02T15:43:57,02-L09,Mono,1,6000.3.25f1,Finalizable t2,c5 GC Used MB,129.38
+2026-11-02T15:43:57,02-L09,Mono,1,6000.3.25f1,Finalizable t2,c5 finalized,9765
+2026-11-02T15:43:57,02-L09,Mono,1,6000.3.25f1,Finalizable t2,c5 weak short|long alive,0|917
+2026-11-02T15:43:57,02-L09,Mono,1,6000.3.25f1,Finalizable t2,drain total collects,157
+2026-11-02T15:43:57,02-L09,Mono,1,6000.3.25f1,Finalizable t2,drain ms after c5,443
+2026-11-02T15:43:57,02-L09,Mono,1,6000.3.25f1,Finalizable t2,drained GC Used MB,6.39
+2026-11-02T15:43:57,02-L09,Mono,1,6000.3.25f1,Finalizable t2,drained finalized,100000
+2026-11-02T15:43:57,02-L09,Mono,1,6000.3.25f1,Finalizable t2,drained weak short|long alive,0|0
+2026-11-02T15:43:57,02-L09,Mono,1,6000.3.25f1,Plain t2,baseline GC Used MB,2.02
+2026-11-02T15:43:57,02-L09,Mono,1,6000.3.25f1,Plain t2,baseline GetTotalMemory MB,2.02
+2026-11-02T15:43:57,02-L09,Mono,1,6000.3.25f1,Plain t2,spawned GC Used MB,136.23
+2026-11-02T15:43:57,02-L09,Mono,1,6000.3.25f1,Plain t2,c0 GC Used MB,136.23
+2026-11-02T15:43:57,02-L09,Mono,1,6000.3.25f1,Plain t2,c0 finalized,0
+2026-11-02T15:43:57,02-L09,Mono,1,6000.3.25f1,Plain t2,c0 weak short|long alive,1000|1000
+2026-11-02T15:43:57,02-L09,Mono,1,6000.3.25f1,Plain t2,c1 collect ms,2.47
+2026-11-02T15:43:57,02-L09,Mono,1,6000.3.25f1,Plain t2,c1 GetTotalMemory MB,2.16
+2026-11-02T15:43:57,02-L09,Mono,1,6000.3.25f1,Plain t2,c1 GC Used MB,2.16
+2026-11-02T15:43:57,02-L09,Mono,1,6000.3.25f1,Plain t2,c1 finalized,0
+2026-11-02T15:43:57,02-L09,Mono,1,6000.3.25f1,Plain t2,c1 weak short|long alive,0|0
+2026-11-02T15:43:57,02-L09,Mono,1,6000.3.25f1,Plain t2,c2 collect ms,1.02
+2026-11-02T15:43:57,02-L09,Mono,1,6000.3.25f1,Plain t2,c2 GetTotalMemory MB,2.16
+2026-11-02T15:43:57,02-L09,Mono,1,6000.3.25f1,Plain t2,c2 GC Used MB,2.16
+2026-11-02T15:43:57,02-L09,Mono,1,6000.3.25f1,Plain t2,c2 finalized,0
+2026-11-02T15:43:57,02-L09,Mono,1,6000.3.25f1,Plain t2,c2 weak short|long alive,0|0
+2026-11-02T15:43:57,02-L09,Mono,1,6000.3.25f1,Plain t2,c3 collect ms,0.79
+2026-11-02T15:43:57,02-L09,Mono,1,6000.3.25f1,Plain t2,c3 GetTotalMemory MB,2.16
+2026-11-02T15:43:57,02-L09,Mono,1,6000.3.25f1,Plain t2,c3 GC Used MB,2.16
+2026-11-02T15:43:57,02-L09,Mono,1,6000.3.25f1,Plain t2,c3 finalized,0
+2026-11-02T15:43:57,02-L09,Mono,1,6000.3.25f1,Plain t2,c3 weak short|long alive,0|0
+2026-11-02T15:43:57,02-L09,Mono,1,6000.3.25f1,Plain t2,c4 collect ms,0.73
+2026-11-02T15:43:57,02-L09,Mono,1,6000.3.25f1,Plain t2,c4 GetTotalMemory MB,2.16
+2026-11-02T15:43:57,02-L09,Mono,1,6000.3.25f1,Plain t2,c4 GC Used MB,2.16
+2026-11-02T15:43:57,02-L09,Mono,1,6000.3.25f1,Plain t2,c4 finalized,0
+2026-11-02T15:43:57,02-L09,Mono,1,6000.3.25f1,Plain t2,c4 weak short|long alive,0|0
+2026-11-02T15:43:57,02-L09,Mono,1,6000.3.25f1,Plain t2,c5 collect ms,0.70
+2026-11-02T15:43:57,02-L09,Mono,1,6000.3.25f1,Plain t2,c5 GetTotalMemory MB,2.16
+2026-11-02T15:43:57,02-L09,Mono,1,6000.3.25f1,Plain t2,c5 GC Used MB,2.16
+2026-11-02T15:43:57,02-L09,Mono,1,6000.3.25f1,Plain t2,c5 finalized,0
+2026-11-02T15:43:57,02-L09,Mono,1,6000.3.25f1,Plain t2,c5 weak short|long alive,0|0
+2026-11-02T15:43:57,02-L09,Mono,1,6000.3.25f1,Plain t2,drain total collects,5
+2026-11-02T15:43:57,02-L09,Mono,1,6000.3.25f1,Plain t2,drain ms after c5,0
+2026-11-02T15:43:57,02-L09,Mono,1,6000.3.25f1,Plain t2,drained GC Used MB,2.16
+2026-11-02T15:43:57,02-L09,Mono,1,6000.3.25f1,Plain t2,drained finalized,0
+2026-11-02T15:43:57,02-L09,Mono,1,6000.3.25f1,Plain t2,drained weak short|long alive,0|0
+2026-11-02T15:43:57,02-L09,Mono,1,6000.3.25f1,Plain t3,baseline GC Used MB,2.03
+2026-11-02T15:43:57,02-L09,Mono,1,6000.3.25f1,Plain t3,baseline GetTotalMemory MB,2.03
+2026-11-02T15:43:57,02-L09,Mono,1,6000.3.25f1,Plain t3,spawned GC Used MB,136.24
+2026-11-02T15:43:57,02-L09,Mono,1,6000.3.25f1,Plain t3,c0 GC Used MB,136.24
+2026-11-02T15:43:57,02-L09,Mono,1,6000.3.25f1,Plain t3,c0 finalized,0
+2026-11-02T15:43:57,02-L09,Mono,1,6000.3.25f1,Plain t3,c0 weak short|long alive,1000|1000
+2026-11-02T15:43:57,02-L09,Mono,1,6000.3.25f1,Plain t3,c1 collect ms,1.96
+2026-11-02T15:43:57,02-L09,Mono,1,6000.3.25f1,Plain t3,c1 GetTotalMemory MB,2.16
+2026-11-02T15:43:57,02-L09,Mono,1,6000.3.25f1,Plain t3,c1 GC Used MB,2.16
+2026-11-02T15:43:57,02-L09,Mono,1,6000.3.25f1,Plain t3,c1 finalized,0
+2026-11-02T15:43:57,02-L09,Mono,1,6000.3.25f1,Plain t3,c1 weak short|long alive,0|0
+2026-11-02T15:43:57,02-L09,Mono,1,6000.3.25f1,Plain t3,c2 collect ms,0.79
+2026-11-02T15:43:57,02-L09,Mono,1,6000.3.25f1,Plain t3,c2 GetTotalMemory MB,2.16
+2026-11-02T15:43:57,02-L09,Mono,1,6000.3.25f1,Plain t3,c2 GC Used MB,2.16
+2026-11-02T15:43:57,02-L09,Mono,1,6000.3.25f1,Plain t3,c2 finalized,0
+2026-11-02T15:43:57,02-L09,Mono,1,6000.3.25f1,Plain t3,c2 weak short|long alive,0|0
+2026-11-02T15:43:57,02-L09,Mono,1,6000.3.25f1,Plain t3,c3 collect ms,0.78
+2026-11-02T15:43:57,02-L09,Mono,1,6000.3.25f1,Plain t3,c3 GetTotalMemory MB,2.16
+2026-11-02T15:43:57,02-L09,Mono,1,6000.3.25f1,Plain t3,c3 GC Used MB,2.16
+2026-11-02T15:43:57,02-L09,Mono,1,6000.3.25f1,Plain t3,c3 finalized,0
+2026-11-02T15:43:57,02-L09,Mono,1,6000.3.25f1,Plain t3,c3 weak short|long alive,0|0
+2026-11-02T15:43:57,02-L09,Mono,1,6000.3.25f1,Plain t3,c4 collect ms,0.80
+2026-11-02T15:43:57,02-L09,Mono,1,6000.3.25f1,Plain t3,c4 GetTotalMemory MB,2.16
+2026-11-02T15:43:57,02-L09,Mono,1,6000.3.25f1,Plain t3,c4 GC Used MB,2.16
+2026-11-02T15:43:57,02-L09,Mono,1,6000.3.25f1,Plain t3,c4 finalized,0
+2026-11-02T15:43:57,02-L09,Mono,1,6000.3.25f1,Plain t3,c4 weak short|long alive,0|0
+2026-11-02T15:43:57,02-L09,Mono,1,6000.3.25f1,Plain t3,c5 collect ms,0.69
+2026-11-02T15:43:57,02-L09,Mono,1,6000.3.25f1,Plain t3,c5 GetTotalMemory MB,2.16
+2026-11-02T15:43:57,02-L09,Mono,1,6000.3.25f1,Plain t3,c5 GC Used MB,2.16
+2026-11-02T15:43:57,02-L09,Mono,1,6000.3.25f1,Plain t3,c5 finalized,0
+2026-11-02T15:43:57,02-L09,Mono,1,6000.3.25f1,Plain t3,c5 weak short|long alive,0|0
+2026-11-02T15:43:57,02-L09,Mono,1,6000.3.25f1,Plain t3,drain total collects,5
+2026-11-02T15:43:57,02-L09,Mono,1,6000.3.25f1,Plain t3,drain ms after c5,0
+2026-11-02T15:43:57,02-L09,Mono,1,6000.3.25f1,Plain t3,drained GC Used MB,2.16
+2026-11-02T15:43:57,02-L09,Mono,1,6000.3.25f1,Plain t3,drained finalized,0
+2026-11-02T15:43:57,02-L09,Mono,1,6000.3.25f1,Plain t3,drained weak short|long alive,0|0
+2026-11-02T15:43:57,02-L09,Mono,1,6000.3.25f1,Finalizable t3,baseline GC Used MB,2.04
+2026-11-02T15:43:57,02-L09,Mono,1,6000.3.25f1,Finalizable t3,baseline GetTotalMemory MB,2.04
+2026-11-02T15:43:57,02-L09,Mono,1,6000.3.25f1,Finalizable t3,spawned GC Used MB,140.85
+2026-11-02T15:43:57,02-L09,Mono,1,6000.3.25f1,Finalizable t3,c0 GC Used MB,140.85
+2026-11-02T15:43:57,02-L09,Mono,1,6000.3.25f1,Finalizable t3,c0 finalized,0
+2026-11-02T15:43:57,02-L09,Mono,1,6000.3.25f1,Finalizable t3,c0 weak short|long alive,1000|1000
+2026-11-02T15:43:57,02-L09,Mono,1,6000.3.25f1,Finalizable t3,c1 collect ms,6.41
+2026-11-02T15:43:57,02-L09,Mono,1,6000.3.25f1,Finalizable t3,c1 GetTotalMemory MB,140.08
+2026-11-02T15:43:57,02-L09,Mono,1,6000.3.25f1,Finalizable t3,c1 GC Used MB,140.08
+2026-11-02T15:43:57,02-L09,Mono,1,6000.3.25f1,Finalizable t3,c1 finalized,1650
+2026-11-02T15:43:57,02-L09,Mono,1,6000.3.25f1,Finalizable t3,c1 weak short|long alive,0|1000
+2026-11-02T15:43:57,02-L09,Mono,1,6000.3.25f1,Finalizable t3,c2 collect ms,4.60
+2026-11-02T15:43:57,02-L09,Mono,1,6000.3.25f1,Finalizable t3,c2 GetTotalMemory MB,137.91
+2026-11-02T15:43:57,02-L09,Mono,1,6000.3.25f1,Finalizable t3,c2 GC Used MB,137.91
+2026-11-02T15:43:57,02-L09,Mono,1,6000.3.25f1,Finalizable t3,c2 finalized,3288
+2026-11-02T15:43:57,02-L09,Mono,1,6000.3.25f1,Finalizable t3,c2 weak short|long alive,0|984
+2026-11-02T15:43:57,02-L09,Mono,1,6000.3.25f1,Finalizable t3,c3 collect ms,5.45
+2026-11-02T15:43:57,02-L09,Mono,1,6000.3.25f1,Finalizable t3,c3 GetTotalMemory MB,135.75
+2026-11-02T15:43:57,02-L09,Mono,1,6000.3.25f1,Finalizable t3,c3 GC Used MB,135.75
+2026-11-02T15:43:57,02-L09,Mono,1,6000.3.25f1,Finalizable t3,c3 finalized,5382
+2026-11-02T15:43:57,02-L09,Mono,1,6000.3.25f1,Finalizable t3,c3 weak short|long alive,0|968
+2026-11-02T15:43:57,02-L09,Mono,1,6000.3.25f1,Finalizable t3,c4 collect ms,4.73
+2026-11-02T15:43:57,02-L09,Mono,1,6000.3.25f1,Finalizable t3,c4 GetTotalMemory MB,133.00
+2026-11-02T15:43:57,02-L09,Mono,1,6000.3.25f1,Finalizable t3,c4 GC Used MB,133.00
+2026-11-02T15:43:57,02-L09,Mono,1,6000.3.25f1,Finalizable t3,c4 finalized,7434
+2026-11-02T15:43:57,02-L09,Mono,1,6000.3.25f1,Finalizable t3,c4 weak short|long alive,0|950
+2026-11-02T15:43:57,02-L09,Mono,1,6000.3.25f1,Finalizable t3,c5 collect ms,4.43
+2026-11-02T15:43:57,02-L09,Mono,1,6000.3.25f1,Finalizable t3,c5 GetTotalMemory MB,130.29
+2026-11-02T15:43:57,02-L09,Mono,1,6000.3.25f1,Finalizable t3,c5 GC Used MB,130.29
+2026-11-02T15:43:57,02-L09,Mono,1,6000.3.25f1,Finalizable t3,c5 finalized,9873
+2026-11-02T15:43:57,02-L09,Mono,1,6000.3.25f1,Finalizable t3,c5 weak short|long alive,0|927
+2026-11-02T15:43:57,02-L09,Mono,1,6000.3.25f1,Finalizable t3,drain total collects,164
+2026-11-02T15:43:57,02-L09,Mono,1,6000.3.25f1,Finalizable t3,drain ms after c5,437
+2026-11-02T15:43:57,02-L09,Mono,1,6000.3.25f1,Finalizable t3,drained GC Used MB,6.15
+2026-11-02T15:43:57,02-L09,Mono,1,6000.3.25f1,Finalizable t3,drained finalized,100000
+2026-11-02T15:43:57,02-L09,Mono,1,6000.3.25f1,Finalizable t3,drained weak short|long alive,0|0
+2026-11-02T15:43:57,02-L09,Mono,1,6000.3.25f1,Finalizable+Wait t1,baseline GC Used MB,2.05
+2026-11-02T15:43:57,02-L09,Mono,1,6000.3.25f1,Finalizable+Wait t1,after wait finalized,100000
+2026-11-02T15:43:57,02-L09,Mono,1,6000.3.25f1,Finalizable+Wait t1,collect1 ms,6.94
+2026-11-02T15:43:57,02-L09,Mono,1,6000.3.25f1,Finalizable+Wait t1,WaitForPendingFinalizers ms,14.70
+2026-11-02T15:43:57,02-L09,Mono,1,6000.3.25f1,Finalizable+Wait t1,collect2 ms,2.48
+2026-11-02T15:43:57,02-L09,Mono,1,6000.3.25f1,Finalizable+Wait t1,after collect2 GC Used MB,6.03
+2026-11-02T15:43:57,02-L09,Mono,1,6000.3.25f1,Finalizable+Wait t1,after collect2 finalized,100000
+2026-11-02T15:43:57,02-L09,Mono,1,6000.3.25f1,Finalizable+Wait t1,after collect2 weak short|long alive,0|0
+2026-11-02T15:43:57,02-L09,Mono,1,6000.3.25f1,Finalizable+Wait t2,baseline GC Used MB,2.06
+2026-11-02T15:43:57,02-L09,Mono,1,6000.3.25f1,Finalizable+Wait t2,after wait finalized,99999
+2026-11-02T15:43:57,02-L09,Mono,1,6000.3.25f1,Finalizable+Wait t2,collect1 ms,6.67
+2026-11-02T15:43:57,02-L09,Mono,1,6000.3.25f1,Finalizable+Wait t2,WaitForPendingFinalizers ms,14.07
+2026-11-02T15:43:57,02-L09,Mono,1,6000.3.25f1,Finalizable+Wait t2,collect2 ms,2.78
+2026-11-02T15:43:57,02-L09,Mono,1,6000.3.25f1,Finalizable+Wait t2,after collect2 GC Used MB,6.05
+2026-11-02T15:43:57,02-L09,Mono,1,6000.3.25f1,Finalizable+Wait t2,after collect2 finalized,100000
+2026-11-02T15:43:57,02-L09,Mono,1,6000.3.25f1,Finalizable+Wait t2,after collect2 weak short|long alive,0|0
+2026-11-02T15:43:57,02-L09,Mono,1,6000.3.25f1,Finalizable+Wait t3,baseline GC Used MB,2.06
+2026-11-02T15:43:57,02-L09,Mono,1,6000.3.25f1,Finalizable+Wait t3,after wait finalized,99999
+2026-11-02T15:43:57,02-L09,Mono,1,6000.3.25f1,Finalizable+Wait t3,collect1 ms,6.40
+2026-11-02T15:43:57,02-L09,Mono,1,6000.3.25f1,Finalizable+Wait t3,WaitForPendingFinalizers ms,15.94
+2026-11-02T15:43:57,02-L09,Mono,1,6000.3.25f1,Finalizable+Wait t3,collect2 ms,2.75
+2026-11-02T15:43:57,02-L09,Mono,1,6000.3.25f1,Finalizable+Wait t3,after collect2 GC Used MB,6.05
+2026-11-02T15:43:57,02-L09,Mono,1,6000.3.25f1,Finalizable+Wait t3,after collect2 finalized,99999
+2026-11-02T15:43:57,02-L09,Mono,1,6000.3.25f1,Finalizable+Wait t3,after collect2 weak short|long alive,0|0
+2026-11-02T15:45:37,02-L09,Mono,1,6000.3.25f1,-,targetFrameRate,-1
+2026-11-02T15:45:37,02-L09,Mono,1,6000.3.25f1,-,metrics valid,true
+2026-11-02T15:45:37,02-L09,Mono,1,6000.3.25f1,-,GarbageCollector.isIncremental,true
+2026-11-02T15:45:37,02-L09,Mono,1,6000.3.25f1,-,count,100000
+2026-11-02T15:45:37,02-L09,Mono,1,6000.3.25f1,Plain t1,baseline GC Used MB,5.95
+2026-11-02T15:45:37,02-L09,Mono,1,6000.3.25f1,Plain t1,baseline GetTotalMemory MB,5.95
+2026-11-02T15:45:37,02-L09,Mono,1,6000.3.25f1,Plain t1,spawned GC Used MB,136.21
+2026-11-02T15:45:37,02-L09,Mono,1,6000.3.25f1,Plain t1,c0 GC Used MB,136.21
+2026-11-02T15:45:37,02-L09,Mono,1,6000.3.25f1,Plain t1,c0 finalized,0
+2026-11-02T15:45:37,02-L09,Mono,1,6000.3.25f1,Plain t1,c0 weak short|long alive,1000|1000
+2026-11-02T15:45:37,02-L09,Mono,1,6000.3.25f1,Plain t1,c1 collect ms,1.72
+2026-11-02T15:45:37,02-L09,Mono,1,6000.3.25f1,Plain t1,c1 GetTotalMemory MB,2.14
+2026-11-02T15:45:37,02-L09,Mono,1,6000.3.25f1,Plain t1,c1 GC Used MB,2.14
+2026-11-02T15:45:37,02-L09,Mono,1,6000.3.25f1,Plain t1,c1 finalized,0
+2026-11-02T15:45:37,02-L09,Mono,1,6000.3.25f1,Plain t1,c1 weak short|long alive,0|0
+2026-11-02T15:45:37,02-L09,Mono,1,6000.3.25f1,Plain t1,c2 collect ms,0.78
+2026-11-02T15:45:37,02-L09,Mono,1,6000.3.25f1,Plain t1,c2 GetTotalMemory MB,2.14
+2026-11-02T15:45:37,02-L09,Mono,1,6000.3.25f1,Plain t1,c2 GC Used MB,2.14
+2026-11-02T15:45:37,02-L09,Mono,1,6000.3.25f1,Plain t1,c2 finalized,0
+2026-11-02T15:45:37,02-L09,Mono,1,6000.3.25f1,Plain t1,c2 weak short|long alive,0|0
+2026-11-02T15:45:37,02-L09,Mono,1,6000.3.25f1,Plain t1,c3 collect ms,0.76
+2026-11-02T15:45:37,02-L09,Mono,1,6000.3.25f1,Plain t1,c3 GetTotalMemory MB,2.14
+2026-11-02T15:45:37,02-L09,Mono,1,6000.3.25f1,Plain t1,c3 GC Used MB,2.14
+2026-11-02T15:45:37,02-L09,Mono,1,6000.3.25f1,Plain t1,c3 finalized,0
+2026-11-02T15:45:37,02-L09,Mono,1,6000.3.25f1,Plain t1,c3 weak short|long alive,0|0
+2026-11-02T15:45:37,02-L09,Mono,1,6000.3.25f1,Plain t1,c4 collect ms,0.69
+2026-11-02T15:45:37,02-L09,Mono,1,6000.3.25f1,Plain t1,c4 GetTotalMemory MB,2.14
+2026-11-02T15:45:37,02-L09,Mono,1,6000.3.25f1,Plain t1,c4 GC Used MB,2.14
+2026-11-02T15:45:37,02-L09,Mono,1,6000.3.25f1,Plain t1,c4 finalized,0
+2026-11-02T15:45:37,02-L09,Mono,1,6000.3.25f1,Plain t1,c4 weak short|long alive,0|0
+2026-11-02T15:45:37,02-L09,Mono,1,6000.3.25f1,Plain t1,c5 collect ms,0.63
+2026-11-02T15:45:37,02-L09,Mono,1,6000.3.25f1,Plain t1,c5 GetTotalMemory MB,2.14
+2026-11-02T15:45:37,02-L09,Mono,1,6000.3.25f1,Plain t1,c5 GC Used MB,2.14
+2026-11-02T15:45:37,02-L09,Mono,1,6000.3.25f1,Plain t1,c5 finalized,0
+2026-11-02T15:45:37,02-L09,Mono,1,6000.3.25f1,Plain t1,c5 weak short|long alive,0|0
+2026-11-02T15:45:37,02-L09,Mono,1,6000.3.25f1,Plain t1,drain total collects,5
+2026-11-02T15:45:37,02-L09,Mono,1,6000.3.25f1,Plain t1,drain ms after c5,0
+2026-11-02T15:45:37,02-L09,Mono,1,6000.3.25f1,Plain t1,drained GC Used MB,2.14
+2026-11-02T15:45:37,02-L09,Mono,1,6000.3.25f1,Plain t1,drained finalized,0
+2026-11-02T15:45:37,02-L09,Mono,1,6000.3.25f1,Plain t1,drained weak short|long alive,0|0
+2026-11-02T15:45:37,02-L09,Mono,1,6000.3.25f1,Finalizable t1,baseline GC Used MB,2.00
+2026-11-02T15:45:37,02-L09,Mono,1,6000.3.25f1,Finalizable t1,baseline GetTotalMemory MB,2.00
+2026-11-02T15:45:37,02-L09,Mono,1,6000.3.25f1,Finalizable t1,spawned GC Used MB,140.82
+2026-11-02T15:45:37,02-L09,Mono,1,6000.3.25f1,Finalizable t1,c0 GC Used MB,140.82
+2026-11-02T15:45:37,02-L09,Mono,1,6000.3.25f1,Finalizable t1,c0 finalized,0
+2026-11-02T15:45:37,02-L09,Mono,1,6000.3.25f1,Finalizable t1,c0 weak short|long alive,1000|1000
+2026-11-02T15:45:37,02-L09,Mono,1,6000.3.25f1,Finalizable t1,c1 collect ms,5.15
+2026-11-02T15:45:37,02-L09,Mono,1,6000.3.25f1,Finalizable t1,c1 GetTotalMemory MB,140.05
+2026-11-02T15:45:37,02-L09,Mono,1,6000.3.25f1,Finalizable t1,c1 GC Used MB,140.05
+2026-11-02T15:45:37,02-L09,Mono,1,6000.3.25f1,Finalizable t1,c1 finalized,1978
+2026-11-02T15:45:37,02-L09,Mono,1,6000.3.25f1,Finalizable t1,c1 weak short|long alive,0|1000
+2026-11-02T15:45:37,02-L09,Mono,1,6000.3.25f1,Finalizable t1,c2 collect ms,6.02
+2026-11-02T15:45:37,02-L09,Mono,1,6000.3.25f1,Finalizable t1,c2 GetTotalMemory MB,137.44
+2026-11-02T15:45:37,02-L09,Mono,1,6000.3.25f1,Finalizable t1,c2 GC Used MB,137.44
+2026-11-02T15:45:37,02-L09,Mono,1,6000.3.25f1,Finalizable t1,c2 finalized,3725
+2026-11-02T15:45:37,02-L09,Mono,1,6000.3.25f1,Finalizable t1,c2 weak short|long alive,0|978
+2026-11-02T15:45:37,02-L09,Mono,1,6000.3.25f1,Finalizable t1,c3 collect ms,6.75
+2026-11-02T15:45:37,02-L09,Mono,1,6000.3.25f1,Finalizable t1,c3 GetTotalMemory MB,135.15
+2026-11-02T15:45:37,02-L09,Mono,1,6000.3.25f1,Finalizable t1,c3 GC Used MB,135.16
+2026-11-02T15:45:37,02-L09,Mono,1,6000.3.25f1,Finalizable t1,c3 finalized,6934
+2026-11-02T15:45:37,02-L09,Mono,1,6000.3.25f1,Finalizable t1,c3 weak short|long alive,0|960
+2026-11-02T15:45:37,02-L09,Mono,1,6000.3.25f1,Finalizable t1,c4 collect ms,4.11
+2026-11-02T15:45:37,02-L09,Mono,1,6000.3.25f1,Finalizable t1,c4 GetTotalMemory MB,130.97
+2026-11-02T15:45:37,02-L09,Mono,1,6000.3.25f1,Finalizable t1,c4 GC Used MB,130.97
+2026-11-02T15:45:37,02-L09,Mono,1,6000.3.25f1,Finalizable t1,c4 finalized,8707
+2026-11-02T15:45:37,02-L09,Mono,1,6000.3.25f1,Finalizable t1,c4 weak short|long alive,0|926
+2026-11-02T15:45:37,02-L09,Mono,1,6000.3.25f1,Finalizable t1,c5 collect ms,3.89
+2026-11-02T15:45:37,02-L09,Mono,1,6000.3.25f1,Finalizable t1,c5 GetTotalMemory MB,128.57
+2026-11-02T15:45:37,02-L09,Mono,1,6000.3.25f1,Finalizable t1,c5 GC Used MB,128.57
+2026-11-02T15:45:37,02-L09,Mono,1,6000.3.25f1,Finalizable t1,c5 finalized,10303
+2026-11-02T15:45:37,02-L09,Mono,1,6000.3.25f1,Finalizable t1,c5 weak short|long alive,0|911
+2026-11-02T15:45:37,02-L09,Mono,1,6000.3.25f1,Finalizable t1,drain total collects,178
+2026-11-02T15:45:37,02-L09,Mono,1,6000.3.25f1,Finalizable t1,drain ms after c5,382
+2026-11-02T15:45:37,02-L09,Mono,1,6000.3.25f1,Finalizable t1,drained GC Used MB,6.08
+2026-11-02T15:45:37,02-L09,Mono,1,6000.3.25f1,Finalizable t1,drained finalized,100000
+2026-11-02T15:45:37,02-L09,Mono,1,6000.3.25f1,Finalizable t1,drained weak short|long alive,0|0
+2026-11-02T15:45:37,02-L09,Mono,1,6000.3.25f1,Finalizable t2,baseline GC Used MB,2.01
+2026-11-02T15:45:37,02-L09,Mono,1,6000.3.25f1,Finalizable t2,baseline GetTotalMemory MB,2.01
+2026-11-02T15:45:37,02-L09,Mono,1,6000.3.25f1,Finalizable t2,spawned GC Used MB,140.82
+2026-11-02T15:45:37,02-L09,Mono,1,6000.3.25f1,Finalizable t2,c0 GC Used MB,140.82
+2026-11-02T15:45:37,02-L09,Mono,1,6000.3.25f1,Finalizable t2,c0 finalized,0
+2026-11-02T15:45:37,02-L09,Mono,1,6000.3.25f1,Finalizable t2,c0 weak short|long alive,1000|1000
+2026-11-02T15:45:37,02-L09,Mono,1,6000.3.25f1,Finalizable t2,c1 collect ms,6.33
+2026-11-02T15:45:37,02-L09,Mono,1,6000.3.25f1,Finalizable t2,c1 GetTotalMemory MB,140.05
+2026-11-02T15:45:37,02-L09,Mono,1,6000.3.25f1,Finalizable t2,c1 GC Used MB,140.05
+2026-11-02T15:45:37,02-L09,Mono,1,6000.3.25f1,Finalizable t2,c1 finalized,1853
+2026-11-02T15:45:37,02-L09,Mono,1,6000.3.25f1,Finalizable t2,c1 weak short|long alive,0|1000
+2026-11-02T15:45:37,02-L09,Mono,1,6000.3.25f1,Finalizable t2,c2 collect ms,4.11
+2026-11-02T15:45:37,02-L09,Mono,1,6000.3.25f1,Finalizable t2,c2 GetTotalMemory MB,137.63
+2026-11-02T15:45:37,02-L09,Mono,1,6000.3.25f1,Finalizable t2,c2 GC Used MB,137.63
+2026-11-02T15:45:37,02-L09,Mono,1,6000.3.25f1,Finalizable t2,c2 finalized,4137
+2026-11-02T15:45:37,02-L09,Mono,1,6000.3.25f1,Finalizable t2,c2 weak short|long alive,0|980
+2026-11-02T15:45:37,02-L09,Mono,1,6000.3.25f1,Finalizable t2,c3 collect ms,4.20
+2026-11-02T15:45:37,02-L09,Mono,1,6000.3.25f1,Finalizable t2,c3 GetTotalMemory MB,134.58
+2026-11-02T15:45:37,02-L09,Mono,1,6000.3.25f1,Finalizable t2,c3 GC Used MB,134.58
+2026-11-02T15:45:37,02-L09,Mono,1,6000.3.25f1,Finalizable t2,c3 finalized,5642
+2026-11-02T15:45:37,02-L09,Mono,1,6000.3.25f1,Finalizable t2,c3 weak short|long alive,0|956
+2026-11-02T15:45:37,02-L09,Mono,1,6000.3.25f1,Finalizable t2,c4 collect ms,4.08
+2026-11-02T15:45:37,02-L09,Mono,1,6000.3.25f1,Finalizable t2,c4 GetTotalMemory MB,132.65
+2026-11-02T15:45:37,02-L09,Mono,1,6000.3.25f1,Finalizable t2,c4 GC Used MB,132.65
+2026-11-02T15:45:37,02-L09,Mono,1,6000.3.25f1,Finalizable t2,c4 finalized,7513
+2026-11-02T15:45:37,02-L09,Mono,1,6000.3.25f1,Finalizable t2,c4 weak short|long alive,0|938
+2026-11-02T15:45:37,02-L09,Mono,1,6000.3.25f1,Finalizable t2,c5 collect ms,4.02
+2026-11-02T15:45:37,02-L09,Mono,1,6000.3.25f1,Finalizable t2,c5 GetTotalMemory MB,130.20
+2026-11-02T15:45:37,02-L09,Mono,1,6000.3.25f1,Finalizable t2,c5 GC Used MB,130.20
+2026-11-02T15:45:37,02-L09,Mono,1,6000.3.25f1,Finalizable t2,c5 finalized,8877
+2026-11-02T15:45:37,02-L09,Mono,1,6000.3.25f1,Finalizable t2,c5 weak short|long alive,0|920
+2026-11-02T15:45:37,02-L09,Mono,1,6000.3.25f1,Finalizable t2,drain total collects,184
+2026-11-02T15:45:37,02-L09,Mono,1,6000.3.25f1,Finalizable t2,drain ms after c5,423
+2026-11-02T15:45:37,02-L09,Mono,1,6000.3.25f1,Finalizable t2,drained GC Used MB,6.01
+2026-11-02T15:45:37,02-L09,Mono,1,6000.3.25f1,Finalizable t2,drained finalized,100000
+2026-11-02T15:45:37,02-L09,Mono,1,6000.3.25f1,Finalizable t2,drained weak short|long alive,0|0
+2026-11-02T15:45:37,02-L09,Mono,1,6000.3.25f1,Plain t2,baseline GC Used MB,2.01
+2026-11-02T15:45:37,02-L09,Mono,1,6000.3.25f1,Plain t2,baseline GetTotalMemory MB,2.01
+2026-11-02T15:45:37,02-L09,Mono,1,6000.3.25f1,Plain t2,spawned GC Used MB,136.22
+2026-11-02T15:45:37,02-L09,Mono,1,6000.3.25f1,Plain t2,c0 GC Used MB,136.22
+2026-11-02T15:45:37,02-L09,Mono,1,6000.3.25f1,Plain t2,c0 finalized,0
+2026-11-02T15:45:37,02-L09,Mono,1,6000.3.25f1,Plain t2,c0 weak short|long alive,1000|1000
+2026-11-02T15:45:37,02-L09,Mono,1,6000.3.25f1,Plain t2,c1 collect ms,1.79
+2026-11-02T15:45:37,02-L09,Mono,1,6000.3.25f1,Plain t2,c1 GetTotalMemory MB,2.14
+2026-11-02T15:45:37,02-L09,Mono,1,6000.3.25f1,Plain t2,c1 GC Used MB,2.14
+2026-11-02T15:45:37,02-L09,Mono,1,6000.3.25f1,Plain t2,c1 finalized,0
+2026-11-02T15:45:37,02-L09,Mono,1,6000.3.25f1,Plain t2,c1 weak short|long alive,0|0
+2026-11-02T15:45:37,02-L09,Mono,1,6000.3.25f1,Plain t2,c2 collect ms,0.64
+2026-11-02T15:45:37,02-L09,Mono,1,6000.3.25f1,Plain t2,c2 GetTotalMemory MB,2.14
+2026-11-02T15:45:37,02-L09,Mono,1,6000.3.25f1,Plain t2,c2 GC Used MB,2.14
+2026-11-02T15:45:37,02-L09,Mono,1,6000.3.25f1,Plain t2,c2 finalized,0
+2026-11-02T15:45:37,02-L09,Mono,1,6000.3.25f1,Plain t2,c2 weak short|long alive,0|0
+2026-11-02T15:45:37,02-L09,Mono,1,6000.3.25f1,Plain t2,c3 collect ms,0.71
+2026-11-02T15:45:37,02-L09,Mono,1,6000.3.25f1,Plain t2,c3 GetTotalMemory MB,2.14
+2026-11-02T15:45:37,02-L09,Mono,1,6000.3.25f1,Plain t2,c3 GC Used MB,2.15
+2026-11-02T15:45:37,02-L09,Mono,1,6000.3.25f1,Plain t2,c3 finalized,0
+2026-11-02T15:45:37,02-L09,Mono,1,6000.3.25f1,Plain t2,c3 weak short|long alive,0|0
+2026-11-02T15:45:37,02-L09,Mono,1,6000.3.25f1,Plain t2,c4 collect ms,0.69
+2026-11-02T15:45:37,02-L09,Mono,1,6000.3.25f1,Plain t2,c4 GetTotalMemory MB,2.15
+2026-11-02T15:45:37,02-L09,Mono,1,6000.3.25f1,Plain t2,c4 GC Used MB,2.15
+2026-11-02T15:45:37,02-L09,Mono,1,6000.3.25f1,Plain t2,c4 finalized,0
+2026-11-02T15:45:37,02-L09,Mono,1,6000.3.25f1,Plain t2,c4 weak short|long alive,0|0
+2026-11-02T15:45:37,02-L09,Mono,1,6000.3.25f1,Plain t2,c5 collect ms,0.64
+2026-11-02T15:45:37,02-L09,Mono,1,6000.3.25f1,Plain t2,c5 GetTotalMemory MB,2.15
+2026-11-02T15:45:37,02-L09,Mono,1,6000.3.25f1,Plain t2,c5 GC Used MB,2.15
+2026-11-02T15:45:37,02-L09,Mono,1,6000.3.25f1,Plain t2,c5 finalized,0
+2026-11-02T15:45:37,02-L09,Mono,1,6000.3.25f1,Plain t2,c5 weak short|long alive,0|0
+2026-11-02T15:45:37,02-L09,Mono,1,6000.3.25f1,Plain t2,drain total collects,5
+2026-11-02T15:45:37,02-L09,Mono,1,6000.3.25f1,Plain t2,drain ms after c5,0
+2026-11-02T15:45:37,02-L09,Mono,1,6000.3.25f1,Plain t2,drained GC Used MB,2.15
+2026-11-02T15:45:37,02-L09,Mono,1,6000.3.25f1,Plain t2,drained finalized,0
+2026-11-02T15:45:37,02-L09,Mono,1,6000.3.25f1,Plain t2,drained weak short|long alive,0|0
+2026-11-02T15:45:37,02-L09,Mono,1,6000.3.25f1,Plain t3,baseline GC Used MB,2.02
+2026-11-02T15:45:37,02-L09,Mono,1,6000.3.25f1,Plain t3,baseline GetTotalMemory MB,2.02
+2026-11-02T15:45:37,02-L09,Mono,1,6000.3.25f1,Plain t3,spawned GC Used MB,136.23
+2026-11-02T15:45:37,02-L09,Mono,1,6000.3.25f1,Plain t3,c0 GC Used MB,136.23
+2026-11-02T15:45:37,02-L09,Mono,1,6000.3.25f1,Plain t3,c0 finalized,0
+2026-11-02T15:45:37,02-L09,Mono,1,6000.3.25f1,Plain t3,c0 weak short|long alive,1000|1000
+2026-11-02T15:45:37,02-L09,Mono,1,6000.3.25f1,Plain t3,c1 collect ms,1.93
+2026-11-02T15:45:37,02-L09,Mono,1,6000.3.25f1,Plain t3,c1 GetTotalMemory MB,2.15
+2026-11-02T15:45:37,02-L09,Mono,1,6000.3.25f1,Plain t3,c1 GC Used MB,2.15
+2026-11-02T15:45:37,02-L09,Mono,1,6000.3.25f1,Plain t3,c1 finalized,0
+2026-11-02T15:45:37,02-L09,Mono,1,6000.3.25f1,Plain t3,c1 weak short|long alive,0|0
+2026-11-02T15:45:37,02-L09,Mono,1,6000.3.25f1,Plain t3,c2 collect ms,0.79
+2026-11-02T15:45:37,02-L09,Mono,1,6000.3.25f1,Plain t3,c2 GetTotalMemory MB,2.15
+2026-11-02T15:45:37,02-L09,Mono,1,6000.3.25f1,Plain t3,c2 GC Used MB,2.15
+2026-11-02T15:45:37,02-L09,Mono,1,6000.3.25f1,Plain t3,c2 finalized,0
+2026-11-02T15:45:37,02-L09,Mono,1,6000.3.25f1,Plain t3,c2 weak short|long alive,0|0
+2026-11-02T15:45:37,02-L09,Mono,1,6000.3.25f1,Plain t3,c3 collect ms,0.73
+2026-11-02T15:45:37,02-L09,Mono,1,6000.3.25f1,Plain t3,c3 GetTotalMemory MB,2.15
+2026-11-02T15:45:37,02-L09,Mono,1,6000.3.25f1,Plain t3,c3 GC Used MB,2.15
+2026-11-02T15:45:37,02-L09,Mono,1,6000.3.25f1,Plain t3,c3 finalized,0
+2026-11-02T15:45:37,02-L09,Mono,1,6000.3.25f1,Plain t3,c3 weak short|long alive,0|0
+2026-11-02T15:45:37,02-L09,Mono,1,6000.3.25f1,Plain t3,c4 collect ms,0.64
+2026-11-02T15:45:37,02-L09,Mono,1,6000.3.25f1,Plain t3,c4 GetTotalMemory MB,2.15
+2026-11-02T15:45:37,02-L09,Mono,1,6000.3.25f1,Plain t3,c4 GC Used MB,2.15
+2026-11-02T15:45:37,02-L09,Mono,1,6000.3.25f1,Plain t3,c4 finalized,0
+2026-11-02T15:45:37,02-L09,Mono,1,6000.3.25f1,Plain t3,c4 weak short|long alive,0|0
+2026-11-02T15:45:37,02-L09,Mono,1,6000.3.25f1,Plain t3,c5 collect ms,0.64
+2026-11-02T15:45:37,02-L09,Mono,1,6000.3.25f1,Plain t3,c5 GetTotalMemory MB,2.15
+2026-11-02T15:45:37,02-L09,Mono,1,6000.3.25f1,Plain t3,c5 GC Used MB,2.16
+2026-11-02T15:45:37,02-L09,Mono,1,6000.3.25f1,Plain t3,c5 finalized,0
+2026-11-02T15:45:37,02-L09,Mono,1,6000.3.25f1,Plain t3,c5 weak short|long alive,0|0
+2026-11-02T15:45:37,02-L09,Mono,1,6000.3.25f1,Plain t3,drain total collects,5
+2026-11-02T15:45:37,02-L09,Mono,1,6000.3.25f1,Plain t3,drain ms after c5,0
+2026-11-02T15:45:37,02-L09,Mono,1,6000.3.25f1,Plain t3,drained GC Used MB,2.16
+2026-11-02T15:45:37,02-L09,Mono,1,6000.3.25f1,Plain t3,drained finalized,0
+2026-11-02T15:45:37,02-L09,Mono,1,6000.3.25f1,Plain t3,drained weak short|long alive,0|0
+2026-11-02T15:45:37,02-L09,Mono,1,6000.3.25f1,Finalizable t3,baseline GC Used MB,2.04
+2026-11-02T15:45:37,02-L09,Mono,1,6000.3.25f1,Finalizable t3,baseline GetTotalMemory MB,2.04
+2026-11-02T15:45:37,02-L09,Mono,1,6000.3.25f1,Finalizable t3,spawned GC Used MB,140.84
+2026-11-02T15:45:37,02-L09,Mono,1,6000.3.25f1,Finalizable t3,c0 GC Used MB,140.84
+2026-11-02T15:45:37,02-L09,Mono,1,6000.3.25f1,Finalizable t3,c0 finalized,0
+2026-11-02T15:45:37,02-L09,Mono,1,6000.3.25f1,Finalizable t3,c0 weak short|long alive,1000|1000
+2026-11-02T15:45:37,02-L09,Mono,1,6000.3.25f1,Finalizable t3,c1 collect ms,5.91
+2026-11-02T15:45:37,02-L09,Mono,1,6000.3.25f1,Finalizable t3,c1 GetTotalMemory MB,140.07
+2026-11-02T15:45:37,02-L09,Mono,1,6000.3.25f1,Finalizable t3,c1 GC Used MB,140.07
+2026-11-02T15:45:37,02-L09,Mono,1,6000.3.25f1,Finalizable t3,c1 finalized,1828
+2026-11-02T15:45:37,02-L09,Mono,1,6000.3.25f1,Finalizable t3,c1 weak short|long alive,0|1000
+2026-11-02T15:45:37,02-L09,Mono,1,6000.3.25f1,Finalizable t3,c2 collect ms,4.44
+2026-11-02T15:45:37,02-L09,Mono,1,6000.3.25f1,Finalizable t3,c2 GetTotalMemory MB,137.69
+2026-11-02T15:45:37,02-L09,Mono,1,6000.3.25f1,Finalizable t3,c2 GC Used MB,137.69
+2026-11-02T15:45:37,02-L09,Mono,1,6000.3.25f1,Finalizable t3,c2 finalized,3138
+2026-11-02T15:45:37,02-L09,Mono,1,6000.3.25f1,Finalizable t3,c2 weak short|long alive,0|983
+2026-11-02T15:45:37,02-L09,Mono,1,6000.3.25f1,Finalizable t3,c3 collect ms,4.35
+2026-11-02T15:45:37,02-L09,Mono,1,6000.3.25f1,Finalizable t3,c3 GetTotalMemory MB,135.89
+2026-11-02T15:45:37,02-L09,Mono,1,6000.3.25f1,Finalizable t3,c3 GC Used MB,135.89
+2026-11-02T15:45:37,02-L09,Mono,1,6000.3.25f1,Finalizable t3,c3 finalized,4460
+2026-11-02T15:45:37,02-L09,Mono,1,6000.3.25f1,Finalizable t3,c3 weak short|long alive,0|969
+2026-11-02T15:45:37,02-L09,Mono,1,6000.3.25f1,Finalizable t3,c4 collect ms,4.77
+2026-11-02T15:45:37,02-L09,Mono,1,6000.3.25f1,Finalizable t3,c4 GetTotalMemory MB,134.23
+2026-11-02T15:45:37,02-L09,Mono,1,6000.3.25f1,Finalizable t3,c4 GC Used MB,134.23
+2026-11-02T15:45:37,02-L09,Mono,1,6000.3.25f1,Finalizable t3,c4 finalized,5946
+2026-11-02T15:45:37,02-L09,Mono,1,6000.3.25f1,Finalizable t3,c4 weak short|long alive,0|955
+2026-11-02T15:45:37,02-L09,Mono,1,6000.3.25f1,Finalizable t3,c5 collect ms,4.55
+2026-11-02T15:45:37,02-L09,Mono,1,6000.3.25f1,Finalizable t3,c5 GetTotalMemory MB,132.25
+2026-11-02T15:45:37,02-L09,Mono,1,6000.3.25f1,Finalizable t3,c5 GC Used MB,132.25
+2026-11-02T15:45:37,02-L09,Mono,1,6000.3.25f1,Finalizable t3,c5 finalized,7702
+2026-11-02T15:45:37,02-L09,Mono,1,6000.3.25f1,Finalizable t3,c5 weak short|long alive,0|941
+2026-11-02T15:45:37,02-L09,Mono,1,6000.3.25f1,Finalizable t3,drain total collects,167
+2026-11-02T15:45:37,02-L09,Mono,1,6000.3.25f1,Finalizable t3,drain ms after c5,436
+2026-11-02T15:45:37,02-L09,Mono,1,6000.3.25f1,Finalizable t3,drained GC Used MB,5.98
+2026-11-02T15:45:37,02-L09,Mono,1,6000.3.25f1,Finalizable t3,drained finalized,100000
+2026-11-02T15:45:37,02-L09,Mono,1,6000.3.25f1,Finalizable t3,drained weak short|long alive,0|0
+2026-11-02T15:45:37,02-L09,Mono,1,6000.3.25f1,Finalizable+Wait t1,baseline GC Used MB,2.05
+2026-11-02T15:45:37,02-L09,Mono,1,6000.3.25f1,Finalizable+Wait t1,after wait finalized,100000
+2026-11-02T15:45:37,02-L09,Mono,1,6000.3.25f1,Finalizable+Wait t1,collect1 ms,6.11
+2026-11-02T15:45:37,02-L09,Mono,1,6000.3.25f1,Finalizable+Wait t1,WaitForPendingFinalizers ms,12.97
+2026-11-02T15:45:37,02-L09,Mono,1,6000.3.25f1,Finalizable+Wait t1,collect2 ms,2.45
+2026-11-02T15:45:37,02-L09,Mono,1,6000.3.25f1,Finalizable+Wait t1,after collect2 GC Used MB,5.98
+2026-11-02T15:45:37,02-L09,Mono,1,6000.3.25f1,Finalizable+Wait t1,after collect2 finalized,100000
+2026-11-02T15:45:37,02-L09,Mono,1,6000.3.25f1,Finalizable+Wait t1,after collect2 weak short|long alive,0|0
+2026-11-02T15:45:37,02-L09,Mono,1,6000.3.25f1,Finalizable+Wait t1,after collect3 GC Used MB,5.98
+2026-11-02T15:45:37,02-L09,Mono,1,6000.3.25f1,Finalizable+Wait t1,after collect3 finalized,100000
+2026-11-02T15:45:37,02-L09,Mono,1,6000.3.25f1,Finalizable+Wait t1,after collect3 weak short|long alive,0|0
+2026-11-02T15:45:37,02-L09,Mono,1,6000.3.25f1,Finalizable+Wait t2,baseline GC Used MB,2.05
+2026-11-02T15:45:37,02-L09,Mono,1,6000.3.25f1,Finalizable+Wait t2,after wait finalized,99999
+2026-11-02T15:45:37,02-L09,Mono,1,6000.3.25f1,Finalizable+Wait t2,collect1 ms,6.86
+2026-11-02T15:45:37,02-L09,Mono,1,6000.3.25f1,Finalizable+Wait t2,WaitForPendingFinalizers ms,14.60
+2026-11-02T15:45:37,02-L09,Mono,1,6000.3.25f1,Finalizable+Wait t2,collect2 ms,2.54
+2026-11-02T15:45:37,02-L09,Mono,1,6000.3.25f1,Finalizable+Wait t2,after collect2 GC Used MB,6.16
+2026-11-02T15:45:37,02-L09,Mono,1,6000.3.25f1,Finalizable+Wait t2,after collect2 finalized,99999
+2026-11-02T15:45:37,02-L09,Mono,1,6000.3.25f1,Finalizable+Wait t2,after collect2 weak short|long alive,0|0
+2026-11-02T15:45:37,02-L09,Mono,1,6000.3.25f1,Finalizable+Wait t2,after collect3 GC Used MB,6.16
+2026-11-02T15:45:37,02-L09,Mono,1,6000.3.25f1,Finalizable+Wait t2,after collect3 finalized,100000
+2026-11-02T15:45:37,02-L09,Mono,1,6000.3.25f1,Finalizable+Wait t2,after collect3 weak short|long alive,0|0
+2026-11-02T15:45:37,02-L09,Mono,1,6000.3.25f1,Finalizable+Wait t3,baseline GC Used MB,2.06
+2026-11-02T15:45:37,02-L09,Mono,1,6000.3.25f1,Finalizable+Wait t3,after wait finalized,99999
+2026-11-02T15:45:37,02-L09,Mono,1,6000.3.25f1,Finalizable+Wait t3,collect1 ms,7.16
+2026-11-02T15:45:37,02-L09,Mono,1,6000.3.25f1,Finalizable+Wait t3,WaitForPendingFinalizers ms,13.91
+2026-11-02T15:45:37,02-L09,Mono,1,6000.3.25f1,Finalizable+Wait t3,collect2 ms,2.49
+2026-11-02T15:45:37,02-L09,Mono,1,6000.3.25f1,Finalizable+Wait t3,after collect2 GC Used MB,6.25
+2026-11-02T15:45:37,02-L09,Mono,1,6000.3.25f1,Finalizable+Wait t3,after collect2 finalized,99999
+2026-11-02T15:45:37,02-L09,Mono,1,6000.3.25f1,Finalizable+Wait t3,after collect2 weak short|long alive,0|0
+2026-11-02T15:45:37,02-L09,Mono,1,6000.3.25f1,Finalizable+Wait t3,after collect3 GC Used MB,6.25
+2026-11-02T15:45:37,02-L09,Mono,1,6000.3.25f1,Finalizable+Wait t3,after collect3 finalized,100000
+2026-11-02T15:45:37,02-L09,Mono,1,6000.3.25f1,Finalizable+Wait t3,after collect3 weak short|long alive,0|0
+2026-11-02T15:45:41,02-L09,Mono,1,6000.3.25f1,-,targetFrameRate,60
+2026-11-02T15:45:41,02-L09,Mono,1,6000.3.25f1,-,metrics valid,true
+2026-11-02T15:45:41,02-L09,Mono,1,6000.3.25f1,-,GarbageCollector.isIncremental,true
+2026-11-02T15:45:41,02-L09,Mono,1,6000.3.25f1,-,count,100000
+2026-11-02T15:45:41,02-L09,Mono,1,6000.3.25f1,Plain t1,baseline GC Used MB,6.01
+2026-11-02T15:45:41,02-L09,Mono,1,6000.3.25f1,Plain t1,baseline GetTotalMemory MB,6.01
+2026-11-02T15:45:41,02-L09,Mono,1,6000.3.25f1,Plain t1,spawned GC Used MB,136.22
+2026-11-02T15:45:41,02-L09,Mono,1,6000.3.25f1,Plain t1,c0 GC Used MB,136.22
+2026-11-02T15:45:41,02-L09,Mono,1,6000.3.25f1,Plain t1,c0 finalized,0
+2026-11-02T15:45:41,02-L09,Mono,1,6000.3.25f1,Plain t1,c0 weak short|long alive,1000|1000
+2026-11-02T15:45:41,02-L09,Mono,1,6000.3.25f1,Plain t1,c1 collect ms,1.97
+2026-11-02T15:45:41,02-L09,Mono,1,6000.3.25f1,Plain t1,c1 GetTotalMemory MB,2.15
+2026-11-02T15:45:41,02-L09,Mono,1,6000.3.25f1,Plain t1,c1 GC Used MB,2.15
+2026-11-02T15:45:41,02-L09,Mono,1,6000.3.25f1,Plain t1,c1 finalized,0
+2026-11-02T15:45:41,02-L09,Mono,1,6000.3.25f1,Plain t1,c1 weak short|long alive,0|0
+2026-11-02T15:45:41,02-L09,Mono,1,6000.3.25f1,Plain t1,c2 collect ms,0.91
+2026-11-02T15:45:41,02-L09,Mono,1,6000.3.25f1,Plain t1,c2 GetTotalMemory MB,2.15
+2026-11-02T15:45:41,02-L09,Mono,1,6000.3.25f1,Plain t1,c2 GC Used MB,2.15
+2026-11-02T15:45:41,02-L09,Mono,1,6000.3.25f1,Plain t1,c2 finalized,0
+2026-11-02T15:45:41,02-L09,Mono,1,6000.3.25f1,Plain t1,c2 weak short|long alive,0|0
+2026-11-02T15:45:41,02-L09,Mono,1,6000.3.25f1,Plain t1,c3 collect ms,0.91
+2026-11-02T15:45:41,02-L09,Mono,1,6000.3.25f1,Plain t1,c3 GetTotalMemory MB,2.15
+2026-11-02T15:45:41,02-L09,Mono,1,6000.3.25f1,Plain t1,c3 GC Used MB,2.15
+2026-11-02T15:45:41,02-L09,Mono,1,6000.3.25f1,Plain t1,c3 finalized,0
+2026-11-02T15:45:41,02-L09,Mono,1,6000.3.25f1,Plain t1,c3 weak short|long alive,0|0
+2026-11-02T15:45:41,02-L09,Mono,1,6000.3.25f1,Plain t1,c4 collect ms,0.93
+2026-11-02T15:45:41,02-L09,Mono,1,6000.3.25f1,Plain t1,c4 GetTotalMemory MB,2.15
+2026-11-02T15:45:41,02-L09,Mono,1,6000.3.25f1,Plain t1,c4 GC Used MB,2.15
+2026-11-02T15:45:41,02-L09,Mono,1,6000.3.25f1,Plain t1,c4 finalized,0
+2026-11-02T15:45:41,02-L09,Mono,1,6000.3.25f1,Plain t1,c4 weak short|long alive,0|0
+2026-11-02T15:45:41,02-L09,Mono,1,6000.3.25f1,Plain t1,c5 collect ms,0.91
+2026-11-02T15:45:41,02-L09,Mono,1,6000.3.25f1,Plain t1,c5 GetTotalMemory MB,2.15
+2026-11-02T15:45:41,02-L09,Mono,1,6000.3.25f1,Plain t1,c5 GC Used MB,2.15
+2026-11-02T15:45:41,02-L09,Mono,1,6000.3.25f1,Plain t1,c5 finalized,0
+2026-11-02T15:45:41,02-L09,Mono,1,6000.3.25f1,Plain t1,c5 weak short|long alive,0|0
+2026-11-02T15:45:41,02-L09,Mono,1,6000.3.25f1,Plain t1,drain total collects,5
+2026-11-02T15:45:41,02-L09,Mono,1,6000.3.25f1,Plain t1,drain ms after c5,0
+2026-11-02T15:45:41,02-L09,Mono,1,6000.3.25f1,Plain t1,drained GC Used MB,2.15
+2026-11-02T15:45:41,02-L09,Mono,1,6000.3.25f1,Plain t1,drained finalized,0
+2026-11-02T15:45:41,02-L09,Mono,1,6000.3.25f1,Plain t1,drained weak short|long alive,0|0
+2026-11-02T15:45:41,02-L09,Mono,1,6000.3.25f1,Finalizable t1,baseline GC Used MB,2.01
+2026-11-02T15:45:41,02-L09,Mono,1,6000.3.25f1,Finalizable t1,baseline GetTotalMemory MB,2.01
+2026-11-02T15:45:41,02-L09,Mono,1,6000.3.25f1,Finalizable t1,spawned GC Used MB,140.82
+2026-11-02T15:45:41,02-L09,Mono,1,6000.3.25f1,Finalizable t1,c0 GC Used MB,140.82
+2026-11-02T15:45:41,02-L09,Mono,1,6000.3.25f1,Finalizable t1,c0 finalized,0
+2026-11-02T15:45:41,02-L09,Mono,1,6000.3.25f1,Finalizable t1,c0 weak short|long alive,1000|1000
+2026-11-02T15:45:41,02-L09,Mono,1,6000.3.25f1,Finalizable t1,c1 collect ms,5.72
+2026-11-02T15:45:41,02-L09,Mono,1,6000.3.25f1,Finalizable t1,c1 GetTotalMemory MB,140.06
+2026-11-02T15:45:41,02-L09,Mono,1,6000.3.25f1,Finalizable t1,c1 GC Used MB,140.06
+2026-11-02T15:45:41,02-L09,Mono,1,6000.3.25f1,Finalizable t1,c1 finalized,83087
+2026-11-02T15:45:41,02-L09,Mono,1,6000.3.25f1,Finalizable t1,c1 weak short|long alive,0|1000
+2026-11-02T15:45:41,02-L09,Mono,1,6000.3.25f1,Finalizable t1,c2 collect ms,2.95
+2026-11-02T15:45:41,02-L09,Mono,1,6000.3.25f1,Finalizable t1,c2 GetTotalMemory MB,28.98
+2026-11-02T15:45:41,02-L09,Mono,1,6000.3.25f1,Finalizable t1,c2 GC Used MB,28.98
+2026-11-02T15:45:41,02-L09,Mono,1,6000.3.25f1,Finalizable t1,c2 finalized,100000
+2026-11-02T15:45:41,02-L09,Mono,1,6000.3.25f1,Finalizable t1,c2 weak short|long alive,0|172
+2026-11-02T15:45:41,02-L09,Mono,1,6000.3.25f1,Finalizable t1,c3 collect ms,1.35
+2026-11-02T15:45:41,02-L09,Mono,1,6000.3.25f1,Finalizable t1,c3 GetTotalMemory MB,5.96
+2026-11-02T15:45:41,02-L09,Mono,1,6000.3.25f1,Finalizable t1,c3 GC Used MB,5.97
+2026-11-02T15:45:41,02-L09,Mono,1,6000.3.25f1,Finalizable t1,c3 finalized,100000
+2026-11-02T15:45:41,02-L09,Mono,1,6000.3.25f1,Finalizable t1,c3 weak short|long alive,0|0
+2026-11-02T15:45:41,02-L09,Mono,1,6000.3.25f1,Finalizable t1,c4 collect ms,1.22
+2026-11-02T15:45:41,02-L09,Mono,1,6000.3.25f1,Finalizable t1,c4 GetTotalMemory MB,5.97
+2026-11-02T15:45:41,02-L09,Mono,1,6000.3.25f1,Finalizable t1,c4 GC Used MB,5.97
+2026-11-02T15:45:41,02-L09,Mono,1,6000.3.25f1,Finalizable t1,c4 finalized,100000
+2026-11-02T15:45:41,02-L09,Mono,1,6000.3.25f1,Finalizable t1,c4 weak short|long alive,0|0
+2026-11-02T15:45:41,02-L09,Mono,1,6000.3.25f1,Finalizable t1,c5 collect ms,1.47
+2026-11-02T15:45:41,02-L09,Mono,1,6000.3.25f1,Finalizable t1,c5 GetTotalMemory MB,5.97
+2026-11-02T15:45:41,02-L09,Mono,1,6000.3.25f1,Finalizable t1,c5 GC Used MB,5.97
+2026-11-02T15:45:41,02-L09,Mono,1,6000.3.25f1,Finalizable t1,c5 finalized,100000
+2026-11-02T15:45:41,02-L09,Mono,1,6000.3.25f1,Finalizable t1,c5 weak short|long alive,0|0
+2026-11-02T15:45:41,02-L09,Mono,1,6000.3.25f1,Finalizable t1,drain total collects,5
+2026-11-02T15:45:41,02-L09,Mono,1,6000.3.25f1,Finalizable t1,drain ms after c5,0
+2026-11-02T15:45:41,02-L09,Mono,1,6000.3.25f1,Finalizable t1,drained GC Used MB,5.97
+2026-11-02T15:45:41,02-L09,Mono,1,6000.3.25f1,Finalizable t1,drained finalized,100000
+2026-11-02T15:45:41,02-L09,Mono,1,6000.3.25f1,Finalizable t1,drained weak short|long alive,0|0
+2026-11-02T15:45:41,02-L09,Mono,1,6000.3.25f1,Finalizable t2,baseline GC Used MB,5.96
+2026-11-02T15:45:41,02-L09,Mono,1,6000.3.25f1,Finalizable t2,baseline GetTotalMemory MB,5.96
+2026-11-02T15:45:41,02-L09,Mono,1,6000.3.25f1,Finalizable t2,spawned GC Used MB,140.83
+2026-11-02T15:45:41,02-L09,Mono,1,6000.3.25f1,Finalizable t2,c0 GC Used MB,140.83
+2026-11-02T15:45:41,02-L09,Mono,1,6000.3.25f1,Finalizable t2,c0 finalized,0
+2026-11-02T15:45:41,02-L09,Mono,1,6000.3.25f1,Finalizable t2,c0 weak short|long alive,1000|1000
+2026-11-02T15:45:41,02-L09,Mono,1,6000.3.25f1,Finalizable t2,c1 collect ms,6.69
+2026-11-02T15:45:41,02-L09,Mono,1,6000.3.25f1,Finalizable t2,c1 GetTotalMemory MB,140.06
+2026-11-02T15:45:41,02-L09,Mono,1,6000.3.25f1,Finalizable t2,c1 GC Used MB,140.06
+2026-11-02T15:45:41,02-L09,Mono,1,6000.3.25f1,Finalizable t2,c1 finalized,64276
+2026-11-02T15:45:41,02-L09,Mono,1,6000.3.25f1,Finalizable t2,c1 weak short|long alive,0|1000
+2026-11-02T15:45:41,02-L09,Mono,1,6000.3.25f1,Finalizable t2,c2 collect ms,5.51
+2026-11-02T15:45:41,02-L09,Mono,1,6000.3.25f1,Finalizable t2,c2 GetTotalMemory MB,54.45
+2026-11-02T15:45:41,02-L09,Mono,1,6000.3.25f1,Finalizable t2,c2 GC Used MB,54.45
+2026-11-02T15:45:41,02-L09,Mono,1,6000.3.25f1,Finalizable t2,c2 finalized,100000
+2026-11-02T15:45:41,02-L09,Mono,1,6000.3.25f1,Finalizable t2,c2 weak short|long alive,0|355
+2026-11-02T15:45:41,02-L09,Mono,1,6000.3.25f1,Finalizable t2,c3 collect ms,1.51
+2026-11-02T15:45:41,02-L09,Mono,1,6000.3.25f1,Finalizable t2,c3 GetTotalMemory MB,5.97
+2026-11-02T15:45:41,02-L09,Mono,1,6000.3.25f1,Finalizable t2,c3 GC Used MB,5.97
+2026-11-02T15:45:41,02-L09,Mono,1,6000.3.25f1,Finalizable t2,c3 finalized,100000
+2026-11-02T15:45:41,02-L09,Mono,1,6000.3.25f1,Finalizable t2,c3 weak short|long alive,0|0
+2026-11-02T15:45:41,02-L09,Mono,1,6000.3.25f1,Finalizable t2,c4 collect ms,1.29
+2026-11-02T15:45:41,02-L09,Mono,1,6000.3.25f1,Finalizable t2,c4 GetTotalMemory MB,5.97
+2026-11-02T15:45:41,02-L09,Mono,1,6000.3.25f1,Finalizable t2,c4 GC Used MB,5.97
+2026-11-02T15:45:41,02-L09,Mono,1,6000.3.25f1,Finalizable t2,c4 finalized,100000
+2026-11-02T15:45:41,02-L09,Mono,1,6000.3.25f1,Finalizable t2,c4 weak short|long alive,0|0
+2026-11-02T15:45:41,02-L09,Mono,1,6000.3.25f1,Finalizable t2,c5 collect ms,1.33
+2026-11-02T15:45:41,02-L09,Mono,1,6000.3.25f1,Finalizable t2,c5 GetTotalMemory MB,5.97
+2026-11-02T15:45:41,02-L09,Mono,1,6000.3.25f1,Finalizable t2,c5 GC Used MB,5.97
+2026-11-02T15:45:41,02-L09,Mono,1,6000.3.25f1,Finalizable t2,c5 finalized,100000
+2026-11-02T15:45:41,02-L09,Mono,1,6000.3.25f1,Finalizable t2,c5 weak short|long alive,0|0
+2026-11-02T15:45:41,02-L09,Mono,1,6000.3.25f1,Finalizable t2,drain total collects,5
+2026-11-02T15:45:41,02-L09,Mono,1,6000.3.25f1,Finalizable t2,drain ms after c5,0
+2026-11-02T15:45:41,02-L09,Mono,1,6000.3.25f1,Finalizable t2,drained GC Used MB,5.97
+2026-11-02T15:45:41,02-L09,Mono,1,6000.3.25f1,Finalizable t2,drained finalized,100000
+2026-11-02T15:45:41,02-L09,Mono,1,6000.3.25f1,Finalizable t2,drained weak short|long alive,0|0
+2026-11-02T15:45:41,02-L09,Mono,1,6000.3.25f1,Plain t2,baseline GC Used MB,2.02
+2026-11-02T15:45:41,02-L09,Mono,1,6000.3.25f1,Plain t2,baseline GetTotalMemory MB,2.02
+2026-11-02T15:45:41,02-L09,Mono,1,6000.3.25f1,Plain t2,spawned GC Used MB,136.23
+2026-11-02T15:45:41,02-L09,Mono,1,6000.3.25f1,Plain t2,c0 GC Used MB,136.23
+2026-11-02T15:45:41,02-L09,Mono,1,6000.3.25f1,Plain t2,c0 finalized,0
+2026-11-02T15:45:41,02-L09,Mono,1,6000.3.25f1,Plain t2,c0 weak short|long alive,1000|1000
+2026-11-02T15:45:41,02-L09,Mono,1,6000.3.25f1,Plain t2,c1 collect ms,2.21
+2026-11-02T15:45:41,02-L09,Mono,1,6000.3.25f1,Plain t2,c1 GetTotalMemory MB,2.16
+2026-11-02T15:45:41,02-L09,Mono,1,6000.3.25f1,Plain t2,c1 GC Used MB,2.16
+2026-11-02T15:45:41,02-L09,Mono,1,6000.3.25f1,Plain t2,c1 finalized,0
+2026-11-02T15:45:41,02-L09,Mono,1,6000.3.25f1,Plain t2,c1 weak short|long alive,0|0
+2026-11-02T15:45:41,02-L09,Mono,1,6000.3.25f1,Plain t2,c2 collect ms,0.87
+2026-11-02T15:45:41,02-L09,Mono,1,6000.3.25f1,Plain t2,c2 GetTotalMemory MB,2.16
+2026-11-02T15:45:41,02-L09,Mono,1,6000.3.25f1,Plain t2,c2 GC Used MB,2.16
+2026-11-02T15:45:41,02-L09,Mono,1,6000.3.25f1,Plain t2,c2 finalized,0
+2026-11-02T15:45:41,02-L09,Mono,1,6000.3.25f1,Plain t2,c2 weak short|long alive,0|0
+2026-11-02T15:45:41,02-L09,Mono,1,6000.3.25f1,Plain t2,c3 collect ms,0.90
+2026-11-02T15:45:41,02-L09,Mono,1,6000.3.25f1,Plain t2,c3 GetTotalMemory MB,2.16
+2026-11-02T15:45:41,02-L09,Mono,1,6000.3.25f1,Plain t2,c3 GC Used MB,2.16
+2026-11-02T15:45:41,02-L09,Mono,1,6000.3.25f1,Plain t2,c3 finalized,0
+2026-11-02T15:45:41,02-L09,Mono,1,6000.3.25f1,Plain t2,c3 weak short|long alive,0|0
+2026-11-02T15:45:41,02-L09,Mono,1,6000.3.25f1,Plain t2,c4 collect ms,0.85
+2026-11-02T15:45:41,02-L09,Mono,1,6000.3.25f1,Plain t2,c4 GetTotalMemory MB,2.16
+2026-11-02T15:45:41,02-L09,Mono,1,6000.3.25f1,Plain t2,c4 GC Used MB,2.16
+2026-11-02T15:45:41,02-L09,Mono,1,6000.3.25f1,Plain t2,c4 finalized,0
+2026-11-02T15:45:41,02-L09,Mono,1,6000.3.25f1,Plain t2,c4 weak short|long alive,0|0
+2026-11-02T15:45:41,02-L09,Mono,1,6000.3.25f1,Plain t2,c5 collect ms,0.90
+2026-11-02T15:45:41,02-L09,Mono,1,6000.3.25f1,Plain t2,c5 GetTotalMemory MB,2.16
+2026-11-02T15:45:41,02-L09,Mono,1,6000.3.25f1,Plain t2,c5 GC Used MB,2.16
+2026-11-02T15:45:41,02-L09,Mono,1,6000.3.25f1,Plain t2,c5 finalized,0
+2026-11-02T15:45:41,02-L09,Mono,1,6000.3.25f1,Plain t2,c5 weak short|long alive,0|0
+2026-11-02T15:45:41,02-L09,Mono,1,6000.3.25f1,Plain t2,drain total collects,5
+2026-11-02T15:45:41,02-L09,Mono,1,6000.3.25f1,Plain t2,drain ms after c5,0
+2026-11-02T15:45:41,02-L09,Mono,1,6000.3.25f1,Plain t2,drained GC Used MB,2.16
+2026-11-02T15:45:41,02-L09,Mono,1,6000.3.25f1,Plain t2,drained finalized,0
+2026-11-02T15:45:41,02-L09,Mono,1,6000.3.25f1,Plain t2,drained weak short|long alive,0|0
+2026-11-02T15:45:41,02-L09,Mono,1,6000.3.25f1,Plain t3,baseline GC Used MB,2.16
+2026-11-02T15:45:41,02-L09,Mono,1,6000.3.25f1,Plain t3,baseline GetTotalMemory MB,2.16
+2026-11-02T15:45:41,02-L09,Mono,1,6000.3.25f1,Plain t3,spawned GC Used MB,136.23
+2026-11-02T15:45:41,02-L09,Mono,1,6000.3.25f1,Plain t3,c0 GC Used MB,136.23
+2026-11-02T15:45:41,02-L09,Mono,1,6000.3.25f1,Plain t3,c0 finalized,0
+2026-11-02T15:45:41,02-L09,Mono,1,6000.3.25f1,Plain t3,c0 weak short|long alive,1000|1000
+2026-11-02T15:45:41,02-L09,Mono,1,6000.3.25f1,Plain t3,c1 collect ms,1.91
+2026-11-02T15:45:41,02-L09,Mono,1,6000.3.25f1,Plain t3,c1 GetTotalMemory MB,2.16
+2026-11-02T15:45:41,02-L09,Mono,1,6000.3.25f1,Plain t3,c1 GC Used MB,2.16
+2026-11-02T15:45:41,02-L09,Mono,1,6000.3.25f1,Plain t3,c1 finalized,0
+2026-11-02T15:45:41,02-L09,Mono,1,6000.3.25f1,Plain t3,c1 weak short|long alive,0|0
+2026-11-02T15:45:41,02-L09,Mono,1,6000.3.25f1,Plain t3,c2 collect ms,0.82
+2026-11-02T15:45:41,02-L09,Mono,1,6000.3.25f1,Plain t3,c2 GetTotalMemory MB,2.16
+2026-11-02T15:45:41,02-L09,Mono,1,6000.3.25f1,Plain t3,c2 GC Used MB,2.16
+2026-11-02T15:45:41,02-L09,Mono,1,6000.3.25f1,Plain t3,c2 finalized,0
+2026-11-02T15:45:41,02-L09,Mono,1,6000.3.25f1,Plain t3,c2 weak short|long alive,0|0
+2026-11-02T15:45:41,02-L09,Mono,1,6000.3.25f1,Plain t3,c3 collect ms,0.84
+2026-11-02T15:45:41,02-L09,Mono,1,6000.3.25f1,Plain t3,c3 GetTotalMemory MB,2.16
+2026-11-02T15:45:41,02-L09,Mono,1,6000.3.25f1,Plain t3,c3 GC Used MB,2.16
+2026-11-02T15:45:41,02-L09,Mono,1,6000.3.25f1,Plain t3,c3 finalized,0
+2026-11-02T15:45:41,02-L09,Mono,1,6000.3.25f1,Plain t3,c3 weak short|long alive,0|0
+2026-11-02T15:45:41,02-L09,Mono,1,6000.3.25f1,Plain t3,c4 collect ms,0.93
+2026-11-02T15:45:41,02-L09,Mono,1,6000.3.25f1,Plain t3,c4 GetTotalMemory MB,2.16
+2026-11-02T15:45:41,02-L09,Mono,1,6000.3.25f1,Plain t3,c4 GC Used MB,2.16
+2026-11-02T15:45:41,02-L09,Mono,1,6000.3.25f1,Plain t3,c4 finalized,0
+2026-11-02T15:45:41,02-L09,Mono,1,6000.3.25f1,Plain t3,c4 weak short|long alive,0|0
+2026-11-02T15:45:41,02-L09,Mono,1,6000.3.25f1,Plain t3,c5 collect ms,1.01
+2026-11-02T15:45:41,02-L09,Mono,1,6000.3.25f1,Plain t3,c5 GetTotalMemory MB,2.16
+2026-11-02T15:45:41,02-L09,Mono,1,6000.3.25f1,Plain t3,c5 GC Used MB,2.16
+2026-11-02T15:45:41,02-L09,Mono,1,6000.3.25f1,Plain t3,c5 finalized,0
+2026-11-02T15:45:41,02-L09,Mono,1,6000.3.25f1,Plain t3,c5 weak short|long alive,0|0
+2026-11-02T15:45:41,02-L09,Mono,1,6000.3.25f1,Plain t3,drain total collects,5
+2026-11-02T15:45:41,02-L09,Mono,1,6000.3.25f1,Plain t3,drain ms after c5,0
+2026-11-02T15:45:41,02-L09,Mono,1,6000.3.25f1,Plain t3,drained GC Used MB,2.16
+2026-11-02T15:45:41,02-L09,Mono,1,6000.3.25f1,Plain t3,drained finalized,0
+2026-11-02T15:45:41,02-L09,Mono,1,6000.3.25f1,Plain t3,drained weak short|long alive,0|0
+2026-11-02T15:45:41,02-L09,Mono,1,6000.3.25f1,Finalizable t3,baseline GC Used MB,2.04
+2026-11-02T15:45:41,02-L09,Mono,1,6000.3.25f1,Finalizable t3,baseline GetTotalMemory MB,2.04
+2026-11-02T15:45:41,02-L09,Mono,1,6000.3.25f1,Finalizable t3,spawned GC Used MB,140.84
+2026-11-02T15:45:41,02-L09,Mono,1,6000.3.25f1,Finalizable t3,c0 GC Used MB,140.84
+2026-11-02T15:45:41,02-L09,Mono,1,6000.3.25f1,Finalizable t3,c0 finalized,0
+2026-11-02T15:45:41,02-L09,Mono,1,6000.3.25f1,Finalizable t3,c0 weak short|long alive,1000|1000
+2026-11-02T15:45:41,02-L09,Mono,1,6000.3.25f1,Finalizable t3,c1 collect ms,6.41
+2026-11-02T15:45:41,02-L09,Mono,1,6000.3.25f1,Finalizable t3,c1 GetTotalMemory MB,140.08
+2026-11-02T15:45:41,02-L09,Mono,1,6000.3.25f1,Finalizable t3,c1 GC Used MB,140.08
+2026-11-02T15:45:41,02-L09,Mono,1,6000.3.25f1,Finalizable t3,c1 finalized,76570
+2026-11-02T15:45:41,02-L09,Mono,1,6000.3.25f1,Finalizable t3,c1 weak short|long alive,0|1000
+2026-11-02T15:45:41,02-L09,Mono,1,6000.3.25f1,Finalizable t3,c2 collect ms,2.60
+2026-11-02T15:45:41,02-L09,Mono,1,6000.3.25f1,Finalizable t3,c2 GetTotalMemory MB,37.82
+2026-11-02T15:45:41,02-L09,Mono,1,6000.3.25f1,Finalizable t3,c2 GC Used MB,37.82
+2026-11-02T15:45:41,02-L09,Mono,1,6000.3.25f1,Finalizable t3,c2 finalized,100000
+2026-11-02T15:45:41,02-L09,Mono,1,6000.3.25f1,Finalizable t3,c2 weak short|long alive,0|236
+2026-11-02T15:45:41,02-L09,Mono,1,6000.3.25f1,Finalizable t3,c3 collect ms,1.46
+2026-11-02T15:45:41,02-L09,Mono,1,6000.3.25f1,Finalizable t3,c3 GetTotalMemory MB,5.98
+2026-11-02T15:45:41,02-L09,Mono,1,6000.3.25f1,Finalizable t3,c3 GC Used MB,5.98
+2026-11-02T15:45:41,02-L09,Mono,1,6000.3.25f1,Finalizable t3,c3 finalized,100000
+2026-11-02T15:45:41,02-L09,Mono,1,6000.3.25f1,Finalizable t3,c3 weak short|long alive,0|0
+2026-11-02T15:45:41,02-L09,Mono,1,6000.3.25f1,Finalizable t3,c4 collect ms,1.23
+2026-11-02T15:45:41,02-L09,Mono,1,6000.3.25f1,Finalizable t3,c4 GetTotalMemory MB,5.98
+2026-11-02T15:45:41,02-L09,Mono,1,6000.3.25f1,Finalizable t3,c4 GC Used MB,5.98
+2026-11-02T15:45:41,02-L09,Mono,1,6000.3.25f1,Finalizable t3,c4 finalized,100000
+2026-11-02T15:45:41,02-L09,Mono,1,6000.3.25f1,Finalizable t3,c4 weak short|long alive,0|0
+2026-11-02T15:45:41,02-L09,Mono,1,6000.3.25f1,Finalizable t3,c5 collect ms,1.13
+2026-11-02T15:45:41,02-L09,Mono,1,6000.3.25f1,Finalizable t3,c5 GetTotalMemory MB,5.99
+2026-11-02T15:45:41,02-L09,Mono,1,6000.3.25f1,Finalizable t3,c5 GC Used MB,5.99
+2026-11-02T15:45:41,02-L09,Mono,1,6000.3.25f1,Finalizable t3,c5 finalized,100000
+2026-11-02T15:45:41,02-L09,Mono,1,6000.3.25f1,Finalizable t3,c5 weak short|long alive,0|0
+2026-11-02T15:45:41,02-L09,Mono,1,6000.3.25f1,Finalizable t3,drain total collects,5
+2026-11-02T15:45:41,02-L09,Mono,1,6000.3.25f1,Finalizable t3,drain ms after c5,0
+2026-11-02T15:45:41,02-L09,Mono,1,6000.3.25f1,Finalizable t3,drained GC Used MB,5.99
+2026-11-02T15:45:41,02-L09,Mono,1,6000.3.25f1,Finalizable t3,drained finalized,100000
+2026-11-02T15:45:41,02-L09,Mono,1,6000.3.25f1,Finalizable t3,drained weak short|long alive,0|0
+2026-11-02T15:45:41,02-L09,Mono,1,6000.3.25f1,Finalizable+Wait t1,baseline GC Used MB,2.05
+2026-11-02T15:45:41,02-L09,Mono,1,6000.3.25f1,Finalizable+Wait t1,after wait finalized,100000
+2026-11-02T15:45:41,02-L09,Mono,1,6000.3.25f1,Finalizable+Wait t1,collect1 ms,5.77
+2026-11-02T15:45:41,02-L09,Mono,1,6000.3.25f1,Finalizable+Wait t1,WaitForPendingFinalizers ms,13.67
+2026-11-02T15:45:41,02-L09,Mono,1,6000.3.25f1,Finalizable+Wait t1,collect2 ms,3.32
+2026-11-02T15:45:41,02-L09,Mono,1,6000.3.25f1,Finalizable+Wait t1,after collect2 GC Used MB,6.24
+2026-11-02T15:45:41,02-L09,Mono,1,6000.3.25f1,Finalizable+Wait t1,after collect2 finalized,100000
+2026-11-02T15:45:41,02-L09,Mono,1,6000.3.25f1,Finalizable+Wait t1,after collect2 weak short|long alive,0|0
+2026-11-02T15:45:41,02-L09,Mono,1,6000.3.25f1,Finalizable+Wait t1,after collect3 GC Used MB,6.24
+2026-11-02T15:45:41,02-L09,Mono,1,6000.3.25f1,Finalizable+Wait t1,after collect3 finalized,100000
+2026-11-02T15:45:41,02-L09,Mono,1,6000.3.25f1,Finalizable+Wait t1,after collect3 weak short|long alive,0|0
+2026-11-02T15:45:41,02-L09,Mono,1,6000.3.25f1,Finalizable+Wait t2,baseline GC Used MB,2.06
+2026-11-02T15:45:41,02-L09,Mono,1,6000.3.25f1,Finalizable+Wait t2,after wait finalized,99998
+2026-11-02T15:45:41,02-L09,Mono,1,6000.3.25f1,Finalizable+Wait t2,collect1 ms,6.33
+2026-11-02T15:45:41,02-L09,Mono,1,6000.3.25f1,Finalizable+Wait t2,WaitForPendingFinalizers ms,14.05
+2026-11-02T15:45:41,02-L09,Mono,1,6000.3.25f1,Finalizable+Wait t2,collect2 ms,2.52
+2026-11-02T15:45:41,02-L09,Mono,1,6000.3.25f1,Finalizable+Wait t2,after collect2 GC Used MB,6.02
+2026-11-02T15:45:41,02-L09,Mono,1,6000.3.25f1,Finalizable+Wait t2,after collect2 finalized,99998
+2026-11-02T15:45:41,02-L09,Mono,1,6000.3.25f1,Finalizable+Wait t2,after collect2 weak short|long alive,0|0
+2026-11-02T15:45:41,02-L09,Mono,1,6000.3.25f1,Finalizable+Wait t2,after collect3 GC Used MB,6.02
+2026-11-02T15:45:41,02-L09,Mono,1,6000.3.25f1,Finalizable+Wait t2,after collect3 finalized,100000
+2026-11-02T15:45:41,02-L09,Mono,1,6000.3.25f1,Finalizable+Wait t2,after collect3 weak short|long alive,0|0
+2026-11-02T15:45:41,02-L09,Mono,1,6000.3.25f1,Finalizable+Wait t3,baseline GC Used MB,2.06
+2026-11-02T15:45:41,02-L09,Mono,1,6000.3.25f1,Finalizable+Wait t3,after wait finalized,99999
+2026-11-02T15:45:41,02-L09,Mono,1,6000.3.25f1,Finalizable+Wait t3,collect1 ms,5.46
+2026-11-02T15:45:41,02-L09,Mono,1,6000.3.25f1,Finalizable+Wait t3,WaitForPendingFinalizers ms,14.65
+2026-11-02T15:45:41,02-L09,Mono,1,6000.3.25f1,Finalizable+Wait t3,collect2 ms,2.24
+2026-11-02T15:45:41,02-L09,Mono,1,6000.3.25f1,Finalizable+Wait t3,after collect2 GC Used MB,6.50
+2026-11-02T15:45:41,02-L09,Mono,1,6000.3.25f1,Finalizable+Wait t3,after collect2 finalized,99999
+2026-11-02T15:45:41,02-L09,Mono,1,6000.3.25f1,Finalizable+Wait t3,after collect2 weak short|long alive,0|0
+2026-11-02T15:45:41,02-L09,Mono,1,6000.3.25f1,Finalizable+Wait t3,after collect3 GC Used MB,6.49
+2026-11-02T15:45:41,02-L09,Mono,1,6000.3.25f1,Finalizable+Wait t3,after collect3 finalized,100000
+2026-11-02T15:45:41,02-L09,Mono,1,6000.3.25f1,Finalizable+Wait t3,after collect3 weak short|long alive,0|0
