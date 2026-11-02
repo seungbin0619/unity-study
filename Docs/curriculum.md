@@ -33,9 +33,28 @@
 | 02-L08 | Memory Profiler 스냅샷 비교로 누수 찾기 (Claude는 절차 안내, GUI 조작은 학습자) | 무엇이 남아 있을까? |
 | 02-L09 | 파이널라이저가 있는 객체의 수거 지연 (GC 사이클 수 확인) | 몇 번째 GC에서 해제? |
 
-## 3\~6. 예정
+## 3. PlayerLoop — 실습 목록 확정, 개념 대기
 
-3. PlayerLoop (`PlayerLoop` API, 커스텀 시스템 삽입, Awaitable/코루틴 동작 위치)
+| ID | 실습 | 예측 질문 예시 |
+|---|---|---|
+| 03-L01 | `PlayerLoop.GetCurrentPlayerLoop()` 트리 덤프 — 에디터 vs Mono·IL2CPP 플레이어 (최상위 단계, 하위 시스템 수·이름) | 최상위 단계 몇 개, `Update`는 몇 번째? 에디터와 플레이어의 시스템 수가 같을까? |
+| 03-L02 | 각 하위 시스템 앞뒤에 마커 시스템을 넣어 콜백·재개 위치를 순번으로 지도화: `Update`/`LateUpdate`/`FixedUpdate`, 코루틴 `yield null`·`WaitForEndOfFrame`·`WaitForFixedUpdate`, `Awaitable.NextFrameAsync`·`EndOfFrameAsync`·`FixedUpdateAsync`, `await Task.Yield()` | 각 재개 지점은 어느 하위 시스템 안에서 실행될까? |
+| 03-L03 | `Instantiate` 호출 시점(`Awake`·`Update`·`LateUpdate`·코루틴)별로 새 객체의 `Awake`/`OnEnable`/`Start`/첫 `Update`가 오는 시점 | `Update`에서 만든 객체의 `Start`는 같은 프레임? 다음 프레임? |
+| 03-L04 | `FixedUpdate` 따라잡기: `Thread.Sleep`으로 프레임을 늘릴 때 프레임당 `FixedUpdate` 횟수, `Time.deltaTime`, `maximumDeltaTime` 효과 | `fixedDeltaTime` 0.02, 프레임 100 ms·500 ms면 프레임당 몇 번? |
+| 03-L05 | `MonoBehaviour.Update` 1만 개 vs 매니저 하나가 1만 개 루프 vs 커스텀 PlayerLoop 시스템 하나, 빈 `Update`·`Update` 미정의 포함 (Mono·IL2CPP) | 순서와 대략적 배수? 빈 `Update`도 비용이 드나? |
+| 03-L06 | 대기 방식별 반복당 할당: `yield return null`·`0`·`new WaitForSeconds`·캐시한 `WaitForSeconds`, `StartCoroutine` 자체, `async Awaitable` vs `async Task` | 어느 줄이 반복마다 할당? 몇 바이트? |
+| 03-L07 | 스레드 전환: `Awaitable.BackgroundThreadAsync`→`MainThreadAsync`, `Task.Run` 후 continuation, `ConfigureAwait(false)` — 스레드 ID, 재개 프레임, 재개 PlayerLoop 단계 | `await Task.Run(...)` 다음 줄은 어느 스레드에서, 몇 프레임 뒤에? |
+| 03-L08 | 수명과 취소: `SetActive(false)`·`enabled = false`·`Destroy` 후 코루틴 / `Awaitable` / `Task`가 계속 도는지, `destroyCancellationToken`, 파괴된 객체 접근 예외 | `Destroy` 후에도 계속 도는 것은? |
+| 03-L09 | 커스텀 시스템 수명 (에디터): 도메인 리로드 끈 Enter Play Mode Options에서 재진입 시 시스템 누적, `SubsystemRegistration`·`playModeStateChanged`로 정리 | 정리 없이 3번 재진입하면 시스템은 몇 개? |
+| 03-L10 | 편집 모드 루프 (에디터, 툴): `[ExecuteAlways]` `Update` 호출 빈도, `EditorApplication.update`, `QueuePlayerLoopUpdate`, 입력 유무 비교 | 편집 모드에서 아무것도 안 하면 `Update`는 초당 몇 번? |
+
+- 약점 재확인: 03-L01 에디터/플레이어 DLL 차이, 03-L06 박싱(`yield return 0`)·델리게이트, 03-L07 "동기 API = 메인 스레드" 가정, 03-L08 가짜 null·예외 타입 차이.
+- 03-L09·L10은 에디터 기준으로 결론을 낸다 (README에 명시).
+- Player Settings: 03-L05·L06의 IL2CPP 빌드에서만 Backend를 바꾸고 복원한다.
+- 확인 필요: `Task` continuation(`UnitySynchronizationContext`)의 실행 하위 시스템 — 소스를 미리 보지 않고 03-L02 마커 실측으로 정한다.
+
+## 4\~6. 예정
+
 4. 직렬화와 에셋 파이프라인 (`SerializedObject`, YAML/GUID, `AssetDatabase`, `ScriptedImporter`, Addressables)
 5. 렌더링 파이프라인 (SRP, Render Graph, SRP Batcher, GPU Resident Drawer, Frame Debugger)
 6. DOTS (Job System, Burst, ECS, 데이터 지향 설계)

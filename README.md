@@ -15,7 +15,8 @@ Unity 엔진 내부 동작을 문서로만 읽지 않고 **직접 측정해서 �
 |---|---|
 | [1. 네이티브–매니지드 경계](#1-네이티브매니지드-경계) | 10 / 10 완료 |
 | [2. 메모리와 GC](#2-메모리와-gc) | 9 / 9 완료 |
-| 3. PlayerLoop · 4. 직렬화와 에셋 파이프라인 · 5. 렌더링 파이프라인 · 6. DOTS | 예정 |
+| [3. PlayerLoop](#3-playerloop) | 0 / 10 완료 |
+| 4. 직렬화와 에셋 파이프라인 · 5. 렌더링 파이프라인 · 6. DOTS | 예정 |
 
 ## 실행 방법
 
@@ -94,3 +95,27 @@ Boehm GC의 특성, 숨은 할당, 힙 크기와 단편화, Incremental GC.
 
 > ✅ **[02-L09 파이널라이저와 수거 지연](Assets/Labs/02_GC/L09_Finalizer/README.md)** · `Mono` `IL2CPP`\
 > 파이널라이저 객체는 "Collect → 파이널라이저 스레드 실행 → 다음 Collect"에서 회수. 매 프레임 Collect하면 스레드가 틈에만 돌아 Mono 약 170회·IL2CPP 약 16회, 60fps면 2\~3회. 첫 수집이 3\~4배 비싸고(다시 마킹), IL2CPP는 `trackResurrection` 미지원
+
+## 3. PlayerLoop
+
+엔진 프레임 루프의 구조, 생명주기 콜백·코루틴·Awaitable이 실행되는 위치, 커스텀 시스템과 편집 모드 루프.
+
+> ⏳ 03-L01 PlayerLoop 트리 덤프 (에디터 vs 플레이어)
+
+> ⏳ 03-L02 콜백·재개 위치 지도
+
+> ⏳ 03-L03 `Instantiate` 시점별 `Start` 호출 시점
+
+> ⏳ 03-L04 `FixedUpdate` 따라잡기와 `maximumDeltaTime`
+
+> ⏳ 03-L05 `Update` 1만 개 vs 매니저 vs 커스텀 시스템
+
+> ⏳ 03-L06 대기 방식별 할당 (코루틴·Awaitable·Task)
+
+> ⏳ 03-L07 스레드 전환과 continuation 위치
+
+> ⏳ 03-L08 비활성화·파괴 시 코루틴·Awaitable·Task 수명
+
+> ⏳ 03-L09 커스텀 시스템 수명과 도메인 리로드 (에디터)
+
+> ⏳ 03-L10 편집 모드 루프와 `[ExecuteAlways]` (에디터)
