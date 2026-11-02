@@ -1,5 +1,7 @@
 # 진행 기록
 
+용어 정리는 [glossary.md](glossary.md).
+
 ## 완료한 개념
 - 1. 네이티브–매니지드 경계: 래퍼 구조, 가짜 null, 생성자 금지·Destroy 지연·연쇄 파괴, 마샬링 비용, IL2CPP 파이프라인·생성 코드·sealed·제네릭 공유·스트리핑
 - 2. 메모리와 GC: 메모리 영역, Boehm GC 특성, 숨은 할당, 측정·감소 기법, 블록/크기 클래스, 정밀·보수적 마킹, pointer-free 객체, Used/Reserved, Incremental GC와 쓰기 배리어, 파이널라이저
