@@ -22,7 +22,7 @@ C#에서는 보이지 않는 런타임 검사(null 검사(null check), 배열 �
   ```
 
 ## 실습 구성
-- 코드: `CheckTargets.cs` — 검사 대상 메서드 A~E (D는 B에 `Il2CppSetOption(NullChecks/ArrayBoundsChecks, false)`를 붙인 버전, E는 B 앞에 직접 null 검사를 넣은 버전)
+- 코드: `CheckTargets.cs` — 검사 대상 메서드 A\~E (D는 B에 `Il2CppSetOption(NullChecks/ArrayBoundsChecks, false)`를 붙인 버전, E는 B 앞에 직접 null 검사를 넣은 버전)
 - 코드: `NullCheckLab.cs` — 대상 메서드를 호출해 스트리핑을 막고, null 체인 예외 타입과 B·D·E의 원소당 시간(100만 원소 × 10회, 워밍업 3, 표본 20)을 기록
 - `Il2CppSetOptionAttribute.cs` — Unity 설치 폴더 `Editor/Data/il2cpp`에서 복사
 - 실행: IL2CPP Development 빌드 후 `Builds/IL2CPP/Labs.exe -lab 01-L07 -batchmode -nographics -logFile Notes/results/player_01-L07.log`, 생성 코드는 `Library/Bee` 아래 `il2cppOutput`에서 메서드 이름으로 검색

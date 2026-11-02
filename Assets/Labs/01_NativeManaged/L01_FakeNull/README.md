@@ -47,8 +47,8 @@
 | | | | 4 | `(bool)go` | `true` | `false` |
 | | | | 5 | `go?.name` | `"Target"` | `MissingReferenceException` |
 | | | | 6 | `(go ?? fallback).name` | `"Target"` | `MissingReferenceException` |
-| 2026-10-29 | Editor (Mono) | 에디터 플레이 모드, 러너를 `Awaitable`로 교체 후 재실행 | 1~6 | (위와 동일) | 동일 | 동일 |
-| 2026-10-29 | Mono | Development 플레이어 (`-batchmode -nographics`) | 1~4 | | 에디터와 동일 | 에디터와 동일 |
+| 2026-10-29 | Editor (Mono) | 에디터 플레이 모드, 러너를 `Awaitable`로 교체 후 재실행 | 1\~6 | (위와 동일) | 동일 | 동일 |
+| 2026-10-29 | Mono | Development 플레이어 (`-batchmode -nographics`) | 1\~4 | | 에디터와 동일 | 에디터와 동일 |
 | | | | 5 | `go?.name` | `"Target"` | **`NullReferenceException`** |
 | | | | 6 | `(go ?? fallback).name` | `"Target"` | **`NullReferenceException`** |
 
@@ -60,13 +60,13 @@
   - C# 언어가 직접 처리하는 것: `is null`, `ReferenceEquals`, `?.`, `??` (2, 3, 5, 6). 매니지드 참조가 실제로 null인지만 본다. C#은 `?.`와 `??`의 오버로드를 허용하지 않아서, 컴파일러가 단순 참조 비교 IL을 낸다.
 - **같은 프레임 (A)**: `Destroy`는 지연 파괴라서 네이티브 객체가 아직 살아 있다. 모든 식이 "살아 있는 객체"처럼 동작한다.
 - **다음 프레임 (B)**: 네이티브 객체만 사라지고 매니지드 래퍼는 남는다(가짜 null). 그래서 2, 3은 여전히 "null 아님"이고, 5와 6도 같은 그룹이라 `go`를 그대로 통과시킨다. 그 결과 `name` getter가 네이티브 쪽을 찾다가 `MissingReferenceException`을 던진다. 5가 `null`을 돌려주거나 6이 `fallback`으로 빠지는 일은 없다.
-- 예측과 비교: 1~3은 맞음. 4(A), 5, 6에서 어긋남.
+- 예측과 비교: 1\~3은 맞음. 4(A), 5, 6에서 어긋남.
   - 4(A): `Destroy` 즉시 파괴된 것으로 봤지만, 같은 줄에서 1(A)는 `false`(살아 있음)로 답했다. 1과 4는 같은 검사의 부정이라 함께 움직여야 한다.
   - 5, 6: `?.`와 `??`를 오버로드를 타는 그룹(`bool`)으로 분류했다. 실제로는 2(`is null`)와 같은 그룹이다. 2를 두 프레임 모두 `false`로 맞혔으니, 그 결론을 5, 6에 그대로 적용하면 된다.
 - 한 단계 더:
   - Rider와 Microsoft.Unity.Analyzers가 `?.`와 `??`에 경고(UNT0008, UNT0007)를 띄우는 이유가 이 결과다. 안전한 형태는 `if (go) go.DoX();` 또는 `go != null ? go : fallback`이다.
   - 같은 이유로 `TryGetComponent(out var c)`가 반환한 값이나 `?.Invoke()` 이벤트 패턴에서도, 대상이 `UnityEngine.Object`이면 파괴 여부를 따로 확인해야 한다.
-  - **예외 타입이 환경마다 다르다.** 에디터에서는 `MissingReferenceException`, Mono Development 플레이어에서는 `NullReferenceException`이었다. 연산자 결과(1~4)는 같고 예외 타입만 다르다. 따라서 `catch (MissingReferenceException)`로 파괴된 객체 접근을 잡는 코드는 빌드에서 동작하지 않는다.
+  - **예외 타입이 환경마다 다르다.** 에디터에서는 `MissingReferenceException`, Mono Development 플레이어에서는 `NullReferenceException`이었다. 연산자 결과(1\~4)는 같고 예외 타입만 다르다. 따라서 `catch (MissingReferenceException)`로 파괴된 객체 접근을 잡는 코드는 빌드에서 동작하지 않는다.
   - 예외 타입이 다른 원인은 [01-L06](../L06_ReadBindings/README.md)에서 확인했다. `TryThrowEditorNullExceptionObject`가 instance ID ≠ 0이면 `MissingReferenceException`을 던지는데, 플레이어용 CoreModule에서는 이 메서드 본문이 비어 있다. IL2CPP 플레이어 결과는 IL2CPP 모듈 설치 후 추가한다.
 - 근거:
   - 실측 CSV (위)

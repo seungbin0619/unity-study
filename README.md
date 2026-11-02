@@ -62,7 +62,7 @@ C# 래퍼와 C++ 네이티브 객체의 관계, 경계를 넘는 비용, IL2CPP�
 > ✅ **[01-L10 코드 스트리핑과 `[Preserve]`](Assets/Labs/01_NativeManaged/L10_Stripping/README.md)** · `IL2CPP`\
 > Stripping High에서 상수 문자열 리플렉션 대상은 타입만 남아 `MissingMethodException`. `[Preserve]`는 타입과 생성자만 보존
 
-백엔드는 결론을 낸 플레이어 기준입니다. 01-L01~L06은 IL2CPP 플레이어에서 아직 실행하지 않았습니다.
+백엔드는 결론을 낸 플레이어 기준입니다. 01-L01\~L06은 IL2CPP 플레이어에서 아직 실행하지 않았습니다.
 
 ## 2. 메모리와 GC
 
@@ -72,25 +72,25 @@ Boehm GC의 특성, 숨은 할당, 힙 크기와 단편화, Incremental GC.
 > 델리게이트 생성이 128 B로 가장 큼 (C# 9는 메서드 그룹·`this` 캡처 람다를 캐시 안 함, 필드 캐시 시 0). `IEnumerable<T>` foreach·LINQ는 열거자 박싱 40 B, `List.Sort()`도 매번 128 B
 
 > ✅ **[02-L02 클로저 할당 시점](Assets/Labs/02_GC/L02_ClosureTiming/README.md)** · `Mono` `IL2CPP`\
-> 클로저는 캡처 변수의 스코프 진입 시 생성. 매개변수를 캡처하면 람다 분기를 안 타도 호출마다 20~24 B
+> 클로저는 캡처 변수의 스코프 진입 시 생성. 매개변수를 캡처하면 람다 분기를 안 타도 호출마다 20\~24 B
 
 > ✅ **[02-L03 `Instantiate`/`Destroy` vs 풀링](Assets/Labs/02_GC/L03_Pooling/README.md)** · `Mono` `IL2CPP`\
-> `Instantiate`의 GC 할당은 GameObject 래퍼 24 B + 스크립트당 40 B뿐(나머지는 네이티브). 풀링 이득은 주로 CPU: 약 2.1~2.6배
+> `Instantiate`의 GC 할당은 GameObject 래퍼 24 B + 스크립트당 40 B뿐(나머지는 네이티브). 풀링 이득은 주로 CPU: 약 2.1\~2.6배
 
 > ✅ **[02-L04 GC Used vs Reserved](Assets/Labs/02_GC/L04_UsedVsReserved/README.md)** · `Mono` `IL2CPP`\
-> 50 MB 해제 + Collect 후 Reserved는 51.8 MB 유지. IL2CPP는 수집 6~12회 뒤 반납, Mono는 32회 뒤에도 유지. 단편화 시 빈 25 MB에 20 MB가 안 들어감
+> 50 MB 해제 + Collect 후 Reserved는 51.8 MB 유지. IL2CPP는 수집 6\~12회 뒤 반납, Mono는 32회 뒤에도 유지. 단편화 시 빈 25 MB에 20 MB가 안 들어감
 
 > ✅ **[02-L05 데이터 배치에 따른 GC 마킹 비용](Assets/Labs/02_GC/L05_MarkCost/README.md)** · `Mono` `IL2CPP`\
 > 참조 없는 `struct[]`는 100만 개여도 기준선과 같음. 참조 필드 하나 든 `struct[]`가 문자열을 공유해도 `List<class>`보다 약 1.7배 비쌈 (훑는 바이트가 3배)
 
 > ✅ **[02-L06 Incremental GC On/Off 프레임 타임](Assets/Labs/02_GC/L06_IncrementalGC/README.md)** · `Mono` `IL2CPP`\
-> Off는 GC마다 10 ms 스파이크. On은 부분(세대별) 수집이라 GC 프레임 약 1 ms, 20회에 한 번 full 마킹이 3~6 ms × 2~3프레임. 총 시간도 On이 적음. 단 30프레임 사는 객체가 많으면 이점이 사라지고, 장수 데이터를 넓게 고치면 On이 약 3배 손해
+> Off는 GC마다 10 ms 스파이크. On은 부분(세대별) 수집이라 GC 프레임 약 1 ms, 20회에 한 번 full 마킹이 3\~6 ms × 2\~3프레임. 총 시간도 On이 적음. 단 30프레임 사는 객체가 많으면 이점이 사라지고, 장수 데이터를 넓게 고치면 On이 약 3배 손해
 
 > ✅ **[02-L07 `GarbageCollector.Mode.Manual`과 `CollectIncremental`](Assets/Labs/02_GC/L07_ManualGC/README.md)** · `Mono` `IL2CPP`\
-> 매 프레임 호출하면 호출마다 새 수집을 시작해 Used는 평평하지만 CPU는 Enabled의 2.5~3.7배. slice는 상한이 아님 (마무리 바닥 0.6~1 ms). 60프레임마다 부르면 GC 시간은 1/30이 되지만 Used가 80 MB 톱니
+> 매 프레임 호출하면 호출마다 새 수집을 시작해 Used는 평평하지만 CPU는 Enabled의 2.5\~3.7배. slice는 상한이 아님 (마무리 바닥 0.6\~1 ms). 60프레임마다 부르면 GC 시간은 1/30이 되지만 Used가 80 MB 톱니
 
 > ✅ **[02-L08 Memory Profiler 스냅샷으로 누수 찾기](Assets/Labs/02_GC/L08_SnapshotLeak/README.md)** · `Mono` `IL2CPP`\
 > 구독 누수는 파괴된 셸 + 필드를 매니지드에 남김. 런타임 `Texture2D`는 구독과 무관하게 네이티브 50 MB 잔존, 셸이 참조하면 `UnloadUnusedAssets`로도 안 풀림
 
 > ✅ **[02-L09 파이널라이저와 수거 지연](Assets/Labs/02_GC/L09_Finalizer/README.md)** · `Mono` `IL2CPP`\
-> 파이널라이저 객체는 "Collect → 파이널라이저 스레드 실행 → 다음 Collect"에서 회수. 매 프레임 Collect하면 스레드가 틈에만 돌아 Mono 약 170회·IL2CPP 약 16회, 60fps면 2~3회. 첫 수집이 3~4배 비싸고(다시 마킹), IL2CPP는 `trackResurrection` 미지원
+> 파이널라이저 객체는 "Collect → 파이널라이저 스레드 실행 → 다음 Collect"에서 회수. 매 프레임 Collect하면 스레드가 틈에만 돌아 Mono 약 170회·IL2CPP 약 16회, 60fps면 2\~3회. 첫 수집이 3\~4배 비싸고(다시 마킹), IL2CPP는 `trackResurrection` 미지원

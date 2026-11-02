@@ -56,7 +56,7 @@
 | | | | – | 파괴 후 구독자 수 (생성 직후 2) | 1 (남음) | 0 (해제됨) |
 | | | | 3 | `Tick()` → `OnTick`의 `name` | `MissingReferenceException` | 호출 안 됨 |
 | | | | 4 | GC 후 매니지드 객체 생존 | **살아 있음** → `Clear()` 후 회수됨 | 회수됨 |
-| 2026-10-29 | Mono | Development 플레이어 | 1~4 | | 3번만 `NullReferenceException`, 나머지 에디터와 동일 | 에디터와 동일 |
+| 2026-10-29 | Mono | Development 플레이어 | 1\~4 | | 3번만 `NullReferenceException`, 나머지 에디터와 동일 | 에디터와 동일 |
 
 원본: `Notes/results/01-L04_Editor_2026-10-29.csv`, `Notes/results/01-L04_Mono_2026-10-29.csv`
 
