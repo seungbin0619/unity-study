@@ -66,6 +66,9 @@ namespace Labs.Editor
         [MenuItem("Labs/02/L09 Finalizer")]
         static void Run02L09() => Run("02-L09");
 
+        [MenuItem("Labs/03/L01 Tree Dump")]
+        static void Run03L01() => Run("03-L01");
+
         public static void Run(string labId)
         {
             if (EditorApplication.isPlaying)

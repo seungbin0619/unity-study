@@ -143,8 +143,8 @@ class Enemy
 
 | 용어 | 뜻 | 헷갈리기 쉬운 것 · 실습 |
 |---|---|---|
-| PlayerLoop | 엔진이 한 프레임에 실행하는 일의 순서. 코드에 박힌 호출 순서가 아니라 **시스템 트리(데이터)**로 표현됨 | `GetCurrentPlayerLoop()`은 **사본**을 돌려줌. 고친 뒤 `SetPlayerLoop()`를 불러야 반영 |
-| `PlayerLoopSystem` | 트리의 노드(struct). `type`(식별용 마커 타입), `subSystemList`(자식 배열), `updateDelegate`(매니지드 콜백), `updatePtr`(네이티브 함수 포인터) | `type`은 실행되는 코드가 아니라 이름표. 엔진 시스템은 `UnityEngine.PlayerLoop` 네임스페이스의 빈 struct |
+| PlayerLoop | 엔진이 한 프레임에 실행하는 일의 순서. 코드에 박힌 호출 순서가 아니라 **시스템 트리(데이터)**로 표현됨 | `GetCurrentPlayerLoop()`은 **사본**을 돌려줌. 고친 뒤 `SetPlayerLoop()`를 불러야 반영. default(엔진 고정 목록)와 current(패키지가 고친 것)는 다를 수 있음 — 툴은 current를 고칠 것 ([03-L01](../Assets/Labs/03_PlayerLoop/L01_TreeDump/README.md)) |
+| `PlayerLoopSystem` | 트리의 노드(struct). `type`(식별용 마커 타입), `subSystemList`(자식 배열), `updateDelegate`(매니지드 콜백), `updateFunction`(네이티브 함수 포인터, `IntPtr`) | `type`은 실행되는 코드가 아니라 이름표. 엔진 시스템은 `UnityEngine.PlayerLoop` 네임스페이스의 빈 struct |
 | 단계 / 하위 시스템 (phase / subsystem) | 최상위 노드(단계)와 그 아래에서 실제 일을 하는 노드 | `Update()` 콜백도 "Update 단계 안의 하위 시스템 하나"가 부르는 것 |
 | 커스텀 시스템 (custom system) | `updateDelegate`에 C# 메서드를 넣어 트리에 끼운 노드 | 매 프레임 **네이티브 → 매니지드** 호출 1회. 1장 경계 비용의 반대 방향 |
 | Unity 메시지 / 매직 메서드 (message / magic method) | `Update`, `Awake` 등 이름으로 찾아 부르는 콜백. 인터페이스·가상 메서드가 아님 | 매 프레임 리플렉션으로 찾지 않음. 스크립트 로드 때 조사해 둔 정보로 호출 |

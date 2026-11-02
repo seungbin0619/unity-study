@@ -51,6 +51,7 @@
 - [힌트 후 오답→풀이] (2026-11-02) 02-L09 확인: Finalizable 첫 `Collect`가 Plain보다 3\~4배 비싼 이유 — 1차 "파이널라이저가 있으면 왜 더 오래 걸리지"(사실상 모름) → 힌트(파이널라이저가 `this`·필드를 씀, 02-L05 비용 = 표시하는 객체 수 + 훑는 바이트) 후 "마킹되어 있던 this와 byte를 취소 처리". 방향이 반대: 추적 GC는 쓰레기를 표시한 적이 없고, 파이널라이저 객체는 오히려 **새로 마킹해 살려야** 함(객체 10만 + `byte[]` 10만, 산 객체와 같은 비용). Plain 쓰레기는 마킹 단계에서 한 번도 닿지 않아 비용 0. 02-L06의 "null 대입 → 마킹 해제" 오해와 같은 계열
 - [오답] (2026-11-03) 3장 개념: `Update`에서 `StartCoroutine(Foo())` 시 첫 `yield` 앞 코드의 실행 시점 — "(b) 이번 프레임 Update 콜백이 끝난 뒤, 코루틴도 PlayerLoop와 관련 있으니". 정답 (a) `StartCoroutine` 안에서 즉시: 스케줄러는 `MoveNext()`를 한 번 돌려 `Current`(yield 값)를 받아야 어느 대기열에 넣을지 안다. PlayerLoop는 **재개**를 담당하고 **시작**은 호출자 쪽에서 동기로 일어남. `Foo()` 호출만으로는 본문이 안 돈다는 점(지연 실행), `async` 메서드도 첫 `await`까지 동기라는 점은 보충함. 03-L02 마커 실측에서 함께 확인. 처음 배우는 사실이라 약점으로 올리지 않음 (처음엔 "스케줄링 = 나중 실행" 가정으로 약점에 올렸으나, 학습자 지적대로 오답 1회로 추론 패턴을 단정한 것이라 철회)
 - [정답 (이유 생략)] (2026-11-03) 3장 개념 확인: `async Awaitable Foo()`의 첫 `await` 앞 `A`와 호출자의 `C` 중 먼저 찍히는 것 — "A". 바로 앞 코루틴 설명을 `async`에 옮겨 적용함. 이미 완료된 것을 await하면 멈추지 않고 이어서 실행된다(`IsCompleted` 빠른 경로)는 점은 보충함
+- [부분 정답] (2026-11-03) 03-L01 에디터 vs 플레이어 PlayerLoop 시스템 수 — "에디터가 많겠지, EditorLoop가 존재하니까". current에서만 1개 많아 방향은 맞음. 이유는 다름: 에디터 루프는 PlayerLoop 트리 **바깥**(프로파일러의 EditorLoop)이고 default 트리는 노드 하나까지 같음. 차이는 Input System의 `#if UNITY_EDITOR` 삽입 — 01-L06의 "에디터·플레이어는 다른 코드"와 같은 구조로 설명함. 질문 1(최상위 단계 수·Update 순번)은 추론 불가능한 암기형이라 학습자 지적으로 철회
 - [설명 들음] (2026-10-30) 검사 개수(정적)와 실행 횟수(루프 안이면 원소마다) 구분, IL2CPP는 hoist·경계 검사 제거를 하지 않음 (RyuJIT과 대비)
 
 ## 약점 (관련 실습에서 재확인)
@@ -69,7 +70,7 @@
 - 빌드 도구(UnityLinker, IL2CPP)가 하는 분석의 수준을 "전부 아니면 전무"로 가정하는 것 — 01-L10에서 링커가 상수 문자열 리플렉션은 알아본다는 점, 01-L08에서 IL2CPP가 sealed를 쓰지 않는다는 점. 도구가 "무엇을 보고 무엇을 못 보는지"를 단계별로 묻기
 
 ## 미응답 질문 (다음 세션 첫 질문으로)
-- (2026-11-03, 03-L01 예측) `PlayerLoop.GetCurrentPlayerLoop()` 트리에서 (1) 최상위 단계는 몇 개이고 `Update` 단계는 몇 번째인가? (2) 에디터 플레이 모드와 플레이어의 시스템 총수는 같은가, 다르면 어느 쪽이 많은가?
+- (2026-11-03, 03-L01 확인) `FixedUpdate` 단계 안에서 `ScriptRunBehaviourFixedUpdate`(우리 `FixedUpdate()` 콜백)가 `PhysicsFixedUpdate`(물리 시뮬레이션 한 스텝)보다 **앞**에 있다. 왜 이 순서일까? 반대라면 `FixedUpdate`에서 `AddForce`한 결과는 언제 반영될까?
 
 ## 보류한 작업
 - 2026-10-31 `Docs/build-and-environment.md`에 `Labs/Build/IL2CPP (Release)` 메뉴(출력 `Builds/IL2CPP-Release`, 생성 코드 비교용, 프로파일러 카운터 없음)를 추가하기 — 학습자가 "나중에"로 보류. Docs 수정이라 할 때 다시 묻는다
@@ -95,6 +96,7 @@
 - 2026-11-02 02-L07 Mono·IL2CPP 플레이어 측정 (Enabled 기준선 + Manual slice 3 ms·1 ms·0.1 ms, 각 2회) + bdwgc `GC_start_incremental_collection`·`GC_collect_a_little_inner` 확인 — [README](../Assets/Labs/02_GC/L07_ManualGC/README.md) (같은 날 학습자 해석을 실험으로: 호출 간격 N = 1·5·20·60, Mono·IL2CPP 각 2회)
 - 2026-11-02 02-L08 Mono·IL2CPP 플레이어 실행 + 스냅샷 A/B/C 촬영(`Builds/Snapshots`) — [README](../Assets/Labs/02_GC/L08_SnapshotLeak/README.md) (판정은 코드로 함). 이후 Memory Profiler 1.2.0 설치, 학습자가 창에서 A→B·B→C 비교와 Leaked Managed Shell 참조 경로를 확인 — 코드 판정과 일치
 - 2026-11-02 02-L09 Mono·IL2CPP 플레이어 측정 (프레임 제한 없음·60fps 각 1회, Mono는 drain·Wait 단계 추가 전 버전 1회 더) — [README](../Assets/Labs/02_GC/L09_Finalizer/README.md) (첫 Mono 결과가 예측과 달라 drain·Wait·`-frameRate` 추가. IL2CPP 첫 실행은 `WeakReference(o, true)` `NotSupportedException`으로 실패 → IL2CPP에서는 긴 약한 참조 생략 후 재빌드. 2장 실습 모두 완료)
+- 2026-11-03 03-L01 에디터 + Mono·IL2CPP 플레이어 실행 — [README](../Assets/Labs/03_PlayerLoop/L01_TreeDump/README.md) (첫 컴파일은 필드명 `updatePtr` 오타로 실패 → 리플렉션으로 실제 이름 `updateFunction` 확인 후 수정. 용어집의 같은 오류도 수정)
 
 ## Player Settings 변경 이력
 (변경 시 날짜, 항목, 원래 값 → 바꾼 값, 복원 여부)
@@ -126,3 +128,4 @@
 - 2026-11-02 Scripting Backend: Mono → IL2CPP (02-L07 호출 간격 빌드 동안만), **복원됨** (`Standalone: 0` 확인)
 - 2026-11-02 Scripting Backend: Mono → IL2CPP (02-L08 빌드 동안만), **복원됨** (`Standalone: 0` 확인)
 - 2026-11-02 Scripting Backend: Mono → IL2CPP (02-L09 빌드 2회 동안만 — 1회차 실행 실패 후 수정 빌드), **복원됨** (매번 `Standalone: 0` 확인)
+- 2026-11-03 Scripting Backend: Mono → IL2CPP (03-L01 빌드 동안만), **복원됨** (`Standalone: 0` 확인)
