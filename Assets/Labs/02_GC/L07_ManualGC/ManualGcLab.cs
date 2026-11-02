@@ -11,6 +11,7 @@ namespace Labs.GarbageCollection
     /// GarbageCollector.GCMode = Manual로 자동 수집을 끄고, 매 프레임 할당 직후 CollectIncremental(slice)를 한 번 부른다.
     /// slice는 플레이어 인자 -slice &lt;나노초&gt;로 정한다. -slice 0이면 Manual로 바꾸지 않고 Enabled(02-L06 기본 조건)로 돈다.
     /// 프레임마다 프레임 시간·할당 루프 시간·CollectIncremental 시간·반환값(남은 작업)·GC 횟수·GC Used를 기록한다.
+    /// -interval N: N프레임마다 호출을 시작하고, 반환값이 true(남은 작업)인 동안은 매 프레임 이어 부른다 (기본 1 = 매 프레임).
     /// </summary>
     [Preserve, Lab("02-L07")]
     public sealed class ManualGcLab : ILab
@@ -25,6 +26,10 @@ namespace Labs.GarbageCollection
         // 측정 내내 살아 있어야 하므로 필드에 보관한다
         EnemyClass[] _live;
         byte[] _last;
+        ulong _slice;
+        int _interval;
+        int _frame;
+        bool _inProgress;
 
         readonly double[] _frameMs = new double[SampleFrames];
         readonly double[] _workMs = new double[SampleFrames];
@@ -32,6 +37,7 @@ namespace Labs.GarbageCollection
         readonly bool[] _moreWork = new bool[SampleFrames];
         readonly int[] _gcDelta = new int[SampleFrames];
         readonly long[] _usedBytes = new long[SampleFrames];
+        int _calls;
 
         public async Awaitable Run(LabContext ctx)
         {
@@ -39,10 +45,12 @@ namespace Labs.GarbageCollection
             Application.targetFrameRate = -1;
 
             var liveCount = ReadCount();
-            var slice = ReadSlice();
-            var manual = slice > 0;
+            _slice = ReadSlice();
+            _interval = ReadInterval();
+            var manual = _slice > 0;
             using var metrics = new LabMetrics();
-            ctx.Record("-", "slice ns", slice.ToString(CultureInfo.InvariantCulture));
+            ctx.Record("-", "slice ns", _slice.ToString(CultureInfo.InvariantCulture));
+            ctx.Record("-", "interval frames", _interval.ToString(CultureInfo.InvariantCulture));
             ctx.Record("-", "metrics valid", metrics.Valid.ToString().ToLowerInvariant());
             ctx.Record("-", "GarbageCollector.isIncremental", GarbageCollector.isIncremental.ToString().ToLowerInvariant());
             ctx.Record("-", "incrementalTimeSliceNanoseconds",
@@ -62,7 +70,7 @@ namespace Labs.GarbageCollection
             for (var i = 0; i < WarmupFrames; i++)
             {
                 AllocateGarbage();
-                if (manual) GarbageCollector.CollectIncremental(slice);
+                if (manual) MaybeCollect(out _);
                 await Awaitable.NextFrameAsync();
             }
 
@@ -76,8 +84,9 @@ namespace Labs.GarbageCollection
                 _workMs[f] = Ms(afterWork - start);
                 if (manual)
                 {
-                    _moreWork[f] = GarbageCollector.CollectIncremental(slice);
+                    _moreWork[f] = MaybeCollect(out var called);
                     _collectMs[f] = Ms(Stopwatch.GetTimestamp() - afterWork);
+                    if (called) _calls++;
                 }
 
                 await Awaitable.NextFrameAsync();
@@ -106,8 +115,19 @@ namespace Labs.GarbageCollection
             foreach (var m in _moreWork) if (m) moreFrames++;
             ctx.Record("summary", "GC count", gcTotal.ToString(CultureInfo.InvariantCulture));
             ctx.Record("summary", "frames with more work", moreFrames.ToString(CultureInfo.InvariantCulture));
+            ctx.Record("summary", "CollectIncremental calls", _calls.ToString(CultureInfo.InvariantCulture));
             ctx.Record("summary", "used MB first|last|max", Mb(_usedBytes[0]) + "|" + Mb(_usedBytes[SampleFrames - 1]) + "|" + Mb(Max(_usedBytes)));
             ctx.Record("-", "keep alive", (_live.Length + _last.Length).ToString(CultureInfo.InvariantCulture));
+        }
+
+        // N프레임마다 새로 부르고, 진행 중인 수집이 남아 있으면 매 프레임 이어 부른다
+        bool MaybeCollect(out bool called)
+        {
+            called = _inProgress || _frame % _interval == 0;
+            _frame++;
+            if (!called) return false;
+            _inProgress = GarbageCollector.CollectIncremental(_slice);
+            return _inProgress;
         }
 
         void AllocateGarbage()
@@ -140,6 +160,14 @@ namespace Labs.GarbageCollection
             var index = Array.IndexOf(args, "-slice");
             if (index >= 0 && index + 1 < args.Length && ulong.TryParse(args[index + 1], out var n)) return n;
             return DefaultSliceNs;
+        }
+
+        static int ReadInterval()
+        {
+            var args = Environment.GetCommandLineArgs();
+            var index = Array.IndexOf(args, "-interval");
+            if (index >= 0 && index + 1 < args.Length && int.TryParse(args[index + 1], out var n) && n > 0) return n;
+            return 1;
         }
 
         static int ReadCount()
