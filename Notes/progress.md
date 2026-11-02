@@ -67,7 +67,7 @@
 - 빌드 도구(UnityLinker, IL2CPP)가 하는 분석의 수준을 "전부 아니면 전무"로 가정하는 것 — 01-L10에서 링커가 상수 문자열 리플렉션은 알아본다는 점, 01-L08에서 IL2CPP가 sealed를 쓰지 않는다는 점. 도구가 "무엇을 보고 무엇을 못 보는지"를 단계별로 묻기
 
 ## 미응답 질문 (다음 세션 첫 질문으로)
-(없음)
+- (2026-11-03, 3장 개념) `Update` 안에서 `StartCoroutine(Foo())`를 호출할 때, `Foo`의 첫 `yield return null` **앞** 코드는 언제 실행되나? (a) `StartCoroutine` 호출 안에서 즉시 (b) 이번 프레임 `Update` 콜백들이 다 끝난 뒤 (c) 다음 프레임
 
 ## 보류한 작업
 - 2026-10-31 `Docs/build-and-environment.md`에 `Labs/Build/IL2CPP (Release)` 메뉴(출력 `Builds/IL2CPP-Release`, 생성 코드 비교용, 프로파일러 카운터 없음)를 추가하기 — 학습자가 "나중에"로 보류. Docs 수정이라 할 때 다시 묻는다

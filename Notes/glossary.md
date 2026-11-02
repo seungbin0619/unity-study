@@ -1,6 +1,6 @@
 # 용어집
 
-1·2장 실습에서 쓴 용어 모음. 각 항목은 "뜻 → 헷갈리기 쉬운 것 → 확인한 실습" 순서다.
+장별 실습에서 쓴 용어 모음. 각 항목은 "뜻 → 헷갈리기 쉬운 것 → 확인한 실습" 순서다.
 새 장을 시작하면 그 장의 용어를 아래에 추가한다.
 
 ## 0. 변수의 종류 (가장 먼저)
@@ -136,3 +136,23 @@ class Enemy
 | 약한 참조 (weak reference) | 객체를 살려 두지 않는 참조 (`WeakReference`) | 긴 약한 참조(`trackResurrection: true`)는 IL2CPP에서 `NotSupportedException` ([02-L09](../Assets/Labs/02_GC/L09_Finalizer/README.md)) |
 | 매니지드 누수 (managed leak) | 쓰지 않는 객체가 루트에서 아직 닿아 회수되지 않는 것 | GC 언어에서 "누수"는 해제를 잊은 게 아니라 **참조를 안 끊은 것**. 이벤트 구독, 정적 컬렉션 ([02-L08](../Assets/Labs/02_GC/L08_SnapshotLeak/README.md)) |
 | 풀링 (pooling) | 객체를 파괴하지 않고 재사용 | Unity 객체 풀링의 이득은 주로 CPU (약 2.1\~2.6배) ([02-L03](../Assets/Labs/02_GC/L03_Pooling/README.md)) |
+
+## 6. PlayerLoop (3장)
+
+실습 칸은 해당 실습을 마치면 채운다.
+
+| 용어 | 뜻 | 헷갈리기 쉬운 것 · 실습 |
+|---|---|---|
+| PlayerLoop | 엔진이 한 프레임에 실행하는 일의 순서. 코드에 박힌 호출 순서가 아니라 **시스템 트리(데이터)**로 표현됨 | `GetCurrentPlayerLoop()`은 **사본**을 돌려줌. 고친 뒤 `SetPlayerLoop()`를 불러야 반영 |
+| `PlayerLoopSystem` | 트리의 노드(struct). `type`(식별용 마커 타입), `subSystemList`(자식 배열), `updateDelegate`(매니지드 콜백), `updatePtr`(네이티브 함수 포인터) | `type`은 실행되는 코드가 아니라 이름표. 엔진 시스템은 `UnityEngine.PlayerLoop` 네임스페이스의 빈 struct |
+| 단계 / 하위 시스템 (phase / subsystem) | 최상위 노드(단계)와 그 아래에서 실제 일을 하는 노드 | `Update()` 콜백도 "Update 단계 안의 하위 시스템 하나"가 부르는 것 |
+| 커스텀 시스템 (custom system) | `updateDelegate`에 C# 메서드를 넣어 트리에 끼운 노드 | 매 프레임 **네이티브 → 매니지드** 호출 1회. 1장 경계 비용의 반대 방향 |
+| Unity 메시지 / 매직 메서드 (message / magic method) | `Update`, `Awake` 등 이름으로 찾아 부르는 콜백. 인터페이스·가상 메서드가 아님 | 매 프레임 리플렉션으로 찾지 않음. 스크립트 로드 때 조사해 둔 정보로 호출 |
+| 코루틴 (coroutine) | 이터레이터(`IEnumerator`)를 엔진이 `MoveNext()`로 나눠 실행하는 것 | 실행 주체는 엔진의 코루틴 스케줄러. `yield` 값의 **종류**가 다음 재개 시점을 정함 |
+| yield instruction | 코루틴이 `yield return`으로 돌려주는 대기 조건 (`null`, `WaitForSeconds`, `WaitForEndOfFrame` 등) | 값 타입을 `yield return`하면 `object`로 반환 → 박싱 대상 |
+| `Awaitable` | Unity 6의 엔진 전용 awaitable 타입 (2023.1 도입). 인스턴스를 풀링함 | 풀링되므로 **같은 인스턴스를 두 번 await하면 안 됨** (공식 문서) |
+| continuation | `await` 다음 줄부터의 나머지 코드. 대기가 끝나면 누군가 이것을 호출해야 함 | "누가, 어느 스레드에서, 언제 부르나"가 Task·Awaitable·코루틴을 가르는 질문 |
+| `SynchronizationContext` / `UnitySynchronizationContext` | continuation을 원래 스레드로 돌려보내는 .NET 장치 / Unity 메인 스레드용 구현. `Post`된 작업을 큐에 모았다가 PlayerLoop에서 실행 | `ConfigureAwait(false)`는 이것을 건너뜀 |
+| 메인 스레드 (main thread) | PlayerLoop 전체를 순서대로 실행하는 스레드. 대부분의 Unity API는 여기서만 호출 가능 | 렌더 스레드·잡 워커·로딩 스레드는 별도. "동기 API = 메인 스레드에서 실행"은 아님 ([01-L03](../Assets/Labs/01_NativeManaged/L03_CtorTiming/README.md)) |
+| 고정 시간 간격 (fixed timestep) | `FixedUpdate`·물리가 쓰는 일정한 시간 간격 (`Time.fixedDeltaTime`, 기본 0.02 s) | 프레임 수와 `FixedUpdate` 횟수는 1:1이 아님 |
+| 도메인 리로드 (domain reload) | 에디터가 매니지드 상태(정적 필드 등)를 버리고 어셈블리를 다시 올리는 것 | Enter Play Mode Options로 끌 수 있음 → 정적 상태와 엔진 쪽 상태가 플레이 모드를 넘어 남을 수 있음 |
