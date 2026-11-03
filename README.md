@@ -15,7 +15,7 @@ Unity 엔진 내부 동작을 문서로만 읽지 않고 **직접 측정해서 �
 |---|---|
 | [1. 네이티브–매니지드 경계](#1-네이티브매니지드-경계) | 10 / 10 완료 |
 | [2. 메모리와 GC](#2-메모리와-gc) | 9 / 9 완료 |
-| [3. PlayerLoop](#3-playerloop) | 1 / 10 완료 |
+| [3. PlayerLoop](#3-playerloop) | 2 / 10 완료 |
 | 4. 직렬화와 에셋 파이프라인 · 5. 렌더링 파이프라인 · 6. DOTS | 예정 |
 
 ## 실행 방법
@@ -103,7 +103,8 @@ Boehm GC의 특성, 숨은 할당, 힙 크기와 단편화, Incremental GC.
 > ✅ **[03-L01 PlayerLoop 트리 덤프](Assets/Labs/03_PlayerLoop/L01_TreeDump/README.md)** · `Mono` `IL2CPP`\
 > 최상위 8단계·하위 131개, 기본 트리는 에디터·플레이어 동일. 에디터만 Input System이 `#if UNITY_EDITOR`로 managed 시스템 1개 삽입
 
-> ⏳ 03-L02 콜백·재개 위치 지도
+> ✅ **[03-L02 콜백·재개 위치 지도](Assets/Labs/03_PlayerLoop/L02_ResumeMap/README.md)** · `Mono` `IL2CPP`\
+> 코루틴과 `Awaitable`은 같은 자리에서 재개. `await Task.Yield()`는 같은 프레임 `ScriptRunDelayedTasks`(Δ 0), 프레임 끝은 플레이어에서 `PlayerSendFrameComplete` 안
 
 > ⏳ 03-L03 `Instantiate` 시점별 `Start` 호출 시점
 

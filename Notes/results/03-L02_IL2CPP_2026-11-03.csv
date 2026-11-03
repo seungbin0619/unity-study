@@ -1,0 +1,49 @@
+run_time,lab,backend,dev_build,unity,condition,metric,value
+2026-11-03T19:27:45,03-L02,IL2CPP,1,6000.3.25f1,-,Application.isBatchMode,false
+2026-11-03T19:27:45,03-L02,IL2CPP,1,6000.3.25f1,-,graphicsDeviceType,Direct3D12
+2026-11-03T19:27:45,03-L02,IL2CPP,1,6000.3.25f1,-,fixedDeltaTime,0.01999999
+2026-11-03T19:27:45,03-L02,IL2CPP,1,6000.3.25f1,callback Update (start),trial 1,+0 | Update/ScriptRunBehaviourUpdate | main
+2026-11-03T19:27:45,03-L02,IL2CPP,1,6000.3.25f1,callback LateUpdate,trial 1,+0 | PreLateUpdate/ScriptRunBehaviourLateUpdate | main
+2026-11-03T19:27:45,03-L02,IL2CPP,1,6000.3.25f1,callback FixedUpdate,trial 1,+1 | FixedUpdate/ScriptRunBehaviourFixedUpdate | main
+2026-11-03T19:27:45,03-L02,IL2CPP,1,6000.3.25f1,callback FixedUpdate,trial 1,+6 | FixedUpdate/ScriptRunBehaviourFixedUpdate | main
+2026-11-03T19:27:45,03-L02,IL2CPP,1,6000.3.25f1,A coroutine first segment,trial 1,+0 | Update/ScriptRunBehaviourUpdate | main
+2026-11-03T19:27:45,03-L02,IL2CPP,1,6000.3.25f1,A yield return null,trial 1,+1 | Update/ScriptRunDelayedDynamicFrameRate | main
+2026-11-03T19:27:45,03-L02,IL2CPP,1,6000.3.25f1,B WaitForSeconds(0.01),trial 1,+1 | Update/ScriptRunDelayedDynamicFrameRate | main
+2026-11-03T19:27:45,03-L02,IL2CPP,1,6000.3.25f1,C WaitForFixedUpdate,trial 1,+1 | FixedUpdate/ScriptRunDelayedFixedFrameRate | main
+2026-11-03T19:27:45,03-L02,IL2CPP,1,6000.3.25f1,D WaitForEndOfFrame,trial 1,+0 | PostLateUpdate/PlayerSendFrameComplete | main
+2026-11-03T19:27:45,03-L02,IL2CPP,1,6000.3.25f1,E awaitable first segment,trial 1,+0 | Update/ScriptRunBehaviourUpdate | main
+2026-11-03T19:27:45,03-L02,IL2CPP,1,6000.3.25f1,E Awaitable.NextFrameAsync,trial 1,+1 | Update/ScriptRunDelayedDynamicFrameRate | main
+2026-11-03T19:27:45,03-L02,IL2CPP,1,6000.3.25f1,F Awaitable.FixedUpdateAsync,trial 1,+1 | FixedUpdate/ScriptRunDelayedFixedFrameRate | main
+2026-11-03T19:27:45,03-L02,IL2CPP,1,6000.3.25f1,G Awaitable.EndOfFrameAsync,trial 1,+0 | PostLateUpdate/PlayerSendFrameComplete | main
+2026-11-03T19:27:45,03-L02,IL2CPP,1,6000.3.25f1,H await Task.Yield(),trial 1,+0 | Update/ScriptRunDelayedTasks | main
+2026-11-03T19:27:45,03-L02,IL2CPP,1,6000.3.25f1,I Awaitable.WaitForSecondsAsync(0.01),trial 1,+1 | Update/ScriptRunDelayedDynamicFrameRate | main
+2026-11-03T19:27:45,03-L02,IL2CPP,1,6000.3.25f1,callback Update (start),trial 2,+0 | Update/ScriptRunBehaviourUpdate | main
+2026-11-03T19:27:45,03-L02,IL2CPP,1,6000.3.25f1,callback LateUpdate,trial 2,+0 | PreLateUpdate/ScriptRunBehaviourLateUpdate | main
+2026-11-03T19:27:45,03-L02,IL2CPP,1,6000.3.25f1,callback FixedUpdate,trial 2,+5 | FixedUpdate/ScriptRunBehaviourFixedUpdate | main
+2026-11-03T19:27:45,03-L02,IL2CPP,1,6000.3.25f1,callback FixedUpdate,trial 2,+17 | FixedUpdate/ScriptRunBehaviourFixedUpdate | main
+2026-11-03T19:27:45,03-L02,IL2CPP,1,6000.3.25f1,A coroutine first segment,trial 2,+0 | Update/ScriptRunBehaviourUpdate | main
+2026-11-03T19:27:45,03-L02,IL2CPP,1,6000.3.25f1,A yield return null,trial 2,+1 | Update/ScriptRunDelayedDynamicFrameRate | main
+2026-11-03T19:27:45,03-L02,IL2CPP,1,6000.3.25f1,B WaitForSeconds(0.01),trial 2,+6 | Update/ScriptRunDelayedDynamicFrameRate | main
+2026-11-03T19:27:45,03-L02,IL2CPP,1,6000.3.25f1,C WaitForFixedUpdate,trial 2,+5 | FixedUpdate/ScriptRunDelayedFixedFrameRate | main
+2026-11-03T19:27:45,03-L02,IL2CPP,1,6000.3.25f1,D WaitForEndOfFrame,trial 2,+0 | PostLateUpdate/PlayerSendFrameComplete | main
+2026-11-03T19:27:45,03-L02,IL2CPP,1,6000.3.25f1,E awaitable first segment,trial 2,+0 | Update/ScriptRunBehaviourUpdate | main
+2026-11-03T19:27:45,03-L02,IL2CPP,1,6000.3.25f1,E Awaitable.NextFrameAsync,trial 2,+1 | Update/ScriptRunDelayedDynamicFrameRate | main
+2026-11-03T19:27:45,03-L02,IL2CPP,1,6000.3.25f1,F Awaitable.FixedUpdateAsync,trial 2,+5 | FixedUpdate/ScriptRunDelayedFixedFrameRate | main
+2026-11-03T19:27:45,03-L02,IL2CPP,1,6000.3.25f1,G Awaitable.EndOfFrameAsync,trial 2,+0 | PostLateUpdate/PlayerSendFrameComplete | main
+2026-11-03T19:27:45,03-L02,IL2CPP,1,6000.3.25f1,H await Task.Yield(),trial 2,+0 | Update/ScriptRunDelayedTasks | main
+2026-11-03T19:27:45,03-L02,IL2CPP,1,6000.3.25f1,I Awaitable.WaitForSecondsAsync(0.01),trial 2,+6 | Update/ScriptRunDelayedDynamicFrameRate | main
+2026-11-03T19:27:45,03-L02,IL2CPP,1,6000.3.25f1,callback Update (start),trial 3,+0 | Update/ScriptRunBehaviourUpdate | main
+2026-11-03T19:27:45,03-L02,IL2CPP,1,6000.3.25f1,callback LateUpdate,trial 3,+0 | PreLateUpdate/ScriptRunBehaviourLateUpdate | main
+2026-11-03T19:27:45,03-L02,IL2CPP,1,6000.3.25f1,callback FixedUpdate,trial 3,+4 | FixedUpdate/ScriptRunBehaviourFixedUpdate | main
+2026-11-03T19:27:45,03-L02,IL2CPP,1,6000.3.25f1,callback FixedUpdate,trial 3,+17 | FixedUpdate/ScriptRunBehaviourFixedUpdate | main
+2026-11-03T19:27:45,03-L02,IL2CPP,1,6000.3.25f1,A coroutine first segment,trial 3,+0 | Update/ScriptRunBehaviourUpdate | main
+2026-11-03T19:27:45,03-L02,IL2CPP,1,6000.3.25f1,A yield return null,trial 3,+1 | Update/ScriptRunDelayedDynamicFrameRate | main
+2026-11-03T19:27:45,03-L02,IL2CPP,1,6000.3.25f1,B WaitForSeconds(0.01),trial 3,+7 | Update/ScriptRunDelayedDynamicFrameRate | main
+2026-11-03T19:27:45,03-L02,IL2CPP,1,6000.3.25f1,C WaitForFixedUpdate,trial 3,+4 | FixedUpdate/ScriptRunDelayedFixedFrameRate | main
+2026-11-03T19:27:45,03-L02,IL2CPP,1,6000.3.25f1,D WaitForEndOfFrame,trial 3,+0 | PostLateUpdate/PlayerSendFrameComplete | main
+2026-11-03T19:27:45,03-L02,IL2CPP,1,6000.3.25f1,E awaitable first segment,trial 3,+0 | Update/ScriptRunBehaviourUpdate | main
+2026-11-03T19:27:45,03-L02,IL2CPP,1,6000.3.25f1,E Awaitable.NextFrameAsync,trial 3,+1 | Update/ScriptRunDelayedDynamicFrameRate | main
+2026-11-03T19:27:45,03-L02,IL2CPP,1,6000.3.25f1,F Awaitable.FixedUpdateAsync,trial 3,+4 | FixedUpdate/ScriptRunDelayedFixedFrameRate | main
+2026-11-03T19:27:45,03-L02,IL2CPP,1,6000.3.25f1,G Awaitable.EndOfFrameAsync,trial 3,+0 | PostLateUpdate/PlayerSendFrameComplete | main
+2026-11-03T19:27:45,03-L02,IL2CPP,1,6000.3.25f1,H await Task.Yield(),trial 3,+0 | Update/ScriptRunDelayedTasks | main
+2026-11-03T19:27:45,03-L02,IL2CPP,1,6000.3.25f1,I Awaitable.WaitForSecondsAsync(0.01),trial 3,+7 | Update/ScriptRunDelayedDynamicFrameRate | main
