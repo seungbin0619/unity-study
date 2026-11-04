@@ -63,6 +63,7 @@
 - [학습자 질문] (2026-11-04) "상태 머신 struct는 메서드마다 타입이 다른데 어떻게 풀링하나, 같은 인터페이스라서?" → 에디터 리플렉션으로 `Awaitable+AwaitableAsyncMethodBuilder` 구조 확인: 제네릭 클래스 `StateMachineBox<TStateMachine>`(필드 `TStateMachine StateMachine`, `Action MoveNext`, `Awaitable ResultingCoroutine`)마다 `static ThreadLocal<...> _pool` + `GetOne`/`Dispose`. 제네릭 정적 필드는 닫힌 타입마다 따로라서 **상태 머신 타입별 풀**. 인터페이스 `IStateMachineBox`는 빌더가 타입을 모른 채 들고 있기 위한 것(풀링 수단은 아님) — 학습자 직관 절반 맞음. `Awaitable` 자체도 `static ThreadLocal _pool`. 실제 재사용 여부·바이트는 이름 기반 추론이라 03-L06에서 측정
 - [학습자 질문 — 정답] (2026-11-04) "1메서드 = 1구조체?" → 맞음: `async`/이터레이터 **메서드 선언 하나당** 상태 머신 타입 하나 (`ResumeProbe`의 async 5개 = `<AwNextFrame>d__16`~`<AwWaitForSeconds>d__20`, 이터레이터 4개 = `<CoNull>d__12`~`d__15`, 에디터 리플렉션). 호출마다 생기는 건 인스턴스. 제네릭 async 메서드는 타입 인자마다 닫힌 타입이 따로 → 풀도 따로
 - [학습자 의견] (2026-11-04) "async 함수 100개를 1회씩만 쓰면 풀링 의미 없음" → 상자(`StateMachineBox<T>`) 풀은 그 말이 맞음(메서드별 풀이라 재사용 0, 오히려 정적 풀이 상자를 계속 잡아 둠 — 추론). 단 `Awaitable` 객체 풀은 타입 하나라 메서드가 달라도 공유됨. GC 관점에서 풀링이 중요한 건 같은 메서드를 매 프레임·객체마다 반복할 때. **03-L06에 조건 추가: 같은 메서드 N회 vs 다른 메서드 N개 1회씩** (학습자 가설 검증)
+- [학습자 질문] (2026-11-04) `ThreadLocal<T> _pool`이 뭔가? → 스레드마다 따로인 `T` 인스턴스(`.Value`, 첫 접근 시 팩토리로 생성). 리플렉션 확인: `Awaitable._pool` = `ThreadLocal<ObjectPool<Awaitable>>`, `StateMachineBox<T>._pool` = `ThreadLocal<ObjectPool<StateMachineBox<T>>>` — 공개 API `UnityEngine.Pool.ObjectPool<T>`(내부 `List`, `m_MaxSize`) 그대로. 이유: `List`가 스레드 안전하지 않은데 `Awaitable`은 백그라운드 스레드에서도 돌아서 락 없이 쓰려고 (추론)
 - [설명 들음] (2026-10-30) 검사 개수(정적)와 실행 횟수(루프 안이면 원소마다) 구분, IL2CPP는 hoist·경계 검사 제거를 하지 않음 (RyuJIT과 대비)
 
 ## 약점 (관련 실습에서 재확인)
