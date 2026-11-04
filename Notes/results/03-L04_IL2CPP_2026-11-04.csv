@@ -1,0 +1,74 @@
+run_time,lab,backend,dev_build,unity,condition,metric,value
+2026-11-04T16:20:18,03-L04,IL2CPP,1,6000.3.25f1,-,Application.isBatchMode,true
+2026-11-04T16:20:18,03-L04,IL2CPP,1,6000.3.25f1,-,fixedDeltaTime,0.02
+2026-11-04T16:20:18,03-L04,IL2CPP,1,6000.3.25f1,-,maximumDeltaTime (default),0.3333
+2026-11-04T16:20:18,03-L04,IL2CPP,1,6000.3.25f1,a frame 0ms,frames,60
+2026-11-04T16:20:18,03-L04,IL2CPP,1,6000.3.25f1,a frame 0ms,fixed per frame min,0
+2026-11-04T16:20:18,03-L04,IL2CPP,1,6000.3.25f1,a frame 0ms,fixed per frame avg,0
+2026-11-04T16:20:18,03-L04,IL2CPP,1,6000.3.25f1,a frame 0ms,fixed per frame max,0
+2026-11-04T16:20:18,03-L04,IL2CPP,1,6000.3.25f1,a frame 0ms,fixed per frame sequence,0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+2026-11-04T16:20:18,03-L04,IL2CPP,1,6000.3.25f1,a frame 0ms,real frame ms avg,0.0295
+2026-11-04T16:20:18,03-L04,IL2CPP,1,6000.3.25f1,a frame 0ms,Time.deltaTime avg,0
+2026-11-04T16:20:18,03-L04,IL2CPP,1,6000.3.25f1,a frame 0ms,Time.unscaledDeltaTime last,0
+2026-11-04T16:20:18,03-L04,IL2CPP,1,6000.3.25f1,a frame 0ms,game/real time ratio,1.0016
+2026-11-04T16:20:18,03-L04,IL2CPP,1,6000.3.25f1,a frame 0ms,fixedTime span in last frame,-
+2026-11-04T16:20:18,03-L04,IL2CPP,1,6000.3.25f1,b frame 10ms,frames,60
+2026-11-04T16:20:18,03-L04,IL2CPP,1,6000.3.25f1,b frame 10ms,fixed per frame min,0
+2026-11-04T16:20:18,03-L04,IL2CPP,1,6000.3.25f1,b frame 10ms,fixed per frame avg,0.55
+2026-11-04T16:20:18,03-L04,IL2CPP,1,6000.3.25f1,b frame 10ms,fixed per frame max,1
+2026-11-04T16:20:18,03-L04,IL2CPP,1,6000.3.25f1,b frame 10ms,fixed per frame sequence,0 1 0 1 1 0 1 0 1 0 1 0 1 0 1 1 0 1 0 1 0 1 0 1 0 1 1 0 1 0 1 0 1 0 1 1 0 1 0 1 0 1 0 1 0 1 0 1 1 0 1 0 1 0 1 0 1 0 1 1
+2026-11-04T16:20:18,03-L04,IL2CPP,1,6000.3.25f1,b frame 10ms,real frame ms avg,10.9398
+2026-11-04T16:20:18,03-L04,IL2CPP,1,6000.3.25f1,b frame 10ms,Time.deltaTime avg,0.0109
+2026-11-04T16:20:18,03-L04,IL2CPP,1,6000.3.25f1,b frame 10ms,Time.unscaledDeltaTime last,0.0123
+2026-11-04T16:20:18,03-L04,IL2CPP,1,6000.3.25f1,b frame 10ms,game/real time ratio,1.0001
+2026-11-04T16:20:18,03-L04,IL2CPP,1,6000.3.25f1,b frame 10ms,fixedTime span in last frame,-
+2026-11-04T16:20:18,03-L04,IL2CPP,1,6000.3.25f1,c frame 50ms,frames,30
+2026-11-04T16:20:18,03-L04,IL2CPP,1,6000.3.25f1,c frame 50ms,fixed per frame min,2
+2026-11-04T16:20:18,03-L04,IL2CPP,1,6000.3.25f1,c frame 50ms,fixed per frame avg,2.5667
+2026-11-04T16:20:18,03-L04,IL2CPP,1,6000.3.25f1,c frame 50ms,fixed per frame max,3
+2026-11-04T16:20:18,03-L04,IL2CPP,1,6000.3.25f1,c frame 50ms,fixed per frame sequence,3 3 2 3 2 3 2 3 3 2 3 2 3 2 3 2 3 2 3 3 2 3 2 3 2 3 2 3 3 2
+2026-11-04T16:20:18,03-L04,IL2CPP,1,6000.3.25f1,c frame 50ms,real frame ms avg,51.097
+2026-11-04T16:20:18,03-L04,IL2CPP,1,6000.3.25f1,c frame 50ms,Time.deltaTime avg,0.0511
+2026-11-04T16:20:18,03-L04,IL2CPP,1,6000.3.25f1,c frame 50ms,Time.unscaledDeltaTime last,0.051
+2026-11-04T16:20:18,03-L04,IL2CPP,1,6000.3.25f1,c frame 50ms,game/real time ratio,1
+2026-11-04T16:20:18,03-L04,IL2CPP,1,6000.3.25f1,c frame 50ms,fixedTime span in last frame,0.02
+2026-11-04T16:20:18,03-L04,IL2CPP,1,6000.3.25f1,d frame 100ms,frames,20
+2026-11-04T16:20:18,03-L04,IL2CPP,1,6000.3.25f1,d frame 100ms,fixed per frame min,5
+2026-11-04T16:20:18,03-L04,IL2CPP,1,6000.3.25f1,d frame 100ms,fixed per frame avg,5.05
+2026-11-04T16:20:18,03-L04,IL2CPP,1,6000.3.25f1,d frame 100ms,fixed per frame max,6
+2026-11-04T16:20:18,03-L04,IL2CPP,1,6000.3.25f1,d frame 100ms,fixed per frame sequence,5 5 5 5 5 5 5 5 5 5 5 5 5 6 5 5 5 5 5 5
+2026-11-04T16:20:18,03-L04,IL2CPP,1,6000.3.25f1,d frame 100ms,real frame ms avg,101.0183
+2026-11-04T16:20:18,03-L04,IL2CPP,1,6000.3.25f1,d frame 100ms,Time.deltaTime avg,0.101
+2026-11-04T16:20:18,03-L04,IL2CPP,1,6000.3.25f1,d frame 100ms,Time.unscaledDeltaTime last,0.1006
+2026-11-04T16:20:18,03-L04,IL2CPP,1,6000.3.25f1,d frame 100ms,game/real time ratio,1
+2026-11-04T16:20:18,03-L04,IL2CPP,1,6000.3.25f1,d frame 100ms,fixedTime span in last frame,0.08
+2026-11-04T16:20:18,03-L04,IL2CPP,1,6000.3.25f1,e frame 500ms,frames,10
+2026-11-04T16:20:18,03-L04,IL2CPP,1,6000.3.25f1,e frame 500ms,fixed per frame min,16
+2026-11-04T16:20:18,03-L04,IL2CPP,1,6000.3.25f1,e frame 500ms,fixed per frame avg,16.6
+2026-11-04T16:20:18,03-L04,IL2CPP,1,6000.3.25f1,e frame 500ms,fixed per frame max,17
+2026-11-04T16:20:18,03-L04,IL2CPP,1,6000.3.25f1,e frame 500ms,fixed per frame sequence,16 17 17 16 17 17 16 17 17 16
+2026-11-04T16:20:18,03-L04,IL2CPP,1,6000.3.25f1,e frame 500ms,real frame ms avg,501.2435
+2026-11-04T16:20:18,03-L04,IL2CPP,1,6000.3.25f1,e frame 500ms,Time.deltaTime avg,0.3333
+2026-11-04T16:20:18,03-L04,IL2CPP,1,6000.3.25f1,e frame 500ms,Time.unscaledDeltaTime last,0.5009
+2026-11-04T16:20:18,03-L04,IL2CPP,1,6000.3.25f1,e frame 500ms,game/real time ratio,0.665
+2026-11-04T16:20:18,03-L04,IL2CPP,1,6000.3.25f1,e frame 500ms,fixedTime span in last frame,0.3
+2026-11-04T16:20:18,03-L04,IL2CPP,1,6000.3.25f1,"f frame 500ms, maximumDeltaTime 1.0",frames,10
+2026-11-04T16:20:18,03-L04,IL2CPP,1,6000.3.25f1,"f frame 500ms, maximumDeltaTime 1.0",fixed per frame min,25
+2026-11-04T16:20:18,03-L04,IL2CPP,1,6000.3.25f1,"f frame 500ms, maximumDeltaTime 1.0",fixed per frame avg,25
+2026-11-04T16:20:18,03-L04,IL2CPP,1,6000.3.25f1,"f frame 500ms, maximumDeltaTime 1.0",fixed per frame max,25
+2026-11-04T16:20:18,03-L04,IL2CPP,1,6000.3.25f1,"f frame 500ms, maximumDeltaTime 1.0",fixed per frame sequence,25 25 25 25 25 25 25 25 25 25
+2026-11-04T16:20:18,03-L04,IL2CPP,1,6000.3.25f1,"f frame 500ms, maximumDeltaTime 1.0",real frame ms avg,501.2502
+2026-11-04T16:20:18,03-L04,IL2CPP,1,6000.3.25f1,"f frame 500ms, maximumDeltaTime 1.0",Time.deltaTime avg,0.5013
+2026-11-04T16:20:18,03-L04,IL2CPP,1,6000.3.25f1,"f frame 500ms, maximumDeltaTime 1.0",Time.unscaledDeltaTime last,0.5013
+2026-11-04T16:20:18,03-L04,IL2CPP,1,6000.3.25f1,"f frame 500ms, maximumDeltaTime 1.0",game/real time ratio,1
+2026-11-04T16:20:18,03-L04,IL2CPP,1,6000.3.25f1,"f frame 500ms, maximumDeltaTime 1.0",fixedTime span in last frame,0.48
+2026-11-04T16:20:18,03-L04,IL2CPP,1,6000.3.25f1,g FixedUpdate 30ms each,frames,20
+2026-11-04T16:20:18,03-L04,IL2CPP,1,6000.3.25f1,g FixedUpdate 30ms each,fixed per frame min,16
+2026-11-04T16:20:18,03-L04,IL2CPP,1,6000.3.25f1,g FixedUpdate 30ms each,fixed per frame avg,16.65
+2026-11-04T16:20:18,03-L04,IL2CPP,1,6000.3.25f1,g FixedUpdate 30ms each,fixed per frame max,17
+2026-11-04T16:20:18,03-L04,IL2CPP,1,6000.3.25f1,g FixedUpdate 30ms each,fixed per frame sequence,16 17 17 16 17 17 16 17 17 16 17 17 16 17 17 16 17 17 16 17
+2026-11-04T16:20:18,03-L04,IL2CPP,1,6000.3.25f1,g FixedUpdate 30ms each,real frame ms avg,511.228
+2026-11-04T16:20:18,03-L04,IL2CPP,1,6000.3.25f1,g FixedUpdate 30ms each,Time.deltaTime avg,0.3333
+2026-11-04T16:20:18,03-L04,IL2CPP,1,6000.3.25f1,g FixedUpdate 30ms each,Time.unscaledDeltaTime last,0.4929
+2026-11-04T16:20:18,03-L04,IL2CPP,1,6000.3.25f1,g FixedUpdate 30ms each,game/real time ratio,0.652
+2026-11-04T16:20:18,03-L04,IL2CPP,1,6000.3.25f1,g FixedUpdate 30ms each,fixedTime span in last frame,0.32

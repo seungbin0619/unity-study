@@ -159,4 +159,5 @@ class Enemy
 | 메인 스레드 (main thread) | PlayerLoop 전체를 순서대로 실행하는 스레드. 대부분의 Unity API는 여기서만 호출 가능 | 렌더 스레드·잡 워커·로딩 스레드는 별도. "동기 API = 메인 스레드에서 실행"은 아님 ([01-L03](../Assets/Labs/01_NativeManaged/L03_CtorTiming/README.md)) |
 | `Start` 지연 호출 | `Awake`·`OnEnable`은 `Instantiate`(`AddComponent`) 안에서 즉시, `Start`는 미뤄 두었다가 다음 스크립트 실행 지점에서 몰아서 호출 | "다음 프레임"이 아님. `Update`에서 만들면 같은 프레임 `Update` 직후 `Start`, 이어서 `LateUpdate`. 프레임 끝에 만들 때만 다음 프레임 `EarlyUpdate/ScriptRunDelayedStartupFrame` ([03-L03](../Assets/Labs/03_PlayerLoop/L03_StartTiming/README.md)) |
 | 고정 시간 간격 (fixed timestep) | `FixedUpdate`·물리가 쓰는 일정한 시간 간격 (`Time.fixedDeltaTime`, 기본 0.02 s) | 프레임 수와 `FixedUpdate` 횟수는 1:1이 아님 |
+| `Time.maximumDeltaTime` (Maximum Allowed Timestep) | 한 프레임에 게임 시간이 진행할 수 있는 상한 (기본 0.333 s) | 프레임이 이보다 길면 `deltaTime`이 잘리고 게임이 슬로모션이 됨(500 ms 프레임에서 0.67배). `FixedUpdate` 따라잡기 횟수도 여기서 막힘 → spiral of death의 브레이크. `unscaledDeltaTime`은 안 잘림 ([03-L04](../Assets/Labs/03_PlayerLoop/L04_FixedCatchUp/README.md)) |
 | 도메인 리로드 (domain reload) | 에디터가 매니지드 상태(정적 필드 등)를 버리고 어셈블리를 다시 올리는 것 | Enter Play Mode Options로 끌 수 있음 → 정적 상태와 엔진 쪽 상태가 플레이 모드를 넘어 남을 수 있음 |

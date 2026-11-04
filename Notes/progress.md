@@ -64,6 +64,7 @@
 - [학습자 질문 — 정답] (2026-11-04) "1메서드 = 1구조체?" → 맞음: `async`/이터레이터 **메서드 선언 하나당** 상태 머신 타입 하나 (`ResumeProbe`의 async 5개 = `<AwNextFrame>d__16`~`<AwWaitForSeconds>d__20`, 이터레이터 4개 = `<CoNull>d__12`~`d__15`, 에디터 리플렉션). 호출마다 생기는 건 인스턴스. 제네릭 async 메서드는 타입 인자마다 닫힌 타입이 따로 → 풀도 따로
 - [학습자 의견] (2026-11-04) "async 함수 100개를 1회씩만 쓰면 풀링 의미 없음" → 상자(`StateMachineBox<T>`) 풀은 그 말이 맞음(메서드별 풀이라 재사용 0, 오히려 정적 풀이 상자를 계속 잡아 둠 — 추론). 단 `Awaitable` 객체 풀은 타입 하나라 메서드가 달라도 공유됨. GC 관점에서 풀링이 중요한 건 같은 메서드를 매 프레임·객체마다 반복할 때. **03-L06에 조건 추가: 같은 메서드 N회 vs 다른 메서드 N개 1회씩** (학습자 가설 검증)
 - [학습자 질문] (2026-11-04) `ThreadLocal<T> _pool`이 뭔가? → 스레드마다 따로인 `T` 인스턴스(`.Value`, 첫 접근 시 팩토리로 생성). 리플렉션 확인: `Awaitable._pool` = `ThreadLocal<ObjectPool<Awaitable>>`, `StateMachineBox<T>._pool` = `ThreadLocal<ObjectPool<StateMachineBox<T>>>` — 공개 API `UnityEngine.Pool.ObjectPool<T>`(내부 `List`, `m_MaxSize`) 그대로. 이유: `List`가 스레드 안전하지 않은데 `Awaitable`은 백그라운드 스레드에서도 돌아서 락 없이 쓰려고 (추론)
+- [정답 2/2] (2026-11-04) 03-L04 프레임 100 ms → `FixedUpdate` 5회, 500 ms → 16.x회·`Time.deltaTime` 0.333 — 실측 5회, 16~17 교대(평균 16.7)·0.3333 (Mono·IL2CPP). 앞서 설명한 누적 규칙과 상한을 계산에 그대로 적용함 (03-L01 이후 120fps 방향 착오 회복). 보충: 상한의 대가는 슬로모션(게임/실제 0.67), 비싼 스텝은 상한이 악순환을 끊음, `unscaledDeltaTime`은 상한 없음
 - [설명 들음] (2026-10-30) 검사 개수(정적)와 실행 횟수(루프 안이면 원소마다) 구분, IL2CPP는 hoist·경계 검사 제거를 하지 않음 (RyuJIT과 대비)
 
 ## 약점 (관련 실습에서 재확인)
@@ -111,6 +112,7 @@
 - 2026-11-03 03-L01 에디터 + Mono·IL2CPP 플레이어 실행 — [README](../Assets/Labs/03_PlayerLoop/L01_TreeDump/README.md) (첫 컴파일은 필드명 `updatePtr` 오타로 실패 → 리플렉션으로 실제 이름 `updateFunction` 확인 후 수정. 용어집의 같은 오류도 수정)
 - 2026-11-03 03-L02 에디터 + Mono(창 모드·배치모드)·IL2CPP(창 모드) 플레이어 실행 — [README](../Assets/Labs/03_PlayerLoop/L02_ResumeMap/README.md) (배치모드에서 `FixedUpdate`가 안 돌아 60프레임 실제 시간 기록을 추가하고 Mono만 재빌드·재실행: 3.4 ms라 20 ms가 안 쌓인 것으로 확인)
 - 2026-11-04 03-L03 에디터 + Mono·IL2CPP(창 모드) 플레이어 실행 — [README](../Assets/Labs/03_PlayerLoop/L03_StartTiming/README.md) (에디터 실행 중 학습자가 `LateUpdate` 예측을 추가 — 결과 공개 전이라 예측으로 기록)
+- 2026-11-04 03-L04 Mono·IL2CPP 배치모드 플레이어 실행 — [README](../Assets/Labs/03_PlayerLoop/L04_FixedCatchUp/README.md) (에디터 미실행)
 
 ## Player Settings 변경 이력
 (변경 시 날짜, 항목, 원래 값 → 바꾼 값, 복원 여부)
@@ -146,3 +148,4 @@
 - 2026-11-03 Scripting Backend: Mono → IL2CPP (03-L02 빌드 동안만), **복원됨** (`Standalone: 0` 확인)
 - 2026-11-04 Scripting Backend: Mono → IL2CPP (03-L03 빌드 동안만), **복원됨** (`Standalone: 0` 확인)
 - 2026-11-04 Scripting Backend: Mono → IL2CPP (async 상태 머신 확인용 IL2CPP Release 빌드 동안만), **복원됨** (`Standalone: 0` 확인)
+- 2026-11-04 Scripting Backend: Mono → IL2CPP (03-L04 빌드 동안만), **복원됨** (`Standalone: 0` 확인)

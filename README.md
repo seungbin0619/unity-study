@@ -15,7 +15,7 @@ Unity 엔진 내부 동작을 문서로만 읽지 않고 **직접 측정해서 �
 |---|---|
 | [1. 네이티브–매니지드 경계](#1-네이티브매니지드-경계) | 10 / 10 완료 |
 | [2. 메모리와 GC](#2-메모리와-gc) | 9 / 9 완료 |
-| [3. PlayerLoop](#3-playerloop) | 3 / 10 완료 |
+| [3. PlayerLoop](#3-playerloop) | 4 / 10 완료 |
 | 4. 직렬화와 에셋 파이프라인 · 5. 렌더링 파이프라인 · 6. DOTS | 예정 |
 
 ## 실행 방법
@@ -109,7 +109,8 @@ Boehm GC의 특성, 숨은 할당, 힙 크기와 단편화, Incremental GC.
 > ✅ **[03-L03 `Instantiate` 시점별 `Start` 호출 시점](Assets/Labs/03_PlayerLoop/L03_StartTiming/README.md)** · `Mono` `IL2CPP`\
 > `Awake`·`OnEnable`은 `Instantiate` 안. `Start`는 다음 프레임이 아니라 그다음 스크립트 실행 지점: `Update`에서 만들면 같은 프레임에 `Start` → `LateUpdate`
 
-> ⏳ 03-L04 `FixedUpdate` 따라잡기와 `maximumDeltaTime`
+> ✅ **[03-L04 `FixedUpdate` 따라잡기와 `maximumDeltaTime`](Assets/Labs/03_PlayerLoop/L04_FixedCatchUp/README.md)** · `Mono` `IL2CPP`\
+> 100 ms 프레임은 5회, 500 ms는 16\~17회(상한 0.333 s)로 게임 시간 0.67배. 스텝이 30 ms로 비싸도 상한이 프레임 약 510 ms에서 악순환을 끊음
 
 > ⏳ 03-L05 `Update` 1만 개 vs 매니저 vs 커스텀 시스템
 
