@@ -58,6 +58,7 @@
 - [학습자 질문 — 방향 착오] (2026-11-03) "120fps면 평균 1.6회, 1회/2회가 섞이고 Debug.Log가 동시에 2회 찍히겠다" → 방향이 반대: 프레임이 짧을수록 프레임당 횟수가 **줄어** 120fps는 평균 0.42회(0회/1회). 2회 이상은 프레임이 20 ms보다 길 때(50fps 미만, 예: 30fps 평균 1.67회). 2회 몰릴 때 두 로그는 같은 `Time.frameCount`에 연달아 찍히지만 `FixedUpdate` 안의 `Time.time`은 `fixedTime`을 돌려줘 0.02씩 다름 — 03-L04에서 함께 확인
 - [예측 생략 — 학습자 요청] (2026-11-03) 03-L02 재개 위치 A\~H 매칭 — "모르겠어 그냥 알려줘 각 기능이 뭔지". 힌트 단계 없이 바로 실행하고 결과로 하위 시스템 역할을 설명함
 - [오답 0/2] (2026-11-04) 03-L03 `Update`에서 `Instantiate`한 객체 — "Start → Update니까 다음 프레임", "Start가 아직 안 불려서 LateUpdate는 못 불릴 것". 실측(세 백엔드 동일): `Start`는 같은 프레임 `Update/ScriptRunDelayedDynamicFrameRate`, 이어서 같은 프레임 `LateUpdate`. 순서 규칙(Start가 먼저)은 맞게 씀. 어긋난 곳은 순서를 지키는 방법을 "객체를 다음 프레임까지 미룸"으로 본 것 — Unity는 `Start`를 다음 스크립트 실행 지점으로 **앞당겨** 지킴. 03-L02의 "순서 제약 ≠ 프레임 경계"(`Task.Yield` Δ 0)와 같은 축
+- [학습자 질문] (2026-11-04) `await`가 어떻게 "1초 뒤 B부터" 실행하나, 어셈블리가 지원하나? → 컴파일러 lowering: 메서드가 상태 머신(`<X>d__N`)이 되고 지역 변수는 필드, `await`는 `GetAwaiter`/`IsCompleted`/`OnCompleted` 호출 + `state` 저장 + return, 재개는 `MoveNext()`가 `state`로 점프. IL·CPU에 await 명령은 없음. 03-L02 빌드의 IL2CPP 생성 코드 `U3CAwNextFrameU3Ed__16_MoveNext`로 확인. 질문의 `await new WaitForSeconds(1f)`는 `WaitForSeconds`에 `GetAwaiter`가 없어 컴파일 오류(에디터 리플렉션으로 UnityEngine의 `GetAwaiter` 목록 확인) — `Awaitable.WaitForSecondsAsync(1f)`를 써야 함
 - [설명 들음] (2026-10-30) 검사 개수(정적)와 실행 횟수(루프 안이면 원소마다) 구분, IL2CPP는 hoist·경계 검사 제거를 하지 않음 (RyuJIT과 대비)
 
 ## 약점 (관련 실습에서 재확인)
