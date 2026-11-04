@@ -72,6 +72,9 @@ namespace Labs.Editor
         [MenuItem("Labs/03/L02 Resume Map")]
         static void Run03L02() => Run("03-L02");
 
+        [MenuItem("Labs/03/L03 Start Timing")]
+        static void Run03L03() => Run("03-L03");
+
         public static void Run(string labId)
         {
             if (EditorApplication.isPlaying)

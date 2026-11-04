@@ -1,0 +1,51 @@
+run_time,lab,backend,dev_build,unity,condition,metric,value
+2026-11-04T15:01:57,03-L03,Editor,1,6000.3.25f1,-,Application.isBatchMode,false
+2026-11-04T15:01:57,03-L03,Editor,1,6000.3.25f1,-,wall ms for 60 frames,336.09
+2026-11-04T15:01:57,03-L03,Editor,1,6000.3.25f1,Spawner.Awake,Awake,+0 | (inside Instantiate)
+2026-11-04T15:01:57,03-L03,Editor,1,6000.3.25f1,Spawner.Awake,OnEnable,+0 | (inside Instantiate)
+2026-11-04T15:01:57,03-L03,Editor,1,6000.3.25f1,Spawner.Awake,Start,+0 | PreLateUpdate/ScriptRunBehaviourLateUpdate
+2026-11-04T15:01:57,03-L03,Editor,1,6000.3.25f1,Spawner.Awake,first FixedUpdate,+1 | FixedUpdate/ScriptRunBehaviourFixedUpdate
+2026-11-04T15:01:57,03-L03,Editor,1,6000.3.25f1,Spawner.Awake,first Update,+1 | Update/ScriptRunBehaviourUpdate
+2026-11-04T15:01:57,03-L03,Editor,1,6000.3.25f1,Spawner.Awake,first LateUpdate,+0 | PreLateUpdate/ScriptRunBehaviourLateUpdate
+2026-11-04T15:01:57,03-L03,Editor,1,6000.3.25f1,Spawner.Start,Awake,+0 | (inside Instantiate)
+2026-11-04T15:01:57,03-L03,Editor,1,6000.3.25f1,Spawner.Start,OnEnable,+0 | (inside Instantiate)
+2026-11-04T15:01:57,03-L03,Editor,1,6000.3.25f1,Spawner.Start,Start,+0 | PostLateUpdate/ScriptRunDelayedDynamicFrameRate
+2026-11-04T15:01:57,03-L03,Editor,1,6000.3.25f1,Spawner.Start,first FixedUpdate,+1 | FixedUpdate/ScriptRunBehaviourFixedUpdate
+2026-11-04T15:01:57,03-L03,Editor,1,6000.3.25f1,Spawner.Start,first Update,+1 | Update/ScriptRunBehaviourUpdate
+2026-11-04T15:01:57,03-L03,Editor,1,6000.3.25f1,Spawner.Start,first LateUpdate,+1 | PreLateUpdate/ScriptRunBehaviourLateUpdate
+2026-11-04T15:01:57,03-L03,Editor,1,6000.3.25f1,Spawner.FixedUpdate,Awake,+0 | (inside Instantiate)
+2026-11-04T15:01:57,03-L03,Editor,1,6000.3.25f1,Spawner.FixedUpdate,OnEnable,+0 | (inside Instantiate)
+2026-11-04T15:01:57,03-L03,Editor,1,6000.3.25f1,Spawner.FixedUpdate,Start,+0 | FixedUpdate/ScriptRunDelayedFixedFrameRate
+2026-11-04T15:01:57,03-L03,Editor,1,6000.3.25f1,Spawner.FixedUpdate,first FixedUpdate,+4 | FixedUpdate/ScriptRunBehaviourFixedUpdate
+2026-11-04T15:01:57,03-L03,Editor,1,6000.3.25f1,Spawner.FixedUpdate,first Update,+0 | Update/ScriptRunBehaviourUpdate
+2026-11-04T15:01:57,03-L03,Editor,1,6000.3.25f1,Spawner.FixedUpdate,first LateUpdate,+0 | PreLateUpdate/ScriptRunBehaviourLateUpdate
+2026-11-04T15:01:57,03-L03,Editor,1,6000.3.25f1,Spawner.Update,Awake,+0 | (inside Instantiate)
+2026-11-04T15:01:57,03-L03,Editor,1,6000.3.25f1,Spawner.Update,OnEnable,+0 | (inside Instantiate)
+2026-11-04T15:01:57,03-L03,Editor,1,6000.3.25f1,Spawner.Update,Start,+0 | Update/ScriptRunDelayedDynamicFrameRate
+2026-11-04T15:01:57,03-L03,Editor,1,6000.3.25f1,Spawner.Update,first FixedUpdate,+4 | FixedUpdate/ScriptRunBehaviourFixedUpdate
+2026-11-04T15:01:57,03-L03,Editor,1,6000.3.25f1,Spawner.Update,first Update,+1 | Update/ScriptRunBehaviourUpdate
+2026-11-04T15:01:57,03-L03,Editor,1,6000.3.25f1,Spawner.Update,first LateUpdate,+0 | PreLateUpdate/ScriptRunBehaviourLateUpdate
+2026-11-04T15:01:57,03-L03,Editor,1,6000.3.25f1,Spawner.LateUpdate,Awake,+0 | (inside Instantiate)
+2026-11-04T15:01:57,03-L03,Editor,1,6000.3.25f1,Spawner.LateUpdate,OnEnable,+0 | (inside Instantiate)
+2026-11-04T15:01:57,03-L03,Editor,1,6000.3.25f1,Spawner.LateUpdate,Start,+0 | PostLateUpdate/ScriptRunDelayedDynamicFrameRate
+2026-11-04T15:01:57,03-L03,Editor,1,6000.3.25f1,Spawner.LateUpdate,first FixedUpdate,+1 | FixedUpdate/ScriptRunBehaviourFixedUpdate
+2026-11-04T15:01:57,03-L03,Editor,1,6000.3.25f1,Spawner.LateUpdate,first Update,+1 | Update/ScriptRunBehaviourUpdate
+2026-11-04T15:01:57,03-L03,Editor,1,6000.3.25f1,Spawner.LateUpdate,first LateUpdate,+1 | PreLateUpdate/ScriptRunBehaviourLateUpdate
+2026-11-04T15:01:57,03-L03,Editor,1,6000.3.25f1,coroutine after yield null,Awake,+0 | (inside Instantiate)
+2026-11-04T15:01:57,03-L03,Editor,1,6000.3.25f1,coroutine after yield null,OnEnable,+0 | (inside Instantiate)
+2026-11-04T15:01:57,03-L03,Editor,1,6000.3.25f1,coroutine after yield null,Start,+0 | PreLateUpdate/ScriptRunBehaviourLateUpdate
+2026-11-04T15:01:57,03-L03,Editor,1,6000.3.25f1,coroutine after yield null,first FixedUpdate,+4 | FixedUpdate/ScriptRunBehaviourFixedUpdate
+2026-11-04T15:01:57,03-L03,Editor,1,6000.3.25f1,coroutine after yield null,first Update,+1 | Update/ScriptRunBehaviourUpdate
+2026-11-04T15:01:57,03-L03,Editor,1,6000.3.25f1,coroutine after yield null,first LateUpdate,+0 | PreLateUpdate/ScriptRunBehaviourLateUpdate
+2026-11-04T15:01:57,03-L03,Editor,1,6000.3.25f1,after await Task.Yield(),Awake,+0 | (inside Instantiate)
+2026-11-04T15:01:57,03-L03,Editor,1,6000.3.25f1,after await Task.Yield(),OnEnable,+0 | (inside Instantiate)
+2026-11-04T15:01:57,03-L03,Editor,1,6000.3.25f1,after await Task.Yield(),Start,+0 | PreLateUpdate/ScriptRunBehaviourLateUpdate
+2026-11-04T15:01:57,03-L03,Editor,1,6000.3.25f1,after await Task.Yield(),first FixedUpdate,+4 | FixedUpdate/ScriptRunBehaviourFixedUpdate
+2026-11-04T15:01:57,03-L03,Editor,1,6000.3.25f1,after await Task.Yield(),first Update,+1 | Update/ScriptRunBehaviourUpdate
+2026-11-04T15:01:57,03-L03,Editor,1,6000.3.25f1,after await Task.Yield(),first LateUpdate,+0 | PreLateUpdate/ScriptRunBehaviourLateUpdate
+2026-11-04T15:01:57,03-L03,Editor,1,6000.3.25f1,coroutine after WaitForEndOfFrame,Awake,+0 | (inside Instantiate)
+2026-11-04T15:01:57,03-L03,Editor,1,6000.3.25f1,coroutine after WaitForEndOfFrame,OnEnable,+0 | (inside Instantiate)
+2026-11-04T15:01:57,03-L03,Editor,1,6000.3.25f1,coroutine after WaitForEndOfFrame,Start,+1 | EarlyUpdate/ScriptRunDelayedStartupFrame
+2026-11-04T15:01:57,03-L03,Editor,1,6000.3.25f1,coroutine after WaitForEndOfFrame,first FixedUpdate,+1 | FixedUpdate/ScriptRunBehaviourFixedUpdate
+2026-11-04T15:01:57,03-L03,Editor,1,6000.3.25f1,coroutine after WaitForEndOfFrame,first Update,+1 | Update/ScriptRunBehaviourUpdate
+2026-11-04T15:01:57,03-L03,Editor,1,6000.3.25f1,coroutine after WaitForEndOfFrame,first LateUpdate,+1 | PreLateUpdate/ScriptRunBehaviourLateUpdate

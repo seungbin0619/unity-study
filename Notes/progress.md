@@ -57,6 +57,7 @@
 - [학습자 질문] (2026-11-03) 60fps(16.6 ms)면 프레임당 `FixedUpdate` 약 8회인가? → 아님. `fixedDeltaTime` 기본 0.02 s = **20 ms**(50 Hz)라 프레임당 평균 0.83회: 6프레임에 5회, 1프레임은 0회 (누적 시간이 20 ms를 넘을 때마다 1회 — 누적 방식은 공식 문서 기준, 03-L04에서 실측). 0.02 s를 2 ms로 읽은 단위 착오로 보임
 - [학습자 질문 — 방향 착오] (2026-11-03) "120fps면 평균 1.6회, 1회/2회가 섞이고 Debug.Log가 동시에 2회 찍히겠다" → 방향이 반대: 프레임이 짧을수록 프레임당 횟수가 **줄어** 120fps는 평균 0.42회(0회/1회). 2회 이상은 프레임이 20 ms보다 길 때(50fps 미만, 예: 30fps 평균 1.67회). 2회 몰릴 때 두 로그는 같은 `Time.frameCount`에 연달아 찍히지만 `FixedUpdate` 안의 `Time.time`은 `fixedTime`을 돌려줘 0.02씩 다름 — 03-L04에서 함께 확인
 - [예측 생략 — 학습자 요청] (2026-11-03) 03-L02 재개 위치 A\~H 매칭 — "모르겠어 그냥 알려줘 각 기능이 뭔지". 힌트 단계 없이 바로 실행하고 결과로 하위 시스템 역할을 설명함
+- [오답 0/2] (2026-11-04) 03-L03 `Update`에서 `Instantiate`한 객체 — "Start → Update니까 다음 프레임", "Start가 아직 안 불려서 LateUpdate는 못 불릴 것". 실측(세 백엔드 동일): `Start`는 같은 프레임 `Update/ScriptRunDelayedDynamicFrameRate`, 이어서 같은 프레임 `LateUpdate`. 순서 규칙(Start가 먼저)은 맞게 씀. 어긋난 곳은 순서를 지키는 방법을 "객체를 다음 프레임까지 미룸"으로 본 것 — Unity는 `Start`를 다음 스크립트 실행 지점으로 **앞당겨** 지킴. 03-L02의 "순서 제약 ≠ 프레임 경계"(`Task.Yield` Δ 0)와 같은 축
 - [설명 들음] (2026-10-30) 검사 개수(정적)와 실행 횟수(루프 안이면 원소마다) 구분, IL2CPP는 hoist·경계 검사 제거를 하지 않음 (RyuJIT과 대비)
 
 ## 약점 (관련 실습에서 재확인)
@@ -103,6 +104,7 @@
 - 2026-11-02 02-L09 Mono·IL2CPP 플레이어 측정 (프레임 제한 없음·60fps 각 1회, Mono는 drain·Wait 단계 추가 전 버전 1회 더) — [README](../Assets/Labs/02_GC/L09_Finalizer/README.md) (첫 Mono 결과가 예측과 달라 drain·Wait·`-frameRate` 추가. IL2CPP 첫 실행은 `WeakReference(o, true)` `NotSupportedException`으로 실패 → IL2CPP에서는 긴 약한 참조 생략 후 재빌드. 2장 실습 모두 완료)
 - 2026-11-03 03-L01 에디터 + Mono·IL2CPP 플레이어 실행 — [README](../Assets/Labs/03_PlayerLoop/L01_TreeDump/README.md) (첫 컴파일은 필드명 `updatePtr` 오타로 실패 → 리플렉션으로 실제 이름 `updateFunction` 확인 후 수정. 용어집의 같은 오류도 수정)
 - 2026-11-03 03-L02 에디터 + Mono(창 모드·배치모드)·IL2CPP(창 모드) 플레이어 실행 — [README](../Assets/Labs/03_PlayerLoop/L02_ResumeMap/README.md) (배치모드에서 `FixedUpdate`가 안 돌아 60프레임 실제 시간 기록을 추가하고 Mono만 재빌드·재실행: 3.4 ms라 20 ms가 안 쌓인 것으로 확인)
+- 2026-11-04 03-L03 에디터 + Mono·IL2CPP(창 모드) 플레이어 실행 — [README](../Assets/Labs/03_PlayerLoop/L03_StartTiming/README.md) (에디터 실행 중 학습자가 `LateUpdate` 예측을 추가 — 결과 공개 전이라 예측으로 기록)
 
 ## Player Settings 변경 이력
 (변경 시 날짜, 항목, 원래 값 → 바꾼 값, 복원 여부)
@@ -136,3 +138,4 @@
 - 2026-11-02 Scripting Backend: Mono → IL2CPP (02-L09 빌드 2회 동안만 — 1회차 실행 실패 후 수정 빌드), **복원됨** (매번 `Standalone: 0` 확인)
 - 2026-11-03 Scripting Backend: Mono → IL2CPP (03-L01 빌드 동안만), **복원됨** (`Standalone: 0` 확인)
 - 2026-11-03 Scripting Backend: Mono → IL2CPP (03-L02 빌드 동안만), **복원됨** (`Standalone: 0` 확인)
+- 2026-11-04 Scripting Backend: Mono → IL2CPP (03-L03 빌드 동안만), **복원됨** (`Standalone: 0` 확인)

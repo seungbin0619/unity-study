@@ -154,5 +154,6 @@ class Enemy
 | continuation | `await` 다음 줄부터의 나머지 코드. 대기가 끝나면 누군가 이것을 호출해야 함 | "누가, 어느 스레드에서, 언제 부르나"가 Task·Awaitable·코루틴을 가르는 질문 |
 | `SynchronizationContext` / `UnitySynchronizationContext` | continuation을 원래 스레드로 돌려보내는 .NET 장치 / Unity 메인 스레드용 구현. `Post`된 작업을 큐에 모았다가 PlayerLoop에서 실행 | `ConfigureAwait(false)`는 이것을 건너뜀. 실행 위치는 `Update/ScriptRunDelayedTasks` — `await Task.Yield()`는 같은 프레임 `LateUpdate` 전에 재개 ([03-L02](../Assets/Labs/03_PlayerLoop/L02_ResumeMap/README.md)) |
 | 메인 스레드 (main thread) | PlayerLoop 전체를 순서대로 실행하는 스레드. 대부분의 Unity API는 여기서만 호출 가능 | 렌더 스레드·잡 워커·로딩 스레드는 별도. "동기 API = 메인 스레드에서 실행"은 아님 ([01-L03](../Assets/Labs/01_NativeManaged/L03_CtorTiming/README.md)) |
+| `Start` 지연 호출 | `Awake`·`OnEnable`은 `Instantiate`(`AddComponent`) 안에서 즉시, `Start`는 미뤄 두었다가 다음 스크립트 실행 지점에서 몰아서 호출 | "다음 프레임"이 아님. `Update`에서 만들면 같은 프레임 `Update` 직후 `Start`, 이어서 `LateUpdate`. 프레임 끝에 만들 때만 다음 프레임 `EarlyUpdate/ScriptRunDelayedStartupFrame` ([03-L03](../Assets/Labs/03_PlayerLoop/L03_StartTiming/README.md)) |
 | 고정 시간 간격 (fixed timestep) | `FixedUpdate`·물리가 쓰는 일정한 시간 간격 (`Time.fixedDeltaTime`, 기본 0.02 s) | 프레임 수와 `FixedUpdate` 횟수는 1:1이 아님 |
 | 도메인 리로드 (domain reload) | 에디터가 매니지드 상태(정적 필드 등)를 버리고 어셈블리를 다시 올리는 것 | Enter Play Mode Options로 끌 수 있음 → 정적 상태와 엔진 쪽 상태가 플레이 모드를 넘어 남을 수 있음 |
