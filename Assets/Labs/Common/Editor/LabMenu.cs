@@ -84,6 +84,9 @@ namespace Labs.Editor
         [MenuItem("Labs/03/L06 Wait Alloc")]
         static void Run03L06() => Run("03-L06");
 
+        [MenuItem("Labs/03/L07 Thread Switch")]
+        static void Run03L07() => Run("03-L07");
+
         public static void Run(string labId)
         {
             if (EditorApplication.isPlaying)

@@ -70,6 +70,8 @@
 - [정답 6/6] (2026-11-12) 03-L06 반복당 할당 O/X — "1 X / 2 O (박싱) / 3 O (새 객체) / 4 X / 5 X (최초 실행은 O?) / 6 X". 모두 맞음(2·3만 20\~24 B). `yield return 0` 박싱을 바로 짚음 — "인터페이스/`object` 자리 박싱" 약점 회복 신호. 5의 "최초 O?"도 맞음: 반복은 0, 시작은 Dev에서 48 B, 메서드를 처음 쓸 때 1\~2 KB. 학습자 가설(03-L05 전 기록, "async 메서드 100개를 1회씩만 쓰면 풀링 의미 없음")도 맞음 — 서로 다른 메서드는 매번 1.1\~1.7 KB(풀 인프라 생성), 같은 메서드는 2회째부터 48 B
 - [학습자 질문] (2026-11-12) `yield return 0`이 어떤 원리로 박싱되나? → 이터레이터 lowering: `<>2__current`(`object`, 비제네릭 `IEnumerator.Current` 때문) 필드에 대입 → IL `box`, IL2CPP `Box(il2cpp_defaults.int32_class, …)` (03-L06 생성 코드). `object` 칸은 타입 헤더가 있는 힙 객체를 가리키는 포인터여야 하고, `MoveNext` 반환 뒤에도 살아 있어야 하기 때문
 - [오답] (2026-11-12) 03-L06 확인: `IEnumerator<int>`로 선언하면 반복마다 박싱이 사라지나? — "한번 int가 되면 힙 안의 값만 수정하니 추가 GC 없음". 이터레이터 객체 안의 필드가 `int`가 된다는 데까지는 맞음(`MoveNext`의 박싱은 실제로 사라짐). 놓친 점: 엔진(`StartCoroutine(IEnumerator)`)은 비제네릭 `IEnumerator.Current`(`object`)로 읽고, 그 getter가 읽을 때마다 `Box` — 실측 Mono·IL2CPP 모두 반복당 20 B 그대로. 만드는 쪽만 보고 **받는 쪽 시그니처**를 확인하지 않음 (약점 "인터페이스를 거칠 때 박싱" 재발)
+- [학습자 질문] (2026-11-12) "제네릭을 쓸 거면 `Current`를 `T`로 받게 설계해 박싱을 없앨 수 있지 않았나? 상태 머신 재사용 이득이 제네릭 0할당보다 낫나?" → (1) 가능은 하지만 이득이 없음: 엔진은 yield 값의 **종류**로 분기해야 하는데(`null`·`WaitForSeconds`·`AsyncOperation`·`Coroutine` …) 한 코루틴이 여러 종류를 섞으려면 공통 기반 타입 = 참조 타입이 되어 박싱 문제가 원래 없음. 값 타입 yield는 엔진에 의미가 없으니(=`null`과 같게 동작) 해법은 "값 타입을 yield하지 말 것". 또 스케줄러가 네이티브라 `T`마다 다른 호출 경로가 필요(IL2CPP AOT). (2) 제네릭과 풀링은 대안이 아니라 **역할이 다른 짝**: 제네릭(`StateMachineBox<TStateMachine>`)은 struct 상태 머신을 `object` 박싱 없이 타입 그대로 담는 것, 풀링은 멈춘 상태를 담을 **힙 거처 자체**를 호출마다 새로 만들지 않는 것. 멈춘 상태는 스택 프레임이 사라진 뒤에도 살아야 하므로 제네릭만으로는 0할당이 불가능. Awaitable은 둘 다 씀. .NET의 `PoolingAsyncValueTaskMethodBuilder`(.NET 6)도 같은 설계
+- [정답 5/5] (2026-11-12) 03-L07 `await` 다음 줄의 스레드 — "A 메인, B 워커, C 워커, D 메인, E 메인". 모두 맞음 (Mono·IL2CPP 5라운드 동일). C(워커에서 `await`하면 계속 워커)까지 캡처 규칙을 바르게 적용함. 보충: 메인 복귀는 `Task` continuation·`MainThreadAsync` 모두 `Update/ScriptRunDelayedTasks`라 즉시가 아님(G가 F 다음 프레임), `ConfigureAwait(false)` 뒤 Unity API 호출 시 `UnityException`
 - [설명 들음] (2026-10-30) 검사 개수(정적)와 실행 횟수(루프 안이면 원소마다) 구분, IL2CPP는 hoist·경계 검사 제거를 하지 않음 (RyuJIT과 대비)
 
 ## 약점 (관련 실습에서 재확인)
@@ -119,6 +121,7 @@
 - 2026-11-04 03-L03 에디터 + Mono·IL2CPP(창 모드) 플레이어 실행 — [README](../Assets/Labs/03_PlayerLoop/L03_StartTiming/README.md) (에디터 실행 중 학습자가 `LateUpdate` 예측을 추가 — 결과 공개 전이라 예측으로 기록)
 - 2026-11-04 03-L04 Mono·IL2CPP 배치모드 플레이어 실행 — [README](../Assets/Labs/03_PlayerLoop/L04_FixedCatchUp/README.md) (에디터 미실행)
 - 2026-11-12 03-L05 Mono·IL2CPP 배치모드 플레이어 측정 — [README](../Assets/Labs/03_PlayerLoop/L05_UpdateCost/README.md) (에디터 미실행)
+- 2026-11-12 03-L07 Mono·IL2CPP 배치모드 플레이어 실행 — [README](../Assets/Labs/03_PlayerLoop/L07_ThreadSwitch/README.md) (에디터 미실행)
 - 2026-11-12 03-L06 Mono·IL2CPP Development 배치모드 플레이어 측정 + 생성 코드·풀 크기 리플렉션 확인 — [README](../Assets/Labs/03_PlayerLoop/L06_WaitAlloc/README.md) (Release 미측정, 1000개 동시 시작의 96 B 원인 미확인)
 
 ## Player Settings 변경 이력
@@ -157,4 +160,5 @@
 - 2026-11-04 Scripting Backend: Mono → IL2CPP (async 상태 머신 확인용 IL2CPP Release 빌드 동안만), **복원됨** (`Standalone: 0` 확인)
 - 2026-11-04 Scripting Backend: Mono → IL2CPP (03-L04 빌드 동안만), **복원됨** (`Standalone: 0` 확인)
 - 2026-11-12 Scripting Backend: Mono → IL2CPP (03-L05 빌드 동안만), **복원됨** (`Standalone: 0` 확인)
-- 2026-11-12 Scripting Backend: Mono → IL2CPP (03-L06 빌드 동안만), **복원됨** (`Standalone: 0` 확인)
+- 2026-11-12 Scripting Backend: Mono → IL2CPP (03-L06 빌드 2회 동안만 — 2회차는 `IEnumerator<int>` 검증), **복원됨** (`Standalone: 0` 확인)
+- 2026-11-12 Scripting Backend: Mono → IL2CPP (03-L07 빌드 동안만), **복원됨** (`Standalone: 0` 확인)

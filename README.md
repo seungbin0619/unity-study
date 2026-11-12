@@ -15,7 +15,7 @@ Unity 엔진 내부 동작을 문서로만 읽지 않고 **직접 측정해서 �
 |---|---|
 | [1. 네이티브–매니지드 경계](#1-네이티브매니지드-경계) | 10 / 10 완료 |
 | [2. 메모리와 GC](#2-메모리와-gc) | 9 / 9 완료 |
-| [3. PlayerLoop](#3-playerloop) | 6 / 10 완료 |
+| [3. PlayerLoop](#3-playerloop) | 7 / 10 완료 |
 | 4. 직렬화와 에셋 파이프라인 · 5. 렌더링 파이프라인 · 6. DOTS | 예정 |
 
 ## 실행 방법
@@ -118,7 +118,8 @@ Boehm GC의 특성, 숨은 할당, 힙 크기와 단편화, Incremental GC.
 > ✅ **[03-L06 대기 방식별 할당 (코루틴·Awaitable·Task)](Assets/Labs/03_PlayerLoop/L06_WaitAlloc/README.md)** · `Mono` `IL2CPP`\
 > 반복당 할당은 `yield return 0`(박싱)·`new WaitForSeconds`만 20\~24 B. 시작당: 코루틴 64 B, `Awaitable` 48 B(Dev), `Task` 약 300 B. async 메서드는 처음 쓸 때 1\~2 KB
 
-> ⏳ 03-L07 스레드 전환과 continuation 위치
+> ✅ **[03-L07 스레드 전환과 continuation 위치](Assets/Labs/03_PlayerLoop/L07_ThreadSwitch/README.md)** · `Mono` `IL2CPP`\
+> 메인에서 캡처한 `await`·`MainThreadAsync`는 모두 `Update/ScriptRunDelayedTasks`로 복귀. `ConfigureAwait(false)` 뒤로는 `await`만으로 메인에 안 돌아옴
 
 > ⏳ 03-L08 비활성화·파괴 시 코루틴·Awaitable·Task 수명
 

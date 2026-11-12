@@ -1,0 +1,242 @@
+run_time,lab,backend,dev_build,unity,condition,metric,value
+2026-11-12T19:45:55,03-L07,Mono,1,6000.3.25f1,-,main thread id,1
+2026-11-12T19:45:55,03-L07,Mono,1,6000.3.25f1,round 1 0 start,thread,main
+2026-11-12T19:45:55,03-L07,Mono,1,6000.3.25f1,round 1 0 start,thread id,1
+2026-11-12T19:45:55,03-L07,Mono,1,6000.3.25f1,round 1 0 start,SynchronizationContext,UnitySynchronizationContext
+2026-11-12T19:45:55,03-L07,Mono,1,6000.3.25f1,round 1 0 start,frame,1
+2026-11-12T19:45:55,03-L07,Mono,1,6000.3.25f1,round 1 0 start,where,Update/ScriptRunDelayedDynamicFrameRate
+2026-11-12T19:45:55,03-L07,Mono,1,6000.3.25f1,round 1 0 start,ms since round start,0.65
+2026-11-12T19:45:55,03-L07,Mono,1,6000.3.25f1,round 1 A after await Task.Run,thread,main
+2026-11-12T19:45:55,03-L07,Mono,1,6000.3.25f1,round 1 A after await Task.Run,thread id,1
+2026-11-12T19:45:55,03-L07,Mono,1,6000.3.25f1,round 1 A after await Task.Run,SynchronizationContext,UnitySynchronizationContext
+2026-11-12T19:45:55,03-L07,Mono,1,6000.3.25f1,round 1 A after await Task.Run,frame,24
+2026-11-12T19:45:55,03-L07,Mono,1,6000.3.25f1,round 1 A after await Task.Run,where,Update/ScriptRunDelayedTasks
+2026-11-12T19:45:55,03-L07,Mono,1,6000.3.25f1,round 1 A after await Task.Run,ms since round start,20.16
+2026-11-12T19:45:55,03-L07,Mono,1,6000.3.25f1,round 1 B after Task.Run ConfigureAwait(false),thread,worker(pool)
+2026-11-12T19:45:55,03-L07,Mono,1,6000.3.25f1,round 1 B after Task.Run ConfigureAwait(false),thread id,9
+2026-11-12T19:45:55,03-L07,Mono,1,6000.3.25f1,round 1 B after Task.Run ConfigureAwait(false),SynchronizationContext,null
+2026-11-12T19:45:55,03-L07,Mono,1,6000.3.25f1,round 1 B after Task.Run ConfigureAwait(false),frame,-
+2026-11-12T19:45:55,03-L07,Mono,1,6000.3.25f1,round 1 B after Task.Run ConfigureAwait(false),where,-
+2026-11-12T19:45:55,03-L07,Mono,1,6000.3.25f1,round 1 B after Task.Run ConfigureAwait(false),ms since round start,23.654
+2026-11-12T19:45:55,03-L07,Mono,1,6000.3.25f1,round 1 C after Task.Delay (from B's thread),thread,worker(pool)
+2026-11-12T19:45:55,03-L07,Mono,1,6000.3.25f1,round 1 C after Task.Delay (from B's thread),thread id,8
+2026-11-12T19:45:55,03-L07,Mono,1,6000.3.25f1,round 1 C after Task.Delay (from B's thread),SynchronizationContext,null
+2026-11-12T19:45:55,03-L07,Mono,1,6000.3.25f1,round 1 C after Task.Delay (from B's thread),frame,-
+2026-11-12T19:45:55,03-L07,Mono,1,6000.3.25f1,round 1 C after Task.Delay (from B's thread),where,-
+2026-11-12T19:45:55,03-L07,Mono,1,6000.3.25f1,round 1 C after Task.Delay (from B's thread),ms since round start,37.38
+2026-11-12T19:45:55,03-L07,Mono,1,6000.3.25f1,round 1 D after Awaitable.MainThreadAsync,thread,main
+2026-11-12T19:45:55,03-L07,Mono,1,6000.3.25f1,round 1 D after Awaitable.MainThreadAsync,thread id,1
+2026-11-12T19:45:55,03-L07,Mono,1,6000.3.25f1,round 1 D after Awaitable.MainThreadAsync,SynchronizationContext,UnitySynchronizationContext
+2026-11-12T19:45:55,03-L07,Mono,1,6000.3.25f1,round 1 D after Awaitable.MainThreadAsync,frame,226
+2026-11-12T19:45:55,03-L07,Mono,1,6000.3.25f1,round 1 D after Awaitable.MainThreadAsync,where,Update/ScriptRunDelayedTasks
+2026-11-12T19:45:55,03-L07,Mono,1,6000.3.25f1,round 1 D after Awaitable.MainThreadAsync,ms since round start,38.42
+2026-11-12T19:45:55,03-L07,Mono,1,6000.3.25f1,round 1 E after Task.Delay (from main),thread,main
+2026-11-12T19:45:55,03-L07,Mono,1,6000.3.25f1,round 1 E after Task.Delay (from main),thread id,1
+2026-11-12T19:45:55,03-L07,Mono,1,6000.3.25f1,round 1 E after Task.Delay (from main),SynchronizationContext,UnitySynchronizationContext
+2026-11-12T19:45:55,03-L07,Mono,1,6000.3.25f1,round 1 E after Task.Delay (from main),frame,286
+2026-11-12T19:45:55,03-L07,Mono,1,6000.3.25f1,round 1 E after Task.Delay (from main),where,Update/ScriptRunDelayedTasks
+2026-11-12T19:45:55,03-L07,Mono,1,6000.3.25f1,round 1 E after Task.Delay (from main),ms since round start,49.088
+2026-11-12T19:45:55,03-L07,Mono,1,6000.3.25f1,round 1 F after Awaitable.BackgroundThreadAsync,thread,worker(pool)
+2026-11-12T19:45:55,03-L07,Mono,1,6000.3.25f1,round 1 F after Awaitable.BackgroundThreadAsync,thread id,9
+2026-11-12T19:45:55,03-L07,Mono,1,6000.3.25f1,round 1 F after Awaitable.BackgroundThreadAsync,SynchronizationContext,null
+2026-11-12T19:45:55,03-L07,Mono,1,6000.3.25f1,round 1 F after Awaitable.BackgroundThreadAsync,frame,-
+2026-11-12T19:45:55,03-L07,Mono,1,6000.3.25f1,round 1 F after Awaitable.BackgroundThreadAsync,where,-
+2026-11-12T19:45:55,03-L07,Mono,1,6000.3.25f1,round 1 F after Awaitable.BackgroundThreadAsync,ms since round start,49.763
+2026-11-12T19:45:55,03-L07,Mono,1,6000.3.25f1,round 1 G after Awaitable.MainThreadAsync,thread,main
+2026-11-12T19:45:55,03-L07,Mono,1,6000.3.25f1,round 1 G after Awaitable.MainThreadAsync,thread id,1
+2026-11-12T19:45:55,03-L07,Mono,1,6000.3.25f1,round 1 G after Awaitable.MainThreadAsync,SynchronizationContext,UnitySynchronizationContext
+2026-11-12T19:45:55,03-L07,Mono,1,6000.3.25f1,round 1 G after Awaitable.MainThreadAsync,frame,287
+2026-11-12T19:45:55,03-L07,Mono,1,6000.3.25f1,round 1 G after Awaitable.MainThreadAsync,where,Update/ScriptRunDelayedTasks
+2026-11-12T19:45:55,03-L07,Mono,1,6000.3.25f1,round 1 G after Awaitable.MainThreadAsync,ms since round start,49.969
+2026-11-12T19:45:55,03-L07,Mono,1,6000.3.25f1,round 2 0 start,thread,main
+2026-11-12T19:45:55,03-L07,Mono,1,6000.3.25f1,round 2 0 start,thread id,1
+2026-11-12T19:45:55,03-L07,Mono,1,6000.3.25f1,round 2 0 start,SynchronizationContext,UnitySynchronizationContext
+2026-11-12T19:45:55,03-L07,Mono,1,6000.3.25f1,round 2 0 start,frame,288
+2026-11-12T19:45:55,03-L07,Mono,1,6000.3.25f1,round 2 0 start,where,Update/ScriptRunDelayedDynamicFrameRate
+2026-11-12T19:45:55,03-L07,Mono,1,6000.3.25f1,round 2 0 start,ms since round start,0.004
+2026-11-12T19:45:55,03-L07,Mono,1,6000.3.25f1,round 2 A after await Task.Run,thread,main
+2026-11-12T19:45:55,03-L07,Mono,1,6000.3.25f1,round 2 A after await Task.Run,thread id,1
+2026-11-12T19:45:55,03-L07,Mono,1,6000.3.25f1,round 2 A after await Task.Run,SynchronizationContext,UnitySynchronizationContext
+2026-11-12T19:45:55,03-L07,Mono,1,6000.3.25f1,round 2 A after await Task.Run,frame,312
+2026-11-12T19:45:55,03-L07,Mono,1,6000.3.25f1,round 2 A after await Task.Run,where,Update/ScriptRunDelayedTasks
+2026-11-12T19:45:55,03-L07,Mono,1,6000.3.25f1,round 2 A after await Task.Run,ms since round start,3.095
+2026-11-12T19:45:55,03-L07,Mono,1,6000.3.25f1,round 2 B after Task.Run ConfigureAwait(false),thread,worker(pool)
+2026-11-12T19:45:55,03-L07,Mono,1,6000.3.25f1,round 2 B after Task.Run ConfigureAwait(false),thread id,8
+2026-11-12T19:45:55,03-L07,Mono,1,6000.3.25f1,round 2 B after Task.Run ConfigureAwait(false),SynchronizationContext,null
+2026-11-12T19:45:55,03-L07,Mono,1,6000.3.25f1,round 2 B after Task.Run ConfigureAwait(false),frame,-
+2026-11-12T19:45:55,03-L07,Mono,1,6000.3.25f1,round 2 B after Task.Run ConfigureAwait(false),where,-
+2026-11-12T19:45:55,03-L07,Mono,1,6000.3.25f1,round 2 B after Task.Run ConfigureAwait(false),ms since round start,6.15
+2026-11-12T19:45:55,03-L07,Mono,1,6000.3.25f1,round 2 C after Task.Delay (from B's thread),thread,worker(pool)
+2026-11-12T19:45:55,03-L07,Mono,1,6000.3.25f1,round 2 C after Task.Delay (from B's thread),thread id,9
+2026-11-12T19:45:55,03-L07,Mono,1,6000.3.25f1,round 2 C after Task.Delay (from B's thread),SynchronizationContext,null
+2026-11-12T19:45:55,03-L07,Mono,1,6000.3.25f1,round 2 C after Task.Delay (from B's thread),frame,-
+2026-11-12T19:45:55,03-L07,Mono,1,6000.3.25f1,round 2 C after Task.Delay (from B's thread),where,-
+2026-11-12T19:45:55,03-L07,Mono,1,6000.3.25f1,round 2 C after Task.Delay (from B's thread),ms since round start,16.216
+2026-11-12T19:45:55,03-L07,Mono,1,6000.3.25f1,round 2 D after Awaitable.MainThreadAsync,thread,main
+2026-11-12T19:45:55,03-L07,Mono,1,6000.3.25f1,round 2 D after Awaitable.MainThreadAsync,thread id,1
+2026-11-12T19:45:55,03-L07,Mono,1,6000.3.25f1,round 2 D after Awaitable.MainThreadAsync,SynchronizationContext,UnitySynchronizationContext
+2026-11-12T19:45:55,03-L07,Mono,1,6000.3.25f1,round 2 D after Awaitable.MainThreadAsync,frame,407
+2026-11-12T19:45:55,03-L07,Mono,1,6000.3.25f1,round 2 D after Awaitable.MainThreadAsync,where,Update/ScriptRunDelayedTasks
+2026-11-12T19:45:55,03-L07,Mono,1,6000.3.25f1,round 2 D after Awaitable.MainThreadAsync,ms since round start,16.384
+2026-11-12T19:45:55,03-L07,Mono,1,6000.3.25f1,round 2 E after Task.Delay (from main),thread,main
+2026-11-12T19:45:55,03-L07,Mono,1,6000.3.25f1,round 2 E after Task.Delay (from main),thread id,1
+2026-11-12T19:45:55,03-L07,Mono,1,6000.3.25f1,round 2 E after Task.Delay (from main),SynchronizationContext,UnitySynchronizationContext
+2026-11-12T19:45:55,03-L07,Mono,1,6000.3.25f1,round 2 E after Task.Delay (from main),frame,487
+2026-11-12T19:45:55,03-L07,Mono,1,6000.3.25f1,round 2 E after Task.Delay (from main),where,Update/ScriptRunDelayedTasks
+2026-11-12T19:45:55,03-L07,Mono,1,6000.3.25f1,round 2 E after Task.Delay (from main),ms since round start,26.584
+2026-11-12T19:45:55,03-L07,Mono,1,6000.3.25f1,round 2 F after Awaitable.BackgroundThreadAsync,thread,worker(pool)
+2026-11-12T19:45:55,03-L07,Mono,1,6000.3.25f1,round 2 F after Awaitable.BackgroundThreadAsync,thread id,9
+2026-11-12T19:45:55,03-L07,Mono,1,6000.3.25f1,round 2 F after Awaitable.BackgroundThreadAsync,SynchronizationContext,null
+2026-11-12T19:45:55,03-L07,Mono,1,6000.3.25f1,round 2 F after Awaitable.BackgroundThreadAsync,frame,-
+2026-11-12T19:45:55,03-L07,Mono,1,6000.3.25f1,round 2 F after Awaitable.BackgroundThreadAsync,where,-
+2026-11-12T19:45:55,03-L07,Mono,1,6000.3.25f1,round 2 F after Awaitable.BackgroundThreadAsync,ms since round start,26.617
+2026-11-12T19:45:55,03-L07,Mono,1,6000.3.25f1,round 2 G after Awaitable.MainThreadAsync,thread,main
+2026-11-12T19:45:55,03-L07,Mono,1,6000.3.25f1,round 2 G after Awaitable.MainThreadAsync,thread id,1
+2026-11-12T19:45:55,03-L07,Mono,1,6000.3.25f1,round 2 G after Awaitable.MainThreadAsync,SynchronizationContext,UnitySynchronizationContext
+2026-11-12T19:45:55,03-L07,Mono,1,6000.3.25f1,round 2 G after Awaitable.MainThreadAsync,frame,488
+2026-11-12T19:45:55,03-L07,Mono,1,6000.3.25f1,round 2 G after Awaitable.MainThreadAsync,where,Update/ScriptRunDelayedTasks
+2026-11-12T19:45:55,03-L07,Mono,1,6000.3.25f1,round 2 G after Awaitable.MainThreadAsync,ms since round start,26.789
+2026-11-12T19:45:55,03-L07,Mono,1,6000.3.25f1,round 3 0 start,thread,main
+2026-11-12T19:45:55,03-L07,Mono,1,6000.3.25f1,round 3 0 start,thread id,1
+2026-11-12T19:45:55,03-L07,Mono,1,6000.3.25f1,round 3 0 start,SynchronizationContext,UnitySynchronizationContext
+2026-11-12T19:45:55,03-L07,Mono,1,6000.3.25f1,round 3 0 start,frame,489
+2026-11-12T19:45:55,03-L07,Mono,1,6000.3.25f1,round 3 0 start,where,Update/ScriptRunDelayedDynamicFrameRate
+2026-11-12T19:45:55,03-L07,Mono,1,6000.3.25f1,round 3 0 start,ms since round start,0.002
+2026-11-12T19:45:55,03-L07,Mono,1,6000.3.25f1,round 3 A after await Task.Run,thread,main
+2026-11-12T19:45:55,03-L07,Mono,1,6000.3.25f1,round 3 A after await Task.Run,thread id,1
+2026-11-12T19:45:55,03-L07,Mono,1,6000.3.25f1,round 3 A after await Task.Run,SynchronizationContext,UnitySynchronizationContext
+2026-11-12T19:45:55,03-L07,Mono,1,6000.3.25f1,round 3 A after await Task.Run,frame,525
+2026-11-12T19:45:55,03-L07,Mono,1,6000.3.25f1,round 3 A after await Task.Run,where,Update/ScriptRunDelayedTasks
+2026-11-12T19:45:55,03-L07,Mono,1,6000.3.25f1,round 3 A after await Task.Run,ms since round start,3.099
+2026-11-12T19:45:55,03-L07,Mono,1,6000.3.25f1,round 3 B after Task.Run ConfigureAwait(false),thread,worker(pool)
+2026-11-12T19:45:55,03-L07,Mono,1,6000.3.25f1,round 3 B after Task.Run ConfigureAwait(false),thread id,8
+2026-11-12T19:45:55,03-L07,Mono,1,6000.3.25f1,round 3 B after Task.Run ConfigureAwait(false),SynchronizationContext,null
+2026-11-12T19:45:55,03-L07,Mono,1,6000.3.25f1,round 3 B after Task.Run ConfigureAwait(false),frame,-
+2026-11-12T19:45:55,03-L07,Mono,1,6000.3.25f1,round 3 B after Task.Run ConfigureAwait(false),where,-
+2026-11-12T19:45:55,03-L07,Mono,1,6000.3.25f1,round 3 B after Task.Run ConfigureAwait(false),ms since round start,6.137
+2026-11-12T19:45:55,03-L07,Mono,1,6000.3.25f1,round 3 C after Task.Delay (from B's thread),thread,worker(pool)
+2026-11-12T19:45:55,03-L07,Mono,1,6000.3.25f1,round 3 C after Task.Delay (from B's thread),thread id,9
+2026-11-12T19:45:55,03-L07,Mono,1,6000.3.25f1,round 3 C after Task.Delay (from B's thread),SynchronizationContext,null
+2026-11-12T19:45:55,03-L07,Mono,1,6000.3.25f1,round 3 C after Task.Delay (from B's thread),frame,-
+2026-11-12T19:45:55,03-L07,Mono,1,6000.3.25f1,round 3 C after Task.Delay (from B's thread),where,-
+2026-11-12T19:45:55,03-L07,Mono,1,6000.3.25f1,round 3 C after Task.Delay (from B's thread),ms since round start,16.222
+2026-11-12T19:45:55,03-L07,Mono,1,6000.3.25f1,round 3 D after Awaitable.MainThreadAsync,thread,main
+2026-11-12T19:45:55,03-L07,Mono,1,6000.3.25f1,round 3 D after Awaitable.MainThreadAsync,thread id,1
+2026-11-12T19:45:55,03-L07,Mono,1,6000.3.25f1,round 3 D after Awaitable.MainThreadAsync,SynchronizationContext,UnitySynchronizationContext
+2026-11-12T19:45:55,03-L07,Mono,1,6000.3.25f1,round 3 D after Awaitable.MainThreadAsync,frame,649
+2026-11-12T19:45:55,03-L07,Mono,1,6000.3.25f1,round 3 D after Awaitable.MainThreadAsync,where,Update/ScriptRunDelayedTasks
+2026-11-12T19:45:55,03-L07,Mono,1,6000.3.25f1,round 3 D after Awaitable.MainThreadAsync,ms since round start,16.496
+2026-11-12T19:45:55,03-L07,Mono,1,6000.3.25f1,round 3 E after Task.Delay (from main),thread,main
+2026-11-12T19:45:55,03-L07,Mono,1,6000.3.25f1,round 3 E after Task.Delay (from main),thread id,1
+2026-11-12T19:45:55,03-L07,Mono,1,6000.3.25f1,round 3 E after Task.Delay (from main),SynchronizationContext,UnitySynchronizationContext
+2026-11-12T19:45:55,03-L07,Mono,1,6000.3.25f1,round 3 E after Task.Delay (from main),frame,739
+2026-11-12T19:45:55,03-L07,Mono,1,6000.3.25f1,round 3 E after Task.Delay (from main),where,Update/ScriptRunDelayedTasks
+2026-11-12T19:45:55,03-L07,Mono,1,6000.3.25f1,round 3 E after Task.Delay (from main),ms since round start,26.632
+2026-11-12T19:45:55,03-L07,Mono,1,6000.3.25f1,round 3 F after Awaitable.BackgroundThreadAsync,thread,worker(pool)
+2026-11-12T19:45:55,03-L07,Mono,1,6000.3.25f1,round 3 F after Awaitable.BackgroundThreadAsync,thread id,8
+2026-11-12T19:45:55,03-L07,Mono,1,6000.3.25f1,round 3 F after Awaitable.BackgroundThreadAsync,SynchronizationContext,null
+2026-11-12T19:45:55,03-L07,Mono,1,6000.3.25f1,round 3 F after Awaitable.BackgroundThreadAsync,frame,-
+2026-11-12T19:45:55,03-L07,Mono,1,6000.3.25f1,round 3 F after Awaitable.BackgroundThreadAsync,where,-
+2026-11-12T19:45:55,03-L07,Mono,1,6000.3.25f1,round 3 F after Awaitable.BackgroundThreadAsync,ms since round start,26.775
+2026-11-12T19:45:55,03-L07,Mono,1,6000.3.25f1,round 3 G after Awaitable.MainThreadAsync,thread,main
+2026-11-12T19:45:55,03-L07,Mono,1,6000.3.25f1,round 3 G after Awaitable.MainThreadAsync,thread id,1
+2026-11-12T19:45:55,03-L07,Mono,1,6000.3.25f1,round 3 G after Awaitable.MainThreadAsync,SynchronizationContext,UnitySynchronizationContext
+2026-11-12T19:45:55,03-L07,Mono,1,6000.3.25f1,round 3 G after Awaitable.MainThreadAsync,frame,740
+2026-11-12T19:45:55,03-L07,Mono,1,6000.3.25f1,round 3 G after Awaitable.MainThreadAsync,where,Update/ScriptRunDelayedTasks
+2026-11-12T19:45:55,03-L07,Mono,1,6000.3.25f1,round 3 G after Awaitable.MainThreadAsync,ms since round start,26.859
+2026-11-12T19:45:55,03-L07,Mono,1,6000.3.25f1,round 4 0 start,thread,main
+2026-11-12T19:45:55,03-L07,Mono,1,6000.3.25f1,round 4 0 start,thread id,1
+2026-11-12T19:45:55,03-L07,Mono,1,6000.3.25f1,round 4 0 start,SynchronizationContext,UnitySynchronizationContext
+2026-11-12T19:45:55,03-L07,Mono,1,6000.3.25f1,round 4 0 start,frame,741
+2026-11-12T19:45:55,03-L07,Mono,1,6000.3.25f1,round 4 0 start,where,Update/ScriptRunDelayedDynamicFrameRate
+2026-11-12T19:45:55,03-L07,Mono,1,6000.3.25f1,round 4 0 start,ms since round start,0.003
+2026-11-12T19:45:55,03-L07,Mono,1,6000.3.25f1,round 4 A after await Task.Run,thread,main
+2026-11-12T19:45:55,03-L07,Mono,1,6000.3.25f1,round 4 A after await Task.Run,thread id,1
+2026-11-12T19:45:55,03-L07,Mono,1,6000.3.25f1,round 4 A after await Task.Run,SynchronizationContext,UnitySynchronizationContext
+2026-11-12T19:45:55,03-L07,Mono,1,6000.3.25f1,round 4 A after await Task.Run,frame,766
+2026-11-12T19:45:55,03-L07,Mono,1,6000.3.25f1,round 4 A after await Task.Run,where,Update/ScriptRunDelayedTasks
+2026-11-12T19:45:55,03-L07,Mono,1,6000.3.25f1,round 4 A after await Task.Run,ms since round start,3.163
+2026-11-12T19:45:55,03-L07,Mono,1,6000.3.25f1,round 4 B after Task.Run ConfigureAwait(false),thread,worker(pool)
+2026-11-12T19:45:55,03-L07,Mono,1,6000.3.25f1,round 4 B after Task.Run ConfigureAwait(false),thread id,9
+2026-11-12T19:45:55,03-L07,Mono,1,6000.3.25f1,round 4 B after Task.Run ConfigureAwait(false),SynchronizationContext,null
+2026-11-12T19:45:55,03-L07,Mono,1,6000.3.25f1,round 4 B after Task.Run ConfigureAwait(false),frame,-
+2026-11-12T19:45:55,03-L07,Mono,1,6000.3.25f1,round 4 B after Task.Run ConfigureAwait(false),where,-
+2026-11-12T19:45:55,03-L07,Mono,1,6000.3.25f1,round 4 B after Task.Run ConfigureAwait(false),ms since round start,6.235
+2026-11-12T19:45:55,03-L07,Mono,1,6000.3.25f1,round 4 C after Task.Delay (from B's thread),thread,worker(pool)
+2026-11-12T19:45:55,03-L07,Mono,1,6000.3.25f1,round 4 C after Task.Delay (from B's thread),thread id,8
+2026-11-12T19:45:55,03-L07,Mono,1,6000.3.25f1,round 4 C after Task.Delay (from B's thread),SynchronizationContext,null
+2026-11-12T19:45:55,03-L07,Mono,1,6000.3.25f1,round 4 C after Task.Delay (from B's thread),frame,-
+2026-11-12T19:45:55,03-L07,Mono,1,6000.3.25f1,round 4 C after Task.Delay (from B's thread),where,-
+2026-11-12T19:45:55,03-L07,Mono,1,6000.3.25f1,round 4 C after Task.Delay (from B's thread),ms since round start,16.324
+2026-11-12T19:45:55,03-L07,Mono,1,6000.3.25f1,round 4 D after Awaitable.MainThreadAsync,thread,main
+2026-11-12T19:45:55,03-L07,Mono,1,6000.3.25f1,round 4 D after Awaitable.MainThreadAsync,thread id,1
+2026-11-12T19:45:55,03-L07,Mono,1,6000.3.25f1,round 4 D after Awaitable.MainThreadAsync,SynchronizationContext,UnitySynchronizationContext
+2026-11-12T19:45:55,03-L07,Mono,1,6000.3.25f1,round 4 D after Awaitable.MainThreadAsync,frame,885
+2026-11-12T19:45:55,03-L07,Mono,1,6000.3.25f1,round 4 D after Awaitable.MainThreadAsync,where,Update/ScriptRunDelayedTasks
+2026-11-12T19:45:55,03-L07,Mono,1,6000.3.25f1,round 4 D after Awaitable.MainThreadAsync,ms since round start,16.547
+2026-11-12T19:45:55,03-L07,Mono,1,6000.3.25f1,round 4 E after Task.Delay (from main),thread,main
+2026-11-12T19:45:55,03-L07,Mono,1,6000.3.25f1,round 4 E after Task.Delay (from main),thread id,1
+2026-11-12T19:45:55,03-L07,Mono,1,6000.3.25f1,round 4 E after Task.Delay (from main),SynchronizationContext,UnitySynchronizationContext
+2026-11-12T19:45:55,03-L07,Mono,1,6000.3.25f1,round 4 E after Task.Delay (from main),frame,990
+2026-11-12T19:45:55,03-L07,Mono,1,6000.3.25f1,round 4 E after Task.Delay (from main),where,Update/ScriptRunDelayedTasks
+2026-11-12T19:45:55,03-L07,Mono,1,6000.3.25f1,round 4 E after Task.Delay (from main),ms since round start,26.689
+2026-11-12T19:45:55,03-L07,Mono,1,6000.3.25f1,round 4 F after Awaitable.BackgroundThreadAsync,thread,worker(pool)
+2026-11-12T19:45:55,03-L07,Mono,1,6000.3.25f1,round 4 F after Awaitable.BackgroundThreadAsync,thread id,9
+2026-11-12T19:45:55,03-L07,Mono,1,6000.3.25f1,round 4 F after Awaitable.BackgroundThreadAsync,SynchronizationContext,null
+2026-11-12T19:45:55,03-L07,Mono,1,6000.3.25f1,round 4 F after Awaitable.BackgroundThreadAsync,frame,-
+2026-11-12T19:45:55,03-L07,Mono,1,6000.3.25f1,round 4 F after Awaitable.BackgroundThreadAsync,where,-
+2026-11-12T19:45:55,03-L07,Mono,1,6000.3.25f1,round 4 F after Awaitable.BackgroundThreadAsync,ms since round start,26.726
+2026-11-12T19:45:55,03-L07,Mono,1,6000.3.25f1,round 4 G after Awaitable.MainThreadAsync,thread,main
+2026-11-12T19:45:55,03-L07,Mono,1,6000.3.25f1,round 4 G after Awaitable.MainThreadAsync,thread id,1
+2026-11-12T19:45:55,03-L07,Mono,1,6000.3.25f1,round 4 G after Awaitable.MainThreadAsync,SynchronizationContext,UnitySynchronizationContext
+2026-11-12T19:45:55,03-L07,Mono,1,6000.3.25f1,round 4 G after Awaitable.MainThreadAsync,frame,991
+2026-11-12T19:45:55,03-L07,Mono,1,6000.3.25f1,round 4 G after Awaitable.MainThreadAsync,where,Update/ScriptRunDelayedTasks
+2026-11-12T19:45:55,03-L07,Mono,1,6000.3.25f1,round 4 G after Awaitable.MainThreadAsync,ms since round start,26.805
+2026-11-12T19:45:55,03-L07,Mono,1,6000.3.25f1,round 5 0 start,thread,main
+2026-11-12T19:45:55,03-L07,Mono,1,6000.3.25f1,round 5 0 start,thread id,1
+2026-11-12T19:45:55,03-L07,Mono,1,6000.3.25f1,round 5 0 start,SynchronizationContext,UnitySynchronizationContext
+2026-11-12T19:45:55,03-L07,Mono,1,6000.3.25f1,round 5 0 start,frame,992
+2026-11-12T19:45:55,03-L07,Mono,1,6000.3.25f1,round 5 0 start,where,Update/ScriptRunDelayedDynamicFrameRate
+2026-11-12T19:45:55,03-L07,Mono,1,6000.3.25f1,round 5 0 start,ms since round start,0.002
+2026-11-12T19:45:55,03-L07,Mono,1,6000.3.25f1,round 5 A after await Task.Run,thread,main
+2026-11-12T19:45:55,03-L07,Mono,1,6000.3.25f1,round 5 A after await Task.Run,thread id,1
+2026-11-12T19:45:55,03-L07,Mono,1,6000.3.25f1,round 5 A after await Task.Run,SynchronizationContext,UnitySynchronizationContext
+2026-11-12T19:45:55,03-L07,Mono,1,6000.3.25f1,round 5 A after await Task.Run,frame,1021
+2026-11-12T19:45:55,03-L07,Mono,1,6000.3.25f1,round 5 A after await Task.Run,where,Update/ScriptRunDelayedTasks
+2026-11-12T19:45:55,03-L07,Mono,1,6000.3.25f1,round 5 A after await Task.Run,ms since round start,3.08
+2026-11-12T19:45:55,03-L07,Mono,1,6000.3.25f1,round 5 B after Task.Run ConfigureAwait(false),thread,worker(pool)
+2026-11-12T19:45:55,03-L07,Mono,1,6000.3.25f1,round 5 B after Task.Run ConfigureAwait(false),thread id,8
+2026-11-12T19:45:55,03-L07,Mono,1,6000.3.25f1,round 5 B after Task.Run ConfigureAwait(false),SynchronizationContext,null
+2026-11-12T19:45:55,03-L07,Mono,1,6000.3.25f1,round 5 B after Task.Run ConfigureAwait(false),frame,-
+2026-11-12T19:45:55,03-L07,Mono,1,6000.3.25f1,round 5 B after Task.Run ConfigureAwait(false),where,-
+2026-11-12T19:45:55,03-L07,Mono,1,6000.3.25f1,round 5 B after Task.Run ConfigureAwait(false),ms since round start,6.115
+2026-11-12T19:45:55,03-L07,Mono,1,6000.3.25f1,round 5 C after Task.Delay (from B's thread),thread,worker(pool)
+2026-11-12T19:45:55,03-L07,Mono,1,6000.3.25f1,round 5 C after Task.Delay (from B's thread),thread id,9
+2026-11-12T19:45:55,03-L07,Mono,1,6000.3.25f1,round 5 C after Task.Delay (from B's thread),SynchronizationContext,null
+2026-11-12T19:45:55,03-L07,Mono,1,6000.3.25f1,round 5 C after Task.Delay (from B's thread),frame,-
+2026-11-12T19:45:55,03-L07,Mono,1,6000.3.25f1,round 5 C after Task.Delay (from B's thread),where,-
+2026-11-12T19:45:55,03-L07,Mono,1,6000.3.25f1,round 5 C after Task.Delay (from B's thread),ms since round start,16.165
+2026-11-12T19:45:55,03-L07,Mono,1,6000.3.25f1,round 5 D after Awaitable.MainThreadAsync,thread,main
+2026-11-12T19:45:55,03-L07,Mono,1,6000.3.25f1,round 5 D after Awaitable.MainThreadAsync,thread id,1
+2026-11-12T19:45:55,03-L07,Mono,1,6000.3.25f1,round 5 D after Awaitable.MainThreadAsync,SynchronizationContext,UnitySynchronizationContext
+2026-11-12T19:45:55,03-L07,Mono,1,6000.3.25f1,round 5 D after Awaitable.MainThreadAsync,frame,1182
+2026-11-12T19:45:55,03-L07,Mono,1,6000.3.25f1,round 5 D after Awaitable.MainThreadAsync,where,Update/ScriptRunDelayedTasks
+2026-11-12T19:45:55,03-L07,Mono,1,6000.3.25f1,round 5 D after Awaitable.MainThreadAsync,ms since round start,16.253
+2026-11-12T19:45:55,03-L07,Mono,1,6000.3.25f1,round 5 E after Task.Delay (from main),thread,main
+2026-11-12T19:45:55,03-L07,Mono,1,6000.3.25f1,round 5 E after Task.Delay (from main),thread id,1
+2026-11-12T19:45:55,03-L07,Mono,1,6000.3.25f1,round 5 E after Task.Delay (from main),SynchronizationContext,UnitySynchronizationContext
+2026-11-12T19:45:55,03-L07,Mono,1,6000.3.25f1,round 5 E after Task.Delay (from main),frame,1303
+2026-11-12T19:45:55,03-L07,Mono,1,6000.3.25f1,round 5 E after Task.Delay (from main),where,Update/ScriptRunDelayedTasks
+2026-11-12T19:45:55,03-L07,Mono,1,6000.3.25f1,round 5 E after Task.Delay (from main),ms since round start,26.362
+2026-11-12T19:45:55,03-L07,Mono,1,6000.3.25f1,round 5 F after Awaitable.BackgroundThreadAsync,thread,worker(pool)
+2026-11-12T19:45:55,03-L07,Mono,1,6000.3.25f1,round 5 F after Awaitable.BackgroundThreadAsync,thread id,9
+2026-11-12T19:45:55,03-L07,Mono,1,6000.3.25f1,round 5 F after Awaitable.BackgroundThreadAsync,SynchronizationContext,null
+2026-11-12T19:45:55,03-L07,Mono,1,6000.3.25f1,round 5 F after Awaitable.BackgroundThreadAsync,frame,-
+2026-11-12T19:45:55,03-L07,Mono,1,6000.3.25f1,round 5 F after Awaitable.BackgroundThreadAsync,where,-
+2026-11-12T19:45:55,03-L07,Mono,1,6000.3.25f1,round 5 F after Awaitable.BackgroundThreadAsync,ms since round start,26.403
+2026-11-12T19:45:55,03-L07,Mono,1,6000.3.25f1,round 5 G after Awaitable.MainThreadAsync,thread,main
+2026-11-12T19:45:55,03-L07,Mono,1,6000.3.25f1,round 5 G after Awaitable.MainThreadAsync,thread id,1
+2026-11-12T19:45:55,03-L07,Mono,1,6000.3.25f1,round 5 G after Awaitable.MainThreadAsync,SynchronizationContext,UnitySynchronizationContext
+2026-11-12T19:45:55,03-L07,Mono,1,6000.3.25f1,round 5 G after Awaitable.MainThreadAsync,frame,1304
+2026-11-12T19:45:55,03-L07,Mono,1,6000.3.25f1,round 5 G after Awaitable.MainThreadAsync,where,Update/ScriptRunDelayedTasks
+2026-11-12T19:45:55,03-L07,Mono,1,6000.3.25f1,round 5 G after Awaitable.MainThreadAsync,ms since round start,26.609

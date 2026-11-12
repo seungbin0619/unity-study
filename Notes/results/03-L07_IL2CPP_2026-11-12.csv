@@ -1,0 +1,242 @@
+run_time,lab,backend,dev_build,unity,condition,metric,value
+2026-11-12T19:47:56,03-L07,IL2CPP,1,6000.3.25f1,-,main thread id,1
+2026-11-12T19:47:56,03-L07,IL2CPP,1,6000.3.25f1,round 1 0 start,thread,main
+2026-11-12T19:47:56,03-L07,IL2CPP,1,6000.3.25f1,round 1 0 start,thread id,1
+2026-11-12T19:47:56,03-L07,IL2CPP,1,6000.3.25f1,round 1 0 start,SynchronizationContext,UnitySynchronizationContext
+2026-11-12T19:47:56,03-L07,IL2CPP,1,6000.3.25f1,round 1 0 start,frame,1
+2026-11-12T19:47:56,03-L07,IL2CPP,1,6000.3.25f1,round 1 0 start,where,Update/ScriptRunDelayedDynamicFrameRate
+2026-11-12T19:47:56,03-L07,IL2CPP,1,6000.3.25f1,round 1 0 start,ms since round start,0.008
+2026-11-12T19:47:56,03-L07,IL2CPP,1,6000.3.25f1,round 1 A after await Task.Run,thread,main
+2026-11-12T19:47:56,03-L07,IL2CPP,1,6000.3.25f1,round 1 A after await Task.Run,thread id,1
+2026-11-12T19:47:56,03-L07,IL2CPP,1,6000.3.25f1,round 1 A after await Task.Run,SynchronizationContext,UnitySynchronizationContext
+2026-11-12T19:47:56,03-L07,IL2CPP,1,6000.3.25f1,round 1 A after await Task.Run,frame,44
+2026-11-12T19:47:56,03-L07,IL2CPP,1,6000.3.25f1,round 1 A after await Task.Run,where,Update/ScriptRunDelayedTasks
+2026-11-12T19:47:56,03-L07,IL2CPP,1,6000.3.25f1,round 1 A after await Task.Run,ms since round start,4.377
+2026-11-12T19:47:56,03-L07,IL2CPP,1,6000.3.25f1,round 1 B after Task.Run ConfigureAwait(false),thread,worker(pool)
+2026-11-12T19:47:56,03-L07,IL2CPP,1,6000.3.25f1,round 1 B after Task.Run ConfigureAwait(false),thread id,23
+2026-11-12T19:47:56,03-L07,IL2CPP,1,6000.3.25f1,round 1 B after Task.Run ConfigureAwait(false),SynchronizationContext,null
+2026-11-12T19:47:56,03-L07,IL2CPP,1,6000.3.25f1,round 1 B after Task.Run ConfigureAwait(false),frame,-
+2026-11-12T19:47:56,03-L07,IL2CPP,1,6000.3.25f1,round 1 B after Task.Run ConfigureAwait(false),where,-
+2026-11-12T19:47:56,03-L07,IL2CPP,1,6000.3.25f1,round 1 B after Task.Run ConfigureAwait(false),ms since round start,7.43
+2026-11-12T19:47:56,03-L07,IL2CPP,1,6000.3.25f1,round 1 C after Task.Delay (from B's thread),thread,worker(pool)
+2026-11-12T19:47:56,03-L07,IL2CPP,1,6000.3.25f1,round 1 C after Task.Delay (from B's thread),thread id,22
+2026-11-12T19:47:56,03-L07,IL2CPP,1,6000.3.25f1,round 1 C after Task.Delay (from B's thread),SynchronizationContext,null
+2026-11-12T19:47:56,03-L07,IL2CPP,1,6000.3.25f1,round 1 C after Task.Delay (from B's thread),frame,-
+2026-11-12T19:47:56,03-L07,IL2CPP,1,6000.3.25f1,round 1 C after Task.Delay (from B's thread),where,-
+2026-11-12T19:47:56,03-L07,IL2CPP,1,6000.3.25f1,round 1 C after Task.Delay (from B's thread),ms since round start,18.09
+2026-11-12T19:47:56,03-L07,IL2CPP,1,6000.3.25f1,round 1 D after Awaitable.MainThreadAsync,thread,main
+2026-11-12T19:47:56,03-L07,IL2CPP,1,6000.3.25f1,round 1 D after Awaitable.MainThreadAsync,thread id,1
+2026-11-12T19:47:56,03-L07,IL2CPP,1,6000.3.25f1,round 1 D after Awaitable.MainThreadAsync,SynchronizationContext,UnitySynchronizationContext
+2026-11-12T19:47:56,03-L07,IL2CPP,1,6000.3.25f1,round 1 D after Awaitable.MainThreadAsync,frame,295
+2026-11-12T19:47:56,03-L07,IL2CPP,1,6000.3.25f1,round 1 D after Awaitable.MainThreadAsync,where,Update/ScriptRunDelayedTasks
+2026-11-12T19:47:56,03-L07,IL2CPP,1,6000.3.25f1,round 1 D after Awaitable.MainThreadAsync,ms since round start,18.142
+2026-11-12T19:47:56,03-L07,IL2CPP,1,6000.3.25f1,round 1 E after Task.Delay (from main),thread,main
+2026-11-12T19:47:56,03-L07,IL2CPP,1,6000.3.25f1,round 1 E after Task.Delay (from main),thread id,1
+2026-11-12T19:47:56,03-L07,IL2CPP,1,6000.3.25f1,round 1 E after Task.Delay (from main),SynchronizationContext,UnitySynchronizationContext
+2026-11-12T19:47:56,03-L07,IL2CPP,1,6000.3.25f1,round 1 E after Task.Delay (from main),frame,507
+2026-11-12T19:47:56,03-L07,IL2CPP,1,6000.3.25f1,round 1 E after Task.Delay (from main),where,Update/ScriptRunDelayedTasks
+2026-11-12T19:47:56,03-L07,IL2CPP,1,6000.3.25f1,round 1 E after Task.Delay (from main),ms since round start,28.5
+2026-11-12T19:47:56,03-L07,IL2CPP,1,6000.3.25f1,round 1 F after Awaitable.BackgroundThreadAsync,thread,worker(pool)
+2026-11-12T19:47:56,03-L07,IL2CPP,1,6000.3.25f1,round 1 F after Awaitable.BackgroundThreadAsync,thread id,22
+2026-11-12T19:47:56,03-L07,IL2CPP,1,6000.3.25f1,round 1 F after Awaitable.BackgroundThreadAsync,SynchronizationContext,null
+2026-11-12T19:47:56,03-L07,IL2CPP,1,6000.3.25f1,round 1 F after Awaitable.BackgroundThreadAsync,frame,-
+2026-11-12T19:47:56,03-L07,IL2CPP,1,6000.3.25f1,round 1 F after Awaitable.BackgroundThreadAsync,where,-
+2026-11-12T19:47:56,03-L07,IL2CPP,1,6000.3.25f1,round 1 F after Awaitable.BackgroundThreadAsync,ms since round start,28.535
+2026-11-12T19:47:56,03-L07,IL2CPP,1,6000.3.25f1,round 1 G after Awaitable.MainThreadAsync,thread,main
+2026-11-12T19:47:56,03-L07,IL2CPP,1,6000.3.25f1,round 1 G after Awaitable.MainThreadAsync,thread id,1
+2026-11-12T19:47:56,03-L07,IL2CPP,1,6000.3.25f1,round 1 G after Awaitable.MainThreadAsync,SynchronizationContext,UnitySynchronizationContext
+2026-11-12T19:47:56,03-L07,IL2CPP,1,6000.3.25f1,round 1 G after Awaitable.MainThreadAsync,frame,508
+2026-11-12T19:47:56,03-L07,IL2CPP,1,6000.3.25f1,round 1 G after Awaitable.MainThreadAsync,where,Update/ScriptRunDelayedTasks
+2026-11-12T19:47:56,03-L07,IL2CPP,1,6000.3.25f1,round 1 G after Awaitable.MainThreadAsync,ms since round start,28.572
+2026-11-12T19:47:56,03-L07,IL2CPP,1,6000.3.25f1,round 2 0 start,thread,main
+2026-11-12T19:47:56,03-L07,IL2CPP,1,6000.3.25f1,round 2 0 start,thread id,1
+2026-11-12T19:47:56,03-L07,IL2CPP,1,6000.3.25f1,round 2 0 start,SynchronizationContext,UnitySynchronizationContext
+2026-11-12T19:47:56,03-L07,IL2CPP,1,6000.3.25f1,round 2 0 start,frame,509
+2026-11-12T19:47:56,03-L07,IL2CPP,1,6000.3.25f1,round 2 0 start,where,Update/ScriptRunDelayedDynamicFrameRate
+2026-11-12T19:47:56,03-L07,IL2CPP,1,6000.3.25f1,round 2 0 start,ms since round start,0.001
+2026-11-12T19:47:56,03-L07,IL2CPP,1,6000.3.25f1,round 2 A after await Task.Run,thread,main
+2026-11-12T19:47:56,03-L07,IL2CPP,1,6000.3.25f1,round 2 A after await Task.Run,thread id,1
+2026-11-12T19:47:56,03-L07,IL2CPP,1,6000.3.25f1,round 2 A after await Task.Run,SynchronizationContext,UnitySynchronizationContext
+2026-11-12T19:47:56,03-L07,IL2CPP,1,6000.3.25f1,round 2 A after await Task.Run,frame,569
+2026-11-12T19:47:56,03-L07,IL2CPP,1,6000.3.25f1,round 2 A after await Task.Run,where,Update/ScriptRunDelayedTasks
+2026-11-12T19:47:56,03-L07,IL2CPP,1,6000.3.25f1,round 2 A after await Task.Run,ms since round start,3.086
+2026-11-12T19:47:56,03-L07,IL2CPP,1,6000.3.25f1,round 2 B after Task.Run ConfigureAwait(false),thread,worker(pool)
+2026-11-12T19:47:56,03-L07,IL2CPP,1,6000.3.25f1,round 2 B after Task.Run ConfigureAwait(false),thread id,23
+2026-11-12T19:47:56,03-L07,IL2CPP,1,6000.3.25f1,round 2 B after Task.Run ConfigureAwait(false),SynchronizationContext,null
+2026-11-12T19:47:56,03-L07,IL2CPP,1,6000.3.25f1,round 2 B after Task.Run ConfigureAwait(false),frame,-
+2026-11-12T19:47:56,03-L07,IL2CPP,1,6000.3.25f1,round 2 B after Task.Run ConfigureAwait(false),where,-
+2026-11-12T19:47:56,03-L07,IL2CPP,1,6000.3.25f1,round 2 B after Task.Run ConfigureAwait(false),ms since round start,6.138
+2026-11-12T19:47:56,03-L07,IL2CPP,1,6000.3.25f1,round 2 C after Task.Delay (from B's thread),thread,worker(pool)
+2026-11-12T19:47:56,03-L07,IL2CPP,1,6000.3.25f1,round 2 C after Task.Delay (from B's thread),thread id,22
+2026-11-12T19:47:56,03-L07,IL2CPP,1,6000.3.25f1,round 2 C after Task.Delay (from B's thread),SynchronizationContext,null
+2026-11-12T19:47:56,03-L07,IL2CPP,1,6000.3.25f1,round 2 C after Task.Delay (from B's thread),frame,-
+2026-11-12T19:47:56,03-L07,IL2CPP,1,6000.3.25f1,round 2 C after Task.Delay (from B's thread),where,-
+2026-11-12T19:47:56,03-L07,IL2CPP,1,6000.3.25f1,round 2 C after Task.Delay (from B's thread),ms since round start,16.186
+2026-11-12T19:47:56,03-L07,IL2CPP,1,6000.3.25f1,round 2 D after Awaitable.MainThreadAsync,thread,main
+2026-11-12T19:47:56,03-L07,IL2CPP,1,6000.3.25f1,round 2 D after Awaitable.MainThreadAsync,thread id,1
+2026-11-12T19:47:56,03-L07,IL2CPP,1,6000.3.25f1,round 2 D after Awaitable.MainThreadAsync,SynchronizationContext,UnitySynchronizationContext
+2026-11-12T19:47:56,03-L07,IL2CPP,1,6000.3.25f1,round 2 D after Awaitable.MainThreadAsync,frame,828
+2026-11-12T19:47:56,03-L07,IL2CPP,1,6000.3.25f1,round 2 D after Awaitable.MainThreadAsync,where,Update/ScriptRunDelayedTasks
+2026-11-12T19:47:56,03-L07,IL2CPP,1,6000.3.25f1,round 2 D after Awaitable.MainThreadAsync,ms since round start,16.207
+2026-11-12T19:47:56,03-L07,IL2CPP,1,6000.3.25f1,round 2 E after Task.Delay (from main),thread,main
+2026-11-12T19:47:56,03-L07,IL2CPP,1,6000.3.25f1,round 2 E after Task.Delay (from main),thread id,1
+2026-11-12T19:47:56,03-L07,IL2CPP,1,6000.3.25f1,round 2 E after Task.Delay (from main),SynchronizationContext,UnitySynchronizationContext
+2026-11-12T19:47:56,03-L07,IL2CPP,1,6000.3.25f1,round 2 E after Task.Delay (from main),frame,1064
+2026-11-12T19:47:56,03-L07,IL2CPP,1,6000.3.25f1,round 2 E after Task.Delay (from main),where,Update/ScriptRunDelayedTasks
+2026-11-12T19:47:56,03-L07,IL2CPP,1,6000.3.25f1,round 2 E after Task.Delay (from main),ms since round start,26.408
+2026-11-12T19:47:56,03-L07,IL2CPP,1,6000.3.25f1,round 2 F after Awaitable.BackgroundThreadAsync,thread,worker(pool)
+2026-11-12T19:47:56,03-L07,IL2CPP,1,6000.3.25f1,round 2 F after Awaitable.BackgroundThreadAsync,thread id,23
+2026-11-12T19:47:56,03-L07,IL2CPP,1,6000.3.25f1,round 2 F after Awaitable.BackgroundThreadAsync,SynchronizationContext,null
+2026-11-12T19:47:56,03-L07,IL2CPP,1,6000.3.25f1,round 2 F after Awaitable.BackgroundThreadAsync,frame,-
+2026-11-12T19:47:56,03-L07,IL2CPP,1,6000.3.25f1,round 2 F after Awaitable.BackgroundThreadAsync,where,-
+2026-11-12T19:47:56,03-L07,IL2CPP,1,6000.3.25f1,round 2 F after Awaitable.BackgroundThreadAsync,ms since round start,26.436
+2026-11-12T19:47:56,03-L07,IL2CPP,1,6000.3.25f1,round 2 G after Awaitable.MainThreadAsync,thread,main
+2026-11-12T19:47:56,03-L07,IL2CPP,1,6000.3.25f1,round 2 G after Awaitable.MainThreadAsync,thread id,1
+2026-11-12T19:47:56,03-L07,IL2CPP,1,6000.3.25f1,round 2 G after Awaitable.MainThreadAsync,SynchronizationContext,UnitySynchronizationContext
+2026-11-12T19:47:56,03-L07,IL2CPP,1,6000.3.25f1,round 2 G after Awaitable.MainThreadAsync,frame,1065
+2026-11-12T19:47:56,03-L07,IL2CPP,1,6000.3.25f1,round 2 G after Awaitable.MainThreadAsync,where,Update/ScriptRunDelayedTasks
+2026-11-12T19:47:56,03-L07,IL2CPP,1,6000.3.25f1,round 2 G after Awaitable.MainThreadAsync,ms since round start,26.544
+2026-11-12T19:47:56,03-L07,IL2CPP,1,6000.3.25f1,round 3 0 start,thread,main
+2026-11-12T19:47:56,03-L07,IL2CPP,1,6000.3.25f1,round 3 0 start,thread id,1
+2026-11-12T19:47:56,03-L07,IL2CPP,1,6000.3.25f1,round 3 0 start,SynchronizationContext,UnitySynchronizationContext
+2026-11-12T19:47:56,03-L07,IL2CPP,1,6000.3.25f1,round 3 0 start,frame,1066
+2026-11-12T19:47:56,03-L07,IL2CPP,1,6000.3.25f1,round 3 0 start,where,Update/ScriptRunDelayedDynamicFrameRate
+2026-11-12T19:47:56,03-L07,IL2CPP,1,6000.3.25f1,round 3 0 start,ms since round start,0.001
+2026-11-12T19:47:56,03-L07,IL2CPP,1,6000.3.25f1,round 3 A after await Task.Run,thread,main
+2026-11-12T19:47:56,03-L07,IL2CPP,1,6000.3.25f1,round 3 A after await Task.Run,thread id,1
+2026-11-12T19:47:56,03-L07,IL2CPP,1,6000.3.25f1,round 3 A after await Task.Run,SynchronizationContext,UnitySynchronizationContext
+2026-11-12T19:47:56,03-L07,IL2CPP,1,6000.3.25f1,round 3 A after await Task.Run,frame,1116
+2026-11-12T19:47:56,03-L07,IL2CPP,1,6000.3.25f1,round 3 A after await Task.Run,where,Update/ScriptRunDelayedTasks
+2026-11-12T19:47:56,03-L07,IL2CPP,1,6000.3.25f1,round 3 A after await Task.Run,ms since round start,3.156
+2026-11-12T19:47:56,03-L07,IL2CPP,1,6000.3.25f1,round 3 B after Task.Run ConfigureAwait(false),thread,worker(pool)
+2026-11-12T19:47:56,03-L07,IL2CPP,1,6000.3.25f1,round 3 B after Task.Run ConfigureAwait(false),thread id,22
+2026-11-12T19:47:56,03-L07,IL2CPP,1,6000.3.25f1,round 3 B after Task.Run ConfigureAwait(false),SynchronizationContext,null
+2026-11-12T19:47:56,03-L07,IL2CPP,1,6000.3.25f1,round 3 B after Task.Run ConfigureAwait(false),frame,-
+2026-11-12T19:47:56,03-L07,IL2CPP,1,6000.3.25f1,round 3 B after Task.Run ConfigureAwait(false),where,-
+2026-11-12T19:47:56,03-L07,IL2CPP,1,6000.3.25f1,round 3 B after Task.Run ConfigureAwait(false),ms since round start,6.198
+2026-11-12T19:47:56,03-L07,IL2CPP,1,6000.3.25f1,round 3 C after Task.Delay (from B's thread),thread,worker(pool)
+2026-11-12T19:47:56,03-L07,IL2CPP,1,6000.3.25f1,round 3 C after Task.Delay (from B's thread),thread id,23
+2026-11-12T19:47:56,03-L07,IL2CPP,1,6000.3.25f1,round 3 C after Task.Delay (from B's thread),SynchronizationContext,null
+2026-11-12T19:47:56,03-L07,IL2CPP,1,6000.3.25f1,round 3 C after Task.Delay (from B's thread),frame,-
+2026-11-12T19:47:56,03-L07,IL2CPP,1,6000.3.25f1,round 3 C after Task.Delay (from B's thread),where,-
+2026-11-12T19:47:56,03-L07,IL2CPP,1,6000.3.25f1,round 3 C after Task.Delay (from B's thread),ms since round start,16.229
+2026-11-12T19:47:56,03-L07,IL2CPP,1,6000.3.25f1,round 3 D after Awaitable.MainThreadAsync,thread,main
+2026-11-12T19:47:56,03-L07,IL2CPP,1,6000.3.25f1,round 3 D after Awaitable.MainThreadAsync,thread id,1
+2026-11-12T19:47:56,03-L07,IL2CPP,1,6000.3.25f1,round 3 D after Awaitable.MainThreadAsync,SynchronizationContext,UnitySynchronizationContext
+2026-11-12T19:47:56,03-L07,IL2CPP,1,6000.3.25f1,round 3 D after Awaitable.MainThreadAsync,frame,1424
+2026-11-12T19:47:56,03-L07,IL2CPP,1,6000.3.25f1,round 3 D after Awaitable.MainThreadAsync,where,Update/ScriptRunDelayedTasks
+2026-11-12T19:47:56,03-L07,IL2CPP,1,6000.3.25f1,round 3 D after Awaitable.MainThreadAsync,ms since round start,16.277
+2026-11-12T19:47:56,03-L07,IL2CPP,1,6000.3.25f1,round 3 E after Task.Delay (from main),thread,main
+2026-11-12T19:47:56,03-L07,IL2CPP,1,6000.3.25f1,round 3 E after Task.Delay (from main),thread id,1
+2026-11-12T19:47:56,03-L07,IL2CPP,1,6000.3.25f1,round 3 E after Task.Delay (from main),SynchronizationContext,UnitySynchronizationContext
+2026-11-12T19:47:56,03-L07,IL2CPP,1,6000.3.25f1,round 3 E after Task.Delay (from main),frame,1637
+2026-11-12T19:47:56,03-L07,IL2CPP,1,6000.3.25f1,round 3 E after Task.Delay (from main),where,Update/ScriptRunDelayedTasks
+2026-11-12T19:47:56,03-L07,IL2CPP,1,6000.3.25f1,round 3 E after Task.Delay (from main),ms since round start,26.717
+2026-11-12T19:47:56,03-L07,IL2CPP,1,6000.3.25f1,round 3 F after Awaitable.BackgroundThreadAsync,thread,worker(pool)
+2026-11-12T19:47:56,03-L07,IL2CPP,1,6000.3.25f1,round 3 F after Awaitable.BackgroundThreadAsync,thread id,22
+2026-11-12T19:47:56,03-L07,IL2CPP,1,6000.3.25f1,round 3 F after Awaitable.BackgroundThreadAsync,SynchronizationContext,null
+2026-11-12T19:47:56,03-L07,IL2CPP,1,6000.3.25f1,round 3 F after Awaitable.BackgroundThreadAsync,frame,-
+2026-11-12T19:47:56,03-L07,IL2CPP,1,6000.3.25f1,round 3 F after Awaitable.BackgroundThreadAsync,where,-
+2026-11-12T19:47:56,03-L07,IL2CPP,1,6000.3.25f1,round 3 F after Awaitable.BackgroundThreadAsync,ms since round start,26.752
+2026-11-12T19:47:56,03-L07,IL2CPP,1,6000.3.25f1,round 3 G after Awaitable.MainThreadAsync,thread,main
+2026-11-12T19:47:56,03-L07,IL2CPP,1,6000.3.25f1,round 3 G after Awaitable.MainThreadAsync,thread id,1
+2026-11-12T19:47:56,03-L07,IL2CPP,1,6000.3.25f1,round 3 G after Awaitable.MainThreadAsync,SynchronizationContext,UnitySynchronizationContext
+2026-11-12T19:47:56,03-L07,IL2CPP,1,6000.3.25f1,round 3 G after Awaitable.MainThreadAsync,frame,1638
+2026-11-12T19:47:56,03-L07,IL2CPP,1,6000.3.25f1,round 3 G after Awaitable.MainThreadAsync,where,Update/ScriptRunDelayedTasks
+2026-11-12T19:47:56,03-L07,IL2CPP,1,6000.3.25f1,round 3 G after Awaitable.MainThreadAsync,ms since round start,26.811
+2026-11-12T19:47:56,03-L07,IL2CPP,1,6000.3.25f1,round 4 0 start,thread,main
+2026-11-12T19:47:56,03-L07,IL2CPP,1,6000.3.25f1,round 4 0 start,thread id,1
+2026-11-12T19:47:56,03-L07,IL2CPP,1,6000.3.25f1,round 4 0 start,SynchronizationContext,UnitySynchronizationContext
+2026-11-12T19:47:56,03-L07,IL2CPP,1,6000.3.25f1,round 4 0 start,frame,1639
+2026-11-12T19:47:56,03-L07,IL2CPP,1,6000.3.25f1,round 4 0 start,where,Update/ScriptRunDelayedDynamicFrameRate
+2026-11-12T19:47:56,03-L07,IL2CPP,1,6000.3.25f1,round 4 0 start,ms since round start,0.001
+2026-11-12T19:47:56,03-L07,IL2CPP,1,6000.3.25f1,round 4 A after await Task.Run,thread,main
+2026-11-12T19:47:56,03-L07,IL2CPP,1,6000.3.25f1,round 4 A after await Task.Run,thread id,1
+2026-11-12T19:47:56,03-L07,IL2CPP,1,6000.3.25f1,round 4 A after await Task.Run,SynchronizationContext,UnitySynchronizationContext
+2026-11-12T19:47:56,03-L07,IL2CPP,1,6000.3.25f1,round 4 A after await Task.Run,frame,1720
+2026-11-12T19:47:56,03-L07,IL2CPP,1,6000.3.25f1,round 4 A after await Task.Run,where,Update/ScriptRunDelayedTasks
+2026-11-12T19:47:56,03-L07,IL2CPP,1,6000.3.25f1,round 4 A after await Task.Run,ms since round start,3.042
+2026-11-12T19:47:56,03-L07,IL2CPP,1,6000.3.25f1,round 4 B after Task.Run ConfigureAwait(false),thread,worker(pool)
+2026-11-12T19:47:56,03-L07,IL2CPP,1,6000.3.25f1,round 4 B after Task.Run ConfigureAwait(false),thread id,23
+2026-11-12T19:47:56,03-L07,IL2CPP,1,6000.3.25f1,round 4 B after Task.Run ConfigureAwait(false),SynchronizationContext,null
+2026-11-12T19:47:56,03-L07,IL2CPP,1,6000.3.25f1,round 4 B after Task.Run ConfigureAwait(false),frame,-
+2026-11-12T19:47:56,03-L07,IL2CPP,1,6000.3.25f1,round 4 B after Task.Run ConfigureAwait(false),where,-
+2026-11-12T19:47:56,03-L07,IL2CPP,1,6000.3.25f1,round 4 B after Task.Run ConfigureAwait(false),ms since round start,6.061
+2026-11-12T19:47:56,03-L07,IL2CPP,1,6000.3.25f1,round 4 C after Task.Delay (from B's thread),thread,worker(pool)
+2026-11-12T19:47:56,03-L07,IL2CPP,1,6000.3.25f1,round 4 C after Task.Delay (from B's thread),thread id,22
+2026-11-12T19:47:56,03-L07,IL2CPP,1,6000.3.25f1,round 4 C after Task.Delay (from B's thread),SynchronizationContext,null
+2026-11-12T19:47:56,03-L07,IL2CPP,1,6000.3.25f1,round 4 C after Task.Delay (from B's thread),frame,-
+2026-11-12T19:47:56,03-L07,IL2CPP,1,6000.3.25f1,round 4 C after Task.Delay (from B's thread),where,-
+2026-11-12T19:47:56,03-L07,IL2CPP,1,6000.3.25f1,round 4 C after Task.Delay (from B's thread),ms since round start,16.095
+2026-11-12T19:47:56,03-L07,IL2CPP,1,6000.3.25f1,round 4 D after Awaitable.MainThreadAsync,thread,main
+2026-11-12T19:47:56,03-L07,IL2CPP,1,6000.3.25f1,round 4 D after Awaitable.MainThreadAsync,thread id,1
+2026-11-12T19:47:56,03-L07,IL2CPP,1,6000.3.25f1,round 4 D after Awaitable.MainThreadAsync,SynchronizationContext,UnitySynchronizationContext
+2026-11-12T19:47:56,03-L07,IL2CPP,1,6000.3.25f1,round 4 D after Awaitable.MainThreadAsync,frame,2065
+2026-11-12T19:47:56,03-L07,IL2CPP,1,6000.3.25f1,round 4 D after Awaitable.MainThreadAsync,where,Update/ScriptRunDelayedTasks
+2026-11-12T19:47:56,03-L07,IL2CPP,1,6000.3.25f1,round 4 D after Awaitable.MainThreadAsync,ms since round start,16.164
+2026-11-12T19:47:56,03-L07,IL2CPP,1,6000.3.25f1,round 4 E after Task.Delay (from main),thread,main
+2026-11-12T19:47:56,03-L07,IL2CPP,1,6000.3.25f1,round 4 E after Task.Delay (from main),thread id,1
+2026-11-12T19:47:56,03-L07,IL2CPP,1,6000.3.25f1,round 4 E after Task.Delay (from main),SynchronizationContext,UnitySynchronizationContext
+2026-11-12T19:47:56,03-L07,IL2CPP,1,6000.3.25f1,round 4 E after Task.Delay (from main),frame,2302
+2026-11-12T19:47:56,03-L07,IL2CPP,1,6000.3.25f1,round 4 E after Task.Delay (from main),where,Update/ScriptRunDelayedTasks
+2026-11-12T19:47:56,03-L07,IL2CPP,1,6000.3.25f1,round 4 E after Task.Delay (from main),ms since round start,26.398
+2026-11-12T19:47:56,03-L07,IL2CPP,1,6000.3.25f1,round 4 F after Awaitable.BackgroundThreadAsync,thread,worker(pool)
+2026-11-12T19:47:56,03-L07,IL2CPP,1,6000.3.25f1,round 4 F after Awaitable.BackgroundThreadAsync,thread id,22
+2026-11-12T19:47:56,03-L07,IL2CPP,1,6000.3.25f1,round 4 F after Awaitable.BackgroundThreadAsync,SynchronizationContext,null
+2026-11-12T19:47:56,03-L07,IL2CPP,1,6000.3.25f1,round 4 F after Awaitable.BackgroundThreadAsync,frame,-
+2026-11-12T19:47:56,03-L07,IL2CPP,1,6000.3.25f1,round 4 F after Awaitable.BackgroundThreadAsync,where,-
+2026-11-12T19:47:56,03-L07,IL2CPP,1,6000.3.25f1,round 4 F after Awaitable.BackgroundThreadAsync,ms since round start,26.487
+2026-11-12T19:47:56,03-L07,IL2CPP,1,6000.3.25f1,round 4 G after Awaitable.MainThreadAsync,thread,main
+2026-11-12T19:47:56,03-L07,IL2CPP,1,6000.3.25f1,round 4 G after Awaitable.MainThreadAsync,thread id,1
+2026-11-12T19:47:56,03-L07,IL2CPP,1,6000.3.25f1,round 4 G after Awaitable.MainThreadAsync,SynchronizationContext,UnitySynchronizationContext
+2026-11-12T19:47:56,03-L07,IL2CPP,1,6000.3.25f1,round 4 G after Awaitable.MainThreadAsync,frame,2303
+2026-11-12T19:47:56,03-L07,IL2CPP,1,6000.3.25f1,round 4 G after Awaitable.MainThreadAsync,where,Update/ScriptRunDelayedTasks
+2026-11-12T19:47:56,03-L07,IL2CPP,1,6000.3.25f1,round 4 G after Awaitable.MainThreadAsync,ms since round start,26.66
+2026-11-12T19:47:56,03-L07,IL2CPP,1,6000.3.25f1,round 5 0 start,thread,main
+2026-11-12T19:47:56,03-L07,IL2CPP,1,6000.3.25f1,round 5 0 start,thread id,1
+2026-11-12T19:47:56,03-L07,IL2CPP,1,6000.3.25f1,round 5 0 start,SynchronizationContext,UnitySynchronizationContext
+2026-11-12T19:47:56,03-L07,IL2CPP,1,6000.3.25f1,round 5 0 start,frame,2304
+2026-11-12T19:47:56,03-L07,IL2CPP,1,6000.3.25f1,round 5 0 start,where,Update/ScriptRunDelayedDynamicFrameRate
+2026-11-12T19:47:56,03-L07,IL2CPP,1,6000.3.25f1,round 5 0 start,ms since round start,0.002
+2026-11-12T19:47:56,03-L07,IL2CPP,1,6000.3.25f1,round 5 A after await Task.Run,thread,main
+2026-11-12T19:47:56,03-L07,IL2CPP,1,6000.3.25f1,round 5 A after await Task.Run,thread id,1
+2026-11-12T19:47:56,03-L07,IL2CPP,1,6000.3.25f1,round 5 A after await Task.Run,SynchronizationContext,UnitySynchronizationContext
+2026-11-12T19:47:56,03-L07,IL2CPP,1,6000.3.25f1,round 5 A after await Task.Run,frame,2364
+2026-11-12T19:47:56,03-L07,IL2CPP,1,6000.3.25f1,round 5 A after await Task.Run,where,Update/ScriptRunDelayedTasks
+2026-11-12T19:47:56,03-L07,IL2CPP,1,6000.3.25f1,round 5 A after await Task.Run,ms since round start,3.196
+2026-11-12T19:47:56,03-L07,IL2CPP,1,6000.3.25f1,round 5 B after Task.Run ConfigureAwait(false),thread,worker(pool)
+2026-11-12T19:47:56,03-L07,IL2CPP,1,6000.3.25f1,round 5 B after Task.Run ConfigureAwait(false),thread id,23
+2026-11-12T19:47:56,03-L07,IL2CPP,1,6000.3.25f1,round 5 B after Task.Run ConfigureAwait(false),SynchronizationContext,null
+2026-11-12T19:47:56,03-L07,IL2CPP,1,6000.3.25f1,round 5 B after Task.Run ConfigureAwait(false),frame,-
+2026-11-12T19:47:56,03-L07,IL2CPP,1,6000.3.25f1,round 5 B after Task.Run ConfigureAwait(false),where,-
+2026-11-12T19:47:56,03-L07,IL2CPP,1,6000.3.25f1,round 5 B after Task.Run ConfigureAwait(false),ms since round start,6.234
+2026-11-12T19:47:56,03-L07,IL2CPP,1,6000.3.25f1,round 5 C after Task.Delay (from B's thread),thread,worker(pool)
+2026-11-12T19:47:56,03-L07,IL2CPP,1,6000.3.25f1,round 5 C after Task.Delay (from B's thread),thread id,22
+2026-11-12T19:47:56,03-L07,IL2CPP,1,6000.3.25f1,round 5 C after Task.Delay (from B's thread),SynchronizationContext,null
+2026-11-12T19:47:56,03-L07,IL2CPP,1,6000.3.25f1,round 5 C after Task.Delay (from B's thread),frame,-
+2026-11-12T19:47:56,03-L07,IL2CPP,1,6000.3.25f1,round 5 C after Task.Delay (from B's thread),where,-
+2026-11-12T19:47:56,03-L07,IL2CPP,1,6000.3.25f1,round 5 C after Task.Delay (from B's thread),ms since round start,16.29
+2026-11-12T19:47:56,03-L07,IL2CPP,1,6000.3.25f1,round 5 D after Awaitable.MainThreadAsync,thread,main
+2026-11-12T19:47:56,03-L07,IL2CPP,1,6000.3.25f1,round 5 D after Awaitable.MainThreadAsync,thread id,1
+2026-11-12T19:47:56,03-L07,IL2CPP,1,6000.3.25f1,round 5 D after Awaitable.MainThreadAsync,SynchronizationContext,UnitySynchronizationContext
+2026-11-12T19:47:56,03-L07,IL2CPP,1,6000.3.25f1,round 5 D after Awaitable.MainThreadAsync,frame,2682
+2026-11-12T19:47:56,03-L07,IL2CPP,1,6000.3.25f1,round 5 D after Awaitable.MainThreadAsync,where,Update/ScriptRunDelayedTasks
+2026-11-12T19:47:56,03-L07,IL2CPP,1,6000.3.25f1,round 5 D after Awaitable.MainThreadAsync,ms since round start,16.376
+2026-11-12T19:47:56,03-L07,IL2CPP,1,6000.3.25f1,round 5 E after Task.Delay (from main),thread,main
+2026-11-12T19:47:56,03-L07,IL2CPP,1,6000.3.25f1,round 5 E after Task.Delay (from main),thread id,1
+2026-11-12T19:47:56,03-L07,IL2CPP,1,6000.3.25f1,round 5 E after Task.Delay (from main),SynchronizationContext,UnitySynchronizationContext
+2026-11-12T19:47:56,03-L07,IL2CPP,1,6000.3.25f1,round 5 E after Task.Delay (from main),frame,2944
+2026-11-12T19:47:56,03-L07,IL2CPP,1,6000.3.25f1,round 5 E after Task.Delay (from main),where,Update/ScriptRunDelayedTasks
+2026-11-12T19:47:56,03-L07,IL2CPP,1,6000.3.25f1,round 5 E after Task.Delay (from main),ms since round start,26.799
+2026-11-12T19:47:56,03-L07,IL2CPP,1,6000.3.25f1,round 5 F after Awaitable.BackgroundThreadAsync,thread,worker(pool)
+2026-11-12T19:47:56,03-L07,IL2CPP,1,6000.3.25f1,round 5 F after Awaitable.BackgroundThreadAsync,thread id,23
+2026-11-12T19:47:56,03-L07,IL2CPP,1,6000.3.25f1,round 5 F after Awaitable.BackgroundThreadAsync,SynchronizationContext,null
+2026-11-12T19:47:56,03-L07,IL2CPP,1,6000.3.25f1,round 5 F after Awaitable.BackgroundThreadAsync,frame,-
+2026-11-12T19:47:56,03-L07,IL2CPP,1,6000.3.25f1,round 5 F after Awaitable.BackgroundThreadAsync,where,-
+2026-11-12T19:47:56,03-L07,IL2CPP,1,6000.3.25f1,round 5 F after Awaitable.BackgroundThreadAsync,ms since round start,26.828
+2026-11-12T19:47:56,03-L07,IL2CPP,1,6000.3.25f1,round 5 G after Awaitable.MainThreadAsync,thread,main
+2026-11-12T19:47:56,03-L07,IL2CPP,1,6000.3.25f1,round 5 G after Awaitable.MainThreadAsync,thread id,1
+2026-11-12T19:47:56,03-L07,IL2CPP,1,6000.3.25f1,round 5 G after Awaitable.MainThreadAsync,SynchronizationContext,UnitySynchronizationContext
+2026-11-12T19:47:56,03-L07,IL2CPP,1,6000.3.25f1,round 5 G after Awaitable.MainThreadAsync,frame,2945
+2026-11-12T19:47:56,03-L07,IL2CPP,1,6000.3.25f1,round 5 G after Awaitable.MainThreadAsync,where,Update/ScriptRunDelayedTasks
+2026-11-12T19:47:56,03-L07,IL2CPP,1,6000.3.25f1,round 5 G after Awaitable.MainThreadAsync,ms since round start,26.923
