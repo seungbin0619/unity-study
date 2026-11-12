@@ -117,3 +117,129 @@ run_time,lab,backend,dev_build,unity,condition,metric,value
 2026-11-12T17:52:53,03-L06,IL2CPP,1,6000.3.25f1,3 same method x8,call 7 allocs,1
 2026-11-12T17:52:53,03-L06,IL2CPP,1,6000.3.25f1,3 same method x8,call 8 bytes,48
 2026-11-12T17:52:53,03-L06,IL2CPP,1,6000.3.25f1,3 same method x8,call 8 allocs,1
+2026-11-12T18:45:49,03-L06,IL2CPP,1,6000.3.25f1,1 per-iteration None,frames,120
+2026-11-12T18:45:49,03-L06,IL2CPP,1,6000.3.25f1,1 per-iteration None,seconds,0.007
+2026-11-12T18:45:49,03-L06,IL2CPP,1,6000.3.25f1,1 per-iteration None,iterations,0
+2026-11-12T18:45:49,03-L06,IL2CPP,1,6000.3.25f1,1 per-iteration None,GC bytes total,0
+2026-11-12T18:45:49,03-L06,IL2CPP,1,6000.3.25f1,1 per-iteration None,GC alloc count total,0
+2026-11-12T18:45:49,03-L06,IL2CPP,1,6000.3.25f1,1 per-iteration None,GC bytes per frame,0
+2026-11-12T18:45:49,03-L06,IL2CPP,1,6000.3.25f1,1 per-iteration None,GC bytes per iteration,-
+2026-11-12T18:45:49,03-L06,IL2CPP,1,6000.3.25f1,1 per-iteration None,GC allocs per iteration,-
+2026-11-12T18:45:49,03-L06,IL2CPP,1,6000.3.25f1,1 per-iteration CoNull,frames,120
+2026-11-12T18:45:49,03-L06,IL2CPP,1,6000.3.25f1,1 per-iteration CoNull,seconds,0.013
+2026-11-12T18:45:49,03-L06,IL2CPP,1,6000.3.25f1,1 per-iteration CoNull,iterations,12100
+2026-11-12T18:45:49,03-L06,IL2CPP,1,6000.3.25f1,1 per-iteration CoNull,GC bytes total,0
+2026-11-12T18:45:49,03-L06,IL2CPP,1,6000.3.25f1,1 per-iteration CoNull,GC alloc count total,0
+2026-11-12T18:45:49,03-L06,IL2CPP,1,6000.3.25f1,1 per-iteration CoNull,GC bytes per frame,0
+2026-11-12T18:45:49,03-L06,IL2CPP,1,6000.3.25f1,1 per-iteration CoNull,GC bytes per iteration,0
+2026-11-12T18:45:49,03-L06,IL2CPP,1,6000.3.25f1,1 per-iteration CoNull,GC allocs per iteration,0
+2026-11-12T18:45:49,03-L06,IL2CPP,1,6000.3.25f1,1 per-iteration CoZero,frames,120
+2026-11-12T18:45:49,03-L06,IL2CPP,1,6000.3.25f1,1 per-iteration CoZero,seconds,0.023
+2026-11-12T18:45:49,03-L06,IL2CPP,1,6000.3.25f1,1 per-iteration CoZero,iterations,12100
+2026-11-12T18:45:49,03-L06,IL2CPP,1,6000.3.25f1,1 per-iteration CoZero,GC bytes total,240000
+2026-11-12T18:45:49,03-L06,IL2CPP,1,6000.3.25f1,1 per-iteration CoZero,GC alloc count total,12000
+2026-11-12T18:45:49,03-L06,IL2CPP,1,6000.3.25f1,1 per-iteration CoZero,GC bytes per frame,2000
+2026-11-12T18:45:49,03-L06,IL2CPP,1,6000.3.25f1,1 per-iteration CoZero,GC bytes per iteration,19.835
+2026-11-12T18:45:49,03-L06,IL2CPP,1,6000.3.25f1,1 per-iteration CoZero,GC allocs per iteration,0.992
+2026-11-12T18:45:49,03-L06,IL2CPP,1,6000.3.25f1,1 per-iteration CoZeroGeneric,frames,120
+2026-11-12T18:45:49,03-L06,IL2CPP,1,6000.3.25f1,1 per-iteration CoZeroGeneric,seconds,0.018
+2026-11-12T18:45:49,03-L06,IL2CPP,1,6000.3.25f1,1 per-iteration CoZeroGeneric,iterations,12100
+2026-11-12T18:45:49,03-L06,IL2CPP,1,6000.3.25f1,1 per-iteration CoZeroGeneric,GC bytes total,240000
+2026-11-12T18:45:49,03-L06,IL2CPP,1,6000.3.25f1,1 per-iteration CoZeroGeneric,GC alloc count total,12000
+2026-11-12T18:45:49,03-L06,IL2CPP,1,6000.3.25f1,1 per-iteration CoZeroGeneric,GC bytes per frame,2000
+2026-11-12T18:45:49,03-L06,IL2CPP,1,6000.3.25f1,1 per-iteration CoZeroGeneric,GC bytes per iteration,19.835
+2026-11-12T18:45:49,03-L06,IL2CPP,1,6000.3.25f1,1 per-iteration CoZeroGeneric,GC allocs per iteration,0.992
+2026-11-12T18:45:49,03-L06,IL2CPP,1,6000.3.25f1,1 per-iteration CoNewWait,frames,5666
+2026-11-12T18:45:49,03-L06,IL2CPP,1,6000.3.25f1,1 per-iteration CoNewWait,seconds,0.299
+2026-11-12T18:45:49,03-L06,IL2CPP,1,6000.3.25f1,1 per-iteration CoNewWait,iterations,3000
+2026-11-12T18:45:49,03-L06,IL2CPP,1,6000.3.25f1,1 per-iteration CoNewWait,GC bytes total,72000
+2026-11-12T18:45:49,03-L06,IL2CPP,1,6000.3.25f1,1 per-iteration CoNewWait,GC alloc count total,3000
+2026-11-12T18:45:49,03-L06,IL2CPP,1,6000.3.25f1,1 per-iteration CoNewWait,GC bytes per frame,12.707
+2026-11-12T18:45:49,03-L06,IL2CPP,1,6000.3.25f1,1 per-iteration CoNewWait,GC bytes per iteration,24
+2026-11-12T18:45:49,03-L06,IL2CPP,1,6000.3.25f1,1 per-iteration CoNewWait,GC allocs per iteration,1
+2026-11-12T18:45:49,03-L06,IL2CPP,1,6000.3.25f1,1 per-iteration CoCachedWait,frames,5567
+2026-11-12T18:45:49,03-L06,IL2CPP,1,6000.3.25f1,1 per-iteration CoCachedWait,seconds,0.298
+2026-11-12T18:45:49,03-L06,IL2CPP,1,6000.3.25f1,1 per-iteration CoCachedWait,iterations,3000
+2026-11-12T18:45:49,03-L06,IL2CPP,1,6000.3.25f1,1 per-iteration CoCachedWait,GC bytes total,0
+2026-11-12T18:45:49,03-L06,IL2CPP,1,6000.3.25f1,1 per-iteration CoCachedWait,GC alloc count total,0
+2026-11-12T18:45:49,03-L06,IL2CPP,1,6000.3.25f1,1 per-iteration CoCachedWait,GC bytes per frame,0
+2026-11-12T18:45:49,03-L06,IL2CPP,1,6000.3.25f1,1 per-iteration CoCachedWait,GC bytes per iteration,0
+2026-11-12T18:45:49,03-L06,IL2CPP,1,6000.3.25f1,1 per-iteration CoCachedWait,GC allocs per iteration,0
+2026-11-12T18:45:49,03-L06,IL2CPP,1,6000.3.25f1,1 per-iteration AwNextFrame,frames,120
+2026-11-12T18:45:49,03-L06,IL2CPP,1,6000.3.25f1,1 per-iteration AwNextFrame,seconds,0.041
+2026-11-12T18:45:49,03-L06,IL2CPP,1,6000.3.25f1,1 per-iteration AwNextFrame,iterations,12100
+2026-11-12T18:45:49,03-L06,IL2CPP,1,6000.3.25f1,1 per-iteration AwNextFrame,GC bytes total,0
+2026-11-12T18:45:49,03-L06,IL2CPP,1,6000.3.25f1,1 per-iteration AwNextFrame,GC alloc count total,0
+2026-11-12T18:45:49,03-L06,IL2CPP,1,6000.3.25f1,1 per-iteration AwNextFrame,GC bytes per frame,0
+2026-11-12T18:45:49,03-L06,IL2CPP,1,6000.3.25f1,1 per-iteration AwNextFrame,GC bytes per iteration,0
+2026-11-12T18:45:49,03-L06,IL2CPP,1,6000.3.25f1,1 per-iteration AwNextFrame,GC allocs per iteration,0
+2026-11-12T18:45:49,03-L06,IL2CPP,1,6000.3.25f1,1 per-iteration TaskYield,frames,120
+2026-11-12T18:45:49,03-L06,IL2CPP,1,6000.3.25f1,1 per-iteration TaskYield,seconds,0.016
+2026-11-12T18:45:49,03-L06,IL2CPP,1,6000.3.25f1,1 per-iteration TaskYield,iterations,12100
+2026-11-12T18:45:49,03-L06,IL2CPP,1,6000.3.25f1,1 per-iteration TaskYield,GC bytes total,0
+2026-11-12T18:45:49,03-L06,IL2CPP,1,6000.3.25f1,1 per-iteration TaskYield,GC alloc count total,0
+2026-11-12T18:45:49,03-L06,IL2CPP,1,6000.3.25f1,1 per-iteration TaskYield,GC bytes per frame,0
+2026-11-12T18:45:49,03-L06,IL2CPP,1,6000.3.25f1,1 per-iteration TaskYield,GC bytes per iteration,0
+2026-11-12T18:45:49,03-L06,IL2CPP,1,6000.3.25f1,1 per-iteration TaskYield,GC allocs per iteration,0
+2026-11-12T18:45:49,03-L06,IL2CPP,1,6000.3.25f1,2 per-start Coroutine,round 1 bytes per start,64
+2026-11-12T18:45:49,03-L06,IL2CPP,1,6000.3.25f1,2 per-start Coroutine,round 1 allocs per start,2
+2026-11-12T18:45:49,03-L06,IL2CPP,1,6000.3.25f1,2 per-start Coroutine,round 2 bytes per start,64
+2026-11-12T18:45:49,03-L06,IL2CPP,1,6000.3.25f1,2 per-start Coroutine,round 2 allocs per start,2
+2026-11-12T18:45:49,03-L06,IL2CPP,1,6000.3.25f1,2 per-start Coroutine,round 3 bytes per start,64
+2026-11-12T18:45:49,03-L06,IL2CPP,1,6000.3.25f1,2 per-start Coroutine,round 3 allocs per start,2
+2026-11-12T18:45:49,03-L06,IL2CPP,1,6000.3.25f1,2 per-start Coroutine,round 4 bytes per start,64
+2026-11-12T18:45:49,03-L06,IL2CPP,1,6000.3.25f1,2 per-start Coroutine,round 4 allocs per start,2
+2026-11-12T18:45:49,03-L06,IL2CPP,1,6000.3.25f1,2 per-start Coroutine,round 5 bytes per start,64
+2026-11-12T18:45:49,03-L06,IL2CPP,1,6000.3.25f1,2 per-start Coroutine,round 5 allocs per start,2
+2026-11-12T18:45:49,03-L06,IL2CPP,1,6000.3.25f1,2 per-start Awaitable,round 1 bytes per start,428.06
+2026-11-12T18:45:49,03-L06,IL2CPP,1,6000.3.25f1,2 per-start Awaitable,round 1 allocs per start,4.919
+2026-11-12T18:45:49,03-L06,IL2CPP,1,6000.3.25f1,2 per-start Awaitable,round 2 bytes per start,172.768
+2026-11-12T18:45:49,03-L06,IL2CPP,1,6000.3.25f1,2 per-start Awaitable,round 2 allocs per start,2.003
+2026-11-12T18:45:49,03-L06,IL2CPP,1,6000.3.25f1,2 per-start Awaitable,round 3 bytes per start,144
+2026-11-12T18:45:49,03-L06,IL2CPP,1,6000.3.25f1,2 per-start Awaitable,round 3 allocs per start,2
+2026-11-12T18:45:49,03-L06,IL2CPP,1,6000.3.25f1,2 per-start Awaitable,round 4 bytes per start,144
+2026-11-12T18:45:49,03-L06,IL2CPP,1,6000.3.25f1,2 per-start Awaitable,round 4 allocs per start,2
+2026-11-12T18:45:49,03-L06,IL2CPP,1,6000.3.25f1,2 per-start Awaitable,round 5 bytes per start,144
+2026-11-12T18:45:49,03-L06,IL2CPP,1,6000.3.25f1,2 per-start Awaitable,round 5 allocs per start,2
+2026-11-12T18:45:49,03-L06,IL2CPP,1,6000.3.25f1,2 per-start Task,round 1 bytes per start,381.888
+2026-11-12T18:45:49,03-L06,IL2CPP,1,6000.3.25f1,2 per-start Task,round 1 allocs per start,4.004
+2026-11-12T18:45:49,03-L06,IL2CPP,1,6000.3.25f1,2 per-start Task,round 2 bytes per start,304
+2026-11-12T18:45:49,03-L06,IL2CPP,1,6000.3.25f1,2 per-start Task,round 2 allocs per start,4
+2026-11-12T18:45:49,03-L06,IL2CPP,1,6000.3.25f1,2 per-start Task,round 3 bytes per start,304
+2026-11-12T18:45:49,03-L06,IL2CPP,1,6000.3.25f1,2 per-start Task,round 3 allocs per start,4
+2026-11-12T18:45:49,03-L06,IL2CPP,1,6000.3.25f1,2 per-start Task,round 4 bytes per start,304
+2026-11-12T18:45:49,03-L06,IL2CPP,1,6000.3.25f1,2 per-start Task,round 4 allocs per start,4
+2026-11-12T18:45:49,03-L06,IL2CPP,1,6000.3.25f1,2 per-start Task,round 5 bytes per start,304
+2026-11-12T18:45:49,03-L06,IL2CPP,1,6000.3.25f1,2 per-start Task,round 5 allocs per start,4
+2026-11-12T18:45:49,03-L06,IL2CPP,1,6000.3.25f1,3 different methods x1 each,call 1 bytes,1268
+2026-11-12T18:45:49,03-L06,IL2CPP,1,6000.3.25f1,3 different methods x1 each,call 1 allocs,20
+2026-11-12T18:45:49,03-L06,IL2CPP,1,6000.3.25f1,3 different methods x1 each,call 2 bytes,1108
+2026-11-12T18:45:49,03-L06,IL2CPP,1,6000.3.25f1,3 different methods x1 each,call 2 allocs,19
+2026-11-12T18:45:49,03-L06,IL2CPP,1,6000.3.25f1,3 different methods x1 each,call 3 bytes,1108
+2026-11-12T18:45:49,03-L06,IL2CPP,1,6000.3.25f1,3 different methods x1 each,call 3 allocs,19
+2026-11-12T18:45:49,03-L06,IL2CPP,1,6000.3.25f1,3 different methods x1 each,call 4 bytes,1108
+2026-11-12T18:45:49,03-L06,IL2CPP,1,6000.3.25f1,3 different methods x1 each,call 4 allocs,19
+2026-11-12T18:45:49,03-L06,IL2CPP,1,6000.3.25f1,3 different methods x1 each,call 5 bytes,1108
+2026-11-12T18:45:49,03-L06,IL2CPP,1,6000.3.25f1,3 different methods x1 each,call 5 allocs,19
+2026-11-12T18:45:49,03-L06,IL2CPP,1,6000.3.25f1,3 different methods x1 each,call 6 bytes,1108
+2026-11-12T18:45:49,03-L06,IL2CPP,1,6000.3.25f1,3 different methods x1 each,call 6 allocs,19
+2026-11-12T18:45:49,03-L06,IL2CPP,1,6000.3.25f1,3 different methods x1 each,call 7 bytes,1108
+2026-11-12T18:45:49,03-L06,IL2CPP,1,6000.3.25f1,3 different methods x1 each,call 7 allocs,19
+2026-11-12T18:45:49,03-L06,IL2CPP,1,6000.3.25f1,3 different methods x1 each,call 8 bytes,1108
+2026-11-12T18:45:49,03-L06,IL2CPP,1,6000.3.25f1,3 different methods x1 each,call 8 allocs,19
+2026-11-12T18:45:49,03-L06,IL2CPP,1,6000.3.25f1,3 same method x8,call 1 bytes,1396
+2026-11-12T18:45:49,03-L06,IL2CPP,1,6000.3.25f1,3 same method x8,call 1 allocs,20
+2026-11-12T18:45:49,03-L06,IL2CPP,1,6000.3.25f1,3 same method x8,call 2 bytes,48
+2026-11-12T18:45:49,03-L06,IL2CPP,1,6000.3.25f1,3 same method x8,call 2 allocs,1
+2026-11-12T18:45:49,03-L06,IL2CPP,1,6000.3.25f1,3 same method x8,call 3 bytes,48
+2026-11-12T18:45:49,03-L06,IL2CPP,1,6000.3.25f1,3 same method x8,call 3 allocs,1
+2026-11-12T18:45:49,03-L06,IL2CPP,1,6000.3.25f1,3 same method x8,call 4 bytes,48
+2026-11-12T18:45:49,03-L06,IL2CPP,1,6000.3.25f1,3 same method x8,call 4 allocs,1
+2026-11-12T18:45:49,03-L06,IL2CPP,1,6000.3.25f1,3 same method x8,call 5 bytes,48
+2026-11-12T18:45:49,03-L06,IL2CPP,1,6000.3.25f1,3 same method x8,call 5 allocs,1
+2026-11-12T18:45:49,03-L06,IL2CPP,1,6000.3.25f1,3 same method x8,call 6 bytes,48
+2026-11-12T18:45:49,03-L06,IL2CPP,1,6000.3.25f1,3 same method x8,call 6 allocs,1
+2026-11-12T18:45:49,03-L06,IL2CPP,1,6000.3.25f1,3 same method x8,call 7 bytes,48
+2026-11-12T18:45:49,03-L06,IL2CPP,1,6000.3.25f1,3 same method x8,call 7 allocs,1
+2026-11-12T18:45:49,03-L06,IL2CPP,1,6000.3.25f1,3 same method x8,call 8 bytes,48
+2026-11-12T18:45:49,03-L06,IL2CPP,1,6000.3.25f1,3 same method x8,call 8 allocs,1

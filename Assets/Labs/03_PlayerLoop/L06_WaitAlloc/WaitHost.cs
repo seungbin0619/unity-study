@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using UnityEngine;
 
@@ -31,6 +32,12 @@ namespace Labs.PlayerLoopLabs
         public IEnumerator CoZero()
         {
             while (Running) { Tick(); yield return 0; } // LAB: 의도적 — int를 object로 반환
+        }
+
+        // 확인 질문: Current가 int 필드인 제네릭 이터레이터. 엔진은 비제네릭 IEnumerator로 받는다
+        public IEnumerator<int> CoZeroGeneric()
+        {
+            while (Running) { Tick(); yield return 0; }
         }
 
         public IEnumerator CoNewWait()

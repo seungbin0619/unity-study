@@ -31,6 +31,7 @@
 | 5 | `await Awaitable.NextFrameAsync()` | 0 | 0 |
 | 6 | `await Task.Yield()` | 0 | 0 |
 
+- 추가 (같은 날, 확인 질문 검증): `IEnumerator<int>`로 선언한 `yield return 0`(`CoZeroGeneric`) — Mono·IL2CPP 모두 **반복마다 20 B, 1회** (`CoZero`와 같음). 재빌드한 실행이라 CSV에 두 번째 실행 행이 추가됨 (다른 조건 값은 첫 실행과 같음).
 - 기준선(대기자 없음): 프레임당 0 B. 2의 측정값 19.8 B는 카운트를 켠 프레임 경계 오차이고, 실제로는 반복마다 20 B, 1회.
 
 **2부 시작당** (한 프레임에 1000개 시작, 한 번 대기하고 끝남)
@@ -56,6 +57,7 @@
 ## 해석
 - **예측과 비교: 6/6 맞음.** 반복마다 할당하는 것은 2(박싱)와 3(새 객체)뿐이고, 둘 다 객체 하나(헤더 16 B + 값 4 B = 20 B)다. 5의 "최초 실행은 O?"도 맞다. 반복은 0이지만 **시작**(2부)과 **메서드를 처음 쓸 때**(3부)는 할당한다.
 - **반복 대기 쪽.** `yield return 0`이 박싱하는 이유는 `IEnumerator.Current`의 타입이 `object`라서다. 2장의 "값이 `object`/인터페이스 자리로 가면 박싱"과 같은 규칙이다. `yield return null`이나 캐시한 객체는 참조를 넘길 뿐이라 0이다. 엔진은 `Current`의 **타입**만 보고 다음 재개 위치를 정하기 때문에, 같은 `WaitForSeconds` 인스턴스를 계속 넘겨도 된다. (단, 여러 코루틴이 공유해도 되는지는 이 실습 범위 밖이다.)
+  - **`IEnumerator<int>`로 바꿔도 박싱은 그대로다.** `<>2__current`가 `int` 필드가 되어 `MoveNext`에서는 박싱이 사라진다(`__current = 0`). 대신 컴파일러가 만든 비제네릭 `IEnumerator.Current` getter가 읽을 때마다 `Box(int32)`를 한다. `StartCoroutine`은 `IEnumerator`를 받으므로 엔진은 이 getter를 반복마다 부른다. 박싱 위치가 "쓰는 쪽"에서 "읽는 쪽"으로 옮겨갈 뿐이다. **받는 쪽의 시그니처가 `object`인 한 값 타입은 어디선가 박싱된다.**
   - `Task.Yield`도 반복당 0이다. 상태 머신 상자는 첫 멈춤 때 한 번만 만들어지고, 이후 await는 같은 상자를 쓴다. `UnitySynchronizationContext`로 `Post`할 때도 반복마다 새 객체가 생기지 않았다.
   - `WaitForSeconds`가 Mono 20 B / IL2CPP 24 B로 다른 이유는 확인 필요다(같은 4 B 필드인 박싱 `int`는 둘 다 20 B).
 - **시작 쪽.** 정상 상태(3라운드 이후)에서 가장 싼 것은 코루틴(64 B)이다.

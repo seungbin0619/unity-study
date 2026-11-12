@@ -21,7 +21,7 @@ namespace Labs.PlayerLoopLabs
         const int StartCount = 1000;
         const int StartRounds = 5;
 
-        enum Wait { None, CoNull, CoZero, CoNewWait, CoCachedWait, AwNextFrame, TaskYield }
+        enum Wait { None, CoNull, CoZero, CoZeroGeneric, CoNewWait, CoCachedWait, AwNextFrame, TaskYield }
         enum Start { Coroutine, Awaitable, Task }
 
         public async Awaitable Run(LabContext ctx)
@@ -110,6 +110,7 @@ namespace Labs.PlayerLoopLabs
             {
                 case Wait.CoNull: host.StartCoroutine(host.CoNull()); break;
                 case Wait.CoZero: host.StartCoroutine(host.CoZero()); break;
+                case Wait.CoZeroGeneric: host.StartCoroutine(host.CoZeroGeneric()); break;
                 case Wait.CoNewWait: host.StartCoroutine(host.CoNewWait()); break;
                 case Wait.CoCachedWait: host.StartCoroutine(host.CoCachedWait()); break;
                 case Wait.AwNextFrame: _ = WaitHost.AwNextFrame(); break;
