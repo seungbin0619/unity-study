@@ -1,0 +1,68 @@
+run_time,lab,backend,dev_build,unity,condition,metric,value
+2026-11-12T17:06:29,03-L05,Mono,1,6000.3.25f1,-,count,10000
+2026-11-12T17:06:29,03-L05,Mono,1,6000.3.25f1,-,frames,300
+2026-11-12T17:06:29,03-L05,Mono,1,6000.3.25f1,-,Application.isBatchMode,true
+2026-11-12T17:06:29,03-L05,Mono,1,6000.3.25f1,-,Stopwatch.Frequency,10000000
+2026-11-12T17:06:29,03-L05,Mono,1,6000.3.25f1,0 baseline,region ms avg,0.0016
+2026-11-12T17:06:29,03-L05,Mono,1,6000.3.25f1,0 baseline,region ms median,0.0015
+2026-11-12T17:06:29,03-L05,Mono,1,6000.3.25f1,0 baseline,region ms min,0.0014
+2026-11-12T17:06:29,03-L05,Mono,1,6000.3.25f1,0 baseline,region ms max,0.0028
+2026-11-12T17:06:29,03-L05,Mono,1,6000.3.25f1,0 baseline,region ns per object (median),0.15
+2026-11-12T17:06:29,03-L05,Mono,1,6000.3.25f1,0 baseline,frame ms median,0.0229
+2026-11-12T17:06:29,03-L05,Mono,1,6000.3.25f1,0 baseline,GC alloc bytes per frame avg,0
+2026-11-12T17:06:29,03-L05,Mono,1,6000.3.25f1,A Update x10000,region ms avg,1.1509
+2026-11-12T17:06:29,03-L05,Mono,1,6000.3.25f1,A Update x10000,region ms median,1.0972
+2026-11-12T17:06:29,03-L05,Mono,1,6000.3.25f1,A Update x10000,region ms min,0.8952
+2026-11-12T17:06:29,03-L05,Mono,1,6000.3.25f1,A Update x10000,region ms max,2.3637
+2026-11-12T17:06:29,03-L05,Mono,1,6000.3.25f1,A Update x10000,region ns per object (median),109.72
+2026-11-12T17:06:29,03-L05,Mono,1,6000.3.25f1,A Update x10000,frame ms median,1.1883
+2026-11-12T17:06:29,03-L05,Mono,1,6000.3.25f1,A Update x10000,GC alloc bytes per frame avg,0
+2026-11-12T17:06:29,03-L05,Mono,1,6000.3.25f1,A0 empty Update x10000,region ms avg,1.035
+2026-11-12T17:06:29,03-L05,Mono,1,6000.3.25f1,A0 empty Update x10000,region ms median,1.0051
+2026-11-12T17:06:29,03-L05,Mono,1,6000.3.25f1,A0 empty Update x10000,region ms min,0.8943
+2026-11-12T17:06:29,03-L05,Mono,1,6000.3.25f1,A0 empty Update x10000,region ms max,1.8866
+2026-11-12T17:06:29,03-L05,Mono,1,6000.3.25f1,A0 empty Update x10000,region ns per object (median),100.51
+2026-11-12T17:06:29,03-L05,Mono,1,6000.3.25f1,A0 empty Update x10000,frame ms median,1.0776
+2026-11-12T17:06:29,03-L05,Mono,1,6000.3.25f1,A0 empty Update x10000,GC alloc bytes per frame avg,0
+2026-11-12T17:06:29,03-L05,Mono,1,6000.3.25f1,N no Update x10000,region ms avg,0.0017
+2026-11-12T17:06:29,03-L05,Mono,1,6000.3.25f1,N no Update x10000,region ms median,0.0015
+2026-11-12T17:06:29,03-L05,Mono,1,6000.3.25f1,N no Update x10000,region ms min,0.0013
+2026-11-12T17:06:29,03-L05,Mono,1,6000.3.25f1,N no Update x10000,region ms max,0.0273
+2026-11-12T17:06:29,03-L05,Mono,1,6000.3.25f1,N no Update x10000,region ns per object (median),0.15
+2026-11-12T17:06:29,03-L05,Mono,1,6000.3.25f1,N no Update x10000,frame ms median,0.0229
+2026-11-12T17:06:29,03-L05,Mono,1,6000.3.25f1,N no Update x10000,GC alloc bytes per frame avg,0
+2026-11-12T17:06:29,03-L05,Mono,1,6000.3.25f1,B manager -> plain x10000,region ms avg,0.0123
+2026-11-12T17:06:29,03-L05,Mono,1,6000.3.25f1,B manager -> plain x10000,region ms median,0.0121
+2026-11-12T17:06:29,03-L05,Mono,1,6000.3.25f1,B manager -> plain x10000,region ms min,0.0111
+2026-11-12T17:06:29,03-L05,Mono,1,6000.3.25f1,B manager -> plain x10000,region ms max,0.0453
+2026-11-12T17:06:29,03-L05,Mono,1,6000.3.25f1,B manager -> plain x10000,region ns per object (median),1.21
+2026-11-12T17:06:29,03-L05,Mono,1,6000.3.25f1,B manager -> plain x10000,frame ms median,0.0338
+2026-11-12T17:06:29,03-L05,Mono,1,6000.3.25f1,B manager -> plain x10000,GC alloc bytes per frame avg,0
+2026-11-12T17:06:29,03-L05,Mono,1,6000.3.25f1,B2 manager -> MonoBehaviour.Tick x10000,region ms avg,0.0126
+2026-11-12T17:06:29,03-L05,Mono,1,6000.3.25f1,B2 manager -> MonoBehaviour.Tick x10000,region ms median,0.0118
+2026-11-12T17:06:29,03-L05,Mono,1,6000.3.25f1,B2 manager -> MonoBehaviour.Tick x10000,region ms min,0.0113
+2026-11-12T17:06:29,03-L05,Mono,1,6000.3.25f1,B2 manager -> MonoBehaviour.Tick x10000,region ms max,0.0406
+2026-11-12T17:06:29,03-L05,Mono,1,6000.3.25f1,B2 manager -> MonoBehaviour.Tick x10000,region ns per object (median),1.18
+2026-11-12T17:06:29,03-L05,Mono,1,6000.3.25f1,B2 manager -> MonoBehaviour.Tick x10000,frame ms median,0.0337
+2026-11-12T17:06:29,03-L05,Mono,1,6000.3.25f1,B2 manager -> MonoBehaviour.Tick x10000,GC alloc bytes per frame avg,0
+2026-11-12T17:06:29,03-L05,Mono,1,6000.3.25f1,C PlayerLoop system -> plain x10000,region ms avg,0.0123
+2026-11-12T17:06:29,03-L05,Mono,1,6000.3.25f1,C PlayerLoop system -> plain x10000,region ms median,0.0117
+2026-11-12T17:06:29,03-L05,Mono,1,6000.3.25f1,C PlayerLoop system -> plain x10000,region ms min,0.0111
+2026-11-12T17:06:29,03-L05,Mono,1,6000.3.25f1,C PlayerLoop system -> plain x10000,region ms max,0.0968
+2026-11-12T17:06:29,03-L05,Mono,1,6000.3.25f1,C PlayerLoop system -> plain x10000,region ns per object (median),1.17
+2026-11-12T17:06:29,03-L05,Mono,1,6000.3.25f1,C PlayerLoop system -> plain x10000,frame ms median,0.0324
+2026-11-12T17:06:29,03-L05,Mono,1,6000.3.25f1,C PlayerLoop system -> plain x10000,GC alloc bytes per frame avg,0
+2026-11-12T17:06:29,03-L05,Mono,1,6000.3.25f1,0 baseline (again),region ms avg,0.0015
+2026-11-12T17:06:29,03-L05,Mono,1,6000.3.25f1,0 baseline (again),region ms median,0.0015
+2026-11-12T17:06:29,03-L05,Mono,1,6000.3.25f1,0 baseline (again),region ms min,0.0013
+2026-11-12T17:06:29,03-L05,Mono,1,6000.3.25f1,0 baseline (again),region ms max,0.0038
+2026-11-12T17:06:29,03-L05,Mono,1,6000.3.25f1,0 baseline (again),region ns per object (median),0.15
+2026-11-12T17:06:29,03-L05,Mono,1,6000.3.25f1,0 baseline (again),frame ms median,0.0216
+2026-11-12T17:06:29,03-L05,Mono,1,6000.3.25f1,0 baseline (again),GC alloc bytes per frame avg,0
+2026-11-12T17:06:29,03-L05,Mono,1,6000.3.25f1,A Update x10000 (again),region ms avg,0.9701
+2026-11-12T17:06:29,03-L05,Mono,1,6000.3.25f1,A Update x10000 (again),region ms median,0.9482
+2026-11-12T17:06:29,03-L05,Mono,1,6000.3.25f1,A Update x10000 (again),region ms min,0.8796
+2026-11-12T17:06:29,03-L05,Mono,1,6000.3.25f1,A Update x10000 (again),region ms max,1.8879
+2026-11-12T17:06:29,03-L05,Mono,1,6000.3.25f1,A Update x10000 (again),region ns per object (median),94.82
+2026-11-12T17:06:29,03-L05,Mono,1,6000.3.25f1,A Update x10000 (again),frame ms median,1.0101
+2026-11-12T17:06:29,03-L05,Mono,1,6000.3.25f1,A Update x10000 (again),GC alloc bytes per frame avg,0

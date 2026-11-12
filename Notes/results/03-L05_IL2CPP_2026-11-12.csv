@@ -1,0 +1,68 @@
+run_time,lab,backend,dev_build,unity,condition,metric,value
+2026-11-12T17:08:54,03-L05,IL2CPP,1,6000.3.25f1,-,count,10000
+2026-11-12T17:08:54,03-L05,IL2CPP,1,6000.3.25f1,-,frames,300
+2026-11-12T17:08:54,03-L05,IL2CPP,1,6000.3.25f1,-,Application.isBatchMode,true
+2026-11-12T17:08:54,03-L05,IL2CPP,1,6000.3.25f1,-,Stopwatch.Frequency,10000000
+2026-11-12T17:08:54,03-L05,IL2CPP,1,6000.3.25f1,0 baseline,region ms avg,0.0013
+2026-11-12T17:08:54,03-L05,IL2CPP,1,6000.3.25f1,0 baseline,region ms median,0.0013
+2026-11-12T17:08:54,03-L05,IL2CPP,1,6000.3.25f1,0 baseline,region ms min,0.0011
+2026-11-12T17:08:54,03-L05,IL2CPP,1,6000.3.25f1,0 baseline,region ms max,0.0016
+2026-11-12T17:08:54,03-L05,IL2CPP,1,6000.3.25f1,0 baseline,region ns per object (median),0.13
+2026-11-12T17:08:54,03-L05,IL2CPP,1,6000.3.25f1,0 baseline,frame ms median,0.0209
+2026-11-12T17:08:54,03-L05,IL2CPP,1,6000.3.25f1,0 baseline,GC alloc bytes per frame avg,0
+2026-11-12T17:08:54,03-L05,IL2CPP,1,6000.3.25f1,A Update x10000,region ms avg,0.7104
+2026-11-12T17:08:54,03-L05,IL2CPP,1,6000.3.25f1,A Update x10000,region ms median,0.694
+2026-11-12T17:08:54,03-L05,IL2CPP,1,6000.3.25f1,A Update x10000,region ms min,0.6508
+2026-11-12T17:08:54,03-L05,IL2CPP,1,6000.3.25f1,A Update x10000,region ms max,1.7424
+2026-11-12T17:08:54,03-L05,IL2CPP,1,6000.3.25f1,A Update x10000,region ns per object (median),69.4
+2026-11-12T17:08:54,03-L05,IL2CPP,1,6000.3.25f1,A Update x10000,frame ms median,0.7522
+2026-11-12T17:08:54,03-L05,IL2CPP,1,6000.3.25f1,A Update x10000,GC alloc bytes per frame avg,0
+2026-11-12T17:08:54,03-L05,IL2CPP,1,6000.3.25f1,A0 empty Update x10000,region ms avg,0.694
+2026-11-12T17:08:54,03-L05,IL2CPP,1,6000.3.25f1,A0 empty Update x10000,region ms median,0.6837
+2026-11-12T17:08:54,03-L05,IL2CPP,1,6000.3.25f1,A0 empty Update x10000,region ms min,0.6347
+2026-11-12T17:08:54,03-L05,IL2CPP,1,6000.3.25f1,A0 empty Update x10000,region ms max,1.3905
+2026-11-12T17:08:54,03-L05,IL2CPP,1,6000.3.25f1,A0 empty Update x10000,region ns per object (median),68.37
+2026-11-12T17:08:54,03-L05,IL2CPP,1,6000.3.25f1,A0 empty Update x10000,frame ms median,0.7416
+2026-11-12T17:08:54,03-L05,IL2CPP,1,6000.3.25f1,A0 empty Update x10000,GC alloc bytes per frame avg,0
+2026-11-12T17:08:54,03-L05,IL2CPP,1,6000.3.25f1,N no Update x10000,region ms avg,0.0013
+2026-11-12T17:08:54,03-L05,IL2CPP,1,6000.3.25f1,N no Update x10000,region ms median,0.0013
+2026-11-12T17:08:54,03-L05,IL2CPP,1,6000.3.25f1,N no Update x10000,region ms min,0.0012
+2026-11-12T17:08:54,03-L05,IL2CPP,1,6000.3.25f1,N no Update x10000,region ms max,0.0027
+2026-11-12T17:08:54,03-L05,IL2CPP,1,6000.3.25f1,N no Update x10000,region ns per object (median),0.13
+2026-11-12T17:08:54,03-L05,IL2CPP,1,6000.3.25f1,N no Update x10000,frame ms median,0.0225
+2026-11-12T17:08:54,03-L05,IL2CPP,1,6000.3.25f1,N no Update x10000,GC alloc bytes per frame avg,0
+2026-11-12T17:08:54,03-L05,IL2CPP,1,6000.3.25f1,B manager -> plain x10000,region ms avg,0.0104
+2026-11-12T17:08:54,03-L05,IL2CPP,1,6000.3.25f1,B manager -> plain x10000,region ms median,0.0103
+2026-11-12T17:08:54,03-L05,IL2CPP,1,6000.3.25f1,B manager -> plain x10000,region ms min,0.0098
+2026-11-12T17:08:54,03-L05,IL2CPP,1,6000.3.25f1,B manager -> plain x10000,region ms max,0.0161
+2026-11-12T17:08:54,03-L05,IL2CPP,1,6000.3.25f1,B manager -> plain x10000,region ns per object (median),1.03
+2026-11-12T17:08:54,03-L05,IL2CPP,1,6000.3.25f1,B manager -> plain x10000,frame ms median,0.0306
+2026-11-12T17:08:54,03-L05,IL2CPP,1,6000.3.25f1,B manager -> plain x10000,GC alloc bytes per frame avg,0
+2026-11-12T17:08:54,03-L05,IL2CPP,1,6000.3.25f1,B2 manager -> MonoBehaviour.Tick x10000,region ms avg,0.0122
+2026-11-12T17:08:54,03-L05,IL2CPP,1,6000.3.25f1,B2 manager -> MonoBehaviour.Tick x10000,region ms median,0.0111
+2026-11-12T17:08:54,03-L05,IL2CPP,1,6000.3.25f1,B2 manager -> MonoBehaviour.Tick x10000,region ms min,0.0105
+2026-11-12T17:08:54,03-L05,IL2CPP,1,6000.3.25f1,B2 manager -> MonoBehaviour.Tick x10000,region ms max,0.0262
+2026-11-12T17:08:54,03-L05,IL2CPP,1,6000.3.25f1,B2 manager -> MonoBehaviour.Tick x10000,region ns per object (median),1.11
+2026-11-12T17:08:54,03-L05,IL2CPP,1,6000.3.25f1,B2 manager -> MonoBehaviour.Tick x10000,frame ms median,0.0328
+2026-11-12T17:08:54,03-L05,IL2CPP,1,6000.3.25f1,B2 manager -> MonoBehaviour.Tick x10000,GC alloc bytes per frame avg,0
+2026-11-12T17:08:54,03-L05,IL2CPP,1,6000.3.25f1,C PlayerLoop system -> plain x10000,region ms avg,0.0114
+2026-11-12T17:08:54,03-L05,IL2CPP,1,6000.3.25f1,C PlayerLoop system -> plain x10000,region ms median,0.0111
+2026-11-12T17:08:54,03-L05,IL2CPP,1,6000.3.25f1,C PlayerLoop system -> plain x10000,region ms min,0.0106
+2026-11-12T17:08:54,03-L05,IL2CPP,1,6000.3.25f1,C PlayerLoop system -> plain x10000,region ms max,0.019
+2026-11-12T17:08:54,03-L05,IL2CPP,1,6000.3.25f1,C PlayerLoop system -> plain x10000,region ns per object (median),1.11
+2026-11-12T17:08:54,03-L05,IL2CPP,1,6000.3.25f1,C PlayerLoop system -> plain x10000,frame ms median,0.0319
+2026-11-12T17:08:54,03-L05,IL2CPP,1,6000.3.25f1,C PlayerLoop system -> plain x10000,GC alloc bytes per frame avg,0
+2026-11-12T17:08:54,03-L05,IL2CPP,1,6000.3.25f1,0 baseline (again),region ms avg,0.0013
+2026-11-12T17:08:54,03-L05,IL2CPP,1,6000.3.25f1,0 baseline (again),region ms median,0.0013
+2026-11-12T17:08:54,03-L05,IL2CPP,1,6000.3.25f1,0 baseline (again),region ms min,0.0012
+2026-11-12T17:08:54,03-L05,IL2CPP,1,6000.3.25f1,0 baseline (again),region ms max,0.0018
+2026-11-12T17:08:54,03-L05,IL2CPP,1,6000.3.25f1,0 baseline (again),region ns per object (median),0.13
+2026-11-12T17:08:54,03-L05,IL2CPP,1,6000.3.25f1,0 baseline (again),frame ms median,0.0222
+2026-11-12T17:08:54,03-L05,IL2CPP,1,6000.3.25f1,0 baseline (again),GC alloc bytes per frame avg,0
+2026-11-12T17:08:54,03-L05,IL2CPP,1,6000.3.25f1,A Update x10000 (again),region ms avg,0.7028
+2026-11-12T17:08:54,03-L05,IL2CPP,1,6000.3.25f1,A Update x10000 (again),region ms median,0.6983
+2026-11-12T17:08:54,03-L05,IL2CPP,1,6000.3.25f1,A Update x10000 (again),region ms min,0.6713
+2026-11-12T17:08:54,03-L05,IL2CPP,1,6000.3.25f1,A Update x10000 (again),region ms max,1.0561
+2026-11-12T17:08:54,03-L05,IL2CPP,1,6000.3.25f1,A Update x10000 (again),region ns per object (median),69.83
+2026-11-12T17:08:54,03-L05,IL2CPP,1,6000.3.25f1,A Update x10000 (again),frame ms median,0.7515
+2026-11-12T17:08:54,03-L05,IL2CPP,1,6000.3.25f1,A Update x10000 (again),GC alloc bytes per frame avg,0

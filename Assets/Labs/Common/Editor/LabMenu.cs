@@ -78,6 +78,9 @@ namespace Labs.Editor
         [MenuItem("Labs/03/L04 Fixed Catch Up")]
         static void Run03L04() => Run("03-L04");
 
+        [MenuItem("Labs/03/L05 Update Cost")]
+        static void Run03L05() => Run("03-L05");
+
         public static void Run(string labId)
         {
             if (EditorApplication.isPlaying)

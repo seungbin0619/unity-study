@@ -147,7 +147,8 @@ class Enemy
 | `PlayerLoopSystem` | 트리의 노드(struct). `type`(식별용 마커 타입), `subSystemList`(자식 배열), `updateDelegate`(매니지드 콜백), `updateFunction`(네이티브 함수 포인터, `IntPtr`), `loopConditionFunction`(반복 조건, default 트리에서는 `FixedUpdate` 단계만 설정) | `type`은 실행되는 코드가 아니라 이름표. 엔진 시스템은 `UnityEngine.PlayerLoop` 네임스페이스의 빈 struct |
 | 단계 / 하위 시스템 (phase / subsystem) | 최상위 노드(단계)와 그 아래에서 실제 일을 하는 노드 | `Update()` 콜백도 "Update 단계 안의 하위 시스템 하나"가 부르는 것 |
 | 커스텀 시스템 (custom system) | `updateDelegate`에 C# 메서드를 넣어 트리에 끼운 노드 | 매 프레임 **네이티브 → 매니지드** 호출 1회. 1장 경계 비용의 반대 방향 |
-| Unity 메시지 / 매직 메서드 (message / magic method) | `Update`, `Awake` 등 이름으로 찾아 부르는 콜백. 인터페이스·가상 메서드가 아님 | 매 프레임 리플렉션으로 찾지 않음. 스크립트 로드 때 조사해 둔 정보로 호출 |
+| Unity 메시지 / 매직 메서드 (message / magic method) | `Update`, `Awake` 등 이름으로 찾아 부르는 콜백. 인터페이스·가상 메서드가 아님 | 매 프레임 리플렉션으로 찾지 않음. 스크립트 로드 때 조사해 둔 정보로 호출. `Update`가 **정의된** 컴포넌트만 호출 목록에 들어감 → 빈 `Update`도 객체당 약 70\~100 ns, 없으면 0 ([03-L05](../Assets/Labs/03_PlayerLoop/L05_UpdateCost/README.md)) |
+| Update 매니저 (update manager) | 객체마다 `Update`를 두지 않고, 매니저 하나(또는 커스텀 시스템)가 배열을 돌며 일반 메서드를 부르는 패턴 | 이득의 원천은 "`MonoBehaviour`를 안 써서"가 아니라 "엔진 → 스크립트 호출을 1만 번에서 1번으로". 대신 enabled·파괴 확인, 예외 격리, 실행 순서를 직접 책임짐 ([03-L05](../Assets/Labs/03_PlayerLoop/L05_UpdateCost/README.md)) |
 | 코루틴 (coroutine) | 이터레이터(`IEnumerator`)를 엔진이 `MoveNext()`로 나눠 실행하는 것 | 실행 주체는 엔진의 코루틴 스케줄러. `yield` 값의 **종류**가 다음 재개 시점을 정함. 첫 구간은 `StartCoroutine` 안에서 동기 실행, 이후 재개는 `ScriptRunDelayed*` 시스템 ([03-L02](../Assets/Labs/03_PlayerLoop/L02_ResumeMap/README.md)) |
 | yield instruction | 코루틴이 `yield return`으로 돌려주는 대기 조건 (`null`, `WaitForSeconds`, `WaitForEndOfFrame` 등) | 값 타입을 `yield return`하면 `object`로 반환 → 박싱 대상 |
 | `Awaitable` | Unity 6의 엔진 전용 awaitable 타입 (2023.1 도입). 인스턴스를 풀링함 | 풀링되므로 **같은 인스턴스를 두 번 await하면 안 됨** (공식 문서) |
