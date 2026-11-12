@@ -151,7 +151,7 @@ class Enemy
 | Update 매니저 (update manager) | 객체마다 `Update`를 두지 않고, 매니저 하나(또는 커스텀 시스템)가 배열을 돌며 일반 메서드를 부르는 패턴 | 이득의 원천은 "`MonoBehaviour`를 안 써서"가 아니라 "엔진 → 스크립트 호출을 1만 번에서 1번으로". 대신 enabled·파괴 확인, 예외 격리, 실행 순서를 직접 책임짐 ([03-L05](../Assets/Labs/03_PlayerLoop/L05_UpdateCost/README.md)) |
 | 코루틴 (coroutine) | 이터레이터(`IEnumerator`)를 엔진이 `MoveNext()`로 나눠 실행하는 것 | 실행 주체는 엔진의 코루틴 스케줄러. `yield` 값의 **종류**가 다음 재개 시점을 정함. 첫 구간은 `StartCoroutine` 안에서 동기 실행, 이후 재개는 `ScriptRunDelayed*` 시스템 ([03-L02](../Assets/Labs/03_PlayerLoop/L02_ResumeMap/README.md)) |
 | yield instruction | 코루틴이 `yield return`으로 돌려주는 대기 조건 (`null`, `WaitForSeconds`, `WaitForEndOfFrame` 등) | 값 타입을 `yield return`하면 `object`로 반환 → 박싱 대상 |
-| `Awaitable` | Unity 6의 엔진 전용 awaitable 타입 (2023.1 도입). 인스턴스를 풀링함 | 풀링되므로 **같은 인스턴스를 두 번 await하면 안 됨** (공식 문서) |
+| `Awaitable` | Unity 6의 엔진 전용 awaitable 타입 (2023.1 도입). 인스턴스를 풀링함 | 풀링되므로 **같은 인스턴스를 두 번 await하면 안 됨** (공식 문서). 반복 await는 0 B지만 풀은 상태 머신 타입별이라 **메서드를 처음 쓸 때** 1\~2 KB, Development에서는 class 상태 머신 때문에 호출당 48 B ([03-L06](../Assets/Labs/03_PlayerLoop/L06_WaitAlloc/README.md)) |
 | continuation | `await` 다음 줄부터의 나머지 코드. 대기가 끝나면 누군가 이것을 호출해야 함 | "누가, 어느 스레드에서, 언제 부르나"가 Task·Awaitable·코루틴을 가르는 질문 |
 | async 상태 머신 (async state machine) | 컴파일러가 `async` 메서드를 바꿔 만든 타입(`<Foo>d__N`). 지역 변수는 필드, 실행 위치는 `state` 정수, 본문은 `MoveNext()` | `await` = "awaiter에 `MoveNext`를 맡기고 return". 재개 = 누군가 `MoveNext()`를 다시 부르면 `state`로 점프. CPU·IL에 await 명령은 없음. `GetAwaiter()`만 있으면 무엇이든 await 가능(패턴 기반) — `WaitForSeconds`는 없어서 불가 |
 | `StateMachineBox<TStateMachine>` | `Awaitable` 빌더가 멈춘 상태 머신 struct를 옮겨 담는 제네릭 클래스. 상태 머신을 필드에 그대로 복사하고 `MoveNext` 델리게이트를 캐시 | 제네릭 클래스의 정적 필드(`_pool`)는 **타입 인자마다 따로** → 상태 머신 타입별 풀. `object` 박싱이 아니라 "타입이 정해진 상자에 복사" (리플렉션으로 구조 확인, 재사용 실측은 03-L06) |

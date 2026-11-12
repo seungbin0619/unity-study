@@ -81,6 +81,9 @@ namespace Labs.Editor
         [MenuItem("Labs/03/L05 Update Cost")]
         static void Run03L05() => Run("03-L05");
 
+        [MenuItem("Labs/03/L06 Wait Alloc")]
+        static void Run03L06() => Run("03-L06");
+
         public static void Run(string labId)
         {
             if (EditorApplication.isPlaying)

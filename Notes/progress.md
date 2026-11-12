@@ -67,6 +67,7 @@
 - [학습자 질문] (2026-11-04) "await가 2개 이상이면 상태 머신이 어떻게 생기나?" → await **지점** 하나당 state 값 하나(0, 1, …; -1 실행 중, -2 완료). `MoveNext` 맨 앞 `switch(state)`가 각 await 바로 뒤로 점프. 같은 awaiter 타입이면 필드 `<>u__1`을 재사용(Roslyn 동작, 이 프로젝트에서 리플렉션 미확인). 상자 이동은 첫 실제 멈춤 1회뿐(이후 await는 같은 상자) — Awaitable 빌더에서도 그런지는 03-L06에서 확인. 확인 질문으로 루프 안 await의 state 수·`MoveNext` 횟수를 물음 → state 수: "인라이닝하면 3개, 아니면 1개" (조건부 정답). 정답 1개: Roslyn은 루프를 펼치지 않고 await **소스 지점** 하나당 state 하나, 반복은 `goto`로 루프 머리에 돌아가며 `i`는 필드로 보존. 인라이닝·언롤은 로워링 **뒤**(JIT/IL2CPP C++ 컴파일러) 일이라 state 구조를 못 바꿈. `MoveNext` 횟수: "4번 (반복 횟수 + 1)" 정답. 보충: 정확히는 "실제 멈춤 횟수 + 1"(await 지점 수·반복 수가 아님, `IsCompleted` 빠른 경로면 줄어듦), 1회차는 호출자 안 동기 실행·2\~4회차는 다음 프레임들의 `ScriptRunDelayedDynamicFrameRate`, 상자 이동은 첫 멈춤 1회, `Awaitable`은 반복마다 풀에서 새로 꺼냄
 - [정답 2/2] (2026-11-04) 03-L04 프레임 100 ms → `FixedUpdate` 5회, 500 ms → 16.x회·`Time.deltaTime` 0.333 — 실측 5회, 16~17 교대(평균 16.7)·0.3333 (Mono·IL2CPP). 앞서 설명한 누적 규칙과 상한을 계산에 그대로 적용함 (03-L01 이후 120fps 방향 착오 회복). 보충: 상한의 대가는 슬로모션(게임/실제 0.67), 비싼 스텝은 상한이 악순환을 끊음, `unscaledDeltaTime`은 상한 없음
 - [정답] (2026-11-12) 03-L05 A(`Update` 1만 개) / B(매니저 루프) / C(커스텀 PlayerLoop 시스템) 순서 — "B=C<A, A는 C++ 네이티브에서 C# 경계 때문". 순서·이유 모두 맞음 (실측 B ≈ C 약 1 ns/객체, A Mono 약 100 ns·IL2CPP 약 69 ns). "성능 이슈를 경계 비용 관점으로 설명" 약점을 스스로 적용함. 배수 질문은 학습자 요청("이런건 묻지마셈")으로 철회 — 앞으로 배수·수치 예측은 묻지 않음. 보충: 빈 `Update`도 같은 비용, `Update` 없으면 0, 매니저가 `MonoBehaviour`를 직접 불러도(B2) 1 ns — 비용은 `MonoBehaviour`가 아니라 엔진 호출에서 남
+- [정답 6/6] (2026-11-12) 03-L06 반복당 할당 O/X — "1 X / 2 O (박싱) / 3 O (새 객체) / 4 X / 5 X (최초 실행은 O?) / 6 X". 모두 맞음(2·3만 20\~24 B). `yield return 0` 박싱을 바로 짚음 — "인터페이스/`object` 자리 박싱" 약점 회복 신호. 5의 "최초 O?"도 맞음: 반복은 0, 시작은 Dev에서 48 B, 메서드를 처음 쓸 때 1\~2 KB. 학습자 가설(03-L05 전 기록, "async 메서드 100개를 1회씩만 쓰면 풀링 의미 없음")도 맞음 — 서로 다른 메서드는 매번 1.1\~1.7 KB(풀 인프라 생성), 같은 메서드는 2회째부터 48 B
 - [설명 들음] (2026-10-30) 검사 개수(정적)와 실행 횟수(루프 안이면 원소마다) 구분, IL2CPP는 hoist·경계 검사 제거를 하지 않음 (RyuJIT과 대비)
 
 ## 약점 (관련 실습에서 재확인)
@@ -116,6 +117,7 @@
 - 2026-11-04 03-L03 에디터 + Mono·IL2CPP(창 모드) 플레이어 실행 — [README](../Assets/Labs/03_PlayerLoop/L03_StartTiming/README.md) (에디터 실행 중 학습자가 `LateUpdate` 예측을 추가 — 결과 공개 전이라 예측으로 기록)
 - 2026-11-04 03-L04 Mono·IL2CPP 배치모드 플레이어 실행 — [README](../Assets/Labs/03_PlayerLoop/L04_FixedCatchUp/README.md) (에디터 미실행)
 - 2026-11-12 03-L05 Mono·IL2CPP 배치모드 플레이어 측정 — [README](../Assets/Labs/03_PlayerLoop/L05_UpdateCost/README.md) (에디터 미실행)
+- 2026-11-12 03-L06 Mono·IL2CPP Development 배치모드 플레이어 측정 + 생성 코드·풀 크기 리플렉션 확인 — [README](../Assets/Labs/03_PlayerLoop/L06_WaitAlloc/README.md) (Release 미측정, 1000개 동시 시작의 96 B 원인 미확인)
 
 ## Player Settings 변경 이력
 (변경 시 날짜, 항목, 원래 값 → 바꾼 값, 복원 여부)
@@ -153,3 +155,4 @@
 - 2026-11-04 Scripting Backend: Mono → IL2CPP (async 상태 머신 확인용 IL2CPP Release 빌드 동안만), **복원됨** (`Standalone: 0` 확인)
 - 2026-11-04 Scripting Backend: Mono → IL2CPP (03-L04 빌드 동안만), **복원됨** (`Standalone: 0` 확인)
 - 2026-11-12 Scripting Backend: Mono → IL2CPP (03-L05 빌드 동안만), **복원됨** (`Standalone: 0` 확인)
+- 2026-11-12 Scripting Backend: Mono → IL2CPP (03-L06 빌드 동안만), **복원됨** (`Standalone: 0` 확인)
