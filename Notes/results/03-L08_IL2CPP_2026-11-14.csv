@@ -1,0 +1,154 @@
+run_time,lab,backend,dev_build,unity,condition,metric,value
+2026-11-14T15:31:11,03-L08,IL2CPP,1,6000.3.25f1,Destroy,op frame,4
+2026-11-14T15:31:11,03-L08,IL2CPP,1,6000.3.25f1,Destroy,restore frame,9
+2026-11-14T15:31:11,03-L08,IL2CPP,1,6000.3.25f1,Destroy Co,ticks before op,3
+2026-11-14T15:31:11,03-L08,IL2CPP,1,6000.3.25f1,Destroy Co,ticks op->restore,1
+2026-11-14T15:31:11,03-L08,IL2CPP,1,6000.3.25f1,Destroy Co,ticks restore->stop,0
+2026-11-14T15:31:11,03-L08,IL2CPP,1,6000.3.25f1,Destroy Co,last tick frame - op frame,0
+2026-11-14T15:31:11,03-L08,IL2CPP,1,6000.3.25f1,Destroy Co,end,still suspended
+2026-11-14T15:31:11,03-L08,IL2CPP,1,6000.3.25f1,Destroy Co,end frame - op frame,-
+2026-11-14T15:31:11,03-L08,IL2CPP,1,6000.3.25f1,Destroy Co,finally ran,no
+2026-11-14T15:31:11,03-L08,IL2CPP,1,6000.3.25f1,Destroy CoOnOtherHost,ticks before op,3
+2026-11-14T15:31:11,03-L08,IL2CPP,1,6000.3.25f1,Destroy CoOnOtherHost,ticks op->restore,5
+2026-11-14T15:31:11,03-L08,IL2CPP,1,6000.3.25f1,Destroy CoOnOtherHost,ticks restore->stop,5
+2026-11-14T15:31:11,03-L08,IL2CPP,1,6000.3.25f1,Destroy CoOnOtherHost,last tick frame - op frame,9
+2026-11-14T15:31:11,03-L08,IL2CPP,1,6000.3.25f1,Destroy CoOnOtherHost,end,stopped by flag
+2026-11-14T15:31:11,03-L08,IL2CPP,1,6000.3.25f1,Destroy CoOnOtherHost,end frame - op frame,10
+2026-11-14T15:31:11,03-L08,IL2CPP,1,6000.3.25f1,Destroy CoOnOtherHost,finally ran,yes
+2026-11-14T15:31:11,03-L08,IL2CPP,1,6000.3.25f1,Destroy Aw,ticks before op,4
+2026-11-14T15:31:11,03-L08,IL2CPP,1,6000.3.25f1,Destroy Aw,ticks op->restore,5
+2026-11-14T15:31:11,03-L08,IL2CPP,1,6000.3.25f1,Destroy Aw,ticks restore->stop,5
+2026-11-14T15:31:11,03-L08,IL2CPP,1,6000.3.25f1,Destroy Aw,last tick frame - op frame,10
+2026-11-14T15:31:11,03-L08,IL2CPP,1,6000.3.25f1,Destroy Aw,end,stopped by flag
+2026-11-14T15:31:11,03-L08,IL2CPP,1,6000.3.25f1,Destroy Aw,end frame - op frame,11
+2026-11-14T15:31:11,03-L08,IL2CPP,1,6000.3.25f1,Destroy Aw,finally ran,yes
+2026-11-14T15:31:11,03-L08,IL2CPP,1,6000.3.25f1,Destroy Task,ticks before op,4
+2026-11-14T15:31:11,03-L08,IL2CPP,1,6000.3.25f1,Destroy Task,ticks op->restore,5
+2026-11-14T15:31:11,03-L08,IL2CPP,1,6000.3.25f1,Destroy Task,ticks restore->stop,5
+2026-11-14T15:31:11,03-L08,IL2CPP,1,6000.3.25f1,Destroy Task,last tick frame - op frame,9
+2026-11-14T15:31:11,03-L08,IL2CPP,1,6000.3.25f1,Destroy Task,end,stopped by flag
+2026-11-14T15:31:11,03-L08,IL2CPP,1,6000.3.25f1,Destroy Task,end frame - op frame,10
+2026-11-14T15:31:11,03-L08,IL2CPP,1,6000.3.25f1,Destroy Task,finally ran,yes
+2026-11-14T15:31:11,03-L08,IL2CPP,1,6000.3.25f1,Destroy AwToken,ticks before op,4
+2026-11-14T15:31:11,03-L08,IL2CPP,1,6000.3.25f1,Destroy AwToken,ticks op->restore,0
+2026-11-14T15:31:11,03-L08,IL2CPP,1,6000.3.25f1,Destroy AwToken,ticks restore->stop,0
+2026-11-14T15:31:11,03-L08,IL2CPP,1,6000.3.25f1,Destroy AwToken,last tick frame - op frame,0
+2026-11-14T15:31:11,03-L08,IL2CPP,1,6000.3.25f1,Destroy AwToken,end,OperationCanceledException
+2026-11-14T15:31:11,03-L08,IL2CPP,1,6000.3.25f1,Destroy AwToken,end frame - op frame,0
+2026-11-14T15:31:11,03-L08,IL2CPP,1,6000.3.25f1,Destroy AwToken,finally ran,yes
+2026-11-14T15:31:11,03-L08,IL2CPP,1,6000.3.25f1,Destroy TaskToken,ticks before op,4
+2026-11-14T15:31:11,03-L08,IL2CPP,1,6000.3.25f1,Destroy TaskToken,ticks op->restore,1
+2026-11-14T15:31:11,03-L08,IL2CPP,1,6000.3.25f1,Destroy TaskToken,ticks restore->stop,0
+2026-11-14T15:31:11,03-L08,IL2CPP,1,6000.3.25f1,Destroy TaskToken,last tick frame - op frame,0
+2026-11-14T15:31:11,03-L08,IL2CPP,1,6000.3.25f1,Destroy TaskToken,end,OperationCanceledException
+2026-11-14T15:31:11,03-L08,IL2CPP,1,6000.3.25f1,Destroy TaskToken,end frame - op frame,1
+2026-11-14T15:31:11,03-L08,IL2CPP,1,6000.3.25f1,Destroy TaskToken,finally ran,yes
+2026-11-14T15:31:11,03-L08,IL2CPP,1,6000.3.25f1,Destroy AwTouchTransform,ticks before op,4
+2026-11-14T15:31:11,03-L08,IL2CPP,1,6000.3.25f1,Destroy AwTouchTransform,ticks op->restore,1
+2026-11-14T15:31:11,03-L08,IL2CPP,1,6000.3.25f1,Destroy AwTouchTransform,ticks restore->stop,0
+2026-11-14T15:31:11,03-L08,IL2CPP,1,6000.3.25f1,Destroy AwTouchTransform,last tick frame - op frame,1
+2026-11-14T15:31:11,03-L08,IL2CPP,1,6000.3.25f1,Destroy AwTouchTransform,end,NullReferenceException
+2026-11-14T15:31:11,03-L08,IL2CPP,1,6000.3.25f1,Destroy AwTouchTransform,end frame - op frame,1
+2026-11-14T15:31:11,03-L08,IL2CPP,1,6000.3.25f1,Destroy AwTouchTransform,finally ran,yes
+2026-11-14T15:31:11,03-L08,IL2CPP,1,6000.3.25f1,SetActiveFalse,op frame,21
+2026-11-14T15:31:11,03-L08,IL2CPP,1,6000.3.25f1,SetActiveFalse,restore frame,26
+2026-11-14T15:31:11,03-L08,IL2CPP,1,6000.3.25f1,SetActiveFalse Co,ticks before op,3
+2026-11-14T15:31:11,03-L08,IL2CPP,1,6000.3.25f1,SetActiveFalse Co,ticks op->restore,0
+2026-11-14T15:31:11,03-L08,IL2CPP,1,6000.3.25f1,SetActiveFalse Co,ticks restore->stop,0
+2026-11-14T15:31:11,03-L08,IL2CPP,1,6000.3.25f1,SetActiveFalse Co,last tick frame - op frame,-1
+2026-11-14T15:31:11,03-L08,IL2CPP,1,6000.3.25f1,SetActiveFalse Co,end,still suspended
+2026-11-14T15:31:11,03-L08,IL2CPP,1,6000.3.25f1,SetActiveFalse Co,end frame - op frame,-
+2026-11-14T15:31:11,03-L08,IL2CPP,1,6000.3.25f1,SetActiveFalse Co,finally ran,no
+2026-11-14T15:31:11,03-L08,IL2CPP,1,6000.3.25f1,SetActiveFalse CoOnOtherHost,ticks before op,3
+2026-11-14T15:31:11,03-L08,IL2CPP,1,6000.3.25f1,SetActiveFalse CoOnOtherHost,ticks op->restore,5
+2026-11-14T15:31:11,03-L08,IL2CPP,1,6000.3.25f1,SetActiveFalse CoOnOtherHost,ticks restore->stop,5
+2026-11-14T15:31:11,03-L08,IL2CPP,1,6000.3.25f1,SetActiveFalse CoOnOtherHost,last tick frame - op frame,9
+2026-11-14T15:31:11,03-L08,IL2CPP,1,6000.3.25f1,SetActiveFalse CoOnOtherHost,end,stopped by flag
+2026-11-14T15:31:11,03-L08,IL2CPP,1,6000.3.25f1,SetActiveFalse CoOnOtherHost,end frame - op frame,10
+2026-11-14T15:31:11,03-L08,IL2CPP,1,6000.3.25f1,SetActiveFalse CoOnOtherHost,finally ran,yes
+2026-11-14T15:31:11,03-L08,IL2CPP,1,6000.3.25f1,SetActiveFalse Aw,ticks before op,4
+2026-11-14T15:31:11,03-L08,IL2CPP,1,6000.3.25f1,SetActiveFalse Aw,ticks op->restore,5
+2026-11-14T15:31:11,03-L08,IL2CPP,1,6000.3.25f1,SetActiveFalse Aw,ticks restore->stop,5
+2026-11-14T15:31:11,03-L08,IL2CPP,1,6000.3.25f1,SetActiveFalse Aw,last tick frame - op frame,10
+2026-11-14T15:31:11,03-L08,IL2CPP,1,6000.3.25f1,SetActiveFalse Aw,end,stopped by flag
+2026-11-14T15:31:11,03-L08,IL2CPP,1,6000.3.25f1,SetActiveFalse Aw,end frame - op frame,11
+2026-11-14T15:31:11,03-L08,IL2CPP,1,6000.3.25f1,SetActiveFalse Aw,finally ran,yes
+2026-11-14T15:31:11,03-L08,IL2CPP,1,6000.3.25f1,SetActiveFalse Task,ticks before op,4
+2026-11-14T15:31:11,03-L08,IL2CPP,1,6000.3.25f1,SetActiveFalse Task,ticks op->restore,5
+2026-11-14T15:31:11,03-L08,IL2CPP,1,6000.3.25f1,SetActiveFalse Task,ticks restore->stop,5
+2026-11-14T15:31:11,03-L08,IL2CPP,1,6000.3.25f1,SetActiveFalse Task,last tick frame - op frame,9
+2026-11-14T15:31:11,03-L08,IL2CPP,1,6000.3.25f1,SetActiveFalse Task,end,stopped by flag
+2026-11-14T15:31:11,03-L08,IL2CPP,1,6000.3.25f1,SetActiveFalse Task,end frame - op frame,10
+2026-11-14T15:31:11,03-L08,IL2CPP,1,6000.3.25f1,SetActiveFalse Task,finally ran,yes
+2026-11-14T15:31:11,03-L08,IL2CPP,1,6000.3.25f1,SetActiveFalse AwToken,ticks before op,4
+2026-11-14T15:31:11,03-L08,IL2CPP,1,6000.3.25f1,SetActiveFalse AwToken,ticks op->restore,5
+2026-11-14T15:31:11,03-L08,IL2CPP,1,6000.3.25f1,SetActiveFalse AwToken,ticks restore->stop,5
+2026-11-14T15:31:11,03-L08,IL2CPP,1,6000.3.25f1,SetActiveFalse AwToken,last tick frame - op frame,10
+2026-11-14T15:31:11,03-L08,IL2CPP,1,6000.3.25f1,SetActiveFalse AwToken,end,stopped by flag
+2026-11-14T15:31:11,03-L08,IL2CPP,1,6000.3.25f1,SetActiveFalse AwToken,end frame - op frame,11
+2026-11-14T15:31:11,03-L08,IL2CPP,1,6000.3.25f1,SetActiveFalse AwToken,finally ran,yes
+2026-11-14T15:31:11,03-L08,IL2CPP,1,6000.3.25f1,SetActiveFalse TaskToken,ticks before op,4
+2026-11-14T15:31:11,03-L08,IL2CPP,1,6000.3.25f1,SetActiveFalse TaskToken,ticks op->restore,5
+2026-11-14T15:31:11,03-L08,IL2CPP,1,6000.3.25f1,SetActiveFalse TaskToken,ticks restore->stop,5
+2026-11-14T15:31:11,03-L08,IL2CPP,1,6000.3.25f1,SetActiveFalse TaskToken,last tick frame - op frame,9
+2026-11-14T15:31:11,03-L08,IL2CPP,1,6000.3.25f1,SetActiveFalse TaskToken,end,stopped by flag
+2026-11-14T15:31:11,03-L08,IL2CPP,1,6000.3.25f1,SetActiveFalse TaskToken,end frame - op frame,10
+2026-11-14T15:31:11,03-L08,IL2CPP,1,6000.3.25f1,SetActiveFalse TaskToken,finally ran,yes
+2026-11-14T15:31:11,03-L08,IL2CPP,1,6000.3.25f1,SetActiveFalse AwTouchTransform,ticks before op,4
+2026-11-14T15:31:11,03-L08,IL2CPP,1,6000.3.25f1,SetActiveFalse AwTouchTransform,ticks op->restore,5
+2026-11-14T15:31:11,03-L08,IL2CPP,1,6000.3.25f1,SetActiveFalse AwTouchTransform,ticks restore->stop,5
+2026-11-14T15:31:11,03-L08,IL2CPP,1,6000.3.25f1,SetActiveFalse AwTouchTransform,last tick frame - op frame,10
+2026-11-14T15:31:11,03-L08,IL2CPP,1,6000.3.25f1,SetActiveFalse AwTouchTransform,end,stopped by flag
+2026-11-14T15:31:11,03-L08,IL2CPP,1,6000.3.25f1,SetActiveFalse AwTouchTransform,end frame - op frame,11
+2026-11-14T15:31:11,03-L08,IL2CPP,1,6000.3.25f1,SetActiveFalse AwTouchTransform,finally ran,yes
+2026-11-14T15:31:11,03-L08,IL2CPP,1,6000.3.25f1,EnabledFalse,op frame,38
+2026-11-14T15:31:11,03-L08,IL2CPP,1,6000.3.25f1,EnabledFalse,restore frame,43
+2026-11-14T15:31:11,03-L08,IL2CPP,1,6000.3.25f1,EnabledFalse Co,ticks before op,3
+2026-11-14T15:31:11,03-L08,IL2CPP,1,6000.3.25f1,EnabledFalse Co,ticks op->restore,5
+2026-11-14T15:31:11,03-L08,IL2CPP,1,6000.3.25f1,EnabledFalse Co,ticks restore->stop,5
+2026-11-14T15:31:11,03-L08,IL2CPP,1,6000.3.25f1,EnabledFalse Co,last tick frame - op frame,9
+2026-11-14T15:31:11,03-L08,IL2CPP,1,6000.3.25f1,EnabledFalse Co,end,stopped by flag
+2026-11-14T15:31:11,03-L08,IL2CPP,1,6000.3.25f1,EnabledFalse Co,end frame - op frame,10
+2026-11-14T15:31:11,03-L08,IL2CPP,1,6000.3.25f1,EnabledFalse Co,finally ran,yes
+2026-11-14T15:31:11,03-L08,IL2CPP,1,6000.3.25f1,EnabledFalse CoOnOtherHost,ticks before op,3
+2026-11-14T15:31:11,03-L08,IL2CPP,1,6000.3.25f1,EnabledFalse CoOnOtherHost,ticks op->restore,5
+2026-11-14T15:31:11,03-L08,IL2CPP,1,6000.3.25f1,EnabledFalse CoOnOtherHost,ticks restore->stop,5
+2026-11-14T15:31:11,03-L08,IL2CPP,1,6000.3.25f1,EnabledFalse CoOnOtherHost,last tick frame - op frame,9
+2026-11-14T15:31:11,03-L08,IL2CPP,1,6000.3.25f1,EnabledFalse CoOnOtherHost,end,stopped by flag
+2026-11-14T15:31:11,03-L08,IL2CPP,1,6000.3.25f1,EnabledFalse CoOnOtherHost,end frame - op frame,10
+2026-11-14T15:31:11,03-L08,IL2CPP,1,6000.3.25f1,EnabledFalse CoOnOtherHost,finally ran,yes
+2026-11-14T15:31:11,03-L08,IL2CPP,1,6000.3.25f1,EnabledFalse Aw,ticks before op,4
+2026-11-14T15:31:11,03-L08,IL2CPP,1,6000.3.25f1,EnabledFalse Aw,ticks op->restore,5
+2026-11-14T15:31:11,03-L08,IL2CPP,1,6000.3.25f1,EnabledFalse Aw,ticks restore->stop,5
+2026-11-14T15:31:11,03-L08,IL2CPP,1,6000.3.25f1,EnabledFalse Aw,last tick frame - op frame,10
+2026-11-14T15:31:11,03-L08,IL2CPP,1,6000.3.25f1,EnabledFalse Aw,end,stopped by flag
+2026-11-14T15:31:11,03-L08,IL2CPP,1,6000.3.25f1,EnabledFalse Aw,end frame - op frame,11
+2026-11-14T15:31:11,03-L08,IL2CPP,1,6000.3.25f1,EnabledFalse Aw,finally ran,yes
+2026-11-14T15:31:11,03-L08,IL2CPP,1,6000.3.25f1,EnabledFalse Task,ticks before op,4
+2026-11-14T15:31:11,03-L08,IL2CPP,1,6000.3.25f1,EnabledFalse Task,ticks op->restore,5
+2026-11-14T15:31:11,03-L08,IL2CPP,1,6000.3.25f1,EnabledFalse Task,ticks restore->stop,5
+2026-11-14T15:31:11,03-L08,IL2CPP,1,6000.3.25f1,EnabledFalse Task,last tick frame - op frame,9
+2026-11-14T15:31:11,03-L08,IL2CPP,1,6000.3.25f1,EnabledFalse Task,end,stopped by flag
+2026-11-14T15:31:11,03-L08,IL2CPP,1,6000.3.25f1,EnabledFalse Task,end frame - op frame,10
+2026-11-14T15:31:11,03-L08,IL2CPP,1,6000.3.25f1,EnabledFalse Task,finally ran,yes
+2026-11-14T15:31:11,03-L08,IL2CPP,1,6000.3.25f1,EnabledFalse AwToken,ticks before op,4
+2026-11-14T15:31:11,03-L08,IL2CPP,1,6000.3.25f1,EnabledFalse AwToken,ticks op->restore,5
+2026-11-14T15:31:11,03-L08,IL2CPP,1,6000.3.25f1,EnabledFalse AwToken,ticks restore->stop,5
+2026-11-14T15:31:11,03-L08,IL2CPP,1,6000.3.25f1,EnabledFalse AwToken,last tick frame - op frame,10
+2026-11-14T15:31:11,03-L08,IL2CPP,1,6000.3.25f1,EnabledFalse AwToken,end,stopped by flag
+2026-11-14T15:31:11,03-L08,IL2CPP,1,6000.3.25f1,EnabledFalse AwToken,end frame - op frame,11
+2026-11-14T15:31:11,03-L08,IL2CPP,1,6000.3.25f1,EnabledFalse AwToken,finally ran,yes
+2026-11-14T15:31:11,03-L08,IL2CPP,1,6000.3.25f1,EnabledFalse TaskToken,ticks before op,4
+2026-11-14T15:31:11,03-L08,IL2CPP,1,6000.3.25f1,EnabledFalse TaskToken,ticks op->restore,5
+2026-11-14T15:31:11,03-L08,IL2CPP,1,6000.3.25f1,EnabledFalse TaskToken,ticks restore->stop,5
+2026-11-14T15:31:11,03-L08,IL2CPP,1,6000.3.25f1,EnabledFalse TaskToken,last tick frame - op frame,9
+2026-11-14T15:31:11,03-L08,IL2CPP,1,6000.3.25f1,EnabledFalse TaskToken,end,stopped by flag
+2026-11-14T15:31:11,03-L08,IL2CPP,1,6000.3.25f1,EnabledFalse TaskToken,end frame - op frame,10
+2026-11-14T15:31:11,03-L08,IL2CPP,1,6000.3.25f1,EnabledFalse TaskToken,finally ran,yes
+2026-11-14T15:31:11,03-L08,IL2CPP,1,6000.3.25f1,EnabledFalse AwTouchTransform,ticks before op,4
+2026-11-14T15:31:11,03-L08,IL2CPP,1,6000.3.25f1,EnabledFalse AwTouchTransform,ticks op->restore,5
+2026-11-14T15:31:11,03-L08,IL2CPP,1,6000.3.25f1,EnabledFalse AwTouchTransform,ticks restore->stop,5
+2026-11-14T15:31:11,03-L08,IL2CPP,1,6000.3.25f1,EnabledFalse AwTouchTransform,last tick frame - op frame,10
+2026-11-14T15:31:11,03-L08,IL2CPP,1,6000.3.25f1,EnabledFalse AwTouchTransform,end,stopped by flag
+2026-11-14T15:31:11,03-L08,IL2CPP,1,6000.3.25f1,EnabledFalse AwTouchTransform,end frame - op frame,11
+2026-11-14T15:31:11,03-L08,IL2CPP,1,6000.3.25f1,EnabledFalse AwTouchTransform,finally ran,yes

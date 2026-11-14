@@ -121,7 +121,8 @@ Boehm GC의 특성, 숨은 할당, 힙 크기와 단편화, Incremental GC.
 > ✅ **[03-L07 스레드 전환과 continuation 위치](Assets/Labs/03_PlayerLoop/L07_ThreadSwitch/README.md)** · `Mono` `IL2CPP`\
 > 메인에서 캡처한 `await`·`MainThreadAsync`는 모두 `Update/ScriptRunDelayedTasks`로 복귀. `ConfigureAwait(false)` 뒤로는 `await`만으로 메인에 안 돌아옴
 
-> ⏳ 03-L08 비활성화·파괴 시 코루틴·Awaitable·Task 수명
+> ✅ **[03-L08 비활성화·파괴 시 코루틴·Awaitable·Task 수명](Assets/Labs/03_PlayerLoop/L08_Lifetime/README.md)** · `Editor` `Mono` `IL2CPP`\
+> 코루틴은 `StartCoroutine`을 건 MonoBehaviour의 `Destroy`·`SetActive(false)`에 정지(재개·`finally` 없음), `enabled = false`엔 계속. `Awaitable`·`Task`는 셋 다 무시 — `destroyCancellationToken`을 멈춤 지점에 넘겨야 파괴 프레임에 끝남
 
 > ⏳ 03-L09 커스텀 시스템 수명과 도메인 리로드 (에디터)
 

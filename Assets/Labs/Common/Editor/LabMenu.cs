@@ -87,6 +87,9 @@ namespace Labs.Editor
         [MenuItem("Labs/03/L07 Thread Switch")]
         static void Run03L07() => Run("03-L07");
 
+        [MenuItem("Labs/03/L08 Lifetime")]
+        static void Run03L08() => Run("03-L08");
+
         public static void Run(string labId)
         {
             if (EditorApplication.isPlaying)
