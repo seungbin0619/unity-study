@@ -1,0 +1,28 @@
+run_time,lab,backend,dev_build,unity,condition,metric,value
+2026-11-14T22:47:47,03-L08b,Editor,1,6000.3.25f1,00 driver: Destroy(gameObject) called,frame - destroy frame,0
+2026-11-14T22:47:47,03-L08b,Editor,1,6000.3.25f1,00 driver: Destroy(gameObject) called,where,Update/ScriptRunDelayedDynamicFrameRate
+2026-11-14T22:47:47,03-L08b,Editor,1,6000.3.25f1,01 OnDisable,frame - destroy frame,0
+2026-11-14T22:47:47,03-L08b,Editor,1,6000.3.25f1,01 OnDisable,where,Update/ScriptRunDelayedDynamicFrameRate
+2026-11-14T22:47:47,03-L08b,Editor,1,6000.3.25f1,01 OnDisable,extra,token cancelled: False
+2026-11-14T22:47:47,03-L08b,Editor,1,6000.3.25f1,02 driver: returned from Destroy,frame - destroy frame,0
+2026-11-14T22:47:47,03-L08b,Editor,1,6000.3.25f1,02 driver: returned from Destroy,where,Update/ScriptRunDelayedDynamicFrameRate
+2026-11-14T22:47:47,03-L08b,Editor,1,6000.3.25f1,02 driver: returned from Destroy,extra,host == null: False
+2026-11-14T22:47:47,03-L08b,Editor,1,6000.3.25f1,03 AwToken catch,frame - destroy frame,0
+2026-11-14T22:47:47,03-L08b,Editor,1,6000.3.25f1,03 AwToken catch,where,PostLateUpdate/ScriptRunDelayedDynamicFrameRate
+2026-11-14T22:47:47,03-L08b,Editor,1,6000.3.25f1,03 AwToken catch,stack,<AwTokenLoop>d__4.MoveNext <- StateMachineBox`1.DoMoveNext <- Awaitable.RunOrScheduleContinuation <- Awaitable.RaiseManagedCompletion <- Awaitable.Cancel <- <>c.<WireupCancellation>b__26_0 <- CancellationCallbackInfo.ExecutionContextCallback <- CancellationCallbackInfo.ExecuteCallback <- CancellationTokenSource.CancellationCallbackCoreWork <- CancellationTokenSource.ExecuteCallbackHandlers <- CancellationTokenSource.NotifyCancellation <- CancellationTokenSource.Cancel <- CancellationTokenSource.Cancel <- MonoBehaviour.RaiseCancellation
+2026-11-14T22:47:47,03-L08b,Editor,1,6000.3.25f1,04 token.Register callback,frame - destroy frame,0
+2026-11-14T22:47:47,03-L08b,Editor,1,6000.3.25f1,04 token.Register callback,where,PostLateUpdate/ScriptRunDelayedDynamicFrameRate
+2026-11-14T22:47:47,03-L08b,Editor,1,6000.3.25f1,04 token.Register callback,extra,this == null: False
+2026-11-14T22:47:47,03-L08b,Editor,1,6000.3.25f1,04 token.Register callback,stack,TokenOrderHost.<Begin>b__1_0 <- <>c.<.cctor>b__26_0 <- CancellationCallbackInfo.ExecutionContextCallback <- ExecutionContext.RunInternal <- ExecutionContext.Run <- ExecutionContext.Run <- CancellationCallbackInfo.ExecuteCallback <- CancellationTokenSource.CancellationCallbackCoreWork <- CancellationTokenSource.ExecuteCallbackHandlers <- CancellationTokenSource.NotifyCancellation <- CancellationTokenSource.Cancel <- CancellationTokenSource.Cancel <- MonoBehaviour.RaiseCancellation
+2026-11-14T22:47:47,03-L08b,Editor,1,6000.3.25f1,05 OnDestroy,frame - destroy frame,0
+2026-11-14T22:47:47,03-L08b,Editor,1,6000.3.25f1,05 OnDestroy,where,PostLateUpdate/ScriptRunDelayedDynamicFrameRate
+2026-11-14T22:47:47,03-L08b,Editor,1,6000.3.25f1,05 OnDestroy,extra,"token cancelled: True, this == null: False"
+2026-11-14T22:47:47,03-L08b,Editor,1,6000.3.25f1,06 driver: next frame 1,frame - destroy frame,1
+2026-11-14T22:47:47,03-L08b,Editor,1,6000.3.25f1,06 driver: next frame 1,where,Update/ScriptRunDelayedDynamicFrameRate
+2026-11-14T22:47:47,03-L08b,Editor,1,6000.3.25f1,07 TaskToken catch,frame - destroy frame,1
+2026-11-14T22:47:47,03-L08b,Editor,1,6000.3.25f1,07 TaskToken catch,where,Update/ScriptRunDelayedTasks
+2026-11-14T22:47:47,03-L08b,Editor,1,6000.3.25f1,07 TaskToken catch,stack,<TaskTokenLoop>d__5.MoveNext <- MoveNextRunner.InvokeMoveNext <- ExecutionContext.RunInternal <- ExecutionContext.Run <- MoveNextRunner.Run <- YieldAwaiter.RunAction <- WorkRequest.Invoke <- UnitySynchronizationContext.Exec <- UnitySynchronizationContext.ExecuteTasks
+2026-11-14T22:47:47,03-L08b,Editor,1,6000.3.25f1,08 driver: next frame 2,frame - destroy frame,2
+2026-11-14T22:47:47,03-L08b,Editor,1,6000.3.25f1,08 driver: next frame 2,where,Update/ScriptRunDelayedDynamicFrameRate
+2026-11-14T22:47:47,03-L08b,Editor,1,6000.3.25f1,09 driver: next frame 3,frame - destroy frame,3
+2026-11-14T22:47:47,03-L08b,Editor,1,6000.3.25f1,09 driver: next frame 3,where,Update/ScriptRunDelayedDynamicFrameRate

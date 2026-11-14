@@ -90,6 +90,9 @@ namespace Labs.Editor
         [MenuItem("Labs/03/L08 Lifetime")]
         static void Run03L08() => Run("03-L08");
 
+        [MenuItem("Labs/03/L08b Token Order")]
+        static void Run03L08b() => Run("03-L08b");
+
         public static void Run(string labId)
         {
             if (EditorApplication.isPlaying)
