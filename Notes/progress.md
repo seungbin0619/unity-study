@@ -76,6 +76,7 @@
 - [부분 정답 1/2] (2026-11-14) 03-L08 `enabled = false` / `SetActive(false)` 뒤 `Co` — "O, 이유는 뭐라못하겟네, 그냥 그렇게 설계했을듯" / "SetActive도 미리 O". `enabled` O 정답. `SetActive(false)`는 X: 비활성화 시 코루틴 정지(재개 안 됨, `finally` 미실행). `enabled`는 콜백 수신 플래그, 비활성화는 씬에서 빠짐이라는 구분은 보충함. 설계 사실이라 추론으로 정할 수 없어 약점으로 올리지 않음. Aw/Task는 둘 다 영향 없음, `destroyCancellationToken`은 비활성화에는 취소 안 됨
 - [오답 + 힌트 후 정답] (2026-11-14) 03-L08b 토큰으로 `AwToken`은 +0, `TaskToken`은 +1에 끝난 이유 — AwToken: "Cancel 후 PlayerLoop의 DelayedScript에서 토큰 상태를 확인" (확인/polling 모델, 오답). 실제는 등록: `NextFrameAsync(token)`이 `token.Register(a => a.Cancel())`를 걸어 `RaiseCancellation` → `CTS.Cancel` 안에서 동기로 `MoveNext`까지 실행(호출 스택 실측). TaskToken: "모르겠네" → 힌트(처음 모델이 둘 중 하나엔 맞다) 후 "토큰 보는 줄이 DelayedScript에 있고 Destroy 뒤 다시 그 시스템이 돌아야" 정답. 위치는 `ScriptRunDelayedTasks`로 보충, 파괴 프레임의 Tasks가 PostLateUpdate 파괴보다 앞이라 +1. 보충: OnDisable은 `Destroy()` 안에서 즉시, 토큰 취소가 OnDestroy보다 먼저, CTS 지연 생성. 처음 보는 API 내부라 약점으로 올리지 않음 — 다음 토큰 관련 질문에서 "이 API는 토큰을 등록하나 확인하나?"를 물어 볼 것
 - [학습자 질문] (2026-11-14) `while(true){ try { await Awaitable.DelayFrameAsync(token); } catch {} }`면 1프레임에 무한 취소? → `DelayFrameAsync`는 UniTask API(Unity 6000.3 소스에 없음), `NextFrameAsync(token)` 기준 답: 그렇다, 대신 프레임이 끝나지 않고 멈춤. 6000.3 소스상 `NextFrameAsync` 첫 줄이 `ThrowIfCancellationRequested()`라 취소 뒤에는 동기 throw → 실제 멈춤이 없어 `MoveNext`가 `RaiseCancellation` → `CTS.Cancel` 호출 스택 안에서 영원히 반복(재귀가 아니라 오버플로도 없음). "await는 실제로 멈출 때만 양보"(빠른 경로)와 연결. 취소는 `break`로 루프 종료. 소스 추론만 했고 측정은 학습자가 불필요하다고 함
+- [정답 2/2] (2026-11-18) 03-L09 정리 없이 3번 진입한 뒤 `MySystem` 수 — "1, 3 (껐을 때 CurrentPlayerLoop는 이전 실행에 설정된 PlayerLoop가 그대로 남으므로)". 실측 A 1·1·1, B 1·2·3이고 프레임당 호출도 0.9·1.8·2.7. (1)은 이유를 적지 않음. 보충: 리로드를 켜도 플레이를 나간 뒤 편집 모드에는 노드가 남고, 다음 진입의 도메인 리로드가 트리를 기본값으로 되돌림(사라진 어셈블리를 가리키는 델리게이트를 남길 수 없음 — 추론). 정리는 자기 `type`만 빼기, 핸들러 등록은 `-=` 후 `+=`
 - [설명 들음] (2026-10-30) 검사 개수(정적)와 실행 횟수(루프 안이면 원소마다) 구분, IL2CPP는 hoist·경계 검사 제거를 하지 않음 (RyuJIT과 대비)
 
 ## 약점 (관련 실습에서 재확인)
@@ -128,6 +129,7 @@
 - 2026-11-12 03-L07 Mono·IL2CPP 배치모드 플레이어 실행 — [README](../Assets/Labs/03_PlayerLoop/L07_ThreadSwitch/README.md) (에디터 미실행)
 - 2026-11-14 03-L08 에디터 + Mono·IL2CPP 배치모드 플레이어 실행 — [README](../Assets/Labs/03_PlayerLoop/L08_Lifetime/README.md)
 - 2026-11-14 03-L08b (심화: 토큰 등록 경로, 파괴 프레임 순서) 에디터 + Mono·IL2CPP 플레이어 + UnityCsReference 6000.3 소스 읽기 — 같은 README
+- 2026-11-18 03-L09 에디터 실행 (조건 4개 × 진입 3회 자동) — [README](../Assets/Labs/03_PlayerLoop/L09_SystemLeak/README.md)
 - 2026-11-12 03-L06 Mono·IL2CPP Development 배치모드 플레이어 측정 + 생성 코드·풀 크기 리플렉션 확인 — [README](../Assets/Labs/03_PlayerLoop/L06_WaitAlloc/README.md) (Release 미측정, 1000개 동시 시작의 96 B 원인 미확인)
 
 ## Player Settings 변경 이력
@@ -170,3 +172,4 @@
 - 2026-11-12 Scripting Backend: Mono → IL2CPP (03-L07 빌드 동안만), **복원됨** (`Standalone: 0` 확인)
 - 2026-11-14 Scripting Backend: Mono → IL2CPP (03-L08 빌드 동안만), **복원됨** (`Standalone: 0` 확인)
 - 2026-11-14 Scripting Backend: Mono → IL2CPP (03-L08b 빌드 동안만), **복원됨** (`Standalone: 0` 확인)
+- 2026-11-18 Enter Play Mode Options (EditorSettings, 학습자 동의): `0`(도메인·씬 둘 다 리로드) → `DisableDomainReload` (03-L09 조건 B\~D 동안만), **복원됨** (`SystemLeakDriver`가 원래 값으로 되돌림. `EditorSettings.asset` 바뀐 줄 없음, `m_EnterPlayModeOptions: 0`)

@@ -93,6 +93,19 @@ namespace Labs.Editor
         [MenuItem("Labs/03/L08b Token Order")]
         static void Run03L08b() => Run("03-L08b");
 
+        // 조건 4개 × 진입 3회를 SystemLeakDriver가 이어서 돈다 (Enter Play Mode Options를 바꾸고 끝나면 복원)
+        [MenuItem("Labs/03/L09 System Leak")]
+        static void Run03L09()
+        {
+            if (EditorApplication.isPlaying)
+            {
+                UnityEngine.Debug.LogWarning("[Lab] 플레이 모드를 종료한 뒤 다시 실행하세요.");
+                return;
+            }
+            PlayerLoopLabs.SystemLeakDriver.Prepare();
+            Run("03-L09");
+        }
+
         public static void Run(string labId)
         {
             if (EditorApplication.isPlaying)

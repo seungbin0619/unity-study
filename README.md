@@ -15,7 +15,7 @@ Unity 엔진 내부 동작을 문서로만 읽지 않고 **직접 측정해서 �
 |---|---|
 | [1. 네이티브–매니지드 경계](#1-네이티브매니지드-경계) | 10 / 10 완료 |
 | [2. 메모리와 GC](#2-메모리와-gc) | 9 / 9 완료 |
-| [3. PlayerLoop](#3-playerloop) | 7 / 10 완료 |
+| [3. PlayerLoop](#3-playerloop) | 8 / 10 완료 |
 | 4. 직렬화와 에셋 파이프라인 · 5. 렌더링 파이프라인 · 6. DOTS | 예정 |
 
 ## 실행 방법
@@ -124,6 +124,7 @@ Boehm GC의 특성, 숨은 할당, 힙 크기와 단편화, Incremental GC.
 > ✅ **[03-L08 비활성화·파괴 시 코루틴·Awaitable·Task 수명](Assets/Labs/03_PlayerLoop/L08_Lifetime/README.md)** · `Editor` `Mono` `IL2CPP`\
 > 코루틴은 `StartCoroutine`을 건 MonoBehaviour의 `Destroy`·`SetActive(false)`에 정지(재개·`finally` 없음), `enabled = false`엔 계속. `Awaitable`·`Task`는 셋 다 무시 — `destroyCancellationToken`을 멈춤 지점에 넘겨야 파괴 프레임에 끝남 (등록 방식: `OnDestroy`보다 먼저 `Cancel()` 호출 스택 안에서 동기 재개)
 
-> ⏳ 03-L09 커스텀 시스템 수명과 도메인 리로드 (에디터)
+> ✅ **[03-L09 커스텀 시스템 수명과 도메인 리로드](Assets/Labs/03_PlayerLoop/L09_SystemLeak/README.md)** · `Editor`\
+> 리로드를 끄면 정리 안 한 시스템이 진입마다 쌓이고 실제 호출도 N배(1→2→3). 켜도 플레이 종료 뒤 편집 모드엔 남고 다음 진입의 리로드가 초기화. `ExitingPlayMode`에서 자기 `type`만 빼면 0
 
 > ⏳ 03-L10 편집 모드 루프와 `[ExecuteAlways]` (에디터)
