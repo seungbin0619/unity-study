@@ -86,11 +86,51 @@ namespace Labs.SerializationLabs
 
             ctx.Record("Ref/original", "JsonUtility.ToJson", JsonUtility.ToJson(rf));
 
+            // --- 자기 타입 필드 (Node.next = null) ---
+            var nh = new GameObject("L01 Node").AddComponent<NodeHolder>();
+            nh.head = new Node { value = 1 };
+            nh.cyc = new CycA { value = 1 };       // cyc.b = null
+            nh.tree = new TreeNode { value = 1 };  // tree.children = null
+            ctx.Record("Node/original before", "chain length", ChainLength(nh.head));
+            NodeHolder nhCopy = null;
+            var log = LabEval.CaptureLog(() => nhCopy = Object.Instantiate(nh));
+            ctx.Record("Node/Instantiate", "first log", log);
+            ctx.Record("Node/original after Instantiate", "chain length", ChainLength(nh.head));
+            ctx.Record("Node/copy", "chain length", ChainLength(nhCopy.head));
+            ctx.Record("Node/original after Instantiate", "cyc depth", CycDepth(nh.cyc));
+            ctx.Record("Node/copy", "cyc depth", CycDepth(nhCopy.cyc));
+            ctx.Record("Node/original after Instantiate", "tree children", nh.tree.children == null ? "null" : "Count=" + nh.tree.children.Count);
+            ctx.Record("Node/copy", "tree children", nhCopy.tree.children == null ? "null" : "Count=" + nhCopy.tree.children.Count);
+            ctx.Record("Node/original", "JsonUtility.ToJson", JsonUtility.ToJson(nh));
+
             Object.Destroy(inl.gameObject);
             Object.Destroy(inlCopy.gameObject);
             Object.Destroy(rf.gameObject);
             Object.Destroy(rfCopy.gameObject);
+            Object.Destroy(nh.gameObject);
+            Object.Destroy(nhCopy.gameObject);
             await Awaitable.NextFrameAsync();
+        }
+
+        /// <summary>CycA → CycB → CycA … 로 null이 아닌 객체 수를 센다.</summary>
+        static string CycDepth(CycA a)
+        {
+            var count = 0;
+            object x = a;
+            while (x != null && count < 1000)
+            {
+                count++;
+                x = x is CycA ca ? ca.b : ((CycB)x).a;
+            }
+            return count.ToString();
+        }
+
+        /// <summary>head부터 null이 나올 때까지 센다 (head가 null이면 0).</summary>
+        static string ChainLength(Node n)
+        {
+            var count = 0;
+            for (; n != null && count < 1000; n = n.next) count++;
+            return count.ToString();
         }
     }
 

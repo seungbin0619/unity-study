@@ -36,3 +36,49 @@ run_time,lab,backend,dev_build,unity,condition,metric,value
 2026-11-18T17:13:18,04-L01,Mono,1,6000.3.25f1,Ref/copy,d,null
 2026-11-18T17:13:18,04-L01,Mono,1,6000.3.25f1,Ref/copy,b.value after a.value = 99,99
 2026-11-18T17:13:18,04-L01,Mono,1,6000.3.25f1,Ref/original,JsonUtility.ToJson,"{""a"":{""rid"":1000},""b"":{""rid"":1000},""c"":{""rid"":1001},""d"":{""rid"":-2},""references"":{""version"":2,""RefIds"":[{""rid"":-2,""type"":{""class"":"""",""ns"":"""",""asm"":""""},""data"":{}},{""rid"":1000,""type"":{""class"":""Item"",""ns"":""Labs.SerializationLabs"",""asm"":""Labs""},""data"":{""value"":1}},{""rid"":1001,""type"":{""class"":""Special"",""ns"":""Labs.SerializationLabs"",""asm"":""Labs""},""data"":{""value"":2,""bonus"":5}}]}}"
+2026-11-18T17:44:23,04-L01,Mono,1,6000.3.25f1,Inline/original before,a,Item(value=1)
+2026-11-18T17:44:23,04-L01,Mono,1,6000.3.25f1,Inline/original before,b,Item(value=1)
+2026-11-18T17:44:23,04-L01,Mono,1,6000.3.25f1,Inline/original before,"ReferenceEquals(a, b)",true
+2026-11-18T17:44:23,04-L01,Mono,1,6000.3.25f1,Inline/original before,c,Special(value=2 bonus=5)
+2026-11-18T17:44:23,04-L01,Mono,1,6000.3.25f1,Inline/original before,d,null
+2026-11-18T17:44:23,04-L01,Mono,1,6000.3.25f1,Inline/original after Instantiate,a,Item(value=1)
+2026-11-18T17:44:23,04-L01,Mono,1,6000.3.25f1,Inline/original after Instantiate,b,Item(value=1)
+2026-11-18T17:44:23,04-L01,Mono,1,6000.3.25f1,Inline/original after Instantiate,"ReferenceEquals(a, b)",true
+2026-11-18T17:44:23,04-L01,Mono,1,6000.3.25f1,Inline/original after Instantiate,c,Special(value=2 bonus=5)
+2026-11-18T17:44:23,04-L01,Mono,1,6000.3.25f1,Inline/original after Instantiate,d,Item(value=0)
+2026-11-18T17:44:23,04-L01,Mono,1,6000.3.25f1,Inline/copy,"ReferenceEquals(original.a, copy.a)",false
+2026-11-18T17:44:23,04-L01,Mono,1,6000.3.25f1,Inline/copy,a,Item(value=1)
+2026-11-18T17:44:23,04-L01,Mono,1,6000.3.25f1,Inline/copy,b,Item(value=1)
+2026-11-18T17:44:23,04-L01,Mono,1,6000.3.25f1,Inline/copy,"ReferenceEquals(a, b)",false
+2026-11-18T17:44:23,04-L01,Mono,1,6000.3.25f1,Inline/copy,c,Item(value=2)
+2026-11-18T17:44:23,04-L01,Mono,1,6000.3.25f1,Inline/copy,d,Item(value=0)
+2026-11-18T17:44:23,04-L01,Mono,1,6000.3.25f1,Inline/copy,b.value after a.value = 99,1
+2026-11-18T17:44:23,04-L01,Mono,1,6000.3.25f1,Inline/original,JsonUtility.ToJson,"{""a"":{""value"":1},""b"":{""value"":1},""c"":{""value"":2},""d"":{""value"":0}}"
+2026-11-18T17:44:23,04-L01,Mono,1,6000.3.25f1,Inline/original after ToJson,d,Item(value=0)
+2026-11-18T17:44:23,04-L01,Mono,1,6000.3.25f1,Ref/original before,a,Item(value=1)
+2026-11-18T17:44:23,04-L01,Mono,1,6000.3.25f1,Ref/original before,b,Item(value=1)
+2026-11-18T17:44:23,04-L01,Mono,1,6000.3.25f1,Ref/original before,"ReferenceEquals(a, b)",true
+2026-11-18T17:44:23,04-L01,Mono,1,6000.3.25f1,Ref/original before,c,Special(value=2 bonus=5)
+2026-11-18T17:44:23,04-L01,Mono,1,6000.3.25f1,Ref/original before,d,null
+2026-11-18T17:44:23,04-L01,Mono,1,6000.3.25f1,Ref/original after Instantiate,a,Item(value=1)
+2026-11-18T17:44:23,04-L01,Mono,1,6000.3.25f1,Ref/original after Instantiate,b,Item(value=1)
+2026-11-18T17:44:23,04-L01,Mono,1,6000.3.25f1,Ref/original after Instantiate,"ReferenceEquals(a, b)",true
+2026-11-18T17:44:23,04-L01,Mono,1,6000.3.25f1,Ref/original after Instantiate,c,Special(value=2 bonus=5)
+2026-11-18T17:44:23,04-L01,Mono,1,6000.3.25f1,Ref/original after Instantiate,d,null
+2026-11-18T17:44:23,04-L01,Mono,1,6000.3.25f1,Ref/copy,"ReferenceEquals(original.a, copy.a)",false
+2026-11-18T17:44:23,04-L01,Mono,1,6000.3.25f1,Ref/copy,a,Item(value=1)
+2026-11-18T17:44:23,04-L01,Mono,1,6000.3.25f1,Ref/copy,b,Item(value=1)
+2026-11-18T17:44:23,04-L01,Mono,1,6000.3.25f1,Ref/copy,"ReferenceEquals(a, b)",true
+2026-11-18T17:44:23,04-L01,Mono,1,6000.3.25f1,Ref/copy,c,Special(value=2 bonus=5)
+2026-11-18T17:44:23,04-L01,Mono,1,6000.3.25f1,Ref/copy,d,null
+2026-11-18T17:44:23,04-L01,Mono,1,6000.3.25f1,Ref/copy,b.value after a.value = 99,99
+2026-11-18T17:44:23,04-L01,Mono,1,6000.3.25f1,Ref/original,JsonUtility.ToJson,"{""a"":{""rid"":1000},""b"":{""rid"":1000},""c"":{""rid"":1001},""d"":{""rid"":-2},""references"":{""version"":2,""RefIds"":[{""rid"":-2,""type"":{""class"":"""",""ns"":"""",""asm"":""""},""data"":{}},{""rid"":1000,""type"":{""class"":""Item"",""ns"":""Labs.SerializationLabs"",""asm"":""Labs""},""data"":{""value"":1}},{""rid"":1001,""type"":{""class"":""Special"",""ns"":""Labs.SerializationLabs"",""asm"":""Labs""},""data"":{""value"":2,""bonus"":5}}]}}"
+2026-11-18T17:44:23,04-L01,Mono,1,6000.3.25f1,Node/original before,chain length,1
+2026-11-18T17:44:23,04-L01,Mono,1,6000.3.25f1,Node/Instantiate,first log,Warning: Serialization depth limit 10 exceeded at 'Labs.SerializationLabs::CycA.b'. There may be an object composition cycle in one or more of your serialized classes. Consider rearranging data or use `[SerializeReference]`.
+2026-11-18T17:44:23,04-L01,Mono,1,6000.3.25f1,Node/original after Instantiate,chain length,1
+2026-11-18T17:44:23,04-L01,Mono,1,6000.3.25f1,Node/copy,chain length,1
+2026-11-18T17:44:23,04-L01,Mono,1,6000.3.25f1,Node/original after Instantiate,cyc depth,11
+2026-11-18T17:44:23,04-L01,Mono,1,6000.3.25f1,Node/copy,cyc depth,11
+2026-11-18T17:44:23,04-L01,Mono,1,6000.3.25f1,Node/original after Instantiate,tree children,null
+2026-11-18T17:44:23,04-L01,Mono,1,6000.3.25f1,Node/copy,tree children,Count=0
+2026-11-18T17:44:23,04-L01,Mono,1,6000.3.25f1,Node/original,JsonUtility.ToJson,"{""head"":{""value"":1},""cyc"":{""value"":1,""b"":{""value"":0,""a"":{""value"":0,""b"":{""value"":0,""a"":{""value"":0,""b"":{""value"":0,""a"":{""value"":0,""b"":{""value"":0,""a"":{""value"":0,""b"":{""value"":0,""a"":{""value"":0}}}}}}}}}}},""tree"":{""value"":1,""children"":[]}}"

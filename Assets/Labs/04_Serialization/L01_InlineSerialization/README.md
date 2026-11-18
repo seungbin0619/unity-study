@@ -40,6 +40,16 @@
 | `d` | `Item(0)` | null |
 | `[NonSerialized] int` (리로드 전 7) | 0 | 0 |
 
+### 확인 질문: 자기 타입 필드 (실행 후 추가, `NodeHolder.cs`)
+- 질문: `Item`에 `public Item next;`를 넣고 모두 null로 두면 `Instantiate` 때 직렬화기는? 학습자 답 (원문 그대로): "무한 직렬화되나..??"
+- 순환 모양 세 가지를 같은 `Instantiate`에서 측정 (에디터·Mono 동일):
+
+| 순환 모양 | 경고 | `Instantiate` 뒤 원본 | 복제본 | JSON |
+|---|---|---|---|---|
+| 직접: `Node.next : Node` | 없음 | `next` null 그대로 | `next` null | `next` 필드 자체가 없음 |
+| 간접: `CycA.b : CycB`, `CycB.a : CycA` | `Serialization depth limit 10 exceeded at 'CycA.b' … Consider … [SerializeReference]` | **객체 11개 깊이로 채워짐** | 11개 | 10단계 중첩 |
+| 컬렉션: `TreeNode.children : List<TreeNode>` | 같은 경고 (`TreeNode.children`) | `children` null 그대로 | **빈 리스트** (`Count=0`) | `"children":[]` |
+
 원본: `Notes/results/04-L01_Editor_2026-11-18.csv`, `Notes/results/04-L01_Mono_2026-11-18.csv`, `Notes/results/04-L01b_Editor_2026-11-18.csv`
 
 ## 해석
@@ -48,4 +58,5 @@
   - **원본도 바뀐다.** `Instantiate`가 원본을 직렬화(쓰기)하는 동안 원본의 null 필드 `d`가 `Item(0)`으로 채워졌다. 읽기 전용 작업처럼 보여도 직렬화기가 매니지드 객체를 건드린다. 원인 추론(확인 필요): Unity 직렬화는 같은 `Transfer` 코드로 읽기·쓰기를 모두 하고, 인라인 필드는 쓸 때도 객체가 있어야 필드를 읽을 수 있어서 null이면 만들어 넣는다. 결과적으로 "null로 표시한 선택적 데이터"는 직렬화를 한 번 거치면 사라지고 기본값 객체가 된다. 이 객체도 GC 할당이다.
   - **도메인 리로드도 같은 경로.** 에디터에서 스크립트가 컴파일될 때마다 모든 컴포넌트가 직렬화 → 역직렬화되므로 공유 참조가 조용히 갈라지고, `[NonSerialized]`·`Dictionary` 같은 직렬화되지 않는 상태는 기본값으로 돌아간다. 에디터 툴에서 "컴파일 한 번 뒤 캐시가 비거나 같은 객체가 둘로 나뉜다"는 버그의 원인이다.
   - **`[SerializeReference]`의 대가.** 객체를 `references` 표에 한 번만 쓰고 필드에는 id만 둔다. 그래서 공유·다형성·null이 보존된다. 대신 데이터에 **타입 이름(클래스·네임스페이스·어셈블리)**이 들어간다. 클래스 이름을 바꾸면 기존 데이터를 읽지 못해 `[MovedFrom]`이 필요하다. 코드에서 그 타입을 안 쓰고 데이터에서만 참조하면 Stripping이 타입을 지울 수 있다는 점(01-L10과 같은 구조)도 추론되지만 확인이 필요하다.
+  - **순환 타입에는 엔진의 안전장치가 있다.** "null을 채운다 → 채운 객체의 같은 필드도 null → 또 채운다"는 추론대로라면 무한히 이어진다. 실제로는 모양에 따라 다르다. 직접 자기 참조 필드는 레이아웃에서 조용히 빠지고(데이터에 없음, 경고 없음), 간접 순환은 깊이 10에서 잘리며 경고와 함께 객체 11개가 생긴다(원본까지). 리스트는 null 대신 빈 리스트가 된다. 그래서 인라인 직렬화로는 연결 리스트·트리·그래프를 표현할 수 없고, `[SerializeReference]`나 인덱스(id) 기반 평면 배열로 바꿔야 한다. 직접 순환 필드를 빼는 규칙은 6000.3 실측이며 문서·소스로는 확인하지 않았다.
 - 근거: Unity Manual "Script serialization"(사용자 정의 클래스는 struct처럼 인라인 직렬화, 다형성·null 미지원), Scripting API `SerializeReference`. 원본 변경·도메인 리로드는 이 실습의 실측.
