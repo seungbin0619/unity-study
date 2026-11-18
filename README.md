@@ -16,7 +16,8 @@ Unity 엔진 내부 동작을 문서로만 읽지 않고 **직접 측정해서 �
 | [1. 네이티브–매니지드 경계](#1-네이티브매니지드-경계) | 10 / 10 완료 |
 | [2. 메모리와 GC](#2-메모리와-gc) | 9 / 9 완료 |
 | [3. PlayerLoop](#3-playerloop) | 10 / 10 완료 |
-| 4. 직렬화와 에셋 파이프라인 · 5. 렌더링 파이프라인 · 6. DOTS | 예정 |
+| [4. 직렬화와 에셋 파이프라인](#4-직렬화와-에셋-파이프라인) | 1 / 8 완료 |
+| 5. 렌더링 파이프라인 · 6. DOTS | 예정 |
 
 ## 실행 방법
 
@@ -129,3 +130,26 @@ Boehm GC의 특성, 숨은 할당, 힙 크기와 단편화, Incremental GC.
 
 > ✅ **[03-L10 편집 모드 루프와 `[ExecuteAlways]`](Assets/Labs/03_PlayerLoop/L10_EditModeLoop/README.md)** · `Editor`\
 > 입력 없는 편집 모드에서 `[ExecuteAlways]` `Update`는 10초에 4회, `EditorApplication.update`는 초당 약 2만 회. 코드로 transform을 바꿔도 안 깨어나고, 틱마다 `QueuePlayerLoopUpdate`면 둘 다 약 317 Hz
+
+## 4. 직렬화와 에셋 파이프라인
+
+네이티브 직렬화기의 규칙과 그 결과(`Instantiate`·도메인 리로드), 에셋이 디스크에 저장·참조·임포트·로드되는 방식.
+
+> ✅ **[04-L01 인라인 직렬화: 공유 참조·다형성·null](Assets/Labs/04_Serialization/L01_InlineSerialization/README.md)** · `Editor` `Mono`\
+> 일반 `[Serializable]` 필드는 struct처럼 저장: 복제·리로드 뒤 공유가 갈라지고 `Special`→`Item`, null→기본 객체(원본까지). `[SerializeReference]`는 셋 다 보존
+
+> ⏳ 04-L02 YAML·GUID·fileID와 이름 변경
+
+> ⏳ 04-L03 필드 직접 수정 vs `SerializedObject`
+
+> ⏳ 04-L04 `ISerializationCallbackReceiver` 호출 빈도
+
+> ⏳ 04-L05 직렬화 필드 크기와 `Instantiate` 비용
+
+> ⏳ 04-L06 `AssetDatabase` 임포트와 배치 편집
+
+> ⏳ 04-L07 `ScriptedImporter`와 의존성
+
+> ⏳ 04-L08 `Resources` vs AssetBundle 로드·언로드
+
+IL2CPP는 04-L01에서 실행하지 않음.

@@ -113,6 +113,12 @@ namespace Labs.Editor
         [MenuItem("Labs/03/L10 Edit Mode Loop (Mouse)")]
         static void Run03L10Mouse() => PlayerLoopLabs.EditModeLoopLab.RunMouse();
 
+        [MenuItem("Labs/04/L01 Inline Serialization")]
+        static void Run04L01() => Run("04-L01");
+
+        [MenuItem("Labs/04/L01b Domain Reload")]
+        static void Run04L01b() => SerializationLabs.DomainReloadProbe.Start();
+
         public static void Run(string labId)
         {
             if (EditorApplication.isPlaying)

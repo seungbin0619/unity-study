@@ -53,9 +53,23 @@
 - Player Settings: 03-L05·L06의 IL2CPP 빌드에서만 Backend를 바꾸고 복원한다.
 - 확인 필요: `Task` continuation(`UnitySynchronizationContext`)의 실행 하위 시스템 — 소스를 미리 보지 않고 03-L02 마커 실측으로 정한다.
 
-## 4\~6. 예정
+## 4. 직렬화와 에셋 파이프라인 — 실습 목록 확정 (2026-11-18)
 
-4. 직렬화와 에셋 파이프라인 (`SerializedObject`, YAML/GUID, `AssetDatabase`, `ScriptedImporter`, Addressables)
+| ID | 실습 | 예측 질문 예시 |
+|---|---|---|
+| 04-L01 | 인라인 직렬화: 공유 참조·다형성(`Special`을 `Item` 필드에)·null이 `Instantiate`·도메인 리로드 뒤 어떻게 되나, `[SerializeReference]` 비교 | 복제본에서 `ReferenceEquals(a, b)`, `c`의 타입, `d`의 null 여부? |
+| 04-L02 | YAML·GUID·fileID: 참조가 디스크에 저장되는 형식. `.meta` 삭제, 스크립트 파일·클래스 이름 변경, `[FormerlySerializedAs]`, `[MovedFrom]` | 어떤 변경에서 참조가 깨지나? |
+| 04-L03 | (툴) 필드 직접 수정 vs `SerializedObject`: Undo, 프리팹 오버라이드, dirty, 디스크 저장 여부 | `SetDirty` 없이 필드만 바꾸고 저장하면 디스크에 남나? |
+| 04-L04 | `ISerializationCallbackReceiver` 호출 빈도(인스펙터 열림 등)와 비용·할당, `Dictionary` 직렬화 패턴 | 인스펙터를 열어 두면 `OnBeforeSerialize`는 언제 불리나? |
+| 04-L05 | (GC·메모리) 직렬화 필드 크기가 `Instantiate` 시간·할당에 미치는 영향, `[NonSerialized]` 효과 | 큰 `List` 필드가 복제 비용을 바꾸나? |
+| 04-L06 | (툴) `AssetDatabase`: 임포트와 Library 캐시, `Refresh` 비용, `StartAssetEditing`/`StopAssetEditing` 배치 효과 | 파일 100개 생성 시 배치 유무 차이? |
+| 04-L07 | `ScriptedImporter`: 커스텀 확장자, 의존성 선언, 버전 변경 시 재임포트 | 의존 파일만 바꾸면 재임포트되나? |
+| 04-L08 | 런타임 로드: `Resources` vs AssetBundle 로드·언로드와 메모리 (Addressables는 패키지 설치 여부를 그때 묻는다) | 언로드 후 네이티브 메모리는? |
+
+- 약점 재확인: 04-L01·L02 도메인 리로드(3장), 04-L05 매니지드 vs 네이티브 메모리, 04-L08 "해제된 메모리에는 무엇이 남나?"(03-L09 후속).
+
+## 5\~6. 예정
+
 5. 렌더링 파이프라인 (SRP, Render Graph, SRP Batcher, GPU Resident Drawer, Frame Debugger)
 6. DOTS (Job System, Burst, ECS, 데이터 지향 설계)
 

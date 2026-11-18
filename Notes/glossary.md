@@ -167,3 +167,12 @@ class Enemy
 | 고정 시간 간격 (fixed timestep) | `FixedUpdate`·물리가 쓰는 일정한 시간 간격 (`Time.fixedDeltaTime`, 기본 0.02 s) | 프레임 수와 `FixedUpdate` 횟수는 1:1이 아님 |
 | `Time.maximumDeltaTime` (Maximum Allowed Timestep) | 한 프레임에 게임 시간이 진행할 수 있는 상한 (기본 0.333 s) | 프레임이 이보다 길면 `deltaTime`이 잘리고 게임이 슬로모션이 됨(500 ms 프레임에서 0.67배). `FixedUpdate` 따라잡기 횟수도 여기서 막힘 → spiral of death의 브레이크. `unscaledDeltaTime`은 안 잘림 ([03-L04](../Assets/Labs/03_PlayerLoop/L04_FixedCatchUp/README.md)) |
 | 도메인 리로드 (domain reload) | 에디터가 매니지드 상태(정적 필드 등)를 버리고 어셈블리를 다시 올리는 것 | Enter Play Mode Options로 끌 수 있음 → 정적 상태와 엔진 쪽 상태가 플레이 모드를 넘어 남을 수 있음 |
+
+## 7. 직렬화와 에셋 파이프라인 (4장)
+
+| 용어 | 뜻 | 헷갈리기 쉬운 것 · 실습 |
+|---|---|---|
+| Unity 직렬화 (Unity serialization) | 네이티브(C++) 직렬화기가 매니지드 객체의 필드를 읽고 쓰는 것. 씬·프리팹 저장, `Instantiate` 복제, 도메인 리로드, 인스펙터가 모두 이 경로 | .NET 직렬화(`BinaryFormatter` 등)와 다름. 대상: `public`/`[SerializeField]`, static·const·readonly 아님, 직렬화 가능한 타입(기본형, `UnityEngine.Object`, `[Serializable]` 클래스·struct, 그 배열·`List<T>`). `Dictionary`·인터페이스 필드·프로퍼티는 안 됨 |
+| 인라인 직렬화 (inline serialization) | 일반 `[Serializable]` 클래스 필드를 **선언 타입**의 필드 값으로 그 자리에 펼쳐 쓰는 방식. struct처럼 동작 | 데이터에 identity·실제 타입·null 칸이 없음 → 역직렬화 뒤 공유 참조가 갈라지고, 파생 타입은 선언 타입으로 잘리고, null은 기본값 객체가 됨. `Instantiate`할 때 **원본**의 null도 채워짐 ([04-L01](../Assets/Labs/04_Serialization/L01_InlineSerialization/README.md)) |
+| `[SerializeReference]` | 필드에 id만 쓰고 객체는 타입 이름(클래스·네임스페이스·어셈블리)과 함께 `references` 표에 한 번씩 쓰는 방식 (2019.3 도입) | 공유·다형성·null(rid -2) 보존. 대신 데이터에 타입 이름이 박혀 클래스 이름 변경에 약함(`[MovedFrom]`) ([04-L01](../Assets/Labs/04_Serialization/L01_InlineSerialization/README.md)) |
+| `[NonSerialized]` | 필드를 직렬화 대상에서 빼는 특성 | 도메인 리로드(스크립트 컴파일)마다 기본값으로 돌아감 — 에디터 툴의 캐시가 비는 원인 ([04-L01](../Assets/Labs/04_Serialization/L01_InlineSerialization/README.md)) |

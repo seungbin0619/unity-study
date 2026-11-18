@@ -1,0 +1,27 @@
+run_time,lab,backend,dev_build,unity,condition,metric,value
+2026-11-18T17:11:28,04-L01b,Editor,1,6000.3.25f1,Inline/before reload,a,Item(value=1)
+2026-11-18T17:11:28,04-L01b,Editor,1,6000.3.25f1,Inline/before reload,b,Item(value=1)
+2026-11-18T17:11:28,04-L01b,Editor,1,6000.3.25f1,Inline/before reload,"ReferenceEquals(a, b)",true
+2026-11-18T17:11:28,04-L01b,Editor,1,6000.3.25f1,Inline/before reload,c,Special(value=2 bonus=5)
+2026-11-18T17:11:28,04-L01b,Editor,1,6000.3.25f1,Inline/before reload,d,null
+2026-11-18T17:11:28,04-L01b,Editor,1,6000.3.25f1,Inline/before reload,nonSerialized,7
+2026-11-18T17:11:28,04-L01b,Editor,1,6000.3.25f1,Ref/before reload,a,Item(value=1)
+2026-11-18T17:11:28,04-L01b,Editor,1,6000.3.25f1,Ref/before reload,b,Item(value=1)
+2026-11-18T17:11:28,04-L01b,Editor,1,6000.3.25f1,Ref/before reload,"ReferenceEquals(a, b)",true
+2026-11-18T17:11:28,04-L01b,Editor,1,6000.3.25f1,Ref/before reload,c,Special(value=2 bonus=5)
+2026-11-18T17:11:28,04-L01b,Editor,1,6000.3.25f1,Ref/before reload,d,null
+2026-11-18T17:11:28,04-L01b,Editor,1,6000.3.25f1,Ref/before reload,nonSerialized,7
+2026-11-18T17:11:33,04-L01b,Editor,1,6000.3.25f1,Inline/after reload,a,Item(value=1)
+2026-11-18T17:11:33,04-L01b,Editor,1,6000.3.25f1,Inline/after reload,b,Item(value=1)
+2026-11-18T17:11:33,04-L01b,Editor,1,6000.3.25f1,Inline/after reload,"ReferenceEquals(a, b)",false
+2026-11-18T17:11:33,04-L01b,Editor,1,6000.3.25f1,Inline/after reload,c,Item(value=2)
+2026-11-18T17:11:33,04-L01b,Editor,1,6000.3.25f1,Inline/after reload,d,Item(value=0)
+2026-11-18T17:11:33,04-L01b,Editor,1,6000.3.25f1,Inline/after reload,b.value after a.value = 99,1
+2026-11-18T17:11:33,04-L01b,Editor,1,6000.3.25f1,Inline/after reload,nonSerialized,0
+2026-11-18T17:11:33,04-L01b,Editor,1,6000.3.25f1,Ref/after reload,a,Item(value=1)
+2026-11-18T17:11:33,04-L01b,Editor,1,6000.3.25f1,Ref/after reload,b,Item(value=1)
+2026-11-18T17:11:33,04-L01b,Editor,1,6000.3.25f1,Ref/after reload,"ReferenceEquals(a, b)",true
+2026-11-18T17:11:33,04-L01b,Editor,1,6000.3.25f1,Ref/after reload,c,Special(value=2 bonus=5)
+2026-11-18T17:11:33,04-L01b,Editor,1,6000.3.25f1,Ref/after reload,d,null
+2026-11-18T17:11:33,04-L01b,Editor,1,6000.3.25f1,Ref/after reload,b.value after a.value = 99,99
+2026-11-18T17:11:33,04-L01b,Editor,1,6000.3.25f1,Ref/after reload,nonSerialized,0
