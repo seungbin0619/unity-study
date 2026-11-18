@@ -5,6 +5,7 @@
 ## 완료한 개념
 - 1. 네이티브–매니지드 경계: 래퍼 구조, 가짜 null, 생성자 금지·Destroy 지연·연쇄 파괴, 마샬링 비용, IL2CPP 파이프라인·생성 코드·sealed·제네릭 공유·스트리핑
 - 2. 메모리와 GC: 메모리 영역, Boehm GC 특성, 숨은 할당, 측정·감소 기법, 블록/크기 클래스, 정밀·보수적 마킹, pointer-free 객체, Used/Reserved, Incremental GC와 쓰기 배리어, 파이널라이저
+- 3. PlayerLoop: 트리 구조, 콜백·재개 위치, `Start` 시점, `FixedUpdate` 따라잡기, `Update` 비용, 대기 방식별 할당, 스레드 전환, 수명과 취소, 커스텀 시스템과 도메인 리로드, 편집 모드 루프
 
 ## 퀴즈 기록
 - [정답] Destroy 후 같은 프레임/다음 프레임/is null 예측
@@ -78,6 +79,7 @@
 - [학습자 질문] (2026-11-14) `while(true){ try { await Awaitable.DelayFrameAsync(token); } catch {} }`면 1프레임에 무한 취소? → `DelayFrameAsync`는 UniTask API(Unity 6000.3 소스에 없음), `NextFrameAsync(token)` 기준 답: 그렇다, 대신 프레임이 끝나지 않고 멈춤. 6000.3 소스상 `NextFrameAsync` 첫 줄이 `ThrowIfCancellationRequested()`라 취소 뒤에는 동기 throw → 실제 멈춤이 없어 `MoveNext`가 `RaiseCancellation` → `CTS.Cancel` 호출 스택 안에서 영원히 반복(재귀가 아니라 오버플로도 없음). "await는 실제로 멈출 때만 양보"(빠른 경로)와 연결. 취소는 `break`로 루프 종료. 소스 추론만 했고 측정은 학습자가 불필요하다고 함
 - [정답 2/2] (2026-11-18) 03-L09 정리 없이 3번 진입한 뒤 `MySystem` 수 — "1, 3 (껐을 때 CurrentPlayerLoop는 이전 실행에 설정된 PlayerLoop가 그대로 남으므로)". 실측 A 1·1·1, B 1·2·3이고 프레임당 호출도 0.9·1.8·2.7. (1)은 이유를 적지 않음. 보충: 리로드를 켜도 플레이를 나간 뒤 편집 모드에는 노드가 남고, 다음 진입의 도메인 리로드가 트리를 기본값으로 되돌림(사라진 어셈블리를 가리키는 델리게이트를 남길 수 없음 — 추론). 정리는 자기 `type`만 빼기, 핸들러 등록은 `-=` 후 `+=`
 - [힌트 후 부분 정답] (2026-11-18) 03-L09 확인: 리로드 뒤 노드를 남겨 두면 생기는 문제 — 1차 "메모리 누수"(붙잡고 있다는 방향만 맞음, 매 프레임 **호출**된다는 점을 놓침) → 힌트(델리게이트 = target + 메서드 포인터, 리로드는 어셈블리·JIT 코드까지 버림) 후 "null이 있겠지". 무효라는 방향은 맞지만 해제된 메모리는 0으로 지워지지 않음 → 댕글링 포인터, 미정의 동작(크래시 또는 조용히 엉뚱한 코드 실행). null이면 검사할 수 있지만 해제된 주소는 검사할 수 없어서 엔진이 리로드 때 트리를 강제로 기본값으로 되돌린다는 점(추론)과, 1장 가짜 null(네이티브가 먼저 죽음)의 반대 방향이라는 점을 보충함. 한 번 나온 오해라 약점으로 올리지 않음 — 4장 이후 네이티브 핸들 관련 질문에서 "해제된 메모리에는 무엇이 남나?"를 물어 볼 것
+- [정답 2/2 (이유 보충)] (2026-11-18) 03-L10 입력 없는 편집 모드 10초 — "(a) X (마우스 입력같은게 안들어오면 멈추던데) (b) O 이건 명시적으로 걸어둔거라 계속 돌듯". 실측 (a) 10초에 4회, 마우스 이동 시 초당 8.2회. (b) 초당 약 2만 회. (b)의 이유 보충: 구독해서 도는 게 아니라 에디터 루프가 원래 계속 돌고 거기에 올라탐. 보충: 코드로 transform을 바꿔도 PlayerLoop는 안 깨어남(5초에 1회), 틱마다 `QueuePlayerLoopUpdate`면 PlayerLoop·에디터 루프 모두 317 Hz로 묶임, `EditorApplication.update`는 핫 패스라 툴 코드에서 할당·`AssetDatabase` 조회 금지
 - [설명 들음] (2026-10-30) 검사 개수(정적)와 실행 횟수(루프 안이면 원소마다) 구분, IL2CPP는 hoist·경계 검사 제거를 하지 않음 (RyuJIT과 대비)
 
 ## 약점 (관련 실습에서 재확인)
@@ -130,6 +132,7 @@
 - 2026-11-12 03-L07 Mono·IL2CPP 배치모드 플레이어 실행 — [README](../Assets/Labs/03_PlayerLoop/L07_ThreadSwitch/README.md) (에디터 미실행)
 - 2026-11-14 03-L08 에디터 + Mono·IL2CPP 배치모드 플레이어 실행 — [README](../Assets/Labs/03_PlayerLoop/L08_Lifetime/README.md)
 - 2026-11-14 03-L08b (심화: 토큰 등록 경로, 파괴 프레임 순서) 에디터 + Mono·IL2CPP 플레이어 + UnityCsReference 6000.3 소스 읽기 — 같은 README
+- 2026-11-18 03-L10 에디터 편집 모드 실행 (자동 단계 + 마우스 단계, 학습자가 메뉴 실행) — [README](../Assets/Labs/03_PlayerLoop/L10_EditModeLoop/README.md) (3장 실습 모두 완료)
 - 2026-11-18 03-L09 에디터 실행 (조건 4개 × 진입 3회 자동) — [README](../Assets/Labs/03_PlayerLoop/L09_SystemLeak/README.md)
 - 2026-11-12 03-L06 Mono·IL2CPP Development 배치모드 플레이어 측정 + 생성 코드·풀 크기 리플렉션 확인 — [README](../Assets/Labs/03_PlayerLoop/L06_WaitAlloc/README.md) (Release 미측정, 1000개 동시 시작의 96 B 원인 미확인)
 

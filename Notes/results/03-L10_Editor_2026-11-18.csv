@@ -1,0 +1,41 @@
+run_time,lab,backend,dev_build,unity,condition,metric,value
+2026-11-18T15:30:24,03-L10,Editor,1,6000.3.25f1,1 idle,seconds,10.00
+2026-11-18T15:30:24,03-L10,Editor,1,6000.3.25f1,1 idle,ExecuteAlways Update calls,4
+2026-11-18T15:30:24,03-L10,Editor,1,6000.3.25f1,1 idle,ExecuteAlways Update per second,0.4
+2026-11-18T15:30:24,03-L10,Editor,1,6000.3.25f1,1 idle,ExecuteAlways Update max gap ms,7539.2
+2026-11-18T15:30:24,03-L10,Editor,1,6000.3.25f1,1 idle,EditorApplication.update calls,240195
+2026-11-18T15:30:24,03-L10,Editor,1,6000.3.25f1,1 idle,EditorApplication.update per second,24019.5
+2026-11-18T15:30:24,03-L10,Editor,1,6000.3.25f1,1 idle,EditorApplication.update max gap ms,7.5
+2026-11-18T15:30:24,03-L10,Editor,1,6000.3.25f1,1 idle,editor focused ratio,1.00
+2026-11-18T15:30:24,03-L10,Editor,1,6000.3.25f1,2 modify transform each editor tick,seconds,5.00
+2026-11-18T15:30:24,03-L10,Editor,1,6000.3.25f1,2 modify transform each editor tick,ExecuteAlways Update calls,1
+2026-11-18T15:30:24,03-L10,Editor,1,6000.3.25f1,2 modify transform each editor tick,ExecuteAlways Update per second,0.2
+2026-11-18T15:30:24,03-L10,Editor,1,6000.3.25f1,2 modify transform each editor tick,ExecuteAlways Update max gap ms,0.0
+2026-11-18T15:30:24,03-L10,Editor,1,6000.3.25f1,2 modify transform each editor tick,EditorApplication.update calls,96208
+2026-11-18T15:30:24,03-L10,Editor,1,6000.3.25f1,2 modify transform each editor tick,EditorApplication.update per second,19241.4
+2026-11-18T15:30:24,03-L10,Editor,1,6000.3.25f1,2 modify transform each editor tick,EditorApplication.update max gap ms,4.0
+2026-11-18T15:30:24,03-L10,Editor,1,6000.3.25f1,2 modify transform each editor tick,editor focused ratio,1.00
+2026-11-18T15:30:24,03-L10,Editor,1,6000.3.25f1,3 QueuePlayerLoopUpdate each editor tick,seconds,5.00
+2026-11-18T15:30:24,03-L10,Editor,1,6000.3.25f1,3 QueuePlayerLoopUpdate each editor tick,ExecuteAlways Update calls,1583
+2026-11-18T15:30:24,03-L10,Editor,1,6000.3.25f1,3 QueuePlayerLoopUpdate each editor tick,ExecuteAlways Update per second,316.5
+2026-11-18T15:30:24,03-L10,Editor,1,6000.3.25f1,3 QueuePlayerLoopUpdate each editor tick,ExecuteAlways Update max gap ms,31.6
+2026-11-18T15:30:24,03-L10,Editor,1,6000.3.25f1,3 QueuePlayerLoopUpdate each editor tick,EditorApplication.update calls,1584
+2026-11-18T15:30:24,03-L10,Editor,1,6000.3.25f1,3 QueuePlayerLoopUpdate each editor tick,EditorApplication.update per second,316.7
+2026-11-18T15:30:24,03-L10,Editor,1,6000.3.25f1,3 QueuePlayerLoopUpdate each editor tick,EditorApplication.update max gap ms,33.3
+2026-11-18T15:30:24,03-L10,Editor,1,6000.3.25f1,3 QueuePlayerLoopUpdate each editor tick,editor focused ratio,1.00
+2026-11-18T15:30:24,03-L10,Editor,1,6000.3.25f1,4 idle again,seconds,5.00
+2026-11-18T15:30:24,03-L10,Editor,1,6000.3.25f1,4 idle again,ExecuteAlways Update calls,1
+2026-11-18T15:30:24,03-L10,Editor,1,6000.3.25f1,4 idle again,ExecuteAlways Update per second,0.2
+2026-11-18T15:30:24,03-L10,Editor,1,6000.3.25f1,4 idle again,ExecuteAlways Update max gap ms,0.0
+2026-11-18T15:30:24,03-L10,Editor,1,6000.3.25f1,4 idle again,EditorApplication.update calls,117523
+2026-11-18T15:30:24,03-L10,Editor,1,6000.3.25f1,4 idle again,EditorApplication.update per second,23504.6
+2026-11-18T15:30:24,03-L10,Editor,1,6000.3.25f1,4 idle again,EditorApplication.update max gap ms,0.8
+2026-11-18T15:30:24,03-L10,Editor,1,6000.3.25f1,4 idle again,editor focused ratio,1.00
+2026-11-18T15:30:46,03-L10,Editor,1,6000.3.25f1,M mouse moving over Scene view,seconds,10.00
+2026-11-18T15:30:46,03-L10,Editor,1,6000.3.25f1,M mouse moving over Scene view,ExecuteAlways Update calls,82
+2026-11-18T15:30:46,03-L10,Editor,1,6000.3.25f1,M mouse moving over Scene view,ExecuteAlways Update per second,8.2
+2026-11-18T15:30:46,03-L10,Editor,1,6000.3.25f1,M mouse moving over Scene view,ExecuteAlways Update max gap ms,386.8
+2026-11-18T15:30:46,03-L10,Editor,1,6000.3.25f1,M mouse moving over Scene view,EditorApplication.update calls,161853
+2026-11-18T15:30:46,03-L10,Editor,1,6000.3.25f1,M mouse moving over Scene view,EditorApplication.update per second,16184.4
+2026-11-18T15:30:46,03-L10,Editor,1,6000.3.25f1,M mouse moving over Scene view,EditorApplication.update max gap ms,7.5
+2026-11-18T15:30:46,03-L10,Editor,1,6000.3.25f1,M mouse moving over Scene view,editor focused ratio,1.00

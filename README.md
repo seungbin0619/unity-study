@@ -15,7 +15,7 @@ Unity 엔진 내부 동작을 문서로만 읽지 않고 **직접 측정해서 �
 |---|---|
 | [1. 네이티브–매니지드 경계](#1-네이티브매니지드-경계) | 10 / 10 완료 |
 | [2. 메모리와 GC](#2-메모리와-gc) | 9 / 9 완료 |
-| [3. PlayerLoop](#3-playerloop) | 8 / 10 완료 |
+| [3. PlayerLoop](#3-playerloop) | 10 / 10 완료 |
 | 4. 직렬화와 에셋 파이프라인 · 5. 렌더링 파이프라인 · 6. DOTS | 예정 |
 
 ## 실행 방법
@@ -127,4 +127,5 @@ Boehm GC의 특성, 숨은 할당, 힙 크기와 단편화, Incremental GC.
 > ✅ **[03-L09 커스텀 시스템 수명과 도메인 리로드](Assets/Labs/03_PlayerLoop/L09_SystemLeak/README.md)** · `Editor`\
 > 리로드를 끄면 정리 안 한 시스템이 진입마다 쌓이고 실제 호출도 N배(1→2→3). 켜도 플레이 종료 뒤 편집 모드엔 남고 다음 진입의 리로드가 초기화. `ExitingPlayMode`에서 자기 `type`만 빼면 0
 
-> ⏳ 03-L10 편집 모드 루프와 `[ExecuteAlways]` (에디터)
+> ✅ **[03-L10 편집 모드 루프와 `[ExecuteAlways]`](Assets/Labs/03_PlayerLoop/L10_EditModeLoop/README.md)** · `Editor`\
+> 입력 없는 편집 모드에서 `[ExecuteAlways]` `Update`는 10초에 4회, `EditorApplication.update`는 초당 약 2만 회. 코드로 transform을 바꿔도 안 깨어나고, 틱마다 `QueuePlayerLoopUpdate`면 둘 다 약 317 Hz

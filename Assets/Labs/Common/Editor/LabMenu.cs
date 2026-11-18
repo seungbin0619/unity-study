@@ -106,6 +106,13 @@ namespace Labs.Editor
             Run("03-L09");
         }
 
+        // 편집 모드 실습: 플레이 모드에 들어가지 않는다. 포커스 조건 때문에 학습자가 에디터에서 직접 누른다
+        [MenuItem("Labs/03/L10 Edit Mode Loop")]
+        static void Run03L10() => PlayerLoopLabs.EditModeLoopLab.RunAuto();
+
+        [MenuItem("Labs/03/L10 Edit Mode Loop (Mouse)")]
+        static void Run03L10Mouse() => PlayerLoopLabs.EditModeLoopLab.RunMouse();
+
         public static void Run(string labId)
         {
             if (EditorApplication.isPlaying)
